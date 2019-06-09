@@ -95,10 +95,10 @@ are essentially 7 distinct pathways of effects in the 3-species system:
 $D$ denotes a disturbance to species $i$, $j$ or $k$.
 
 Studying the effects of multiple disturbances means that we will be focusing on
-disturbances affecting multiple species that will will call pathways of multiple
+disturbances affecting multiple species, referred to as pathways of multiple
 effects ($D_{i,j}$, $D_{i,k}$, $D_{j,k}$, and $D_{i,j,k}$).
 
-In a food web context, we can define the linear or non-linear effect as a
+In a food web context, we will define linear and non-linear effect as a
 function of whether these pathways of multiple effects result in
 additive ($D_{i,j} = D_i + D_j$),
 synergistic ($D_{i,j} >> D_i + D_j$),
@@ -169,7 +169,9 @@ likely to be characterized by non-linear effects (Figure \ref{path}).
 
 This results in 6 distinct motifs, 14 different positions and 74 distinct
 pathways of effect (Figure \ref{path}).
-There are 10 strictly indirect (*i.e.*
+There are 34 single pathways of effects, of which 14 are direct and 20 are
+strictly indirect.
+There are also 10 strictly indirect (*i.e.*
 only peripheral species disturbed) double pathways of effect, and 21 double and
 10 triple pathways of effects with both direct and indirect effects (*i.e.*
 involving focal and peripheral species; Figure \ref{path}).
@@ -178,6 +180,277 @@ involving focal and peripheral species; Figure \ref{path}).
 
 \newpage
 
+# Equation systems and Jacobian matrix formulas
+
+## Tri-trophic chain
+
+### Archetypes
+
+<!-- Beluga <- Cod <- Snow crab / shrimp -->
+
+<!-- Blue whale <- Krill <- Primary producer -->
+
+! Otter <- Sea Urchin <- Kelp (well documented with trophic cascades)
+
+
+### Equation system
+
+Resource: $\frac{dR}{dt} = r_RR(1-\frac{R}{K_R}) - \alpha_{RC} RC$
+
+Competitor: $\frac{dC}{dt} = \alpha_{RC} RC - \alpha_{CP} CP - m_C C$
+
+Predator: $\frac{dP}{dt} = \alpha_{CP} CP - m_P P$
+
+### Jacobian matrix
+
+\[
+\makebox[\displaywidth][l]{$
+  \renewcommand*{\arraystretch}{2}
+  J =
+  \begin{bmatrix}
+    \frac{d(\frac{dR}{dt})}{dR}  & \frac{d(\frac{dR}{dt})}{dC}  & \frac{d(\frac{dR}{dt})}{dP} \\
+    \frac{d(\frac{dC}{dt})}{dR}  & \frac{d(\frac{dC}{dt})}{dC}  & \frac{d(\frac{dC}{dt})}{dP} \\
+    \frac{d(\frac{dP}{dt})}{dR}  & \frac{d(\frac{dP}{dt})}{dC}  & \frac{d(\frac{dP}{dt})}{dP}
+  \end{bmatrix}
+$}
+\]
+
+\[
+\makebox[\displaywidth][l]{$
+  \renewcommand*{\arraystretch}{2}
+  J =
+  \begin{bmatrix}
+    r_R (1-\frac{2R}{K_R}) - \alpha_{RC} C    & - \alpha_{RC} R       & 0       \\
+    \alpha_{RC} C   & \alpha_{RC} R - \alpha_{CP} P - m_C    & - \alpha_{CP} C       \\
+    0   &   \alpha_{CP} P   & \alpha_{CP} C - m_P
+  \end{bmatrix}
+$}
+\]
+
+
+\newpage
+
+## Omnivory
+
+
+
+### Archetypes
+
+### Equation system
+
+Resource: $\frac{dR}{dt} = r_RR(1-R/K_R) - \alpha_{RC} RC - \alpha_{RP} RP$
+
+Competitor: $\frac{dC}{dt} = \alpha_{RC} RC - \alpha_{CP} CP - m_C C$
+
+Predator: $\frac{dP}{dt} = \alpha_{RP} RP + \alpha_{CP} CP - m_P P$
+
+
+### Jacobian matrix
+
+\[
+\makebox[\displaywidth][l]{$
+  \renewcommand*{\arraystretch}{2}
+  J =
+  \begin{bmatrix}
+    \frac{d(\frac{dR}{dt})}{dR}  & \frac{d(\frac{dR}{dt})}{dC}  & \frac{d(\frac{dR}{dt})}{dP} \\
+    \frac{d(\frac{dC}{dt})}{dR}  & \frac{d(\frac{dC}{dt})}{dC}  & \frac{d(\frac{dC}{dt})}{dP} \\
+    \frac{d(\frac{dP}{dt})}{dR}  & \frac{d(\frac{dP}{dt})}{dC}  & \frac{d(\frac{dP}{dt})}{dP}
+  \end{bmatrix}
+$}
+\]
+
+\[
+\makebox[\displaywidth][l]{$
+  \renewcommand*{\arraystretch}{2}
+  J =
+  \begin{bmatrix}
+    r_R (1-\frac{2R}{K_R}) - \alpha_{RC} C - \alpha_{RP} P   & - \alpha_{RC} R       & - \alpha_{RP} R \\
+    \alpha_{RC} C   & \alpha_{RC} R - \alpha_{CP} P - m_C    & - \alpha_{CP} C \\
+    \alpha_{RP} P   & \alpha_{CP} C     & \alpha_{RP} R + \alpha_{CP} C - m_P
+  \end{bmatrix}
+$}
+\]
+
+\newpage
+
+## Exploitative competition
+
+### Archetypes
+
+Norway: Humpback whale <- Herring -> Orcas (BBC Blue Planet II E1)
+
+### Equation system
+
+Resource: $\frac{dR}{dt} = r_RR(1-R/K_R) - \alpha_{RP_1} RP_1 - \alpha_{RP_1} RP_2$
+
+Predator 1: $\frac{dP_1}{dt} = \alpha_{RP_1} RP_1 - m_{P_1} P_1$
+
+Predator 2: $\frac{dP_2}{dt} = \alpha_{RP_2} RP_2 - m_{P_2} P_2$
+
+
+### Jacobian matrix
+
+\[
+\makebox[\displaywidth][l]{$
+  \renewcommand*{\arraystretch}{2}
+  J =
+  \begin{bmatrix}
+    \frac{d(\frac{dR}{dt})}{dR}  & \frac{d(\frac{dR}{dt})}{dP_1}  & \frac{d(\frac{dR}{dt})}{dP_2} \\
+    \frac{d(\frac{dP_1}{dt})}{dR}  & \frac{d(\frac{dP_1}{dt})}{dP_1}  & \frac{d(\frac{dP_1}{dt})}{dP_2} \\
+    \frac{d(\frac{dP_2}{dt})}{dR}  & \frac{d(\frac{dP_2}{dt})}{dP_1}  & \frac{d(\frac{dP_2}{dt})}{dP_2}
+  \end{bmatrix}
+$}
+\]
+
+\[
+\makebox[\displaywidth][l]{$
+  \renewcommand*{\arraystretch}{2}
+  J =
+  \begin{bmatrix}
+    r_R (1-\frac{2R}{K_R}) - \alpha_{RP_1} P_1 - \alpha_{RP_2} P_2  &  - \alpha_{RP_1} R & - \alpha_{RP_2} R \\
+    \alpha_{RP_1} P_1   & \alpha_{RP_1} R - m_{P_1}   & 0 \\
+    \alpha_{RP_1} P_2   & 0   & \alpha_{RP_2} R - m_{P_2}
+  \end{bmatrix}
+$}
+\]
+
+\newpage
+
+## Apparent competition
+
+### Archetypes
+
+Barents sea: Krill -> Capelin (Mallotus villosus) <- Copepods (https://www.ncbi.nlm.nih.gov/pubmed/29281755)
+
+Shrimp -> Cod <- Snow crab
+
+
+### Equation system
+
+Resource 1: $\frac{dR_1}{dt} = r_{R_1}R_1(1-R_1/K_1) - \alpha_{R_1C} R_1C$
+
+Resource 2: $\frac{dR_2}{dt} = r_{R_2}R_2(1-R_2/K_2) - \alpha_{R_2C} R_2C$
+
+Predator: $\frac{dP}{dt} = \alpha_{R_1C} R_1C + \alpha_{R_2C} R_2C - m_{C} C$
+
+
+### Jacobian matrix
+
+\[
+\makebox[\displaywidth][l]{$
+  \renewcommand*{\arraystretch}{2}
+  J =
+  \begin{bmatrix}
+    \frac{d(\frac{dR_1}{dt})}{dR_1}  & \frac{d(\frac{dR_1}{dt})}{dR_2}  & \frac{d(\frac{dR_1}{dt})}{dP} \\
+    \frac{d(\frac{dR_2}{dt})}{dR_1}  & \frac{d(\frac{dR_2}{dt})}{dR_2}  & \frac{d(\frac{dR_2}{dt})}{dP} \\
+    \frac{d(\frac{dP}{dt})}{dR_1}  & \frac{d(\frac{dP}{dt})}{dR_2}  & \frac{d(\frac{dP}{dt})}{dP}
+  \end{bmatrix}
+$}
+\]
+
+\[
+\makebox[\displaywidth][l]{$
+  \renewcommand*{\arraystretch}{2}
+  J =
+  \begin{bmatrix}
+    r_{R_1} (1-\frac{2{R_1}}{K_{R_1}}) - \alpha_{R_1P} P  &  0 & - \alpha_{R_1P} R_1 \\
+    0   & r_{R_2} (1-\frac{2{R_2}}{K_{R_2}}) - \alpha_{R_2P} P  & - \alpha_{R_2P} R_2 \\
+    \alpha_{R_1P} P   & \alpha_{R_2P} P   & \alpha_{R_1P} R_1 + \alpha_{R_2P} R_2 - m_P
+  \end{bmatrix}
+$}
+\]
+
+\newpage
+
+
+## Partially connected
+
+### Archetype
+
+
+#### Equation system
+
+Resource: $\frac{dR}{dt} = r_RR(1-R/K_R) - \alpha_{RC} RC$
+
+Predator: $\frac{dP}{dt} = \alpha_{RP} RP - m_P P$
+
+Species: $\frac{dS}{dt} = r_SS(1-S/K_S)$
+
+### Jacobian matrix
+
+\[
+\makebox[\displaywidth][l]{$
+  \renewcommand*{\arraystretch}{2}
+  J =
+  \begin{bmatrix}
+    \frac{d(\frac{dR}{dt})}{dR}  & \frac{d(\frac{dR}{dt})}{dP}  & \frac{d(\frac{dR}{dt})}{dS} \\
+    \frac{d(\frac{dP}{dt})}{dR}  & \frac{d(\frac{dP}{dt})}{dP}  & \frac{d(\frac{dP}{dt})}{dS} \\
+    \frac{d(\frac{dS}{dt})}{dR}  & \frac{d(\frac{dS}{dt})}{dP}  & \frac{d(\frac{dS}{dt})}{dS}
+  \end{bmatrix}
+$}
+\]
+
+\[
+\makebox[\displaywidth][l]{$
+  \renewcommand*{\arraystretch}{2}
+  J =
+  \begin{bmatrix}
+    r_R (1-\frac{2R}{K_R}) - \alpha_{RP} P  & - \alpha_{RP} R   & 0 \\
+    \alpha_{RP} P   & \alpha_{RP} R - m_P  & 0 \\
+    0   & 0   & r_S (1-\frac{2S}{K_S})
+  \end{bmatrix}
+$}
+\]
+
+
+\newpage
+
+## Disconnected
+
+Species 1: $\frac{dS_1}{dt} = r_{S_1}S_1(1-S_1/K_{S_1})$
+
+Species 2: $\frac{dS_2}{dt} = r_{S_2}S_2(1-S_2/K_{S_2})$
+
+Species 3: $\frac{dS_3}{dt} = r_{S_3}S_3(1-S_3/K_{S_3})$
+
+\[
+\makebox[\displaywidth][l]{$
+  \renewcommand*{\arraystretch}{2}
+  J =
+  \begin{bmatrix}
+    \frac{d(\frac{dS_1}{dt})}{dS_1}  & \frac{d(\frac{dS_1}{dt})}{dS_2}  & \frac{d(\frac{dS_1}{dt})}{dS_3} \\
+    \frac{d(\frac{dS_2}{dt})}{dS_1}  & \frac{d(\frac{dS_2}{dt})}{dS_2}  & \frac{d(\frac{dS_2}{dt})}{dS_3} \\
+    \frac{d(\frac{dS_3}{dt})}{dS_1}  & \frac{d(\frac{dS_3}{dt})}{dS_2}  & \frac{d(\frac{dS_3}{dt})}{dS_3}
+  \end{bmatrix}
+$}
+\]
+
+\[
+\makebox[\displaywidth][l]{$
+  \renewcommand*{\arraystretch}{2}
+  J =
+  \begin{bmatrix}
+    r_{S_1} (1-\frac{2S_1}{K_{S_1}}) & 0 & 0 \\
+    0 & r_{S_2} (1-\frac{2S_2}{K_{S_2}}) & 0 \\
+    0 & 0 & r_{S_3} (1-\frac{2S_3}{K_{S_3}})
+  \end{bmatrix}
+$}
+\]
+
+\newpage
+
+
+
+
+
+
+
+
+
+
+
+
+
 # Next points
 
 - Non-linear effects in motifs
@@ -185,6 +458,10 @@ involving focal and peripheral species; Figure \ref{path}).
 - Species profiles (frequency of times occupying roles that contribute to non-linear effects; see @stouffer2012)
 - Graphs to present these results
 - Methods
+
+# Interesting points
+
+- Effect limit [@schafer2018]: maximum effect size for a response (*e.g.* 100% mortality, zero growth or reproduction)
 
 # Literature to cite - or at least look at!
 
