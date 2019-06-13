@@ -28,6 +28,12 @@ relativeurls: true
 rmarkdown::render('./FoodWebs-MultipleStressors.md', 'pdf_document')
 -->
 
+
+<!--
+https://www.symbolab.com/solver/derivative-calculator/
+https://mccannlab.org/aboutDE/mathematical-prerequisites.html
+-->
+
 # Introduction
 
 Global changes, be they natural or human-induced, are resulting in increasingly
@@ -232,9 +238,10 @@ $}
 
 ## Omnivory
 
-
-
 ### Archetypes
+
+|-> Cod -> Beluga <- Hyas -|
+|--------------------------|
 
 ### Equation system
 
@@ -366,6 +373,7 @@ $}
 ## Partially connected
 
 ### Archetype
+
 
 
 #### Equation system
