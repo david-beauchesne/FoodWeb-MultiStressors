@@ -4,6 +4,7 @@
 #' equilibrium(motif = 'exploitative', param = defaultParam('exploitative'))
 #' equilibrium(motif = 'apparent', param = defaultParam('apparent'))
 #' equilibrium(motif = 'partial', param = defaultParam('partial'))
+#' equilibrium(motif = 'disconnected', param = defaultParam('disconnected'))
 #'
 #'
 #'
@@ -102,6 +103,28 @@ equilibrium <- function(motif, param) {
 
   # ---------------------------------------------------------------------------
   #                             Partially disconnected
+  # ---------------------------------------------------------------------------
+  if(motif == 'partial') {
+    # Species functions
+    x <- function(my=p$my, b=p$b, u=p$u) {
+      my/(b*u)
+    }
+    y <- function(b=p$b, rx=p$rx, u=p$u, ax=p$ax, my=p$my) {
+      (b*rx*u - ax*my)/(b^2*u)
+    }
+    z <- function(rz=p$rz, az=p$az) {
+      rz/az
+    }
+
+    # Evaluate
+    xyz <- c(x(), y(), z())
+    xyz <- c(xyz, sum(xyz))
+    names(xyz) <- c('x','y','z','total')
+  }
+
+
+  # ---------------------------------------------------------------------------
+  #                                 Disconnected
   # ---------------------------------------------------------------------------
   if(motif == 'disconnected') {
     # Species functions

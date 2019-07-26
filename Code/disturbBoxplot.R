@@ -28,7 +28,7 @@ disturbBoxplot <- function(disturbanceData) {
   id2 <- which(id0 > 1)
 
   # One graph per joint model comparing joint and additive model
-  dfX <- dfY <- dfZ <- dfT <- matrix(ncol = length(id2), nrow = n)
+  dfX <- dfY <- dfZ <- dfT <- dfS <- matrix(ncol = length(id2), nrow = n)
 
   for(i in 1:length(id2)) {
     # Parameters of model considered
@@ -49,25 +49,29 @@ disturbBoxplot <- function(disturbanceData) {
     z <- disturbanceData$deltaAbundance[[id2[i]]]
 
     # Difference
-    yz <- y - z
+    yz <- round(y - z, 4)
 
     # Add in data.frames
     dfX[,i] <- yz[,1]
     dfY[,i] <- yz[,2]
     dfZ[,i] <- yz[,3]
     dfT[,i] <- yz[,4]
+    dfS[,i] <- yz[,5]
 
     # list of data.frames
-    df <- list(dfX, dfY, dfZ, dfT)
+    df <- list(dfX, dfY, dfZ, dfT, dfS)
   }
 
+  # Transform data to numeric
+  df <- lapply(df, function(x) apply(x, 2, function(y) y <- as.numeric(y)))
+
   # All synergistic or all antagonistic
-  syn <- lapply(df, function(x) apply(x, 2, function(y) all(y > 0)))
-  ant <- lapply(df, function(x) apply(x, 2, function(y) all(y < 0)))
-  add <-  lapply(df, function(x) apply(x, 2, function(y) all(y == 0)))
+  syn <- lapply(df[1:4], function(x) apply(x, 2, function(y) all(y > 0)))
+  ant <- lapply(df[1:4], function(x) apply(x, 2, function(y) all(y < 0)))
+  add <-  lapply(df[1:4], function(x) apply(x, 2, function(y) all(y == 0)))
 
   # Plot
-  par(mfrow = c(5,1), mar = c(1,4,1,.5))
+  par(mfrow = c(6,1), mar = c(1,4,1,.5))
   id <- c('Species X','Species Y','Species Z','Full motif')
   # Boxplots
   for(i in 1:4) {
@@ -81,6 +85,15 @@ disturbBoxplot <- function(disturbanceData) {
     mtext(at = length(id2)-1, text = id[i], adj = c(1,1), font = 2)
     abline(h = 0, col = '#c45b5f', lty = 2)
   }
+  # Stability
+  cols <- '#474747'
+  boxplot(df[[5]], lwd = .5, axes = F, ylim = c(-100,100), col = cols)
+  axis(1, at = 1:length(id2), labels = FALSE)
+  axis(2, at = c(-100,0,100))
+  abline(h = 0, col = '#c45b5f', lty = 2)
+  mtext(at = length(id2)-1, text = 'Stability', adj = c(1,1), font = 2)
+  text(x = -1, y = -95, labels = 'Increased stability', adj = c(0,0))
+  text(x = -1, y = 95, labels = 'Decreased stability', adj = c(0,1))
   # Legend
   par(mar = c(1,4,0,.5))
   plot0(xlim = c(0,length(id2)), ylim = c(0,1))
