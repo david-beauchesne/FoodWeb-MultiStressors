@@ -1,195 +1,173 @@
-# ---------------------------------------------------------------------------
-#                              Installing SAGE on iOS
-# ---------------------------------------------------------------------------
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#                           Installing SAGE on iOS
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # brew cask install sage
 
 
-# ---------------------------------------------------------------------------
-#        Lotka-volterra predator-prey model with prey logistic growth
-# ---------------------------------------------------------------------------
-x,y = var('x,y')
-K,E,m = var('K,E,m')
-eq1 = x*(1-x/K) - x*y/(1+x)
-eq2 = E*y*x/(1+x) - m*y
-z = solve([eq1 == 0], x)
-z = solve([eq1 == 0, eq2 == 0], x, y)
-jacobian([eq1, eq2], (x, y))
-
-
-# ---------------------------------------------------------------------------
-#                              Tri-trophic food chain
-# ---------------------------------------------------------------------------
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#                                   Modules
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# ---------------------------------------------------
+#                  Tri-trophic food chain
+# ---------------------------------------------------
 # Variables
 x,y,z = var('x,y,z')
-r,a,b,u,d,w,my,mz = var('r,a,b,u,d,w,my,mz')
+r,alpha,beta,mu,delta,omega,m_y,m_z = var('r,alpha,beta,mu,delta,omega,m_y,m_z')
 
 # Equations
-eq1 = x * (r - a*x - b*y)
-eq2 = y * (u*b*x - d*z - my)
-eq3 = z * (w*d*y - mz)
+tt1 = x * (r - alpha*x - beta*y)
+tt2 = y * (mu*beta*x - delta*z - m_y)
+tt3 = z * (omega*delta*y - m_z)
+
+# Matrix of symbolic equations
+tt = matrix(SR, 1, [tt1, tt2, tt3])
 
 # Solve
-eqSol = solve([eq1 == 0, eq2 == 0, eq3 == 0], x, y, z)
-latex(eqSol)
+ttSol = solve([tt1 == 0, tt2 == 0, tt3 == 0], x, y, z)
+ttSol = ttSol[4]
 
 # Jacobian
-j = jacobian([eq1, eq2, eq3], (x, y, z))
-latex(j)
+ttJ = jacobian([tt1, tt2, tt3], (x, y, z))
 
 # Jacobian at equilibrium
-# eq1.full_simplify()
-jEq = j.substitute(eqSol[4])
-latex(jEq)
+ttJEq = ttJ.substitute(ttSol)
 
-
-
-# ---------------------------------------------------------------------------
-#                                     Omnivory
-# ---------------------------------------------------------------------------
+# ---------------------------------------------------
+#                         Omnivory
+# ---------------------------------------------------
 # Variables
 x,y,z = var('x,y,z')
-r,a,b,u,d,w,g,v,my,mz = var('r,a,b,u,d,w,g,v,my,mz')
+r,alpha,beta,mu,delta,omega,gamma,nu,m_y,m_z = var('r,alpha,beta,mu,delta,omega,gamma,nu,m_y,m_z')
 
 # Equations
-eq1 = x * (r - a*x - b*y - g*z)
-eq2 = y * (u*b*x - d*z - my)
-eq3 = z * (v*g*x + w*d*y - mz)
+om1 = x * (r - alpha*x - beta*y - gamma*z)
+om2 = y * (mu*beta*x - delta*z - m_y)
+om3 = z * (nu*gamma*x + omega*delta*y - m_z)
+
+# Equations
+om = matrix(SR, 1, [om1, om2, om3])
 
 # Solve
-eqSol = solve([eq1 == 0, eq2 == 0, eq3 == 0], x, y, z)
-latex(eqSol)
+omSol = solve([om1 == 0, om2 == 0, om3 == 0], x, y, z)
+omSol = omSol[5]
 
 # Jacobian
-j = jacobian([eq1, eq2, eq3], (x, y, z))
-latex(j)
+omJ = jacobian([om1, om2, om3], (x, y, z))
 
 # Jacobian at equilibrium
-# eq1.full_simplify()
-jEq = j.substitute(eqSol[5])
-latex(jEq)
+# omJEq = omJ.substitute(omSol)
 
 
-# ---------------------------------------------------------------------------
-#                           Exploitative competition 1
-# ---------------------------------------------------------------------------
+# ---------------------------------------------------
+#               Exploitative competition
+# ---------------------------------------------------
+# First version, no equilibria without constraints to predator growth
 # Variables
 x,y,z = var('x,y,z')
-r,a,b,u,d,w,g,v,my,mz = var('r,a,b,u,d,w,g,v,my,mz')
+r,alpha,beta,mu,delta,omega,gamma,nu,m_y,m_z = var('r,alpha,beta,mu,delta,omega,gamma,nu,m_y,m_z')
 
 # Equations
-eq1 = x * (r - a*x - b*y - g*z)
-eq2 = y * (u*b*x - my)
-eq3 = z * (v*g*x - mz)
+ex1 = x * (r - alpha*x - beta*y - gamma*z)
+ex2 = y * (mu*beta*x - m_y)
+ex3 = z * (nu*gamma*x - m_z)
 
-# Jacobian
-j = jacobian([eq1, eq2, eq3], (x, y, z))
-latex(j)
-
-# Jacobian at equilibrium
-# eq1.full_simplify()
-jEq = j.substitute(eqSol[5])
-latex(jEq)
-
-# ---------------------------------------------------------------------------
-#                           Exploitative competition 2
-# ---------------------------------------------------------------------------
+# Second version, with density dependence and competition for predators
 # Variables
 x,y,z = var('x,y,z')
-r,aii,b,u,g,v,my,mz,ajj,ajk,akk,akj = var('r,aii,b,u,g,v,my,mz,ajj,ajk,akk,akj')
+r,a_x,beta,mu,gamma,nu,m_y,m_z,a_y,a_yz,a_z,a_zy = var('r,a_x,beta,mu,gamma,nu,m_y,m_z,a_y,a_yz,a_z,a_zy')
 
 # Equations
-eq1 = x * (r - aii*x - b*y - g*z)
-eq2 = y * (u*b*x - my - ajj*y - ajj*ajk*z)
-eq3 = z * (v*g*x - mz - akk*z - akk*akj*y)
+ex1 = x * (r - a_x*x - beta*y - gamma*z)
+ex2 = y * (mu*beta*x - m_y - a_y*y - a_y*a_yz*z)
+ex3 = z * (nu*gamma*x - m_z - a_z*z - a_z*a_zy*y)
+
+# Equations
+ex = matrix(SR, 1, [ex1, ex2, ex3])
 
 # Solve
-eqSol = solve([eq1 == 0, eq2 == 0, eq3 == 0], x, y, z)
-latex(eqSol)
+exSol = solve([ex1 == 0, ex2 == 0, ex3 == 0], x, y, z)
+exSol = exSol[7]
 
 # Jacobian
-j = jacobian([eq1, eq2, eq3], (x, y, z))
-latex(j)
+exJ = jacobian([ex1, ex2, ex3], (x, y, z))
 
 # Jacobian at equilibrium
-# eq1.full_simplify()
-jEq = j.substitute(eqSol[5])
-latex(jEq)
+# exJEq = exJ.substitute(exSol)
 
 
-
-# ---------------------------------------------------------------------------
-#                             Apparent competition
-# ---------------------------------------------------------------------------
+# ---------------------------------------------------
+#                Apparent competition
+# ---------------------------------------------------
 # Variables
 x,y,z = var('x,y,z')
-rx,ax,ry,ay,d,w,g,v,mz = var('rx,ax,ry,ay,d,w,g,v,mz')
+r_x,a_x,r_y,a_y,delta,omega,gamma,nu,m_z = var('r_x,a_x,r_y,a_y,delta,omega,gamma,nu,m_z')
 
 # Equations
-eq1 = x * (rx - ax*x - g*z)
-eq2 = y * (ry - ay*y - d*z)
-eq3 = z * (v*g*x + w*d*y - mz)
+ap1 = x * (r_x - a_x*x - gamma*z)
+ap2 = y * (r_y - a_y*y - delta*z)
+ap3 = z * (nu*gamma*x + omega*delta*y - m_z)
+
+# Equations
+ap = matrix(SR, 1, [ap1, ap2, ap3])
 
 # Solve
-eqSol = solve([eq1 == 0, eq2 == 0, eq3 == 0], x, y, z)
-latex(eqSol)
+apSol = solve([ap1 == 0, ap2 == 0, ap3 == 0], x, y, z)
+apSol = apSol[6]
 
 # Jacobian
-j = jacobian([eq1, eq2, eq3], (x, y, z))
-latex(j)
+apJ = jacobian([ap1, ap2, ap3], (x, y, z))
 
 # Jacobian at equilibrium
-# eq1.full_simplify()
-jEq = j.substitute(eqSol[6])
-latex(jEq)
+# apJEq = apJ.substitute(apSol)
 
 
-# ---------------------------------------------------------------------------
-#                             Partially disconnected
-# ---------------------------------------------------------------------------
+# ---------------------------------------------------
+#               Partially disconnected
+# ---------------------------------------------------
 # Variables
 x,y,z = var('x,y,z')
-rx,ax,rz,az,u,b,my = var('rx,ax,rz,az,u,b,my')
+r_x,a_x,r_z,a_z,mu,beta,m_y = var('r_x,a_x,r_z,a_z,mu,beta,m_y')
 
 # Equations
-eq1 = x * (rx - ax*x - b*y)
-eq2 = y * (u*b*x - my)
-eq3 = z * (rz - az*z)
+pd1 = x * (r_x - a_x*x - beta*y)
+pd2 = y * (mu*beta*x - m_y)
+pd3 = z * (r_z - a_z*z)
+
+# Equations
+pd = matrix(SR, 1, [pd1, pd2, pd3])
 
 # Solve
-eqSol = solve([eq1 == 0, eq2 == 0, eq3 == 0], x, y, z)
-latex(eqSol)
+pdSol = solve([pd1 == 0, pd2 == 0, pd3 == 0], x, y, z)
+pdSol = pdSol[5]
 
 # Jacobian
-j = jacobian([eq1, eq2, eq3], (x, y, z))
-latex(j)
+pdJ = jacobian([pd1, pd2, pd3], (x, y, z))
 
 # Jacobian at equilibrium
-# eq1.full_simplify()
-jEq = j.substitute(eqSol[6])
-latex(jEq)
+# pdJEq = pdJ.substitute(pdSol)
 
 
-# ---------------------------------------------------------------------------
-#                                    Disconnected
-# ---------------------------------------------------------------------------
+# ---------------------------------------------------
+#                    Disconnected
+# ---------------------------------------------------
 # Variables
 x,y,z = var('x,y,z')
-rx,ax,ry,az,rz,az = var('rx,ax,ry,az,rz,az')
+r_x,a_x,r_y,a_z,r_z,a_z = var('r_x,a_x,r_y,a_z,r_z,a_z')
 
 # Equations
-eq1 = x * (rx - ax*x)
-eq2 = y * (ry - ay*y)
-eq3 = z * (rz - az*z)
+di1 = x * (r_x - a_x*x)
+di2 = y * (r_y - a_y*y)
+di3 = z * (r_z - a_z*z)
+
+# Equations
+di = matrix(SR, 1, [di1, di2, di3])
 
 # Solve
-eqSol = solve([eq1 == 0, eq2 == 0, eq3 == 0], x, y, z)
-latex(eqSol)
+diSol = solve([di1 == 0, di2 == 0, di3 == 0], x, y, z)
+diSol = diSol[7]
 
 # Jacobian
-j = jacobian([eq1, eq2, eq3], (x, y, z))
-latex(j)
+diJ = jacobian([di1, di2, di3], (x, y, z))
 
 # Jacobian at equilibrium
-# eq1.full_simplify()
-jEq = j.substitute(eqSol[6])
-latex(jEq)
+# diJEq = diJ.substitute(diSol)

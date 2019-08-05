@@ -226,14 +226,6 @@ $}
 \]
 
 
-### Inequalities
-
-
-
-
-
-
-
 ### Parameter space
 
 #### Default parameters

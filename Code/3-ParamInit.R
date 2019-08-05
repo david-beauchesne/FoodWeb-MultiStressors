@@ -1,0 +1,6 @@
+source('./Code/0-Param.R')
+nmParam <- names(formals(ttSt))
+nParam <- length(nmParam)
+paramLow <- rep(.00001, nParam)
+paramUp <- rep(1, nParam)
+test <- SimAnnealing(FUN = ttSt, paramLow = paramLow, paramUp = paramUp, temp=10)
