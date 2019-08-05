@@ -5,9 +5,9 @@ library(magrittr)
 
 
 # Functions
-source('./code/defaultParameters.R')
-source('./code/equilibrium.R')
-source('./code/disturbance.R')
-source('./code/disturbBoxplot.R')
-source('./code/stability.R')
-source('./code/SimAnnealing.R')
+source('./Code/defaultParameters.R')
+source('./Code/equilibrium.R')
+source('./Code/disturbance.R')
+source('./Code/disturbBoxplot.R')
+source('./Code/stability.R')
+source('./Code/SimAnnealing.R')
