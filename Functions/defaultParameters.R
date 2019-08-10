@@ -36,24 +36,24 @@ defaultParam <- function(motif) {
 
     exploitative = list(
           r = 1,      # Growth rate
-        a_x =  .001,  # Resource density-dependence effect
+        alpha_x =  .001,  # Resource density-dependence effect
        beta = .01,    # Species y attack rate on species x
          mu = .1,     # Species y conversion rate of species x
       gamma = .01,    # Species z attack rate on species x
          nu = .1,     # Species z conversion rate of species x
         m_y = .1,     # Species y mortality rate
         m_z = .1,     # Species z mortality rate
-        a_y = .01,    # Density dependence effect of species y on itself
-       a_yz = .01,    # Competitive effect of species z on species y
-        a_z = .01,    # Density dependence effect of species z on itself
-       a_zy = .01     # Competitive effect of species y on species z
+        alpha_y = .01,    # Density dependence effect of species y on itself
+       alpha_yz = .01,    # Competitive effect of species z on species y
+        alpha_z = .01,    # Density dependence effect of species z on itself
+       alpha_zy = .01     # Competitive effect of species y on species z
    ),
 
     apparent = list(
         r_x = 1,      # Growth rate of species x
         r_y = 1,      # Growth rate of species y
-        a_x = .001,   # Species x density-dependence effect
-        a_y = .001,   # Species y density-dependence effect
+        alpha_x = .001,   # Species x density-dependence effect
+        alpha_y = .001,   # Species y density-dependence effect
       gamma = .01,    # Predator attack rate on species x
          nu = .1,     # Predator conversion efficiency of soecies x
       delta = .01,    # Predator attack rate on speciex y
@@ -63,9 +63,9 @@ defaultParam <- function(motif) {
 
     partial = list(
         r_x = 1,      # Growth rate of species x
-        a_x = .001,   # Species x density-dependence effect
+        alpha_x = .001,   # Species x density-dependence effect
         r_z = 1,      # Growth rate of species z
-        a_z = .001,   # Species z density-dependence effect
+        alpha_z = .001,   # Species z density-dependence effect
        beta = .01,    # Species y attack rate on species x
          mu = .1,     # Species y conversion rate of species x
         m_y = .1      # Species y mortality rate
@@ -73,11 +73,11 @@ defaultParam <- function(motif) {
 
     disconnected = list(
         r_x = 1,      # Growth rate of species x
-        a_x = .001,   # Species x density-dependence effect
+        alpha_x = .001,   # Species x density-dependence effect
         r_y = 1,      # Growth rate of species y
-        a_y = .001,   # Species y density-dependence effect
+        alpha_y = .001,   # Species y density-dependence effect
         r_z = 1,      # Growth rate of species z
-        a_z = .001    # Species z density-dependence effect
+        alpha_z = .001    # Species z density-dependence effect
     )
   )
 

@@ -55,7 +55,7 @@ omSol = omSol[5]
 omJ = jacobian([om1, om2, om3], (x, y, z))
 
 # Jacobian at equilibrium
-# omJEq = omJ.substitute(omSol)
+omJEq = omJ.substitute(omSol)
 
 
 # ---------------------------------------------------
@@ -74,12 +74,12 @@ ex3 = z * (nu*gamma*x - m_z)
 # Second version, with density dependence and competition for predators
 # Variables
 x,y,z = var('x,y,z')
-r,a_x,beta,mu,gamma,nu,m_y,m_z,a_y,a_yz,a_z,a_zy = var('r,a_x,beta,mu,gamma,nu,m_y,m_z,a_y,a_yz,a_z,a_zy')
+r,alpha_x,beta,mu,gamma,nu,m_y,m_z,alpha_y,alpha_yz,alpha_z,alpha_zy = var('r,alpha_x,beta,mu,gamma,nu,m_y,m_z,alpha_y,alpha_yz,alpha_z,alpha_zy')
 
 # Equations
-ex1 = x * (r - a_x*x - beta*y - gamma*z)
-ex2 = y * (mu*beta*x - m_y - a_y*y - a_y*a_yz*z)
-ex3 = z * (nu*gamma*x - m_z - a_z*z - a_z*a_zy*y)
+ex1 = x * (r - alpha_x*x - beta*y - gamma*z)
+ex2 = y * (mu*beta*x - m_y - alpha_y*y - alpha_y*alpha_yz*z)
+ex3 = z * (nu*gamma*x - m_z - alpha_z*z - alpha_z*alpha_zy*y)
 
 # Equations
 ex = matrix(SR, 1, [ex1, ex2, ex3])
@@ -92,7 +92,7 @@ exSol = exSol[7]
 exJ = jacobian([ex1, ex2, ex3], (x, y, z))
 
 # Jacobian at equilibrium
-# exJEq = exJ.substitute(exSol)
+exJEq = exJ.substitute(exSol)
 
 
 # ---------------------------------------------------
@@ -100,11 +100,11 @@ exJ = jacobian([ex1, ex2, ex3], (x, y, z))
 # ---------------------------------------------------
 # Variables
 x,y,z = var('x,y,z')
-r_x,a_x,r_y,a_y,delta,omega,gamma,nu,m_z = var('r_x,a_x,r_y,a_y,delta,omega,gamma,nu,m_z')
+r_x,alpha_x,r_y,alpha_y,delta,omega,gamma,nu,m_z = var('r_x,alpha_x,r_y,alpha_y,delta,omega,gamma,nu,m_z')
 
 # Equations
-ap1 = x * (r_x - a_x*x - gamma*z)
-ap2 = y * (r_y - a_y*y - delta*z)
+ap1 = x * (r_x - alpha_x*x - gamma*z)
+ap2 = y * (r_y - alpha_y*y - delta*z)
 ap3 = z * (nu*gamma*x + omega*delta*y - m_z)
 
 # Equations
@@ -118,7 +118,7 @@ apSol = apSol[6]
 apJ = jacobian([ap1, ap2, ap3], (x, y, z))
 
 # Jacobian at equilibrium
-# apJEq = apJ.substitute(apSol)
+apJEq = apJ.substitute(apSol)
 
 
 # ---------------------------------------------------
@@ -126,12 +126,12 @@ apJ = jacobian([ap1, ap2, ap3], (x, y, z))
 # ---------------------------------------------------
 # Variables
 x,y,z = var('x,y,z')
-r_x,a_x,r_z,a_z,mu,beta,m_y = var('r_x,a_x,r_z,a_z,mu,beta,m_y')
+r_x,alpha_x,r_z,alpha_z,mu,beta,m_y = var('r_x,alpha_x,r_z,alpha_z,mu,beta,m_y')
 
 # Equations
-pd1 = x * (r_x - a_x*x - beta*y)
+pd1 = x * (r_x - alpha_x*x - beta*y)
 pd2 = y * (mu*beta*x - m_y)
-pd3 = z * (r_z - a_z*z)
+pd3 = z * (r_z - alpha_z*z)
 
 # Equations
 pd = matrix(SR, 1, [pd1, pd2, pd3])
@@ -144,7 +144,7 @@ pdSol = pdSol[5]
 pdJ = jacobian([pd1, pd2, pd3], (x, y, z))
 
 # Jacobian at equilibrium
-# pdJEq = pdJ.substitute(pdSol)
+pdJEq = pdJ.substitute(pdSol)
 
 
 # ---------------------------------------------------
@@ -152,12 +152,12 @@ pdJ = jacobian([pd1, pd2, pd3], (x, y, z))
 # ---------------------------------------------------
 # Variables
 x,y,z = var('x,y,z')
-r_x,a_x,r_y,a_z,r_z,a_z = var('r_x,a_x,r_y,a_z,r_z,a_z')
+r_x,alpha_x,r_y,alpha_y,r_z,alpha_z = var('r_x,alpha_x,r_y,alpha_y,r_z,alpha_z')
 
 # Equations
-di1 = x * (r_x - a_x*x)
-di2 = y * (r_y - a_y*y)
-di3 = z * (r_z - a_z*z)
+di1 = x * (r_x - alpha_x*x)
+di2 = y * (r_y - alpha_y*y)
+di3 = z * (r_z - alpha_z*z)
 
 # Equations
 di = matrix(SR, 1, [di1, di2, di3])
@@ -170,4 +170,4 @@ diSol = diSol[7]
 diJ = jacobian([di1, di2, di3], (x, y, z))
 
 # Jacobian at equilibrium
-# diJEq = diJ.substitute(diSol)
+diJEq = diJ.substitute(diSol)
