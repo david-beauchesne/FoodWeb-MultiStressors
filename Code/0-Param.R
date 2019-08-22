@@ -6,11 +6,11 @@ library(latex2exp)
 
 
 # Functions
-source('./Functions/defaultParameters.R')
-source('./Functions/equilibrium.R')
-source('./Functions/disturbance.R')
-source('./Functions/disturbBoxplot.R')
-source('./Functions/stability.R')
+# source('./Functions/defaultParameters.R')
+# source('./Functions/equilibrium.R')
+# source('./Functions/disturbance.R')
+# source('./Functions/disturbBoxplot.R')
+# source('./Functions/stability.R')
 source('./Functions/simAnnealing.R')
 source('./Functions/tritrophic.R')
 source('./Functions/omnivory.R')
