@@ -38,6 +38,7 @@ rsconnect/
 # Files to ignore
 Menage/
 FoodWebs-MultipleStressors-Old.md
+Data/ParamSpace/*
 
 #iOS file
 .DS_Store

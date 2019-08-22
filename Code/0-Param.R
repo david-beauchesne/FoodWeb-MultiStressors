@@ -2,6 +2,7 @@
 library(tidyverse)
 library(graphicsutils)
 library(magrittr)
+library(latex2exp)
 
 
 # Functions
@@ -17,3 +18,8 @@ source('./Functions/apparent.R')
 source('./Functions/exploitative.R')
 source('./Functions/partial.R')
 source('./Functions/disconnected.R')
+source('./Functions/parameterSpace.R')
+source('./Functions/univariateDisturbance.R')
+source('./Functions/multivariateDisturbance.R')
+source('./Functions/additivity.R')
+source('./Functions/plotMotifs.R')
