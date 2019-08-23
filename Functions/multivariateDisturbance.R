@@ -11,12 +11,21 @@ multivariateDisturbance <- function(init, disturb) {
 
 
     # Delta abundance
-    d <- A2 %>%
-         mutate(x = round((x-A1[1]) / A1[1], 4),
-                y = round((y-A1[2]) / A1[2], 4),
-                z = round((z-A1[3]) / A1[3], 4))
+    if (nrow(disturb[[i]]) > 3) {
+      d <- A2 %>%
+           mutate(x = round((x-A1[1]) / A1[1], 4),
+                  y = round((y-A1[2]) / A1[2], 4),
+                  z = round((z-A1[3]) / A1[3], 4))
 
-    deltaA[[i]] <- d
+      deltaA[[i]] <- d
+    } else {
+      d <- A2 %>% t() %>% as.data.frame() %>%
+           mutate(x = round((x-A1[1]) / A1[1], 4),
+                  y = round((y-A1[2]) / A1[2], 4),
+                  z = round((z-A1[3]) / A1[3], 4))
+
+      deltaA[[i]] <- d
+    }
   }
 
   # Return
