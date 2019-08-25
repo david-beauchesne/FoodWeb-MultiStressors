@@ -84,11 +84,11 @@ est <- graph_from_adjacency_matrix(est, mode = 'directed')
 # Heat map
 png('./Figures/positionFrequencySSL.png', width = 3000, height = 1200,
     res = 200, pointsize = 6)
-par(mfrow = c(1,2))
+par(mfrow = c(1,5))
 heatmapPos(ssl80, main = 'Southern St. Lawrence (mid-1980s)')
 heatmapPos(ssl90, main = 'Southern St. Lawrence (mid-1990s)')
-heatmapPos(ssl80, main = 'Northern St. Lawrence(mid-1980s)')
-heatmapPos(ssl90, main = 'Northern St. Lawrence(mid-1990s)')
+heatmapPos(nsl80, main = 'Northern St. Lawrence(mid-1980s)')
+heatmapPos(nsl90, main = 'Northern St. Lawrence(mid-1990s)')
 heatmapPos(est, main = 'Lower St. Lawrence Estuary (2008-2010)')
 dev.off()
 
