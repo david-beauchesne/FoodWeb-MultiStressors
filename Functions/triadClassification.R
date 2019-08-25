@@ -138,7 +138,7 @@ positionFrequency <- function(foodWeb) {
   return(df)
 }
 
-heatmapPos <- function(ssl) {
+heatmapPos <- function(ssl, main = '') {
   # Position frequency
   posFreq <- positionFrequency(ssl)
 
@@ -150,13 +150,15 @@ heatmapPos <- function(ssl) {
   posFreq <- apply(posFreq, c(1,2), function(x) pal(101)[(x*400)+1])
 
   # Plot
-  par(mar = c(0,3,0,0), family = 'serif')
+  par(mar = c(0,3,1,0), family = 'serif')
   plot0(x = c(1,ncol(posFreq)+1), y = c(-.25,nrow(posFreq)+1))
   # axis(1);axis(2);axis(3);axis(4)
 
   # Species names
   mtext(side = 2, at = 1:nrow(posFreq)+.5, text = rownames(posFreq), line = 0, las = 1, font = 2)
 
+  # Main title
+  mtext(side = 3, text = main, font = 2, cex = 1.25, line = -1)
   # Heatmap
   for(i in 1:ncol(posFreq)) {
     for(j in 1:nrow(posFreq)) {

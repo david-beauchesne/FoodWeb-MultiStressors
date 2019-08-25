@@ -1,0 +1,31 @@
+Group	Description	Species	CET	HAS	HOS	GSE	HAS	SEA	LCO	SCO	GRH	SAP	LAP	FLO	SKA	RED	LDF	SDF	CAP	LPF	PIP	PLP	SHR	LCR	ECH	MOL	POL	OBI	LZO	SZO	PHY	DET
+CET	Cetaceans	 Balaenoptera physalus, Balaenoptera acutorostrata, Megaptera novaeangliae, Phocoena phocoena, Lagenorhynchus acutus, Lagenorhynchus albirostris	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+HAS	Harp seals	 Phoca groenlandica	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+HOS	Hooded seals	 Cystophora cristata	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+GSE	Grey seals	 Halichoerus grypus	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+HAS	Harbour seals	 Phoca vitulina	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+SEA	Seabirds	 Phalacrocorax carbo, Phalacrocorax auritus, Larus delwarensis, L. argentatus, L. marinus, Sterna hirundo, S. paradisaea, Cepphus grylle, Oceanodroma leucorhoa, Morus bassanus, Rissa tridactyla, Uria aalge, Alca torda, Fratercula arctica	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+LCO	Large Atlantic cod	 (> 35 cm) Gadus morhua	0	1.2	10.6	11.7	1.9	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+SCO	Small Atlantic cod	 (? 35 cm) Gadus morhua	1.1	3.5	10.3	11.7	5.6	0.2	3.1	0	0	0	0	0	3.3	0.3	1.1	6	0	0.2	0	0	0	0	0	0	0	0	0	0	0	0
+GRH	Greenland halibut	 Reinhardtius hippoglossoides	0	3.7	24.5	0.2	0	0.5	0	0	0.1	0	0	0	0	0	0.6	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+SAP	Small American plaice	 (? 35 cm) Hippoglossoides platessoides	0	0.7	0	2.9	0	0.5	0.5	0	0.1	0	0	0	0.1	0	0.6	11	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+LAP	Large American plaice	 (> 35 cm) Hippoglossoides platessoides	0	0.7	0	2.9	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+FLO	Flounders	 Limanda ferruginea, Glyptocephalus cynoglossus, Pseudopleuronectes americanus	0	2	14.8	6.5	1.8	0.5	0.8	4.9	0.1	0	0	0	0.5	0	0.6	8.4	0	3.1	0	0	0	0	0	0	0	0	0	0	0	0
+SKA	Skates	 Amblyraja radiata, Malacoraja senta, Leucoraja ocellata	0	0	0	13.5	0.1	0.5	0	0	0	0	0	0	0	0	0.8	0	0	2.9	0	0	0	0	0	0	0	0	0	0	0	0
+RED	Redfish	 Sebastes mentella, Sebastes fasciatus	0.9	2.2	13.3	0	0.4	0	0	0	3.9	0	0	0	13.6	1.7	0.4	0	0	0.7	0	0	0	0	0	0	0	0	0	0	0	0
+LDF	Large demersal feeders	 Urophycis tenuis, Melanogrammus aeglefinnus, Centroscyllium fabricii, Anarhichas spp., Cyclopterus lumpus, Lycodes spp., Macrouridae, Zoarcidae, Lophius americanus, Hippoglossus hippoglossus	0	1	1.2	11.9	2.7	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+SDF	Small demersal feeders	 Myoxocephalus spp., Tautogolabrus adspersus, Macrozoarces americanus, large demersal juveniles	0	4.1	5.8	17.8	3	7.7	4.8	3.2	9.8	0	0.1	0.9	18.6	1.6	2.3	17.8	0	4	0	0	0	0	0	0	0	0	0	0	0	0
+CAP	Capelin	 Mallotus villosus	21.7	58.5	8.9	8.7	5.9	46	2	0	50.3	0	0	0	1.8	5.2	0.8	0.3	0	3.1	6.7	0	0	0	0	0	0	0	0	0	0	0
+LPF	Large pelagic feeders	 Squalus acanthias, Pollachius virens, Merluccius bilinearis, Cetorhinus maximus	2.2	0	0	0.5	8.7	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+PIP	Piscivorous small pelagic feeders	 Scomber scombrus, piscivorous myctophids and other mesopelagics, Illex illecebrosus, piscivorous large pelagic juveniles	41.4	2.6	3.5	1.3	29.9	7.8	2	0	0.9	0	0	0	2.7	0.2	8.9	0	0	3.1	0	0	0	0	0	0	0	0	0	0	0	0
+PLP	Planktivorous small pelagic feeders	 Clupea harengus harengus, planktivorous myctophids and other mesopelagics, Scomberesox saurus, Gonatus sp., planktivorous large pelagic juveniles	30.2	9.9	7.1	10.4	33.5	31.3	8.9	0	7.5	0	0	1.2	36.9	13.9	75.8	5.8	0	45.8	5.3	0	0	0	0	0	0	0	0	0	0	0
+SHR	Shrimp	 Argis dentata, Eualus macilentus, E. gaimardi, Pandalus montagui	0.7	2.8	0	0	5.9	0.7	6.9	6.8	15.8	3.2	5.9	2.4	3.1	37.6	2.5	12.4	0	3	5.1	0.3	0	3.8	0	0	0	0	0	0	0	0
+LCR	Large crustaceans	 Chionoecetes opilio, other non-commercial species (Hyas spp.)	0	0.2	0	0.1	0.4	0	12.2	1.6	0	0.2	7.1	1.6	13.4	0	0.7	15.8	0	1.2	0	0	0	10.6	0	0	0	0	0	0	0	0
+ECH	Echinoderms	 Echinarachnius parma, Stronglyocentrotus pallidus, Ophiura robusta	0	0	0	0	0	0	2.3	0.1	0	3.1	50	24.6	0.1	0	0	0.1	0	0	0	0	0	15.2	0	0	0	0	0	0	0	0
+MOL	Molluscs	 Mesodesma deauratum, Cyrtodaria siliqua	0	0	0	0	0.2	0	13.4	1.6	0	6	6.9	17.8	0.8	0	0	0.6	0	0	0	0	0	20.8	0	0	0	0	0	0	0	0
+POL	Polychaetes	 Exogene hebes	0	0	0	0	0	0	11.4	6.1	0	6.6	12.7	24.5	4.5	0	4	11.3	0	2	0	0	1.5	12.7	0	0	26	0	0	0	0	0
+OBI	Other benthic invertebrates	 Miscellaneous crustaceans, nematodes, other meiofauna	0	0.2	0	0	0.1	0.5	10.4	13.2	0	15.8	2.5	23.3	0.5	0	0.6	1.3	0	0	0.4	6.1	1.5	4	0	0	0	0	0	0	0	0
+LZO	Large zooplankton	 (> 5 mm) Euphausiids, chaetognaths, hyperiid amphipods, cnidarians and ctenophores (jellyfish), mysids, tunicates >5 mm, ichthyoplankton	1.7	6.6	0	0	0	3.7	20.9	61.7	11.3	65.2	14.6	0.7	0.1	31.9	0.4	9.2	6.3	30.7	24.2	41.6	12	1.8	0	0	0	0	5	0	0	0
+SZO	Small zooplankton	 (< 5 mm) Copepods (mainly Oithona similis, Temora longicornis, Pseudocalanus spp., and Calanus finmarchicus), tunicates < 5 mm, meroplankton, heterotrophic protozoa (flagellates, dinoflagellates, and ciliates)	0	0	0	0	0	0.2	0.3	0.8	0	0.1	0	0	0	7.5	0	0	93.7	0	58.4	52	24	0	0	0	0	0	43	12.5	0	0
+PHY	Phytoplankton	 Diatom species such as Chaetoceros affinis, Chaetoceros spp., Leptocylindrus minimus, Thalassiiosira nordenskioldii, T. spp., Fragilariopsis spp., and a mixture of autotrophic and mixotrophic organisms including Cryptophytes, dinoflagellates, Prasinophytes, and Prymnesiophytes	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	8.5	0	0	50	37	0	37	54.1	0	0
+DET	Detritus	 Sinking particulate organic matter including both large particles (consisting of animal carcasses and debris of terrigenous and coastal plants) and fine particles (mostly from planktonic organisms, including feces, moults, phytoplankton aggregates, bacteria)	0	0	0	0	0	0	0	0	0	0	0	3	0	0	0	0	0	0	0	0	52.5	31.1	100	50	37	100	15	33.4	0	0
