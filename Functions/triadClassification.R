@@ -138,9 +138,9 @@ positionFrequency <- function(foodWeb) {
   return(df)
 }
 
-heatmapPos <- function(ssl, main = '') {
+heatmapPos <- function(foodWeb, main = '') {
   # Position frequency
-  posFreq <- positionFrequency(ssl)
+  posFreq <- positionFrequency(foodWeb)
 
   # Flip table
   posFreq <- apply(posFreq, 2, rev)
