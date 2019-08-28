@@ -1,8 +1,5 @@
 # Parameters and Functions
 source('./Code/0-Param.R')
-nSol = 10
-# ---------- 1 random solution for all combinations
-
 # ---------------------------------------------------------------------------
 #                              Tri-trophic food chain
 # ---------------------------------------------------------------------------
@@ -10,22 +7,20 @@ nSol = 10
 load('./Data/ParamInit/ttParam.Rdata')
 
 # List to store results for all initial parameters tested
-# nInit <- nrow(ttParam)
-nInit <- 10
+nInit <- nrow(ttParam)
 ttSpace <- vector('list', nInit)
 
 # Explore parameter space
 for(i in 1:nInit) {
   cat('   Iteration', i, 'of', nInit, '\r')
-  ttSpace[[i]] <- parameterSpaceAll(FUN = ttEq,
+  ttSpace[[i]] <- paramFix(FUN = ttEq,
                                  init = ttParam[i, 1:8],
                                  fixed = c('alpha'),
                                  spaceDir = c(r='neg', beta='neg', delta='neg',
                                               m_y='pos', m_z='pos', mu='neg',
-                                              omega='neg'),
-                                 nSol = nSol)
+                                              omega='neg'))
 }
-save(ttSpace, file = './Data/ParamSpace/ttSpaceAll.RData')
+save(ttSpace, file = './Data/ParamSpace/ttSpace.RData')
 
 
 # ---------------------------------------------------------------------------
@@ -35,21 +30,20 @@ save(ttSpace, file = './Data/ParamSpace/ttSpaceAll.RData')
 load('./Data/ParamInit/omParam.Rdata')
 
 # List to store results for all initial parameters tested
-# nInit <- nrow(omParam)
+nInit <- nrow(omParam)
 omSpace <- vector('list', nInit)
 
 # Explore parameter space
 for(i in 1:nInit) {
   cat('   Iteration', i, 'of', nInit, '\r')
-  omSpace[[i]] <- parameterSpaceAll(FUN = omEq,
+  omSpace[[i]] <- paramFix(FUN = omEq,
                                  init = omParam[i, 1:10],
                                  fixed = c('alpha'),
                                  spaceDir = c(r='neg', beta='neg', delta='neg',
                                               gamma = 'neg', m_y='pos',m_z='pos',
-                                              mu='neg', omega='neg', nu='neg'),
-                                 nSol = nSol)
+                                              mu='neg', omega='neg', nu='neg'))
 }
-save(omSpace, file = './Data/ParamSpace/omSpaceAll.RData')
+save(omSpace, file = './Data/ParamSpace/omSpace.RData')
 
 
 # ---------------------------------------------------------------------------
@@ -59,22 +53,21 @@ save(omSpace, file = './Data/ParamSpace/omSpaceAll.RData')
 load('./Data/ParamInit/exParam.Rdata')
 
 # List to store results for all initial parameters tested
-# nInit <- nrow(exParam)
+nInit <- nrow(exParam)
 exSpace <- vector('list', nInit)
 
 # Explore parameter space
 for(i in 1:nInit) {
   cat('   Iteration', i, 'of', nInit, '\r')
-  exSpace[[i]] <- parameterSpaceAll(FUN = exEq,
+  exSpace[[i]] <- paramFix(FUN = exEq,
                                  init = exParam[i, 1:12],
                                  fixed = c('alpha_x', 'alpha_y','alpha_yz',
                                            'alpha_z', 'alpha_zy'),
                                  spaceDir = c(r='neg', beta='neg', gamma='neg',
                                               m_y='pos', m_z='pos', mu='neg',
-                                              nu='neg'),
-                                 nSol = nSol)
+                                              nu='neg'))
 }
-save(exSpace, file = './Data/ParamSpace/exSpaceAll.RData')
+save(exSpace, file = './Data/ParamSpace/exSpace.RData')
 
 
 # ---------------------------------------------------------------------------
@@ -84,21 +77,20 @@ save(exSpace, file = './Data/ParamSpace/exSpaceAll.RData')
 load('./Data/ParamInit/apParam.Rdata')
 
 # List to store results for all initial parameters tested
-# nInit <- nrow(apParam)
+nInit <- nrow(apParam)
 apSpace <- vector('list', nInit)
 
 # Explore parameter space
 for(i in 1:nInit) {
   cat('   Iteration', i, 'of', nInit, '\r')
-  apSpace[[i]] <- parameterSpaceAll(FUN = apEq,
+  apSpace[[i]] <- paramFix(FUN = apEq,
                                  init = apParam[i, 1:9],
                                  fixed = c('alpha_x','alpha_y'),
                                  spaceDir = c(r_x='neg', r_y='neg', delta='neg',
                                               gamma='neg', m_z='pos', omega='neg',
-                                              nu='neg'),
-                                 nSol = nSol)
+                                              nu='neg'))
 }
-save(apSpace, file = './Data/ParamSpace/apSpaceAll.RData')
+save(apSpace, file = './Data/ParamSpace/apSpace.RData')
 
 
 # ---------------------------------------------------------------------------
@@ -108,20 +100,19 @@ save(apSpace, file = './Data/ParamSpace/apSpaceAll.RData')
 load('./Data/ParamInit/paParam.Rdata')
 
 # List to store results for all initial parameters tested
-# nInit <- nrow(paParam)
+nInit <- nrow(paParam)
 paSpace <- vector('list', nInit)
 
 # Explore parameter space
 for(i in 1:nInit) {
   cat('   Iteration', i, 'of', nInit, '\r')
-  paSpace[[i]] <- parameterSpaceAll(FUN = paEq,
+  paSpace[[i]] <- paramFix(FUN = paEq,
                                  init = paParam[i, 1:7],
                                  fixed = c('alpha_x','alpha_z'),
                                  spaceDir = c(r_x='neg', r_z='neg', beta='neg',
-                                              m_y='pos', mu='neg'),
-                                 nSol = nSol)
+                                              m_y='pos', mu='neg'))
 }
-save(paSpace, file = './Data/ParamSpace/paSpaceAll.RData')
+save(paSpace, file = './Data/ParamSpace/paSpace.RData')
 
 
 # ---------------------------------------------------------------------------
@@ -137,10 +128,9 @@ diSpace <- vector('list', nInit)
 # Explore parameter space
 for(i in 1:nInit) {
   cat('   Iteration', i, 'of', nInit, '\r')
-  diSpace[[i]] <- parameterSpaceAll(FUN = diEq,
+  diSpace[[i]] <- paramFix(FUN = diEq,
                                  init = diParam[i, 1:6],
                                  fixed = c('alpha_x','alpha_y','alpha_z'),
-                                 spaceDir = c(r_x='neg', r_y='neg', r_z='neg'),
-                                 nSol = nSol)
+                                 spaceDir = c(r_x='neg', r_y='neg', r_z='neg'))
 }
-save(diSpace, file = './Data/ParamSpace/diSpaceAll.RData')
+save(diSpace, file = './Data/ParamSpace/diSpace.RData')

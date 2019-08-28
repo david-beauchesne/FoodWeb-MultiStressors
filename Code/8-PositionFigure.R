@@ -1,10 +1,13 @@
-# source('./Code/3_8-PositionFigure.R')
+# source('./Code/8-PositionFigure.R')
 # source('./Code/0-Param.R')
 library(graphicsutils)
 library(magrittr)
-load('./Data/Univariate1P.RData')
-load('./Data/Multivariate1P.RData')
-load('./Data/MultivariateAdditivity1P.RData')
+load('./Data/UnivariatePath.RData')
+load('./Data/MultivariatePath.RData')
+load('./Data/AdditivePath.RData')
+load('./Data/UnivariatePosition.RData')
+load('./Data/MultivariatePosition.RData')
+load('./Data/AdditivePosition.RData')
 source('./Functions/plotMotifs.R')
 
 # ------------------------------------------------------------------------------
@@ -33,7 +36,7 @@ mat[2:15,4] <- 40:53 # multivariate
 mat[2:15,5] <- 54:67 # additivity
 # layout.show(67)
 
-png('./Figures/positions1P.png', width = 1200, height = 1500, res = 200, pointsize = 6)
+png('./Figures/positions.png', width = 1200, height = 1500, res = 200, pointsize = 6)
 layout(mat, widths = c(.55,.35,1,1,1), heights = c(.5,rep(1,14)))
 par(family = 'serif')
 
@@ -87,8 +90,8 @@ for(i in 1:length(motifs)) {
 # Plot 26:39 - Univariate
 for(k in pos) {
   # Parameters
-  uid <- uni$position == k
-  dat <- uni[uid, ]
+  uid <- uniPath$position == k
+  dat <- uniPath[uid, ]
 
   # Thresholds
   # Mean abundances < | > 0.1
@@ -122,13 +125,17 @@ for(k in pos) {
     lines(x = rep(id0[2]+.5,2), y = c(u[3]+yG, u[4]-yG), lty = 4, col = '#668aeb')
     polygon(x = c(id0[1]-.5,id0[2]+.5, id0[2]+.5,id0[1]-.5), y = c(u[3]+yG, u[3]+yG, u[4]-yG,u[4]-yG), border = 'transparent', col = '#668aeb22')
   }
+
+  # Mean motif value
+  uid <- uniPos$position == k
+  abline(h = uniPos$Mean[uid], lty = 3, lwd = 2, col = '#29967a66')
 }
 
 # Plot 40:53 - Multivariate
 for(k in pos) {
   # Parameters
-  uid <- int$position == k
-  dat <- int[uid, ]
+  uid <- multiPath$position == k
+  dat <- multiPath[uid, ]
 
   # Thresholds
   # Mean abundances < | > 0.1
@@ -162,19 +169,23 @@ for(k in pos) {
     lines(x = rep(id0[2]+.5,2), y = c(u[3]+yG, u[4]-yG), lty = 4, col = '#668aeb')
     polygon(x = c(id0[1]-.5,id0[2]+.5, id0[2]+.5,id0[1]-.5), y = c(u[3]+yG, u[3]+yG, u[4]-yG,u[4]-yG), border = 'transparent', col = '#668aeb22')
   }
+
+  # Mean motif value
+  uid <- multiPos$position == k
+  abline(h = multiPos$Mean[uid], lty = 3, lwd = 2, col = '#29967a66')
 }
 
 
 # Plot 54:67 - Additivity
 for(k in pos) {
   # Parameters
-  uid <- intAdd$position == k
-  dat <- intAdd[uid, ]
+  uid <- addPath$position == k
+  dat <- addPath[uid, ]
 
   # Thresholds
   # Additivity
-  idA1 <- which(round(dat$Mean,6) <= -.0005) %>% { if(length(.) > 0) max(.) else NULL }
-  idA2 <- which(round(dat$Mean,6) >= .0005) %>% { if(length(.) > 0) min(.) else NULL }
+  idA1 <- which(round(dat$Mean,6) <= -.0001) %>% { if(length(.) > 0) max(.) else NULL }
+  idA2 <- which(round(dat$Mean,6) >= .0001) %>% { if(length(.) > 0) min(.) else NULL }
 
   # Plot
   par(mar = c(0,3,0,0))
@@ -196,6 +207,10 @@ for(k in pos) {
     lines(x = rep(idA2-.5,2), y = c(u[3]+yG, u[4]-yG), lty = 4, col = '#c46a86')
     polygon(x = c(u[2],idA2-.5, idA2-.5,u[2]), y = c(u[3]+yG, u[3]+yG, u[4]-yG,u[4]-yG), border = 'transparent', col = '#c46a8622')
   }
+
+  # Mean motif value
+  uid <- addPos$position == k
+  abline(h = addPos$Mean[uid], lty = 3, lwd = 2, col = '#29967a66')
 }
 
 

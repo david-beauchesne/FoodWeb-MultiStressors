@@ -26,69 +26,9 @@ newParamFix <- function(p, s){
   return(cand)
 }
 
-paramFix <- function(FUN, init, fixed, spaceDir, nSol = 1) {
 
-  # Parameters
-  init <- init[order(names(init))]
-  nmParam <- names(init)
-  nParam <- length(nmParam)
 
-  # Fixed parameters
-  lsFixed <- split(init[nmParam %in% fixed], fixed)
-
-  # Parameters to explore
-  nmVar <- nmParam[!nmParam %in% fixed]
-  lsVar <- split(init[names(init) %in% nmVar], nmVar)
-  nVar <- length(nmVar)
-
-  # Combinations of parameters to test
-  paramCombn <- list()
-  for(i in 1:nVar) paramCombn <- c(paramCombn, combn(nmVar, i, simplify = F))
-  nComb <- length(paramCombn)
-  nmCombn <- unlist(lapply(paramCombn, paste, collapse = '-'))
-
-  # List to store analytical abundances for combinations of parameter disturbances
-  paramSpace <- vector('list', nComb)
-  names(paramSpace) <- nmCombn
-
-  # Matrices to store analytical solutions
-  for(i in 1:nComb) paramSpace[[i]] <- matrix(nrow = nSol,
-                                              ncol = length(paramCombn[[i]])+3,
-                                              dimnames = list(c(), c(paramCombn[[i]], 'x','y','z')))
-
-  # Explore parameter space
-  for(i in 1:nComb) {
-    # Parameters to explore in current iteration
-    nm <- paramCombn[[i]]
-    p <- init[nmParam %in% nm]
-    s <- spaceDir[names(spaceDir) %in% nm]
-
-    # Candidate parameters
-    pNew <- newParamFix(p, s)
-
-    # Analytical abundances
-    lsNew <- split(pNew, names(pNew))
-    A <- do.call(FUN, c(lsFixed, lsNew, lsVar[!names(lsVar) %in% nm]))
-
-    paramSpace[[i]][1, ] <- round(c(pNew, A), 6)
-  }
-
-  return(paramSpace)
-}
-
-#
-
-# source('./Code/0-Param.R')
-# load('./Data/ParamInit/ttParam.Rdata')
-# FUN = ttEq
-# init = ttParam[1, 1:8]
-# fixed = c('alpha')
-# spaceDir = c(r='neg', beta='neg', delta='neg',
-#             m_y='pos', m_z='pos', mu='neg',
-#             omega='neg')
-# nSol = 1
-
-paramFixAll <- function(FUN, init, fixed, spaceDir, nSol=1) {
+paramFix <- function(FUN, init, fixed, spaceDir) {
   # Parameters
   init <- init[order(names(init))]
   nmParam <- names(init)
@@ -121,9 +61,9 @@ paramFixAll <- function(FUN, init, fixed, spaceDir, nSol=1) {
   abundances <- deltaA <- vector('list', nComb)
   names(abundances) <- names(deltaA) <- nmCombn
   for(i in 1:nComb) {
-    abundances[[i]] <- deltaA[[i]] <- data.frame(x = numeric(nSol),
-                                                y = numeric(nSol),
-                                                z = numeric(nSol))
+    abundances[[i]] <- deltaA[[i]] <- data.frame(x = numeric(1),
+                                                y = numeric(1),
+                                                z = numeric(1))
   }
 
   # Explore parameter space
@@ -165,3 +105,55 @@ paramFixAll <- function(FUN, init, fixed, spaceDir, nSol=1) {
   # Return
   return(list(param = paramSpace, abundance = abundances, deltaA = deltaA))
 }
+
+
+
+# paramFix <- function(FUN, init, fixed, spaceDir, nSol = 1) {
+#
+#   # Parameters
+#   init <- init[order(names(init))]
+#   nmParam <- names(init)
+#   nParam <- length(nmParam)
+#
+#   # Fixed parameters
+#   lsFixed <- split(init[nmParam %in% fixed], fixed)
+#
+#   # Parameters to explore
+#   nmVar <- nmParam[!nmParam %in% fixed]
+#   lsVar <- split(init[names(init) %in% nmVar], nmVar)
+#   nVar <- length(nmVar)
+#
+#   # Combinations of parameters to test
+#   paramCombn <- list()
+#   for(i in 1:nVar) paramCombn <- c(paramCombn, combn(nmVar, i, simplify = F))
+#   nComb <- length(paramCombn)
+#   nmCombn <- unlist(lapply(paramCombn, paste, collapse = '-'))
+#
+#   # List to store analytical abundances for combinations of parameter disturbances
+#   paramSpace <- vector('list', nComb)
+#   names(paramSpace) <- nmCombn
+#
+#   # Matrices to store analytical solutions
+#   for(i in 1:nComb) paramSpace[[i]] <- matrix(nrow = nSol,
+#                                               ncol = length(paramCombn[[i]])+3,
+#                                               dimnames = list(c(), c(paramCombn[[i]], 'x','y','z')))
+#
+#   # Explore parameter space
+#   for(i in 1:nComb) {
+#     # Parameters to explore in current iteration
+#     nm <- paramCombn[[i]]
+#     p <- init[nmParam %in% nm]
+#     s <- spaceDir[names(spaceDir) %in% nm]
+#
+#     # Candidate parameters
+#     pNew <- newParamFix(p, s)
+#
+#     # Analytical abundances
+#     lsNew <- split(pNew, names(pNew))
+#     A <- do.call(FUN, c(lsFixed, lsNew, lsVar[!names(lsVar) %in% nm]))
+#
+#     paramSpace[[i]][1, ] <- round(c(pNew, A), 6)
+#   }
+#
+#   return(paramSpace)
+# }

@@ -18,9 +18,14 @@ source('./Functions/apparent.R')
 source('./Functions/exploitative.R')
 source('./Functions/partial.R')
 source('./Functions/disconnected.R')
-source('./Functions/parameterSpace.R')
+source('./Functions/paramFix.R')
+
+
+# source('./Functions/parameterSpace.R')
 source('./Functions/univariateDisturbance.R')
 source('./Functions/multivariateDisturbance.R')
-source('./Functions/multivariateDistFix.R')
 source('./Functions/additivity.R')
 source('./Functions/plotMotifs.R')
+
+# Disturbance value to use
+distValue = .01 # (1%)

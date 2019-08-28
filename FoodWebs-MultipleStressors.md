@@ -43,12 +43,15 @@ intricate environmental stress exposure regimes [@halpern2015a; @bowler2019].
 Exposure to multiple interacting stressors can induce complex and unpredictable
 environmental effects that can propagate through entire ecological communities
 by way of interactions linking species together [@refs].
+
+<!-- This may be irrelevant in the introduction, depending on where we end up submitting -->
 Net effects of multiple stressors can be
 additive (*i.e.* joint effect equal to the sum of individual effects),
 synergistic (joint effect superior to the sum of individual effects),
 antagonistic (joint effect inferior to the sum of individual effects) or
 dominant (joint effect equal to an individual effect)
 [e.g. @crain2008; @darling2008; @cote2016].
+
 There is a rich literature documenting the effects of disturbances on communities
 and how network structure contributes to community resistance [@refs].
 It however remains unclear how network structure influences community resistance

@@ -9,9 +9,10 @@ nmParam <- names(formals(ttEq))
 nParam <- length(nmParam)
 
 # Fixed parameters
-lsFixed <- list(r = 1, alpha = .001)
+lsFixed <- list(r = 1, alpha = .001, mu = .5, omega = .5)
 fixed <- unlist(lsFixed)
 nmFixed <- names(fixed)
+nFix <- length(nmFixed)
 
 # Number of parameters that will vary
 nVar <- sum(!nmParam %in% nmFixed)
@@ -21,7 +22,7 @@ nmVar <- nmParam[!nmParam %in% nmFixed]
 iter <- 100
 
 # Empty data frames to store initial parameters
-df <- matrix(ncol = nVar+5, nrow = iter, dimnames = list(c(), c(nmFixed, nmVar,'x','y','z')))
+df <- matrix(ncol = nVar+nFix+3, nrow = iter, dimnames = list(c(), c(nmFixed, nmVar,'x','y','z')))
 
 # Algorithm
 i = 1
@@ -29,8 +30,8 @@ cat('   Iteration:', i,'\n')
 while(i < (iter+1)) {
   # Simulations
   simul <- SimAnnealing(FUN = ttEq,
-                        paramLow = c(.0001, .01, .0001, .01, .01, .01),
-                        paramUp = c(.01, .5, .01, .5, .5, .5),
+                        paramLow = c(.0001, .0001, .01, .01),
+                        paramUp = c(.01, .01, .5, .5),
                         optimAbundance = 2:3,
                         fixed = lsFixed,
                         dtemp = .1,
@@ -57,9 +58,10 @@ nmParam <- names(formals(omEq))
 nParam <- length(nmParam)
 
 # Fixed parameters
-lsFixed <- list(r = 1, alpha = .001)
+lsFixed <- list(r = 1, alpha = .001, mu = .5, omega = .5, nu = .5)
 fixed <- unlist(lsFixed)
 nmFixed <- names(fixed)
+nFix <- length(nmFixed)
 
 # Number of parameters that will vary
 nVar <- sum(!nmParam %in% nmFixed)
@@ -69,7 +71,7 @@ nmVar <- nmParam[!nmParam %in% nmFixed]
 iter <- 100
 
 # Empty data frames to store initial parameters
-df <- matrix(ncol = nVar+5, nrow = iter, dimnames = list(c(), c(nmFixed, nmVar,'x','y','z')))
+df <- matrix(ncol = nVar+nFix+3, nrow = iter, dimnames = list(c(), c(nmFixed, nmVar,'x','y','z')))
 
 # Algorithm
 i = 1
@@ -77,8 +79,8 @@ cat('   Iteration:', i,'\n')
 while(i < (iter+1)) {
   # Simulations
   simul <- SimAnnealing(FUN = omEq,
-                        paramLow = c(.0001, .01, .0001, .01, .0001, .01, .01, .01),
-                        paramUp = c(.01, .5, .01, .5, .01, .5, .5, .5),
+                        paramLow = c(.0001, .0001, .0001, .01, .01),
+                        paramUp = c(.01, .01, .01, .5, .5),
                         fixed = lsFixed,
                         optimAbundance = 2:3,
                         dtemp = .1,
@@ -105,9 +107,12 @@ nmParam <- names(formals(exEq))
 nParam <- length(nmParam)
 
 # Fixed parameters
-lsFixed <- list(r = 1, alpha_x = .001, alpha_y = .001, alpha_yz = .001, alpha_z = .001, alpha_zy = .001)
+lsFixed <- list(r = 1, alpha_x = .001, alpha_y = .001, alpha_yz = .001,
+                alpha_z = .001, alpha_zy = .001, mu = .5, nu = .5)
 fixed <- unlist(lsFixed)
 nmFixed <- names(fixed)
+nFix <- length(nmFixed)
+
 
 # Number of parameters that will vary
 nVar <- sum(!nmParam %in% nmFixed)
@@ -117,7 +122,7 @@ nmVar <- nmParam[!nmParam %in% nmFixed]
 iter <- 100
 
 # Empty data frames to store initial parameters
-df <- matrix(ncol = nVar+9, nrow = iter, dimnames = list(c(), c(nmFixed, nmVar,'x','y','z')))
+df <- matrix(ncol = nVar+nFix+3, nrow = iter, dimnames = list(c(), c(nmFixed, nmVar,'x','y','z')))
 
 # Algorithm
 i = 1
@@ -125,8 +130,8 @@ cat('   Iteration:', i,'\n')
 while(i < (iter+1)) {
   # Simulations
   simul <- SimAnnealing(FUN = exEq,
-                        paramLow = c(.0001, .01, .0001, .01, .01, .01),
-                        paramUp = c(.01, .5, .01, .5, .5, .5),
+                        paramLow = c(.0001, .0001, .01, .01),
+                        paramUp = c(.01, .01, .5, .5),
                         fixed = lsFixed,
                         optimAbundance = 2:3,
                         dtemp = .1,
@@ -154,9 +159,10 @@ nmParam <- names(formals(apEq))
 nParam <- length(nmParam)
 
 # Fixed parameters
-lsFixed <- list(r_x = 1, alpha_x = .001, r_y = 1, alpha_y = .001)
+lsFixed <- list(r_x = 1, alpha_x = .001, r_y = 1, alpha_y = .001, omega = .5, nu = .5)
 fixed <- unlist(lsFixed)
 nmFixed <- names(fixed)
+nFix <- length(nmFixed)
 
 # Number of parameters that will vary
 nVar <- sum(!nmParam %in% nmFixed)
@@ -166,7 +172,7 @@ nmVar <- nmParam[!nmParam %in% nmFixed]
 iter <- 100
 
 # Empty data frames to store initial parameters
-df <- matrix(ncol = nVar+7, nrow = iter, dimnames = list(c(), c(nmFixed, nmVar,'x','y','z')))
+df <- matrix(ncol = nVar+nFix+3, nrow = iter, dimnames = list(c(), c(nmFixed, nmVar,'x','y','z')))
 
 # Algorithm
 i = 1
@@ -174,8 +180,8 @@ cat('   Iteration:', i,'\n')
 while(i < (iter+1)) {
   # Simulations
   simul <- SimAnnealing(FUN = apEq,
-                        paramLow = c(.0001, .01, .0001, .01, .01),
-                        paramUp = c(.01, .5, .01, .5, .5),
+                        paramLow = c(.0001, .0001, .01),
+                        paramUp = c(.01, .01, .5),
                         fixed = lsFixed,
                         optimAbundance = 3,
                         dtemp = .1,
@@ -202,9 +208,10 @@ nmParam <- names(formals(paEq))
 nParam <- length(nmParam)
 
 # Fixed parameters
-lsFixed <- list(r_x = 1, r_z = 1, alpha_x = .001, alpha_z = .001)
+lsFixed <- list(r_x = 1, r_z = 1, alpha_x = .001, alpha_z = .001, mu = .5)
 fixed <- unlist(lsFixed)
 nmFixed <- names(fixed)
+nFix <- length(nmFixed)
 
 # Number of parameters that will vary
 nVar <- sum(!nmParam %in% nmFixed)
@@ -214,7 +221,7 @@ nmVar <- nmParam[!nmParam %in% nmFixed]
 iter <- 100
 
 # Empty data frames to store initial parameters
-df <- matrix(ncol = nVar+7, nrow = iter, dimnames = list(c(), c(nmFixed, nmVar,'x','y','z')))
+df <- matrix(ncol = nVar+nFix+3, nrow = iter, dimnames = list(c(), c(nmFixed, nmVar,'x','y','z')))
 
 # Algorithm
 i = 1
@@ -222,8 +229,8 @@ cat('   Iteration:', i,'\n')
 while(i < (iter+1)) {
   # Simulations
   simul <- SimAnnealing(FUN = paEq,
-                        paramLow = c(.0001, .01, .01),
-                        paramUp = c(.01, .5, .5),
+                        paramLow = c(.0001, .01),
+                        paramUp = c(.01, .5),
                         optimAbundance = 2:3,
                         fixed = lsFixed,
                         dtemp = .1,
