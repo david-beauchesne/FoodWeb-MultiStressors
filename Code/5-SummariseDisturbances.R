@@ -33,7 +33,7 @@ om <- distSpace(omSpace, 'om')
 ex <- distSpace(exSpace, 'ex')
 ap <- distSpace(apSpace, 'ap')
 pa <- distSpace(paSpace, 'pa')
-di <- bind_rows(diSpace[[3]]) %>% mutate(motif = 'di', pathway = names(diSpace[[3]]))
+di <- distSpace(diSpace, 'di')
 
 # Single data.frame per motif
 tt <- bind_rows(tt)
@@ -72,7 +72,6 @@ uni <- int[int$nParam == 1, ]
 # Change parameter name
 uni$pathway <- gsub('^r$','r_x', uni$pathway)
 
-
 # Pathways
 uniPath <- uni %>%
            group_by(motif,pathway,species,position) %>%
@@ -82,6 +81,7 @@ uniPath <- uni %>%
                      SE = SD/sqrt(n()),
                      CIp = Mean + (1.96*SE),
                      CIm = Mean - (1.96*SE)) %>%
+           mutate(param = pathway) %>%
            arrange(Mean)
 
 # Positions
@@ -111,6 +111,7 @@ multiPath <- multi %>%
                        SE = SD/sqrt(n()),
                        CIp = Mean + (1.96*SE),
                        CIm = Mean - (1.96*SE)) %>%
+             mutate(param = stringr::str_split(pathway, '-')) %>%
              arrange(Mean)
 
 # Remove NAs

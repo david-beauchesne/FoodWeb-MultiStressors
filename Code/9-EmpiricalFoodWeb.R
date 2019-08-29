@@ -60,20 +60,29 @@ source('./Functions/triadClassification.R')
   # Sci. 2999: vii+150 pp.
   EST <- read.table('./Data/FoodWeb/estuary.txt', sep = '\t', header = T)
   est <- EST[, -c(1:3)]  %>% apply(2, as.numeric)
-  est[which(est > 0)] <- 1
+  # Transform data to make sure every column sums to 1
+  nC <- (ncol(est)-2):ncol(est)
+  est[,-nC] <- apply(est[, -nC], 2, function(x) (x/sum(x)))
+  # est <- est/100 # Percentage
   rownames(est) <- colnames(est)
+  estG <- est
+  estG[which(estG > 0)] <- 1
 
 
 # Food webs as igraphs
-ssl80 <- graph_from_adjacency_matrix(ssl80, mode = 'directed')
+ssl80 <- graph_from_adjacency_matrix(ssl80, mode = 'directed')#, weighted = TRUE)
 ssl90 <- graph_from_adjacency_matrix(ssl90, mode = 'directed')
 nsl80 <- graph_from_adjacency_matrix(nsl80, mode = 'directed')
 nsl90 <- graph_from_adjacency_matrix(nsl90, mode = 'directed')
-est <- graph_from_adjacency_matrix(est, mode = 'directed')
+estG <- graph_from_adjacency_matrix(estG, mode = 'directed')
 
+foodWeb <- estG
+mat <- est
+
+triadProb <- triadProbability(estG, est)
 
 # # Triad classification
-# triadClass <- triadClassification(ssl)
+# triadClass <- triadClassification(ssl80)
 #
 # # Triad frequency
 # triadFreq <- triadFrequency(ssl)

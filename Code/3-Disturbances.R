@@ -122,14 +122,14 @@ save(paSpace, file = './Data/ParamSpace/paSpace.RData')
 load('./Data/ParamInit/diParam.Rdata')
 
 # List to store results for all initial parameters tested
-nInit <- nrow(diParam)
+nInit <- 1
 diSpace <- vector('list', nInit)
 
 # Explore parameter space
 for(i in 1:nInit) {
   cat('   Iteration', i, 'of', nInit, '\r')
   diSpace[[i]] <- paramFix(FUN = diEq,
-                                 init = diParam[i, 1:6],
+                                 init = diParam[1:6],
                                  fixed = c('alpha_x','alpha_y','alpha_z'),
                                  spaceDir = c(r_x='neg', r_y='neg', r_z='neg'))
 }

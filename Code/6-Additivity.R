@@ -21,7 +21,7 @@ for(i in 1:length(omSpace)) om[[i]] <- additivity(omSpace[[i]]) %>% mutate(motif
 for(i in 1:length(exSpace)) ex[[i]] <- additivity(exSpace[[i]]) %>% mutate(motif = 'ex')
 for(i in 1:length(apSpace)) ap[[i]] <- additivity(apSpace[[i]]) %>% mutate(motif = 'ap')
 for(i in 1:length(paSpace)) pa[[i]] <- additivity(paSpace[[i]]) %>% mutate(motif = 'pa')
-di[[1]] <- additivity(diSpace) %>% mutate(motif = 'di')
+for(i in 1:length(diSpace)) di[[i]] <- additivity(diSpace[[i]]) %>% mutate(motif = 'di')
 
 # Single dataset for all motifs and positions
 for(i in 1:length(tt)) tt[[i]] <- mutate(tt[[i]], init = i)
@@ -41,6 +41,9 @@ int <- bind_rows(tt,om,ex,ap,pa,di) %>%
        spread(model, delta) %>%
        mutate(position = paste0(motif, species))
 
+# Number of parameters
+int$nParam <- lapply(int$param, length) %>% unlist()
+
 # Keep only unique positions
 pos <- c('ttx','tty','ttz','omx','omy','omz','exx','exz','apx','apz','pax','pay','paz','dix')
 int <- int[int$position %in% pos, ]
@@ -59,7 +62,11 @@ addPath <- int %>%
                      SE = SD/sqrt(n()),
                      CIp = Mean + (1.96*SE),
                      CIm = Mean - (1.96*SE)) %>%
+           mutate(param = stringr::str_split(pathway, '-')) %>%
            arrange(Mean)
+
+# Number of parameters
+addPath$nParam <- lapply(addPath$param, length) %>% unlist()
 
 # Remove NAs
 idNA <- is.na(addPath$SD)
