@@ -27,45 +27,47 @@ if(check[[2]]) id2 <- min(which(dat > th))
 if(check[[3]]) id0 <- range(which(dat == 0))
 
 # Plot
-par(mar = c(2,5,.5,.5))
+par(mar = c(2,5,1,.5))
 plot0(x = c(1,nrow(uniPath)), y = c(-.075, .075))
 axis(2, at = seq(-.075,.075,by=.025), labels = seq(-7.5,7.5,by=2.5), las = 2)
 mtext(text = 'Rank', side = 1, at = nrow(uniPath), line = .75)
 u <- par("usr")
 arrows(u[1], u[3], u[2], u[3], length = .05, code = 2, xpd = TRUE)
-mtext(text = TeX('Mean $\\delta_A$ (%) $\\pm$ 95% CI'), side = 2, line = 3, cex = .75)
-mtext(text = 'Disturbed abundance - initial abundance', side = 2, line = 4, cex = 1)
+mtext(text = TeX('Mean $\\delta_A$ (%) $\\pm$ 95% CI'), side = 2, line = 2, cex = .75)
+mtext(text = 'Disturbed abundance - initial abundance', side = 2, line = 3.5, cex = 1)
+mtext(text = 'Pathways of effect', side = 3, font = 2, line = -1)
 
 
 # Legend
 # Mortality / growth rate
 # Attack rate / evasiveness
 # Conversion rate / palatability
-text(x = u[2]-5, y = u[3]+.035, labels = TeX('Mortality / growth rate ($r$, $m$)'), adj = c(1, .5))
-text(x = u[2]-5, y = u[3]+.030, labels = TeX('Attack rate / predator avoidance ($\\beta$, $\\gamma$, $\\delta$)'), adj = c(1, .5))
-text(x = u[2]-5, y = u[3]+.025, labels = TeX('Conversion rate / palatability ($\\mu$, $\\nu$, $\\omega$)'), adj = c(1, .5))
-points(x = u[2]-3.5, y = u[3]+.03525, col = '#db5656', bg = '#00000099', pch = 21, lwd = 2, cex = 1)
-lines(x = c(u[2]-3, u[2]-4), y = rep(u[3]+.03025, 2), lwd = 2, col = '#db5656')
-lines(x = c(u[2]-3, u[2]-4), y = rep(u[3]+.02525, 2), lwd = 2, col = '#53998e')
+text(x = u[2]-2.75, y = u[3]+.040, labels = TeX('Mortality / growth rate ($r$, $m$)'), adj = c(1, .5))
+text(x = u[2]-2.75, y = u[3]+.035, labels = TeX('Attack rate / predator avoidance ($\\beta$, $\\gamma$, $\\delta$)'), adj = c(1, .5))
+text(x = u[2]-2.75, y = u[3]+.030, labels = TeX('Conversion rate / palatability ($\\mu$, $\\nu$, $\\omega$)'), adj = c(1, .5))
+points(x = u[2]-1.5, y = u[3]+.04025, col = '#db5656', bg = '#00000099', pch = 21, lwd = 2, cex = 1)
+lines(x = c(u[2]-1, u[2]-2), y = rep(u[3]+.03525, 2), lwd = 2, col = '#db5656')
+lines(x = c(u[2]-1, u[2]-2), y = rep(u[3]+.03025, 2), lwd = 2, col = '#53998e')
 
 # Thresholds
+yG <- .0055
 if(check[[1]]) {
-  abline(v = id1+.5, lty = 4, col = '#c46a86')
-  polygon(x = c(u[1],id1+.5, id1+.5,u[1]), y = c(u[3], u[3], u[4],u[4]), border = 'transparent', col = '#c46a8622')
-  text(x = mean(c(id1,u[1])), y = u[4]-.01, labels = 'Weak entry points', adj = c(.5,.5), font = 2)
+  lines(x = rep(id1+.5,2), y = c(u[3]+yG, u[4]-yG), lty = 4, col = '#c46a86')
+  polygon(x = c(u[1],id1+.5, id1+.5,u[1]), y = c(u[3]+yG, u[3]+yG, u[4]-yG,u[4]-yG), border = 'transparent', col = '#c46a8622')
+  text(x = u[1]+1, y = u[4]-.01, labels = 'Weak entry pathways', adj = c(0,.5), font = 4, cex = 1.25)
 }
 
 if(check[[2]]) {
-  abline(v = id2-.5, lty = 4, col = '#c46a86')
-  polygon(x = c(u[2],id2-.5, id2-.5,u[2]), y = c(u[3], u[3], u[4],u[4]), border = 'transparent', col = '#c46a8622')
-  text(x = mean(c(id2,u[2])), y = u[4]-.01, labels = 'Weak entry points', adj = c(.5,.5), font = 2)
+  lines(x = rep(id2-.5,2), y = c(u[3]+yG, u[4]-yG), lty = 4, col = '#c46a86')
+  polygon(x = c(u[2],id2-.5, id2-.5,u[2]), y = c(u[3]+yG, u[3]+yG, u[4]-yG,u[4]-yG), border = 'transparent', col = '#c46a8622')
+  text(x = u[2]-1, y = u[4]-.01, labels = 'Weak entry pathways', adj = c(1,.5), font = 4, cex = 1.25)
 }
 
 if(check[[3]]) {
-  abline(v = id0[1]-.5, lty = 4, col = '#668aeb')
-  abline(v = id0[2]+.5, lty = 4, col = '#668aeb')
-  polygon(x = c(id0[1]-.5,id0[2]+.5, id0[2]+.5,id0[1]-.5), y = c(u[3], u[3], u[4],u[4]), border = 'transparent', col = '#668aeb22')
-  text(x = mean(id0), y = u[4]-.01, labels = 'Biotic buffers', adj = c(.5,.5), font = 2)
+  lines(x = rep(id0[1]-.5,2), y = c(u[3]+yG, u[4]-yG), lty = 4, col = '#668aeb')
+  lines(x = rep(id0[2]+.5,2), y = c(u[3]+yG, u[4]-yG), lty = 4, col = '#668aeb')
+  polygon(x = c(id0[1]-.5,id0[2]+.5, id0[2]+.5,id0[1]-.5), y = c(u[3]+yG, u[3]+yG, u[4]-yG,u[4]-yG), border = 'transparent', col = '#668aeb22')
+  text(x = mean(id0), y = u[4]-.01, labels = 'Buffer pathways', adj = c(.5,.5), font = 4, cex = 1.25)
 }
 
 # Data
@@ -81,14 +83,14 @@ points(uniPath$Mean, col = '#233499', cex = .9, pch = 15)
 # Add motifs
 for(i in seq(1,nrow(uniPath), by = 2)) {
   plotMotifs(motif = uniPath$motif[i], position = uniPath$species[i],
-             path = uniPath$pathway[i], x = i, y = -.075, scalingY = .0025,
-             add = T, cex = .6, lwd = 1, lwd2 = 1.1)
+             path = uniPath$pathway[i], x = i, y = -.07, scalingY = .0025,
+             add = T, cex = .75, lwd = 1, lwd2 = 1.1, scalingX = 1.4)
 }
 
 for(i in seq(2,nrow(uniPath), by = 2)) {
   plotMotifs(motif = uniPath$motif[i], position = uniPath$species[i],
-             path = uniPath$pathway[i], x = i, y = -.065, scalingY = .0025,
-             add = T, cex = .6, lwd = 1, lwd2 = 1.1)
+             path = uniPath$pathway[i], x = i, y = -.06, scalingY = .0025,
+             add = T, cex = .75, lwd = 1, lwd2 = 1.1, scalingX = 1.4)
 }
 
 
@@ -106,11 +108,13 @@ if(check[[3]]) id0 <- range(which(dat == 0))
 
 # Plot
 # Abundance - Position profile
-par(mar = c(2,5,.5,.5))
-plot0(x = c(1,nrow(uniPos)), y = c(-.05, .05))
-axis(2, at = seq(-.05,.05,by=.025), labels = seq(-5,5,by=2.5), las = 2)
-mtext(text = TeX('Mean $\\delta_A$ (%) $\\pm$ 95% CI'), side = 2, line = 3, cex = .75)
-mtext(text = 'Position profile', side = 2, line = 4, cex = 1)
+par(mar = c(2,5,1,.5))
+plot0(x = c(1,nrow(uniPos)), y = c(-.04, .04))
+axis(2, at = seq(-.04,.04,by=.02), labels = seq(-4,4,by=2), las = 2)
+mtext(text = TeX('Mean $\\delta_A$ (%) $\\pm$ 95% CI'), side = 2, line = 2, cex = .75)
+mtext(text = 'Position profile', side = 2, line = 3.5, cex = 1)
+mtext(text = 'Motif positions', side = 3, font = 2, line = -1)
+
 abline(h = 0, lty = 2, col = '#00000055')
 mtext(text = 'Rank', side = 1, at = nrow(uniPos), line = .75)
 u <- par("usr")
@@ -121,26 +125,27 @@ for(i in 1:nrow(uniPos)) {
   lines(x = c(i-.2, i+.2), y = c(uniPos$CIp[i], uniPos$CIp[i]))
   lines(x = c(i-.2, i+.2), y = c(uniPos$CIm[i], uniPos$CIm[i]))
 }
-points(uniPos$Mean, col = '#233499', cex = .9, pch = 15)
+points(uniPos$Mean, col = '#233499', cex = 1.5, pch = 15)
 
 # Thresholds
+yG <- .003
 if(check[[1]]) {
-  abline(v = id1+.5, lty = 4, col = '#c46a86')
-  polygon(x = c(u[1],id1+.5, id1+.5,u[1]), y = c(u[3], u[3], u[4],u[4]), border = 'transparent', col = '#c46a8622')
-  text(x = mean(c(id1,u[1])), y = u[4]-.01, labels = 'Weak entry points', adj = c(.5,.5), font = 2)
+  lines(x = rep(id1+.5,2), y = c(u[3]+yG, u[4]-yG), lty = 4, col = '#c46a86')
+  polygon(x = c(u[1],id1+.5, id1+.5,u[1]), y = c(u[3]+yG, u[3]+yG, u[4]-yG,u[4]-yG), border = 'transparent', col = '#c46a8622')
+  text(x = u[1]+.1, y = u[4]-.0053, labels = 'Weak entry points', adj = c(0,.5), font = 4, cex = 1.25)
 }
 
 if(check[[2]]) {
-  abline(v = id2-.5, lty = 4, col = '#c46a86')
-  polygon(x = c(u[2],id2-.5, id2-.5,u[2]), y = c(u[3], u[3], u[4],u[4]), border = 'transparent', col = '#c46a8622')
-  text(x = mean(c(id2,u[2])), y = u[4]-.01, labels = 'Weak entry points', adj = c(.5,.5), font = 2)
+  lines(x = rep(id2-.5,2), y = c(u[3]+yG, u[4]-yG), lty = 4, col = '#c46a86')
+  polygon(x = c(u[2],id2-.5, id2-.5,u[2]), y = c(u[3]+yG, u[3]+yG, u[4]-yG,u[4]-yG), border = 'transparent', col = '#c46a8622')
+  text(x = u[2]-.1, y = u[4]-.0053, labels = 'Weak entry points', adj = c(1,.5), font = 4, cex = 1.25)
 }
 
 if(check[[3]]) {
-  abline(v = id0[1]-.5, lty = 4, col = '#668aeb')
-  abline(v = id0[2]+.5, lty = 4, col = '#668aeb')
-  polygon(x = c(id0[1]-.5,id0[2]+.5, id0[2]+.5,id0[1]-.5), y = c(u[3], u[3], u[4],u[4]), border = 'transparent', col = '#668aeb22')
-  text(x = mean(id0), y = u[4]-.01, labels = 'Biotic buffers', adj = c(.5,.5), font = 2)
+  lines(x = rep(id0[1]-.5,2), y = c(u[3]+yG, u[4]-yG), lty = 4, col = '#668aeb')
+  lines(x = rep(id0[2]+.5,2), y = c(u[3]+yG, u[4]-yG), lty = 4, col = '#668aeb')
+  polygon(x = c(id0[1]-.5,id0[2]+.5, id0[2]+.5,id0[1]-.5), y = c(u[3]+yG, u[3]+yG, u[4]-yG,u[4]-yG), border = 'transparent', col = '#668aeb22')
+  text(x = mean(id0), y = u[4]-.0053, labels = 'Biotic buffers', adj = c(.5,.5), font = 4, cex = 1.25)
 }
 
 # Add motifs
@@ -149,8 +154,8 @@ sp <- substr(uniPos$position,3,3)
 
 for(i in 1:nrow(uniPos)) {
   plotMotifs(motif = motif[i], position = sp[i],
-             path = '', x = i, y = -.0475, scalingY = .0025, scalingX = .35,
-             add = T, cex = 1, lwd = 1.15)
+             path = '', x = i, y = -.036, scalingY = .0025, scalingX = .35,
+             add = T, cex = 1.75, lwd = 1.15)
 }
 
 
@@ -174,30 +179,30 @@ abline(h = 0, lty = 2, col = '#00000055')
 mtext(text = 'Rank', side = 1, at = nrow(multiPath), line = .75)
 u <- par("usr")
 arrows(u[1], u[3], u[2], u[3], length = .05, code = 2, xpd = TRUE)
-mtext(text = TeX('$\\delta$ $A_{disturb}$ - $\\delta$ $A_{initial} (%)$'), side = 2, line = 3, cex = .75)
-mtext(text = TeX('$\\delta$ Abundance ($\\delta_A$)'), side = 2, line = 4.5, cex = 1)
-mtext(text = 'Multivariate disturbances - Abundance', side = 3, font = 2)
+mtext(text = TeX('$\\delta$ $A_{disturb}$ - $\\delta$ $A_{initial} (%)$'), side = 2, line = 2, cex = .75)
+mtext(text = TeX('$\\delta$ Abundance ($\\delta_A$)'), side = 2, line = 3.5, cex = 1)
 polygon(x = c(1:nrow(multiPath), nrow(multiPath):1), y = c(multiPath$CIm, rev(multiPath$CIp)), col = '#23349922', border = 'transparent')
 lines(multiPath$Mean, col = '#233499', lwd = 2)
 
 # Thresholds
+yG <- .015
 if(check[[1]]) {
-  abline(v = id1+.5, lty = 4, col = '#c46a86')
-  polygon(x = c(u[1],id1+.5, id1+.5,u[1]), y = c(u[3], u[3], u[4],u[4]), border = 'transparent', col = '#c46a8622')
-  text(x = mean(c(id1,u[1])), y = u[4]-.01, labels = 'Weak entry points', adj = c(.5,.5), font = 2)
+  lines(x = rep(id1+.5,2), y = c(u[3]+yG, u[4]-yG), lty = 4, col = '#c46a86')
+  polygon(x = c(u[1],id1+.5, id1+.5,u[1]), y = c(u[3]+yG, u[3]+yG, u[4]-yG,u[4]-yG), border = 'transparent', col = '#c46a8622')
+  text(x = u[1]+20, y = u[4]-.027, labels = 'Weak entry points]', adj = c(0,.5), font = 4, cex = 1.25)
 }
 
 if(check[[2]]) {
-  abline(v = id2-.5, lty = 4, col = '#c46a86')
-  polygon(x = c(u[2],id2-.5, id2-.5,u[2]), y = c(u[3], u[3], u[4],u[4]), border = 'transparent', col = '#c46a8622')
-  text(x = mean(c(id2,u[2])), y = u[4]-.01, labels = 'Weak entry points', adj = c(.5,.5), font = 2)
+  lines(x = rep(id2-.5,2), y = c(u[3]+yG, u[4]-yG), lty = 4, col = '#c46a86')
+  polygon(x = c(u[2],id2-.5, id2-.5,u[2]), y = c(u[3]+yG, u[3]+yG, u[4]-yG,u[4]-yG), border = 'transparent', col = '#c46a8622')
+  text(x = u[2]-20, y = u[4]-.027, labels = 'Weak entry points]', adj = c(1,.5), font = 4, cex = 1.25)
 }
 
 if(check[[3]]) {
-  abline(v = id0[1]-.5, lty = 4, col = '#668aeb')
-  abline(v = id0[2]+.5, lty = 4, col = '#668aeb')
-  polygon(x = c(id0[1]-.5,id0[2]+.5, id0[2]+.5,id0[1]-.5), y = c(u[3], u[3], u[4],u[4]), border = 'transparent', col = '#668aeb22')
-  text(x = mean(id0), y = u[4]-.01, labels = 'Biotic buffers', adj = c(.5,.5), font = 2)
+  lines(x = rep(id0[1]-.5,2), y = c(u[3]+yG, u[4]-yG), lty = 4, col = '#668aeb')
+  lines(x = rep(id0[2]+.5,2), y = c(u[3]+yG, u[4]-yG), lty = 4, col = '#668aeb')
+  polygon(x = c(id0[1]-.5,id0[2]+.5, id0[2]+.5,id0[1]-.5), y = c(u[3]+yG, u[3]+yG, u[4]-yG,u[4]-yG), border = 'transparent', col = '#668aeb22')
+  text(x = mean(id0), y = u[4]-.027, labels = 'Biotic buffers', adj = c(.5,.5), font = 4, cex = 1.25)
 }
 
 # ---------------------------------------
@@ -215,10 +220,10 @@ if(check[[3]]) id0 <- range(which(dat == 0))
 # Plot
 # Abundance - Position profile
 par(mar = c(2,5,.5,.5))
-plot0(x = c(1,nrow(multiPos)), y = c(-.1, .1))
-axis(2, at = seq(-.1,.1,by=.05), labels = seq(-10,10,by=5), las = 2)
-mtext(text = TeX('Mean $\\delta_A$ (%) $\\pm$ 95% CI'), side = 2, line = 3, cex = .75)
-mtext(text = 'Position profile', side = 2, line = 4, cex = 1)
+plot0(x = c(1,nrow(multiPos)), y = c(-.08, .08))
+axis(2, at = seq(-.08,.08,by=.04), labels = seq(-8,8,by=4), las = 2)
+mtext(text = TeX('Mean $\\delta_A$ (%) $\\pm$ 95% CI'), side = 2, line = 2, cex = .75)
+mtext(text = 'Position profile', side = 2, line = 3.5, cex = 1)
 abline(h = 0, lty = 2, col = '#00000055')
 mtext(text = 'Rank', side = 1, at = nrow(multiPos), line = .75)
 u <- par("usr")
@@ -229,26 +234,27 @@ for(i in 1:nrow(multiPos)) {
   lines(x = c(i-.2, i+.2), y = c(multiPos$CIp[i], multiPos$CIp[i]))
   lines(x = c(i-.2, i+.2), y = c(multiPos$CIm[i], multiPos$CIm[i]))
 }
-points(multiPos$Mean, col = '#233499', cex = .9, pch = 15)
+points(multiPos$Mean, col = '#233499', cex = 1.5, pch = 15)
 
 # Thresholds
+yG <- .006
 if(check[[1]]) {
-  abline(v = id1+.5, lty = 4, col = '#c46a86')
-  polygon(x = c(u[1],id1+.5, id1+.5,u[1]), y = c(u[3], u[3], u[4],u[4]), border = 'transparent', col = '#c46a8622')
-  text(x = mean(c(id1,u[1])), y = u[4]-.01, labels = 'Weak entry points', adj = c(.5,.5), font = 2)
+  lines(x = rep(id1+.5,2), y = c(u[3]+yG, u[4]-yG), lty = 4, col = '#c46a86')
+  polygon(x = c(u[1],id1+.5, id1+.5,u[1]), y = c(u[3]+yG, u[3]+yG, u[4]-yG,u[4]-yG), border = 'transparent', col = '#c46a8622')
+  text(x = u[1]+.1, y = u[4]-.0106, labels = 'Weak entry pathways', adj = c(0,.5), font = 4, cex = 1.25)
 }
 
 if(check[[2]]) {
-  abline(v = id2-.5, lty = 4, col = '#c46a86')
-  polygon(x = c(u[2],id2-.5, id2-.5,u[2]), y = c(u[3], u[3], u[4],u[4]), border = 'transparent', col = '#c46a8622')
-  text(x = mean(c(id2,u[2])), y = u[4]-.01, labels = 'Weak entry points', adj = c(.5,.5), font = 2)
+  lines(x = rep(id2-.5,2), y = c(u[3]+yG, u[4]-yG), lty = 4, col = '#c46a86')
+  polygon(x = c(u[2],id2-.5, id2-.5,u[2]), y = c(u[3]+yG, u[3]+yG, u[4]-yG,u[4]-yG), border = 'transparent', col = '#c46a8622')
+  text(x = u[2]-.1, y = u[4]-.0106, labels = 'Weak entry pathways', adj = c(1,.5), font = 4, cex = 1.25)
 }
 
 if(check[[3]]) {
-  abline(v = id0[1]-.5, lty = 4, col = '#668aeb')
-  abline(v = id0[2]+.5, lty = 4, col = '#668aeb')
-  polygon(x = c(id0[1]-.5,id0[2]+.5, id0[2]+.5,id0[1]-.5), y = c(u[3], u[3], u[4],u[4]), border = 'transparent', col = '#668aeb22')
-  text(x = mean(id0), y = u[4]-.01, labels = 'Biotic buffers', adj = c(.5,.5), font = 2)
+  lines(x = rep(id0[1]-.5,2), y = c(u[3]+yG, u[4]-yG), lty = 4, col = '#668aeb')
+  lines(x = rep(id0[2]+.5,2), y = c(u[3]+yG, u[4]-yG), lty = 4, col = '#668aeb')
+  polygon(x = c(id0[1]-.5,id0[2]+.5, id0[2]+.5,id0[1]-.5), y = c(u[3]+yG, u[3]+yG, u[4]-yG,u[4]-yG), border = 'transparent', col = '#668aeb22')
+  text(x = mean(id0), y = u[4]-.0106, labels = 'Buffer pathways', adj = c(.5,.5), font = 4, cex = 1.25)
 }
 
 # Add motifs
@@ -257,9 +263,10 @@ sp <- substr(multiPos$position,3,3)
 
 for(i in 1:nrow(multiPos)) {
   plotMotifs(motif = motif[i], position = sp[i],
-             path = '', x = i, y = -.0975, scalingY = .005, scalingX = .35,
-             add = T, cex = 1, lwd = 1.15)
+             path = '', x = i, y = -.072, scalingY = .005, scalingX = .35,
+             add = T, cex = 1.75, lwd = 1.15)
 }
+
 
 
 
@@ -276,29 +283,29 @@ if(check[[2]]) id2 <- min(which(dat > th))
 
 # Plot
 par(mar = c(2,5,.5,.5))
-plot0(x = c(0,nrow(addPath)), y = c(-.005, .005))
-axis(2, at = seq(-.005, .005, by = .0025), labels = seq(-.5,.5,by = .25), las = 2)
+plot0(x = c(0,nrow(addPath)), y = c(-.006, .006))
+axis(2, at = seq(-.006, .006, by = .003), labels = seq(-.6,.6,by = .3), las = 2)
 abline(h = 0, lty = 2, col = '#00000055')
 mtext(text = 'Rank', side = 1, at = nrow(addPath), line = .75)
 u <- par("usr")
 arrows(u[1], u[3], u[2], u[3], length = .05, code = 2, xpd = TRUE)
-mtext(text = TeX('$\\delta$ $A_{disturb}$ - $\\delta$ $A_{initial} (%)$'), side = 2, line = 3, cex = .75)
-mtext(text = TeX('$\\delta$ Abundance ($\\delta_A$)'), side = 2, line = 4.5, cex = 1)
-mtext(text = 'Multivariate disturbances - Abundance', side = 3, font = 2)
+mtext(text = TeX('$\\delta$ $A_{Joint}$ - $\\delta$$ $A_{Additive}$ (%)'), side = 2, line = 2, cex = .75)
+mtext(text = TeX('Joint - additive model'), side = 2, line = 3.5, cex = 1)
 polygon(x = c(1:nrow(addPath), nrow(addPath):1), y = c(addPath$CIm, rev(addPath$CIp)), col = '#23349922', border = 'transparent')
 lines(addPath$Mean, col = '#233499', lwd = 2)
 
 # Thresholds
+yG <- .00045
 if(check[[1]]) {
-  abline(v = id1+.5, lty = 4, col = '#668aeb')
-  polygon(x = c(u[1],id1+.5, id1+.5,u[1]), y = c(u[3], u[3], u[4],u[4]), border = 'transparent', col = '#668aeb22')
-  text(x = u[1]+50, y = u[4]-.0005, labels = 'Biotic sinks', adj = c(0,.5), font = 2)
+  lines(x = rep(id1+.5,2), y = c(u[3]+yG, u[4]-yG), lty = 4, col = '#668aeb')
+  polygon(x = c(u[1],id1+.5, id1+.5,u[1]), y = c(u[3]+yG, u[3]+yG, u[4]-yG,u[4]-yG), border = 'transparent', col = '#668aeb22')
+  text(x = u[1]+20, y = u[4]-.00075, labels = 'Biotic multipliers', adj = c(0,.5), font = 4, cex = 1.25)
 }
 
 if(check[[2]]) {
-  abline(v = id2-.5, lty = 4, col = '#c46a86')
-  polygon(x = c(u[2],id2-.5, id2-.5,u[2]), y = c(u[3], u[3], u[4],u[4]), border = 'transparent', col = '#c46a8622')
-  text(x = u[2]-50, y = u[4]-.0005, labels = 'Biotic multipliers', adj = c(1,.5), font = 2)
+  lines(x = rep(id2-.5,2), y = c(u[3]+yG, u[4]-yG), lty = 4, col = '#c46a86')
+  polygon(x = c(u[2],id2-.5, id2-.5,u[2]), y = c(u[3]+yG, u[3]+yG, u[4]-yG,u[4]-yG), border = 'transparent', col = '#c46a8622')
+  text(x = u[2]-20, y = u[4]-.00075, labels = 'Synergistic pathways', adj = c(1,.5), font = 4, cex = 1.25)
 }
 
 
@@ -316,10 +323,10 @@ if(check[[2]]) id2 <- min(which(dat > th))
 # Plot
 # Abundance - Position profile
 par(mar = c(2,5,.5,.5))
-plot0(x = c(1,nrow(addPos)), y = c(-.0008, .0008))
-axis(2, at = seq(-.0008,.0008,by=.0004), labels = seq(-.08,.08,by=.04), las = 2)
-mtext(text = TeX('Mean $\\delta_A$ (%) $\\pm$ 95% CI'), side = 2, line = 3, cex = .75)
-mtext(text = 'Position profile', side = 2, line = 4, cex = 1)
+plot0(x = c(1,nrow(addPos)), y = c(-.0005, .0005))
+axis(2, at = seq(-.0005,.0005,by=.00025), labels = seq(-.05,.05,by=.025), las = 2)
+mtext(text = TeX('Mean $\\delta_A$ (%) $\\pm$ 95% CI'), side = 2, line = 2, cex = .75)
+mtext(text = 'Position profile', side = 2, line = 3.5, cex = 1)
 abline(h = 0, lty = 2, col = '#00000055')
 mtext(text = 'Rank', side = 1, at = nrow(addPos), line = .75)
 u <- par("usr")
@@ -330,19 +337,20 @@ for(i in 1:nrow(addPos)) {
   lines(x = c(i-.2, i+.2), y = c(addPos$CIp[i], addPos$CIp[i]))
   lines(x = c(i-.2, i+.2), y = c(addPos$CIm[i], addPos$CIm[i]))
 }
-points(addPos$Mean, col = '#233499', cex = .9, pch = 15)
+points(addPos$Mean, col = '#233499', cex = 1.5, pch = 15)
 
 # Thresholds
+yG <- .00004
 if(check[[1]]) {
-  abline(v = id1+.5, lty = 4, col = '#668aeb')
-  polygon(x = c(u[1],id1+.5, id1+.5,u[1]), y = c(u[3], u[3], u[4],u[4]), border = 'transparent', col = '#668aeb22')
-  text(x = mean(c(id1,u[1])), y = u[4]-.0005, labels = 'Weak entry points', adj = c(.5,.5), font = 2)
+  lines(x = rep(id1+.5,2), y = c(u[3]+yG, u[4]-yG), lty = 4, col = '#668aeb')
+  polygon(x = c(u[1],id1+.5, id1+.5,u[1]), y = c(u[3]+yG, u[3]+yG, u[4]-yG,u[4]-yG), border = 'transparent', col = '#668aeb22')
+  text(x = u[1]+.1, y = u[4]-.000065, labels = 'Biotic sinks', adj = c(0,.5), font = 4, cex = 1.25)
 }
 
 if(check[[2]]) {
-  abline(v = id2-.5, lty = 4, col = '#c46a86')
-  polygon(x = c(u[2],id2-.5, id2-.5,u[2]), y = c(u[3], u[3], u[4],u[4]), border = 'transparent', col = '#c46a8622')
-  text(x = mean(c(id2,u[2])), y = u[4]-.0005, labels = 'Weak entry points', adj = c(.5,.5), font = 2)
+  lines(x = rep(id2-.5,2), y = c(u[3]+yG, u[4]-yG), lty = 4, col = '#c46a86')
+  polygon(x = c(u[2],id2-.5, id2-.5,u[2]), y = c(u[3]+yG, u[3]+yG, u[4]-yG,u[4]-yG), border = 'transparent', col = '#c46a8622')
+  text(x = u[2]-.1, y = u[4]-.000065, labels = 'Biotic multipliers', adj = c(1,.5), font = 4, cex = 1.25)
 }
 
 # Add motifs
@@ -351,11 +359,12 @@ sp <- substr(addPos$position,3,3)
 
 for(i in 1:nrow(addPos)) {
   plotMotifs(motif = motif[i], position = sp[i],
-             path = '', x = i, y = -.0007, scalingY = .00004, scalingX = .35,
-             add = T, cex = 1, lwd = 1.15)
+             path = '', x = i, y = -.00045, scalingY = .00003, scalingX = .35,
+             add = T, cex = 1.75, lwd = 1.15)
 }
 
 # ---------------------------------------
 #               The end
 # ---------------------------------------
 dev.off()
+# Add motifs

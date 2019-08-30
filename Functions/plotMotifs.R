@@ -30,7 +30,7 @@ plotMotifs <- function(motif, position = '', path = '', x = 0, y = 0,
     if (position == 'z') pt$bg[3] <- posCol
 
     # Pathways
-    if (path == 'r_x') pt$col[1] <- growth
+    if (path == 'r_x' | path == 'r') pt$col[1] <- growth
     if (path == 'm_y') pt$col[2] <- growth
     if (path == 'm_z') pt$col[3] <- growth
 
@@ -58,7 +58,7 @@ plotMotifs <- function(motif, position = '', path = '', x = 0, y = 0,
     if (position == 'z') pt$bg[3] <- posCol
 
     # Pathways
-    if (path == 'r_x') pt$col[1] <- growth
+    if (path == 'r_x' | path == 'r') pt$col[1] <- growth
     if (path == 'm_y') pt$col[2] <- growth
     if (path == 'm_z') pt$col[3] <- growth
 
@@ -90,7 +90,7 @@ plotMotifs <- function(motif, position = '', path = '', x = 0, y = 0,
 
     # Pathways
     if (path == 'm_z') pt$col[1] <- growth
-    if (path == 'r_x') pt$col[2] <- growth
+    if (path == 'r_x' | path == 'r') pt$col[2] <- growth
     if (path == 'm_y') pt$col[3] <- growth
 
     # Lines
