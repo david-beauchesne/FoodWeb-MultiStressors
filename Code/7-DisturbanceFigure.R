@@ -189,20 +189,20 @@ yG <- .015
 if(check[[1]]) {
   lines(x = rep(id1+.5,2), y = c(u[3]+yG, u[4]-yG), lty = 4, col = '#c46a86')
   polygon(x = c(u[1],id1+.5, id1+.5,u[1]), y = c(u[3]+yG, u[3]+yG, u[4]-yG,u[4]-yG), border = 'transparent', col = '#c46a8622')
-  text(x = u[1]+20, y = u[4]-.027, labels = 'Weak entry points]', adj = c(0,.5), font = 4, cex = 1.25)
+  text(x = u[1]+20, y = u[4]-.027, labels = 'Weak entry pathways', adj = c(0,.5), font = 4, cex = 1.25)
 }
 
 if(check[[2]]) {
   lines(x = rep(id2-.5,2), y = c(u[3]+yG, u[4]-yG), lty = 4, col = '#c46a86')
   polygon(x = c(u[2],id2-.5, id2-.5,u[2]), y = c(u[3]+yG, u[3]+yG, u[4]-yG,u[4]-yG), border = 'transparent', col = '#c46a8622')
-  text(x = u[2]-20, y = u[4]-.027, labels = 'Weak entry points]', adj = c(1,.5), font = 4, cex = 1.25)
+  text(x = u[2]-20, y = u[4]-.027, labels = 'Weak entry pathways', adj = c(1,.5), font = 4, cex = 1.25)
 }
 
 if(check[[3]]) {
   lines(x = rep(id0[1]-.5,2), y = c(u[3]+yG, u[4]-yG), lty = 4, col = '#668aeb')
   lines(x = rep(id0[2]+.5,2), y = c(u[3]+yG, u[4]-yG), lty = 4, col = '#668aeb')
   polygon(x = c(id0[1]-.5,id0[2]+.5, id0[2]+.5,id0[1]-.5), y = c(u[3]+yG, u[3]+yG, u[4]-yG,u[4]-yG), border = 'transparent', col = '#668aeb22')
-  text(x = mean(id0), y = u[4]-.027, labels = 'Biotic buffers', adj = c(.5,.5), font = 4, cex = 1.25)
+  text(x = mean(id0), y = u[4]-.027, labels = 'Buffer pathways', adj = c(.5,.5), font = 4, cex = 1.25)
 }
 
 # ---------------------------------------
@@ -241,20 +241,20 @@ yG <- .006
 if(check[[1]]) {
   lines(x = rep(id1+.5,2), y = c(u[3]+yG, u[4]-yG), lty = 4, col = '#c46a86')
   polygon(x = c(u[1],id1+.5, id1+.5,u[1]), y = c(u[3]+yG, u[3]+yG, u[4]-yG,u[4]-yG), border = 'transparent', col = '#c46a8622')
-  text(x = u[1]+.1, y = u[4]-.0106, labels = 'Weak entry pathways', adj = c(0,.5), font = 4, cex = 1.25)
+  text(x = u[1]+.1, y = u[4]-.0106, labels = 'Weak entry points', adj = c(0,.5), font = 4, cex = 1.25)
 }
 
 if(check[[2]]) {
   lines(x = rep(id2-.5,2), y = c(u[3]+yG, u[4]-yG), lty = 4, col = '#c46a86')
   polygon(x = c(u[2],id2-.5, id2-.5,u[2]), y = c(u[3]+yG, u[3]+yG, u[4]-yG,u[4]-yG), border = 'transparent', col = '#c46a8622')
-  text(x = u[2]-.1, y = u[4]-.0106, labels = 'Weak entry pathways', adj = c(1,.5), font = 4, cex = 1.25)
+  text(x = u[2]-.1, y = u[4]-.0106, labels = 'Weak entry points', adj = c(1,.5), font = 4, cex = 1.25)
 }
 
 if(check[[3]]) {
   lines(x = rep(id0[1]-.5,2), y = c(u[3]+yG, u[4]-yG), lty = 4, col = '#668aeb')
   lines(x = rep(id0[2]+.5,2), y = c(u[3]+yG, u[4]-yG), lty = 4, col = '#668aeb')
   polygon(x = c(id0[1]-.5,id0[2]+.5, id0[2]+.5,id0[1]-.5), y = c(u[3]+yG, u[3]+yG, u[4]-yG,u[4]-yG), border = 'transparent', col = '#668aeb22')
-  text(x = mean(id0), y = u[4]-.0106, labels = 'Buffer pathways', adj = c(.5,.5), font = 4, cex = 1.25)
+  text(x = mean(id0), y = u[4]-.0106, labels = 'Biotic buffers', adj = c(.5,.5), font = 4, cex = 1.25)
 }
 
 # Add motifs
