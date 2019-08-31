@@ -1,6 +1,6 @@
 ---
-title: Effects of multiple stressors on food web structure
-author: David Beauchesne^1,2,\*^, Dominique Gravel^3^, Philippe Archambault^2^
+title: On the sensitivity of food webs to multiple disturbances
+author: David Beauchesne^1,2,\*^, Kevin Cazelles^3^, Philippe Archambault^2^, Dominique Gravel^4^
 fontsize: 12pt
 output:
   pdf_document:
@@ -18,6 +18,7 @@ header-includes:
    - \newcommand{\blandscape}{\begin{landscape}}
    - \newcommand{\elandscape}{\end{landscape}}
    - \usepackage{float}
+   - \restylefloat{table}
 bibliography: FoodWeb-MultiStressorMS.bib
 csl: frontiers.csl
 link-citations: yes
@@ -29,16 +30,284 @@ relativeurls: true
 rmarkdown::render('./FoodWebs-MultipleStressors.md', 'pdf_document')
 -->
 
+# Introduction
+
+Global changes are resulting in increasingly intricate environmental stress
+exposure regimes [@halpern2015a; @bowler2019]. Exposure to multiple interacting
+stressors can induce complex and unpredictable environmental effects that can
+propagate through entire ecological communities by way of biotic interactions
+[@bascompte2009a; @montoya2009].
+
+Pathways of effect
+
+Literature on the effects of disturbances on the structure of empirical and simulated networks
+
+
+
+Recent attempts have focused on
+
+In this paper, we investigated
+
+
+
+
+There is a rich literature documenting the effects of disturbances on communities
+and how network structure contributes to community resistance [@refs].
+It however remains unclear how network structure influences community resistance
+to multiple disturbances.
+Recent efforts have focused on [...]. [@thompson2018; @galic2018; @schafer2018] <!-- document -->
+Here, we seek to identify what characteristics of network structure
+and the role of species in buffering against or multiplying the effects of
+multiple stressors.
+
+
+
+
+
+
+# Objectives
+
+Our goal was to investigate the impact of disturbances targetting multiple
+pathways of effect (*e.g.* mortality and physiology) on the
+
+The overarching goal is to conceptualize how the structure of food webs affects
+the direct and indirect propagation of multiple sources of stress non-linearly
+and affects the likelihood of observing antagonistic or synergistic effects of
+multiple stressors.
+The objectives are to 1) identify network characteristics
+that make them more or less sensitive or resistant to multiple stressors and 2)
+what is the role of species and their interactions contributing to the
+propensity of networks in buffering against or amplifying the effects of multiple
+stressors.
+
+
+
+# Methodology
+
+## Models
+
+The dynamics of the four most abundant 3-species motifs (*i.e.* tri-trophic
+food chain, omnivory, exploitative and apparent competition) in empirical food
+webs [@stouffer2010] were modeled using Lotka-Voltera equation systems solved at
+equilibrium. We also included two additional motifs [...]
+
+Resources were modeled using logistic growth equations of the form
+$\frac{dX_i}{dt} = X_i(r_i - \alpha_{ii} X_i - \sum \alpha_{ij} X_j)$,
+where $X$ are species, $i$ is the resource, $j$ are the consumers, $r_i$ is the
+intrinsic resource growth rate, $\alpha_{ii}$ is the density-dependent effect of
+the resource on itself and $\alpha_{ij}$ is the rate at which consumer $j$
+affects resource $i$, i.e. the attack rate.
+
+Consumers and predators were modeled with a Type I functional response of the form
+$\frac{dX_j}{dt} = X_j(-m_j + \sum e_{ij} \alpha_{ij} X_i - \alpha_{jk} X_k)$,
+where $m$ is the mortality rate and $e$ is the rate at which resource biomass is
+transformed into consumer biomass, *i.e.* the conversion rate. $e$ is a scaling
+parameter of the attack rate which cannot exceed 1, since 1 unit of resource
+biomass cannot be transformed into more than 1 unit of consumer biomass.
+
+As no equilibrium exists for the exploitative competition motif with
+Lotka-Voltera models of these forms, competitive parameters of the form
+$\alpha_{jj} \alpha_{jk} X_j X_k - \alpha_{jj} X_j^2$ were included in the
+consumer models to constrain their growth and obtain solutions at equilibrium.
+Sage [@ref] was used to solve all equation systems at equilibrium. All other
+analyses were performed using R [@ref]. All code and data used to perform the
+simulations and analyses are available at [...].
+
+Initial parameter values were set by using a simulated annealing algorithm
+optimizing for consumer and predator abundance.
+
+Model parameter values for intrinsic growth and
+resource density-dependence parameters were fixed to 1 and 0.001, respectively,
+to bound all solutions. Competitive parameters for the exploitative competition motif
+were also fixed at 0.001 since those parameters were not to be investigated in
+our analyses. Conversion rates were fixed to 0.5. Finally, a total of 100 sets
+of mortality and attack rates were evaluated using a simulated annealing
+algorithm optimizing for consumer abundance.  
+
+## Initial parameter values
+
+
+
+## Disturbances
+
+
+\newpage
+
+# Results
+
+## Univariate disturbances
+
+## Multivariate disturbances
+
+## Additivity
+
+![Disturbances \label{disturbances}](./Figures/disturbances.png)
+
+![Positions \label{positions}](./Figures/positions.png)
+
+
+
+
+
+
+\newpage
+
+# Supplementary Material
+
+## Models
+
+\begin{table}[H]
+\centering
+\renewcommand{\arraystretch}{1.25}
+\begin{tabular}{p{12.67ex} | l | l}
+\hline
+\textbf{Motifs} & \textbf{Equation systems} & \textbf{Parameters} \\[0.5ex]
+\hline\hline
+% ------------------------------------------------
+Tri-trophic food chain &
+$\begin{array} {lcl}
+  \frac{dX_i}{dt} &=& X_i(r_i - \alpha_{ii} X_i - \alpha_{ij} X_j) \\
+  \frac{dX_j}{dt} &=& X_j(e_{ij} \alpha_{ij} X_i - \alpha_{jk} X_k - m_j) \\
+  \frac{dX_k}{dt} &=& X_k(e_{jk} \alpha_{jk} X_j - m_k)
+\end{array}$ &
+$\begin{array} {lcl}
+  r_i = 1 \\
+  \alpha_{ii} = 0.001 \\
+  \alpha_{ij}, \alpha_{jk} \in [0.0001, 0.01] \\
+  e_{ij}, e_{jk} = 0.5 \\
+  m_j, m_k \in [0.01, 0.5]
+\end{array}$ \\
+\hline
+% ------------------------------------------------
+Omnivory &
+$\begin{array} {lcl}
+  \frac{dX_i}{dt} &=& X_i(r_i - \alpha_{ii} - \alpha_{ij} X_j - \alpha_{ik} X_k) \\
+  \frac{dX_j}{dt} &=& X_j(e_{ij} \alpha_{ij} X_i - \alpha_{jk} X_k - m_j) \\
+  \frac{dX_k}{dt} &=& X_k(e_{ik} \alpha_{ik} X_i + e_{jk} \alpha_{jk} X_j - m_k) \\
+\end{array}$ &
+$\begin{array} {lcl}
+  r_i = 1 \\
+  \alpha_{ii} = 0.001 \\
+  \alpha_{ij}, \alpha_{ik}, \alpha_{jk} \in [0.0001, 0.01] \\
+  e_{ij}, e_{ik}, e_{jk} = 0.5 \\
+  m_j, m_k \in [0.01, 0.5]
+\end{array}$ \\
+\hline
+% ------------------------------------------------
+Exploitative competition &
+$\begin{array} {lcl}
+  \frac{dX_i}{dt} &=& X_i(r_i - \alpha_{ii} - \alpha_{ij} X_j - \alpha_{ik} X_k) \\
+  \frac{dX_j}{dt} &=& X_j(e_{ij} \alpha_{ij} X_i - \alpha_{jj}\alpha_{jk}X_k - \alpha_{jj}X_j - m_j) \\
+  \frac{dX_k}{dt} &=& X_k(e_{ik} \alpha_{ik} X_i - \alpha_{kk}\alpha_{kj}X_j - \alpha_{kk}X_k - m_k) \\
+  \end{array}$ &
+  $\begin{array} {lcl}
+    r_i = 1 \\
+    \alpha_{ii}, \alpha_{jj}, \alpha_{kk}, \alpha_{jk}, \alpha_{kj} = 0.001 \\
+    \alpha_{ij}, \alpha_{ik}, \in [0.0001, 0.01] \\
+    e_{ij}, e_{ik} = 0.5 \\
+    m_j, m_k \in [0.01, 0.5]
+  \end{array}$ \\
+\hline
+% ------------------------------------------------
+Apparent competition &
+$\begin{array} {lcl}
+  \frac{dX_i}{dt} &=& X_i(r_i - \alpha_{ii} X_i - \alpha_{ik} X_k) \\
+  \frac{dX_j}{dt} &=& X_j(r_j - \alpha_{jj} X_j - \alpha_{jk} X_k) \\
+  \frac{dX_k}{dt} &=& X_k(e_{ik} \alpha_{ik} X_i + e_{jk} \alpha_{jk} X_j - m_k)
+  \end{array}$ &
+  $\begin{array} {lcl}
+    r_i, r_j = 1 \\
+    \alpha_{ii}, \alpha_{jj} = 0.001 \\
+    \alpha_{ik}, \alpha_{jk} \in [0.0001, 0.01] \\
+    e_{ik}, e_{jk} = 0.5 \\
+    m_k \in [0.01, 0.5]
+  \end{array}$ \\
+\hline
+% ------------------------------------------------
+Partially disconnected &
+$\begin{array} {lcl}
+  \frac{dX_i}{dt} &=& X_i(r_i - \alpha_{ii} X_i - \alpha_{ik} X_k) \\
+  \frac{dX_j}{dt} &=& X_j(r_j - \alpha_{jj} X_j) \\
+  \frac{dX_k}{dt} &=& X_k(e_{ik} \alpha_{ik} X_i - m_k)
+  \end{array}$ &
+  $\begin{array} {lcl}
+    r_i, r_j = 1 \\
+    \alpha_{ii}, \alpha_{jj} = 0.001 \\
+    \alpha_{ik} \in [0.0001, 0.01] \\
+    e_{ik} = 0.5 \\
+    m_k \in [0.01, 0.5]
+  \end{array}$ \\
+\hline
+% ------------------------------------------------
+Disconnected &
+$\begin{array} {lcl}
+  \frac{dX_i}{dt} &=& X_i(r_i - \alpha_{ii} X_i) \\
+  \frac{dX_j}{dt} &=& X_j(r_j - \alpha_{jj} X_j) \\
+  \frac{dX_k}{dt} &=& X_k(r_k - \alpha_{kk} X_k)
+  \end{array}$ &
+  $\begin{array} {lcl}
+    r_i, r_j, r_k = 1 \\
+    \alpha_{ii}, \alpha_{jj}, \alpha_{kk} = 0.001 \\
+  \end{array}$ \\
+\hline
+\end{tabular}
+\caption{Systems of Lotka-Volterra equations used to model the effect of multiple disturbances}
+\label{equations}
+\end{table}
+
+\newpage
+
+
+
 
 <!--
-https://www.symbolab.com/solver/derivative-calculator/
-https://mccannlab.org/aboutDE/mathematical-prerequisites.html
-https://naes.unr.edu/shoemaker/teaching/NRES-470/LECTURE16.html
+
+#### Analytical simulations
+
+We now explore the parameter space by varying parameters on all possible
+combinations to simulate disturbances. For the simulations, we assume that
+disturbances are always negative, *e.g.* causing a decrease in predator attack
+rate or an increase in mortality. Parameter variations are randomly drawn
+from a uniform distribution within a 40% parameter range from the default
+value.
+
+***I believe that this should eventually be modified to explore the parameter
+space so that we explore the full range of parameters that ensures species
+co-existance and evaluate which parameters are more robust to modifications.
+For now, though, I set this to 40% because it allows me to
+better explore the disturbances that are dominant. For example, certain
+parameters have no effect on the abundance of certain species.***
+
+Analytical abundance results for each species are then compared to those
+using the default parameters to evaluate the percent change in abundance.
+To compare whether disturbances are additive or non-additive, we then
+compare the additive model, *i.e.* the sum of the individual parameter
+changes, with the joint models, *i.e.* parameters changed simultaneously.
+Comparisons are performed by substracting the percent abundance change of the
+joint model with that of the additive model. A null difference signifies either
+an absence of effect, an additive effect or a dominant effect. A negative
+difference means a greater difference from the additive model than the joint
+model, hence an antagonistic effect for the joint model, while a positive
+difference is the inverse, *i.e.* a synergistic effect for the joint model.
+Results are presented as a series of boxplot as an initial
+exploratory analysis.
 -->
+
+
+
+
+
+
+
+
+
+
+
+\newpage
 
 # Introduction
 
-Global changes, be they natural or human-induced, are resulting in increasingly
+Global changes, <!-- be they natural or human-induced -->, are resulting in increasingly
 intricate environmental stress exposure regimes [@halpern2015a; @bowler2019].
 Exposure to multiple interacting stressors can induce complex and unpredictable
 environmental effects that can propagate through entire ecological communities
@@ -186,433 +455,12 @@ effects ($\alpha$) and mortality rates ($m$) is not used in motifs where the
 parameter exists for a single species.
 
 
-<!-- ----------------------------------------------------------------------- -->
-<!-- ----------------------------------------------------------------------- -->
-
 \newpage
 
-## Tri-trophic chain
 
-### Equations
 
-\begin{eqnarray}
-  \nonumber \frac{dx}{dt} &=& x(r - \alpha x - \beta y) \\
-  \nonumber \frac{dy}{dt} &=& y(\mu \beta x - \delta z - m_y) \\
-  \nonumber \frac{dz}{dt} &=& z(\omega \delta y - m_z) \\
-\end{eqnarray}
 
-### Equilibria
 
-We identify the equilibria of the equations system using sage and focus only on
-the equilibria including all species. See `modules.sage` file for code for
-tri-trophic food chain equilibrium.
-
-\begin{eqnarray}
-  \nonumber x &=& \frac{\delta r \omega - \beta \mathit{m_z}}{\alpha \delta \omega} \\
-  \nonumber y &=& \frac{\mathit{m_z}}{\delta \omega} \\
-  \nonumber z &=& -\frac{\beta^{2} \mathit{m_z} \mu - {\left(\beta \delta r \mu - \alpha \delta \mathit{m_y}\right)} \omega}{\alpha \delta^{2} \omega} \\
-\end{eqnarray}
-
-
-### Jacobian
-
-\[
-\makebox[\displaywidth][l]{$
-  \renewcommand*{\arraystretch}{2}
-  J =
-  \begin{bmatrix}
-    -2 \alpha x - \beta y + r & -\beta x & 0 \\
-    \beta \mu y & \beta \mu x - \delta z - \mathit{m_y} & -\delta y \\
-    0 & \delta \omega z & \delta \omega y - \mathit{m_z}
-  \end{bmatrix}
-$}
-\]
-
-
-### Inequalities
-
-
-
-
-
-
-
-### Parameter space
-
-#### Default parameters
-
-For now, I manually chose default parameters to initiate the simulations. This
-should be done more rigorously for an actual scientific paper, but for
-exploratory purposes it will serve.
-
-\begin{eqnarray}
-  \nonumber r &=& 1 \\
-  \nonumber \alpha &=& 0.001 \\
-  \nonumber \beta &=& 0.01 \\
-  \nonumber \mu &=& 0.1 \\
-  \nonumber \delta &=& 0.01 \\
-  \nonumber \omega &=& 0.5 \\
-  \nonumber m_y &=& 0.01 \\
-  \nonumber m_z &=& 0.1 \\
-\end{eqnarray}
-
-#### Analytical simulations
-
-We now explore the parameter space by varying parameters on all possible
-combinations to simulate disturbances. For the simulations, we assume that
-disturbances are always negative, *e.g.* causing a decrease in predator attack
-rate or an increase in mortality. Parameter variations are randomly drawn
-from a uniform distribution within a 40% parameter range from the default
-value.
-
-***I believe that this should eventually be modified to explore the parameter
-space so that we explore the full range of parameters that ensures species
-co-existance and evaluate which parameters are more robust to modifications.
-For now, though, I set this to 40% because it allows me to
-better explore the disturbances that are dominant. For example, certain
-parameters have no effect on the abundance of certain species.***
-
-Analytical abundance results for each species are then compared to those
-using the default parameters to evaluate the percent change in abundance.
-To compare whether disturbances are additive or non-additive, we then
-compare the additive model, *i.e.* the sum of the individual parameter
-changes, with the joint models, *i.e.* parameters changed simultaneously.
-Comparisons are performed by substracting the percent abundance change of the
-joint model with that of the additive model. A null difference signifies either
-an absence of effect, an additive effect or a dominant effect. A negative
-difference means a greater difference from the additive model than the joint
-model, hence an antagonistic effect for the joint model, while a positive
-difference is the inverse, *i.e.* a synergistic effect for the joint model.
-Results are presented as a series of boxplot as an initial
-exploratory analysis.
-
-![Analytical simulation of disturbances to combinations of parameters for the tri-trophic food chain. \label{ttBox}](./figures/tritrophicDisturbance.png)
-
-
-<!-- ----------------------------------------------------------------------- -->
-<!-- ----------------------------------------------------------------------- -->
-
-\newpage
-
-## Omnivory
-
-### Equations
-
-\begin{eqnarray}
-  \nonumber \frac{dx}{dt} &=& x(r - \alpha x - \beta y - \gamma z) \\
-  \nonumber \frac{dy}{dt} &=& y(\mu \beta x - \delta z - m_y) \\
-  \nonumber \frac{dz}{dt} &=& z(\nu \gamma x + \omega \delta y - m_z) \\
-\end{eqnarray}
-
-### Equilibria
-
-\begin{eqnarray}
-  \nonumber x &=& \frac{\beta \mathit{m_z} - {\left(\gamma \mathit{m_y} + \delta r\right)} \omega}{\beta \gamma \nu - {\left(\beta \gamma \mu + \alpha \delta\right)} \omega} \\
-  \nonumber y &=& -\frac{\beta \gamma \mathit{m_z} \mu + \alpha \delta \mathit{m_z} - {\left(\gamma^{2} \mathit{m_y} + \delta \gamma r\right)} \nu}{\beta \delta \gamma \nu - {\left(\beta \delta \gamma \mu + \alpha \delta^{2}\right)} \omega} \\
-  \nonumber z &=& \frac{\beta^{2} \mathit{m_z} \mu - \beta \gamma \mathit{m_y} \nu - {\left(\beta \delta r \mu - \alpha \delta \mathit{m_y}\right)} \omega}{\beta \delta \gamma \nu - {\left(\beta \delta \gamma \mu + \alpha \delta^{2}\right)} \omega} \\
-\end{eqnarray}
-
-
-### Jacobian
-
-\[
-\makebox[\displaywidth][l]{$
-  \renewcommand*{\arraystretch}{2}
-  J =
-  \begin{bmatrix}
-    -2 \, \alpha x - \beta y - \gamma z + r & -\beta x & -\gamma x \\
-    \beta \mu y & \beta \mu x - \delta z - \mathit{m_y} & -\delta y \\
-    \gamma \nu z & \delta \omega z & \gamma \nu x + \delta \omega y - \mathit{m_z}
-  \end{bmatrix}
-$}
-\]
-
-
-### Parameter space
-
-#### Default parameters
-
-\begin{eqnarray}
-  \nonumber r &=& 1 \\
-  \nonumber \alpha &=& 0.001 \\
-  \nonumber \beta &=& 0.0008 \\
-  \nonumber \mu &=& 0.375 \\
-  \nonumber \gamma &=& .0008 \\
-  \nonumber \nu &=& 0.125 \\
-  \nonumber \delta &=& 0.0002 \\
-  \nonumber \omega &=& 0.5 \\
-  \nonumber m_y &=& 0.1 \\
-  \nonumber m_z &=& 0.1 \\
-\end{eqnarray}
-
-#### Analytical simulations
-
-![Analytical simulation of disturbances to combinations of parameters for the tri-trophic food chain. \label{omBox}](./figures/omnivoryDisturbance.png)
-
-
-<!-- ----------------------------------------------------------------------- -->
-<!-- ----------------------------------------------------------------------- -->
-
-\newpage
-
-## Exploitative competition
-
-### Equations
-
-\begin{eqnarray}
-  \nonumber \frac{dx}{dt} &=& x(r - \alpha x - \beta y - \gamma z) \\
-  \nonumber \frac{dy}{dt} &=& y(\mu \beta x - m_y) \\
-  \nonumber \frac{dz}{dt} &=& z(\nu \gamma x - m_z) \\
-\end{eqnarray}
-
-### Equilibria
-
-NO EQUILIBRIUM EXISTS FOR ALL 3 SPECIES
-
-I tried with a density-dependent effect and competition parameters for the predators.
-This will have to be verified. I have not formatted the math for this yet.
-
-## Exploitative competition - competitive parameters and density-dependence
-
-### Equations
-
-\begin{eqnarray}
-  \nonumber \frac{dx}{dt} &=& -{\left(\mathit{\alpha_{xx}} x + b y + g z - r\right)} x \\
-  \nonumber \frac{dy}{dt} &=& {\left(b u x - \mathit{ajj} \mathit{ajk} z - \mathit{ajj} y - \mathit{my}\right)} y \\
-  \nonumber \frac{dz}{dt} &=& {\left(g v x - \mathit{akj} \mathit{akk} y - \mathit{akk} z - \mathit{mz}\right)} z \\
-\end{eqnarray}
-
-
-### Equilibria
-
-\begin{eqnarray}
-  \nonumber x &=& \frac{{\left(\mathit{\alpha_{yy}} \mathit{\alpha_{yz}} \mathit{\alpha_{zy}} - \mathit{\alpha_{yy}}\right)} \mathit{\alpha_{zz}} r + {\left(\mathit{\alpha_{zy}} \mathit{\alpha_{zz}} \gamma - \mathit{\alpha_{zz}} \beta\right)} \mathit{m_y} + {\left(\mathit{\alpha_{yy}} \mathit{\alpha_{yz}} \beta - \mathit{\alpha_{yy}} \gamma\right)} \mathit{m_z}}{{\left(\mathit{\alpha_{xx}} \mathit{\alpha_{yy}} \mathit{\alpha_{yz}} \mathit{\alpha_{zy}} - \mathit{\alpha_{xx}} \mathit{\alpha_{yy}}\right)} \mathit{\alpha_{zz}} + {\left(\mathit{\alpha_{zy}} \mathit{\alpha_{zz}} \beta \gamma - \mathit{\alpha_{zz}} \beta^{2}\right)} \mu + {\left(\mathit{\alpha_{yy}} \mathit{\alpha_{yz}} \beta \gamma - \mathit{\alpha_{yy}} \gamma^{2}\right)} \nu} \\
-  \nonumber y &=& -\frac{\mathit{\alpha_{xx}} \mathit{\alpha_{yy}} \mathit{\alpha_{yz}} \mathit{m_z} - \mathit{\alpha_{xx}} \mathit{\alpha_{zz}} \mathit{m_y} + {\left(\beta \gamma \mathit{m_z} + \mathit{\alpha_{zz}} \beta r\right)} \mu - {\left(\mathit{\alpha_{yy}} \mathit{\alpha_{yz}} \gamma r + \gamma^{2} \mathit{m_y}\right)} \nu}{{\left(\mathit{\alpha_{xx}} \mathit{\alpha_{yy}} \mathit{\alpha_{yz}} \mathit{\alpha_{zy}} - \mathit{\alpha_{xx}} \mathit{\alpha_{yy}}\right)} \mathit{\alpha_{zz}} + {\left(\mathit{\alpha_{zy}} \mathit{\alpha_{zz}} \beta \gamma - \mathit{\alpha_{zz}} \beta^{2}\right)} \mu + {\left(\mathit{\alpha_{yy}} \mathit{\alpha_{yz}} \beta \gamma - \mathit{\alpha_{yy}} \gamma^{2}\right)} \nu} \\
-  \nonumber z &=& -\frac{\mathit{\alpha_{xx}} \mathit{\alpha_{zy}} \mathit{\alpha_{zz}} \mathit{m_y} - \mathit{\alpha_{xx}}\mathit{\alpha_{yy}} \mathit{m_z} - {\left(\mathit{\alpha_{zy}} \mathit{\alpha_{zz}} \beta r + \beta^{2} \mathit{m_z}\right)} \mu + {\left(\beta \gamma \mathit{m_y} + \mathit{\alpha_{yy}} \gamma r\right)} \nu}{{\left(\mathit{\alpha_{xx}} \mathit{\alpha_{yy}} \mathit{\alpha_{yz}} \mathit{\alpha_{zy}} - \mathit{\alpha_{xx}} \mathit{\alpha_{yy}}\right)} \mathit{\alpha_{zz}} + {\left(\mathit{\alpha_{zy}} \mathit{\alpha_{zz}} \beta \gamma - \mathit{\alpha_{zz}} \beta^{2}\right)} \mu + {\left(\mathit{\alpha_{yy}} \mathit{\alpha_{yz}} \beta \gamma - \mathit{\alpha_{yy}} \gamma^{2}\right)} \nu}
-\end{eqnarray}
-
-
-### Jacobian
-
-\[
-\makebox[\displaywidth][l]{$
-  \renewcommand*{\arraystretch}{2}
-  J =
-  \begin{bmatrix}
-    -2 \, \mathit{\alpha_{xx}} x - \beta y - \gamma z + r & -\beta x & -\gamma x \\
-    \beta \mu y & \beta \mu x - \mathit{\alpha_{yy}} \mathit{\alpha_{yz}} z - 2 \, \mathit{\alpha_{yy}} y - \mathit{m_y} & -\mathit{\alpha_{yy}} \mathit{\alpha_{yz}} y \\
-    \gamma \nu z & -\mathit{\alpha_{zy}} \mathit{\alpha_{zz}} z & \gamma \nu x - \mathit{\alpha_{zy}} \mathit{\alpha_{zz}} y - 2 \, \mathit{\alpha_{zz}} z - \mathit{m_z}
-  \end{bmatrix}
-$}
-\]
-
-### Parameter space
-
-#### Default parameters
-
-\begin{eqnarray}
-  \nonumber r &=& 1, \\
-  \nonumber aii &=& 0.001, \\
-  \nonumber b &=& 0.01, \\
-  \nonumber u &=& 0.1, \\
-  \nonumber g &=& 0.01, \\
-  \nonumber v &=& 0.1, \\
-  \nonumber my &=& 0.1, \\
-  \nonumber mz &=& 0.1, \\
-  \nonumber ajj &=& 0.01, \\
-  \nonumber ajk &=& 0.01, \\
-  \nonumber akk &=& 0.01, \\
-  \nonumber akj &=& 0.01 \\
-\end{eqnarray}
-
-#### Analytical simulations
-
-![Analytical simulation of disturbances to combinations of parameters for the tri-trophic food chain. \label{exBox}](./figures/exploitativeDisturbance.png)
-
-
-<!-- ----------------------------------------------------------------------- -->
-<!-- ----------------------------------------------------------------------- -->
-
-\newpage
-
-## Apparent competition
-
-### Equations
-
-\begin{eqnarray}
-  \nonumber \frac{dx}{dt} &=& x(r_x - \alpha_x x - \gamma z) \\
-  \nonumber \frac{dy}{dt} &=& y(r_y - \alpha_y y - \delta z) \\
-  \nonumber \frac{dz}{dt} &=& z(\nu \gamma x + \omega \delta y - m_z) \\
-\end{eqnarray}
-
-### Equilibria
-
-\begin{eqnarray}
-  \nonumber x = \frac{\mathit{\alpha_y} \gamma \mathit{mz} + {\left(\delta^{2} \mathit{r_x} - \delta \gamma \mathit{r_y}\right)} \omega}{\mathit{\alpha_y} \gamma^{2} \nu + \mathit{\alpha_x} \delta^{2} \omega} \\
-  \nonumber y = \frac{\mathit{\alpha_x} \delta \mathit{mz} - {\left(\delta \gamma \mathit{r_x} - \gamma^{2} \mathit{r_y}\right)} \nu}{\mathit{\alpha_y} \gamma^{2} \nu + \mathit{\alpha_x} \delta^{2} \omega} \\
-  \nonumber z = \frac{\mathit{\alpha_y} \gamma \mathit{r_x} \nu + \mathit{\alpha_x} \delta \mathit{r_y} \omega - \mathit{\alpha_x} \mathit{\alpha_y} \mathit{mz}}{\mathit{\alpha_y} \gamma^{2} \nu + \mathit{\alpha_x} \delta^{2} \omega} \\
-\end{eqnarray}
-
-
-### Jacobian
-
-\[
-\makebox[\displaywidth][l]{$
-  \renewcommand*{\arraystretch}{2}
-  J =
-  \begin{bmatrix}
-    -2 \, \mathit{a_x} x - \gamma z + \mathit{r_x} & 0 & -\gamma x \\
-    0 & -2 \, \mathit{a_y} y - \delta z + \mathit{r_y} & -\delta y \\
-    \gamma \nu z & \delta \omega z & \gamma \nu x + \delta \omega y - \mathit{m_z}
-  \end{bmatrix}
-$}
-\]
-
-
-### Parameter space
-
-#### Default parameters
-
-\begin{eqnarray}
-  \nonumber r_x &=& 1 \\
-  \nonumber r_y &=& 1 \\
-  \nonumber \alpha_x &=& 0.001 \\
-  \nonumber \alpha_y &=& 0.001 \\
-  \nonumber \gamma &=& 0.01 \\
-  \nonumber \nu &=& 0.1 \\
-  \nonumber \delta &=& 0.01 \\
-  \nonumber \omega &=& 0.1 \\
-  \nonumber m_z &=& 0.1 \\
-\end{eqnarray}
-
-
-#### Analytical simulations
-
-![Analytical simulation of disturbances to combinations of parameters for the . \label{apBox}](./figures/apparentDisturbance.png)
-
-<!-- ----------------------------------------------------------------------- -->
-<!-- ----------------------------------------------------------------------- -->
-
-\newpage
-
-## Partially disconnected
-
-### Equations
-
-\begin{eqnarray}
-  \nonumber \frac{dx}{dt} &=& x(r_x - \alpha_x x - \beta y) \\
-  \nonumber \frac{dy}{dt} &=& y(\mu \beta x - m_y) \\
-  \nonumber \frac{dz}{dt} &=& z(r_z - \alpha_z z) \\
-\end{eqnarray}
-
-### Equilibria
-
-\begin{eqnarray}
-  \nonumber x &=& \frac{\mathit{m_y}}{\beta \mu}\\
-  \nonumber y &=& \frac{\beta \mathit{r_x} \mu - \mathit{\alpha_x} \mathit{m_y}}{\beta^{2} \mu}\\
-  \nonumber z &=& \frac{\mathit{r_z}}{\mathit{a_z}}
-\end{eqnarray}
-
-
-### Jacobian
-
-\[
-\makebox[\displaywidth][l]{$
-  \renewcommand*{\arraystretch}{2}
-  J =
-  \begin{bmatrix}
-    -2 \, \mathit{a_x} x - \beta y + \mathit{r_x} & -\beta x & 0 \\
-    \beta \mu y & \beta \mu x - \mathit{m_y} & 0 \\
-    0 & 0 & -2 \, \mathit{a_z} z + \mathit{r_z}
-  \end{bmatrix}
-$}
-\]
-
-
-
-### Parameter space
-
-#### Default parameters
-
-\begin{eqnarray}
-  \nonumber r_x &=& 1 \\
-  \nonumber a_x &=& 0.001 \\
-  \nonumber r_z &=& 1 \\
-  \nonumber a_z &=& 0.001 \\
-  \nonumber \beta &=& 0.01 \\
-  \nonumber \mu &=& 0.1 \\
-  \nonumber m_y &=& 0.1 \\
-\end{eqnarray}
-
-
-#### Analytical simulations
-
-![Analytical simulation of disturbances to combinations of parameters for the . \label{paBox}](./figures/partiallyDisturbance.png)
-
-
-<!-- ----------------------------------------------------------------------- -->
-<!-- ----------------------------------------------------------------------- -->
-
-\newpage
-
-## Disconnected
-
-### Equations
-
-\begin{eqnarray}
-  \nonumber \frac{dx}{dt} &=& x(r_x - \alpha_x x) \\
-  \nonumber \frac{dy}{dt} &=& y(r_y - \alpha_y y) \\
-  \nonumber \frac{dz}{dt} &=& z(r_z - \alpha_z z) \\
-\end{eqnarray}
-
-### Equilibria
-
-\begin{eqnarray}
-  \nonumber x &=& \frac{\mathit{r_x}}{\mathit{a_x}} \\
-  \nonumber y &=& \frac{\mathit{r_y}}{\mathit{a_y}} \\
-  \nonumber z &=& \frac{\mathit{r_z}}{\mathit{a_z}}
-\end{eqnarray}
-
-
-### Jacobian
-
-\[
-\makebox[\displaywidth][l]{$
-  \renewcommand*{\arraystretch}{2}
-  J =
-  \begin{bmatrix}
-    -2 \, \mathit{\alpha_x} x + \mathit{r_x} & 0 & 0 \\
-    0 & -2 \, \mathit{\alpha_y} y + \mathit{r_y} & 0 \\
-    0 & 0 & -2 \, \mathit{\alpha_z} z + \mathit{r_z}
-  \end{bmatrix}
-$}
-\]
-
-
-
-### Parameter space
-
-#### Default parameters
-
-\begin{eqnarray}
-  \nonumber r_x &=& 1 \\
-  \nonumber a_x &=& 0.001 \\
-  \nonumber r_y &=& 1 \\
-  \nonumber a_y &=& 0.001 \\
-  \nonumber r_z &=& 1 \\
-  \nonumber a_z &=& 0.001 \\
-\end{eqnarray}
-
-
-#### Analytical simulations
-
-![Analytical simulation of disturbances to combinations of parameters for the . \label{diBox}](./figures/disconnectedDisturbance.png)
-
-
-<!-- ----------------------------------------------------------------------- -->
-<!-- ----------------------------------------------------------------------- -->
-
-\newpage
 
 # Next points
 
@@ -651,7 +499,7 @@ $}
 \newpage
 
 # References
-
+ -->
 
 
 
@@ -662,4 +510,63 @@ in predicting impacts to natural systems [@darling2008; @cote2016], yet most
 assessments still overwhelmingly focus on single stressors [@obrien2019].
 
 
+-->
+
+
+
+
+
+<!--
+## Tri-trophic chain
+
+\begin{eqnarray}
+  \nonumber \frac{dx}{dt} &=& x(r - \alpha x - \beta y) \\
+  \nonumber \frac{dy}{dt} &=& y(\mu \beta x - \delta z - m_y) \\
+  \nonumber \frac{dz}{dt} &=& z(\omega \delta y - m_z) \\
+\end{eqnarray}
+
+
+## Omnivory
+
+\begin{eqnarray}
+  \nonumber \frac{dx}{dt} &=& x(r - \alpha x - \beta y - \gamma z) \\
+  \nonumber \frac{dy}{dt} &=& y(\mu \beta x - \delta z - m_y) \\
+  \nonumber \frac{dz}{dt} &=& z(\nu \gamma x + \omega \delta y - m_z) \\
+\end{eqnarray}
+
+
+## Exploitative competition
+
+\begin{eqnarray}
+  \nonumber \frac{dx}{dt} &=& -{\left(\mathit{\alpha_{xx}} x + b y + g z - r\right)} x \\
+  \nonumber \frac{dy}{dt} &=& {\left(b u x - \mathit{ajj} \mathit{ajk} z - \mathit{ajj} y - \mathit{my}\right)} y \\
+  \nonumber \frac{dz}{dt} &=& {\left(g v x - \mathit{akj} \mathit{akk} y - \mathit{akk} z - \mathit{mz}\right)} z \\
+\end{eqnarray}
+
+
+## Apparent competition
+
+\begin{eqnarray}
+  \nonumber \frac{dx}{dt} &=& x(r_x - \alpha_x x - \gamma z) \\
+  \nonumber \frac{dy}{dt} &=& y(r_y - \alpha_y y - \delta z) \\
+  \nonumber \frac{dz}{dt} &=& z(\nu \gamma x + \omega \delta y - m_z) \\
+\end{eqnarray}
+
+
+## Partially disconnected
+
+\begin{eqnarray}
+  \nonumber \frac{dx}{dt} &=& x(r_x - \alpha_x x - \beta y) \\
+  \nonumber \frac{dy}{dt} &=& y(\mu \beta x - m_y) \\
+  \nonumber \frac{dz}{dt} &=& z(r_z - \alpha_z z) \\
+\end{eqnarray}
+
+
+## Disconnected
+
+\begin{eqnarray}
+  \nonumber \frac{dx}{dt} &=& x(r_x - \alpha_x x) \\
+  \nonumber \frac{dy}{dt} &=& y(r_y - \alpha_y y) \\
+  \nonumber \frac{dz}{dt} &=& z(r_z - \alpha_z z) \\
+\end{eqnarray}
 -->

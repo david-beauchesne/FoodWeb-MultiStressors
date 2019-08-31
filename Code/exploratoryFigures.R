@@ -51,8 +51,20 @@ for(i in 1:nrow(dat)) {
 }
 points(x = 1:9, y = dat$Mean, col = '#233499', cex = .9, pch = 15)
 
+# Jitter
+par(mar = c(2,5,.5,.5))
+plot0(x = c(1,nrow(dat)), y = c(-1, 1))
+axis(2)
+axis(1, at = 1:9)
+mtext(text = TeX('Mean $\\delta_A$ (%) $\\pm$ 95% CI'), side = 2, line = 3, cex = .75)
+mtext(text = 'Disturbed abundance - initial abundance', side = 2, line = 4, cex = 1)
+mtext(side = 3, text = 'Number of parameters', line = -1)
+abline(h = 0, lty = 2)
+x <- int$nParam + (runif(nrow(int),-.25,.25))
+points(int$delta ~ x, cex = .005, pch = 20, col = '#23349988')
+
 # Boxplot
-boxplot(int$delta ~ int$nParam, xlab = 'Number of parameters', ylab = 'Delta abundance', cex = .5, pch = 20)
+# boxplot(int$delta ~ int$nParam, xlab = 'Number of parameters', ylab = 'Delta abundance', cex = .5, pch = 20)
 
 
 # Additivity data
@@ -88,7 +100,18 @@ for(i in 1:nrow(dat)) {
 points(x = 2:9, y = dat$Mean[2:9], col = '#233499', cex = .9, pch = 15)
 
 # Boxplot
-boxplot(intAdd$Int ~ intAdd$nParam, xlab = 'Number of parameters', ylab = 'Delta abundance', cex = .5, pch = 20)
+# Jitter
+par(mar = c(2,5,.5,.5))
+plot0(x = c(1,nrow(dat)), y = c(-.05, .05))
+axis(2)
+axis(1, at = 1:9)
+mtext(text = TeX('Mean $\\delta_A$ (%) $\\pm$ 95% CI'), side = 2, line = 3, cex = .75)
+mtext(text = 'Disturbed abundance - initial abundance', side = 2, line = 4, cex = 1)
+mtext(side = 3, text = 'Number of parameters', line = -1)
+abline(h = 0, lty = 2)
+x <- intAdd$nParam + (runif(nrow(intAdd),-.25,.25))
+points(intAdd$Int ~ x, cex = .01, pch = 20, col = '#23349988')
+
 dev.off()
 
 # ------------------------------------------------------------------------------
