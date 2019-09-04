@@ -25,71 +25,209 @@ link-citations: yes
 relativeurls: true
 ---
 
+<!-- Kevin Cazelles -- . -->
+
 
 <!--
 rmarkdown::render('./FoodWebs-MultipleStressors.md', 'pdf_document')
 -->
 
+^1^Institut des sciences de la mer, Université du Québec à Rimouski, Rimouski, QC, Canada \newline
+^2^Québec Océan, Département de biologie, Université Laval, Québec, QC, Canada \newline
+^3^Department of Integrative Biology, University Of Guelph, Guelph, Ontario, Canada N1G 2W1 \newline
+^4^Département de biologie, Université de Sherbrooke, Sherbrooke, QC, Canada \newline
+
+**Correspondence**: \newline
+David Beauchesne \newline
+david.beauchesne@uqar.ca \newline
+
+
+\newpage
+
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 # Introduction
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 
-Global changes are resulting in increasingly intricate environmental stress
-exposure regimes [@halpern2015a; @bowler2019]. Exposure to multiple interacting
-stressors can induce complex and unpredictable environmental effects that can
-propagate through entire ecological communities by way of biotic interactions
-[@bascompte2009a; @montoya2009].
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+## Context
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 
-Pathways of effect
+- **Global changes, multiple stressors and food webs**
+  - Global changes are resulting in increasingly intricate environmental stress
+    exposure regimes [@halpern2015a; @cote2016; @bowler2019]. These can in turn
+    induce complex and unpredictable environmental effects that propagate through
+    entire ecological communities by way of species interactions
+    [@bascompte2009a; @montoya2009].
 
-Literature on the effects of disturbances on the structure of empirical and simulated networks
+- **Uncertainty associated with mutliple stressors**
+  - Largest uncertainty in predicting environmental effects is the potential for
+    complex driver interactions [@cote2016; @darling2008].
+  - Stressors can combine non-additively and result in effects that are greater
+    (*i.e.* synergistic) or lower (*i.e.* antagonistic) than the sum of
+    individual effects [@cote2016; @crain2008; @darling2008]
+  - Net effects of multiple stressors can be additive (*i.e.* joint effect
+    equal to the sum of individual effects), synergistic (joint effect superior
+    to the sum of individual effects), antagonistic (joint effect inferior to
+    the sum of individual effects) or dominant (joint effect equal to an
+    individual effect) [e.g. @crain2008; @darling2008; @cote2016].
+  - This is of particular significance for management, because we have mostly been
+    operating under the assumption that stressors are mostly additive and thus
+    can be managed independently.
+  - Maybe cite [@hodgson2019] (cite it for certain in the article).
+  - most research on driver effects in marine environments remains overwhelmingly
+    focused on single driver assessments [@obrien2019].
+
+- **Limits of *in situ* and experimental approaches to study multiple disturbances**
+  - The number of stressors and of their potential interactions limits the
+    insights we can glean into the effects of multiple disturbances *in situ*
+    and in experimental settings such as mesocosm [@cote2016].
+  - In food webs, this is compounded by the myriad of possible interactions
+  - between species
+
+- **Limited insights from null model testing**
+  - The knowledge we do have has mostly been gleaned from null model testing
+    providing little insights into ecological mecanisms underlying non-additive
+    stressor effects [@delaender2018].
+
+- **Shift towards ecological modelling to better understand mecanisms**
+  - [@delaender2018; @schafer2018; @thompson2018]
+
+- **Some insights on the effects of disturbances on ecological communities from theoretical ecology**
+  - Importance of interactions and web complexity
+  - Indirect effects [@wootton1993; @yodzis2000; @wootton2002; @montoya2009; ogorman2009]; see intro séminaire 1
+  - Different types of interactions will lead to different overall effects [@refs].
+    - Different sensitivity for species involved in different types of interactions (segway to motifs)
+  - How direct and indirect effects combine to affect food web sensitivity to disturbances
+
+- **Theoretical has thus far mostly been concerned mostly with single disturbances and
+  resistance of communities to extinctions**
+  - Little insights into how different pathways of effect influences food webs, let
+    alone pathways of multiple effects.
+  - Little on the role of species and their interactions in propagating or
+    buffering against disturbances
+
+
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+## Objectives
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+1. Objective
+2. Pathways of effect
+3. Archetypes
+4. Motifs
+5. Terminology
 
 
 
-Recent attempts have focused on
+- **State the objective**
+  - Here, we investigate the role of species in mediating the effects of multiple
+    disturbances on food webs. We also seek to answer questions of particular
+    significance for management: 1) should species interactions be considered in
+    impact assessments, and 2) should the effects of stressors be evaluated
+    seperately or in combination?
+  - OR
+  - Here, we focus on evaluating the structural role of species and their
+    trophic interactions in mediating food web sensitivity to multiple stressors.
+    We also seek to answer questions of particular significance for management:
+    1) should species interactions be considered in impact assessments, and
+    2) should the effects of stressors be evaluated seperately or in combination?
 
-In this paper, we investigated
+- **How we do this**
+  - To do so, we focus on how trophic position and interaction types affect
+    species sensitivity to disturbances and the likelihood of species acting as
+    buffer against or amplifiers of the effects of multiple disturbances.
+
+- **Transition to motifs**
+  - ...?
+
+- **Motif description and use**
+  - A food web can be decomposed into a set of smaller $n$-species subgraphs
+    called motifs [@milo2004; @stouffer2007]. For example, there are 13 distinct
+    3-species motifs composed of 30 unique positions [@stouffer2007; @stouffer2012].
+    Motifs are the backbone of food webs and their study has unearthed
+    valuable insights on community dynamics such as [...].
+  - Their type and frequency has been linked to food web stability and
+    persistence [@ref]
+  - Like many disturbance studies in theoretical ecology, however, these have
+    focused less on the dynamics of population abundances and more on the
+    resistance of food webs to extinctions.
+  - Motifs have been used to investigate the persistence of food web to species
+    extinctions [@stouffer2010] and the benefit associated to each species in
+    food web persistence [@stouffer2012].
+  - *The ecological role of a species in a network is a direct rest if its
+    interactions with other species (Luczkovich 2003; Olesen 2007; Allesina 2009)
+    (in Stouffer 2012)*
+  - *The number and types of motifs that make up a food web are known to
+    directly affect the web's stability and persistence (Neutel 2002; Kondoh
+    2008; Allesina 2008; García-Domingo 2008; Stouffer 2010; in Stouffer 2012)*
+
+- **Our focus**
+  - Here we focus on the most abundant types of interactions: omnivory,
+    tri-trophic food chain, exploitative competition and apparent competition
+    [@stouffer2010; @camacho2007]
+  - Two additional motifs, *i.e.* partially connected and disconnected were also
+    considered in order to evaluate whether interactions in food webs are truly
+    more likely to be characterized by non-linear effects.
+  - To study the effects of multiple stressors in a trophic context, we rather
+    focus on the resulting disturbances following different pathways of effect
+    rather than on the disturbances themselves. This means that we will not
+    investigate the effects of multiple stressors applied to a single species
+    in the food web. This precludes us from investigating the sensitivity of
+    species to each individual stressor. Rather, we investigate the effects of
+    disturbances to multiple species simultaneously. But see @thompson2018a and
+    @thompson2018 for a description of a modelling approaching incorporating
+    multiple sources of stress in a food web model.
+  - We are interested in pathways that affect the trophic dynamic of food webs,
+    *i.e.* those that target population growth (*i.e.* birth and death rates) and the
+    rates at which species interact (*i.e.* attack and conversion rates).
 
 
+- **Pathways of effect**
+  - Studying the effects of multiple disturbances means that we will be focusing
+    on disturbances affecting multiple species, referred to as pathways of
+    multiple effects ($D_{i,j}$, $D_{i,k}$, $D_{j,k}$, and $D_{i,j,k}$).
+  - In a food web context, we will define linear and non-linear effect as a
+    function of whether these pathways of multiple effects result in
+    additive ($D_{i,j} = D_i + D_j$), synergistic ($D_{i,j} >> D_i + D_j$),
+    antagonistic ($D_{i,j} << D_i + D_j$) or dominant ($D_{i,j} = D_i \veebar D_j$)
+    effects.
+
+- **Terminology for types of pathways and position profile**
+  - Species can occupy different roles in these pathways of multiple effects.
+    Investigating species profile [e.g.* @stouffer2012] could thus inform us on
+    the role played by individual species in buffering against or amplifying
+    the effects of multiple disturbances.
+  - We define 4 key roles in species propagating or buffering against multiple
+    disturbances:
+
+| Role    | Description | Mathematically | Example                   |
+| :------- | :---------  | :----------      |   :---------------------: |
+| Weak entry point  | Species directly or indirectly more affected than expected | Synergistic effect on focal species | $S_i$ in $\Delta i | D_{i,j} >> \Delta i | D_i + \Delta i | D_j$ |
+| Biotic multiplier | Species propagating disturbances | Peripheral species involved in synergistic effect | $S_j$ in $\Delta i | D_{i,j} >> \Delta i | D_i + \Delta i | D_j$ |
+| Biotic sink       | Species directly or indirectly affected less than expected | Antagonistic effect on focal species | $S_i$ in $\Delta i | D_{i,j} << \Delta i | D_i + \Delta i | D_j$ |
+| Biotic buffer     | Species blocking the propagation of disturbances | Peripheral species involved in antagonistic effect | $S_j$ in $\Delta i | D_{i,j} << \Delta i | D_i + \Delta i | D_j$ |
+| Biotic dominant   | Species whose individual effect dictates the response of other species | Focal or peripheral species driving dominance effect | $S_j$ in $\Delta i | D_{i,j} = \Delta i | D_j$ |
 
 
-There is a rich literature documenting the effects of disturbances on communities
-and how network structure contributes to community resistance [@refs].
-It however remains unclear how network structure influences community resistance
-to multiple disturbances.
-Recent efforts have focused on [...]. [@thompson2018; @galic2018; @schafer2018] <!-- document -->
-Here, we seek to identify what characteristics of network structure
-and the role of species in buffering against or multiplying the effects of
-multiple stressors.
+![Conceptualize the effects of multiple disturbances on food webs \label{concept}](./Figures/sketch.png)
 
 
+\newpage
 
-
-
-
-# Objectives
-
-Our goal was to investigate the impact of disturbances targetting multiple
-pathways of effect (*e.g.* mortality and physiology) on the
-
-The overarching goal is to conceptualize how the structure of food webs affects
-the direct and indirect propagation of multiple sources of stress non-linearly
-and affects the likelihood of observing antagonistic or synergistic effects of
-multiple stressors.
-The objectives are to 1) identify network characteristics
-that make them more or less sensitive or resistant to multiple stressors and 2)
-what is the role of species and their interactions contributing to the
-propensity of networks in buffering against or amplifying the effects of multiple
-stressors.
-
-
-
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 # Methodology
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 
 ## Models
 
 The dynamics of the four most abundant 3-species motifs (*i.e.* tri-trophic
 food chain, omnivory, exploitative and apparent competition) in empirical food
-webs [@stouffer2010] were modeled using Lotka-Voltera equation systems solved at
-equilibrium. We also included two additional motifs [...]
+webs [@stouffer2010] were modeled using Lotka-Voltera equation systems (Table S1).
+Two additional motifs were included to serve as controls to test the importance of
+considering species interactions when evaluating environmental effects, *i.e.*
+a partially connected motifs with a disconnected resource and a predator and a prey
+interaction, and a fully disconnected motif with three independent species
+modelled as resources.
 
 Resources were modeled using logistic growth equations of the form
 $\frac{dX_i}{dt} = X_i(r_i - \alpha_{ii} X_i - \sum \alpha_{ij} X_j)$,
@@ -105,35 +243,54 @@ transformed into consumer biomass, *i.e.* the conversion rate. $e$ is a scaling
 parameter of the attack rate which cannot exceed 1, since 1 unit of resource
 biomass cannot be transformed into more than 1 unit of consumer biomass.
 
+Models were solved at equilibrium since we wished to study the dynamics of the
+motifs in the context of persistent food webs, which is closer to reality.
 As no equilibrium exists for the exploitative competition motif with
 Lotka-Voltera models of these forms, competitive parameters of the form
 $\alpha_{jj} \alpha_{jk} X_j X_k - \alpha_{jj} X_j^2$ were included in the
-consumer models to constrain their growth and obtain solutions at equilibrium.
+consumer models to constrain their growth and obtain equilibrium solutions.
 Sage [@ref] was used to solve all equation systems at equilibrium. All other
 analyses were performed using R [@ref]. All code and data used to perform the
 simulations and analyses are available at [...].
 
-Initial parameter values were set by using a simulated annealing algorithm
-optimizing for consumer and predator abundance.
-
-Model parameter values for intrinsic growth and
-resource density-dependence parameters were fixed to 1 and 0.001, respectively,
-to bound all solutions. Competitive parameters for the exploitative competition motif
-were also fixed at 0.001 since those parameters were not to be investigated in
-our analyses. Conversion rates were fixed to 0.5. Finally, a total of 100 sets
-of mortality and attack rates were evaluated using a simulated annealing
-algorithm optimizing for consumer abundance.  
-
-## Initial parameter values
-
-
+Initial model parameter values for intrinsic growth ($r$) and resource
+density-dependence ($\alpha_{ii}$) parameters were fixed to 1 and 0.001,
+respectively, to bound all solutions. Competitive parameters for the
+exploitative competition motif were also fixed at 0.001 since those parameters
+were not to be investigated in our analyses. Conversion rates ($e$) were fixed
+to 0.5. Finally, a total of 100 sets of mortality ($m$) and attack rates
+($\alpha_{ij}$) were evaluated using a simulated annealing
+algorithm optimizing for consumer abundance.
 
 ## Disturbances
 
+Parameters selected to simulate disturbances were those related to
+population growth ($r$ and $m$) and interaction rates ($e$ and $\alpha_{ij}$).
+Disturbances were simulated by applying a 1% variation on all combinations of
+selected model parameters to simulate all possible unique pathways of
+univariate and multivariate effects. Parameter variation were only applied as a
+simulation of stress, hence mortality rates were increased, while all other
+parameters were decreased by 1%.
+
+Parameter combinations resulted in between 7 (disconnected) and 511 (omnivory
+possible pathways of effect, for a total of 930 unique pathways of effects
+(*to check, I may be multiplying the number of unique pathways for
+exploitative and apparent competition*).
+
+The sensitivity to disturbances was measured as percent change between the
+analytical abundance after parameter variation and the initial abundance,
+for each species and each pathway of effect. The amplication potential of
+pathways of multiple effects was measured as percent difference between the
+analytical abundance of the multivariate disturbance model and the sum of the
+univariate disturbance models. A value of 0 equals a null or additive effect,
+a value below 0 is a dominant or antagonistic effect, and a value over 0 is a
+synergistic effect.
 
 \newpage
 
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 # Results
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 
 ## Univariate disturbances
 
@@ -143,7 +300,43 @@ algorithm optimizing for consumer abundance.
 
 ![Disturbances \label{disturbances}](./Figures/disturbances.png)
 
+\newpage
+
 ![Positions \label{positions}](./Figures/positions.png)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -152,7 +345,9 @@ algorithm optimizing for consumer abundance.
 
 \newpage
 
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 # Supplementary Material
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 
 ## Models
 
@@ -161,7 +356,7 @@ algorithm optimizing for consumer abundance.
 \renewcommand{\arraystretch}{1.25}
 \begin{tabular}{p{12.67ex} | l | l}
 \hline
-\textbf{Motifs} & \textbf{Equation systems} & \textbf{Parameters} \\[0.5ex]
+\textbf{Motifs} & \textbf{Equation systems} & \textbf{Initial parameters values} \\[0.5ex]
 \hline\hline
 % ------------------------------------------------
 Tri-trophic food chain &
@@ -259,210 +454,9 @@ $\begin{array} {lcl}
 
 
 
-
-<!--
-
-#### Analytical simulations
-
-We now explore the parameter space by varying parameters on all possible
-combinations to simulate disturbances. For the simulations, we assume that
-disturbances are always negative, *e.g.* causing a decrease in predator attack
-rate or an increase in mortality. Parameter variations are randomly drawn
-from a uniform distribution within a 40% parameter range from the default
-value.
-
-***I believe that this should eventually be modified to explore the parameter
-space so that we explore the full range of parameters that ensures species
-co-existance and evaluate which parameters are more robust to modifications.
-For now, though, I set this to 40% because it allows me to
-better explore the disturbances that are dominant. For example, certain
-parameters have no effect on the abundance of certain species.***
-
-Analytical abundance results for each species are then compared to those
-using the default parameters to evaluate the percent change in abundance.
-To compare whether disturbances are additive or non-additive, we then
-compare the additive model, *i.e.* the sum of the individual parameter
-changes, with the joint models, *i.e.* parameters changed simultaneously.
-Comparisons are performed by substracting the percent abundance change of the
-joint model with that of the additive model. A null difference signifies either
-an absence of effect, an additive effect or a dominant effect. A negative
-difference means a greater difference from the additive model than the joint
-model, hence an antagonistic effect for the joint model, while a positive
-difference is the inverse, *i.e.* a synergistic effect for the joint model.
-Results are presented as a series of boxplot as an initial
-exploratory analysis.
--->
-
-
-
-
-
-
-
-
-
-
-
-\newpage
-
-# Introduction
-
-Global changes, <!-- be they natural or human-induced -->, are resulting in increasingly
-intricate environmental stress exposure regimes [@halpern2015a; @bowler2019].
-Exposure to multiple interacting stressors can induce complex and unpredictable
-environmental effects that can propagate through entire ecological communities
-by way of interactions linking species together [@refs].
-
-<!-- This may be irrelevant in the introduction, depending on where we end up submitting -->
-Net effects of multiple stressors can be
-additive (*i.e.* joint effect equal to the sum of individual effects),
-synergistic (joint effect superior to the sum of individual effects),
-antagonistic (joint effect inferior to the sum of individual effects) or
-dominant (joint effect equal to an individual effect)
-[e.g. @crain2008; @darling2008; @cote2016].
-
-There is a rich literature documenting the effects of disturbances on communities
-and how network structure contributes to community resistance [@refs].
-It however remains unclear how network structure influences community resistance
-to multiple disturbances.
-Recent efforts have focused on [...]. [@thompson2018; @galic2018; @schafer2018] <!-- document -->
-Here, we seek to identify what characteristics of network structure
-and the role of species in buffering against or multiplying the effects of
-multiple stressors.
-
-<!-- Maybe in the introduction talk about the modelling approaches that have been creeping up in the literature recently
-  - thompson2018
-  - galic2018
-  - delaender2018
-
-  Check these authors recent work
- -->
-
-# Objectives
-
-The overarching goal is to conceptualize how the structure of food webs affects
-the direct and indirect propagation of multiple sources of stress non-linearly
-and affects the likelihood of observing antagonistic or synergistic effects of
-multiple stressors.
-The objectives are to 1) identify network characteristics
-that make them more or less sensitive or resistant to multiple stressors and 2)
-what is the role of species and their interactions contributing to the
-propensity of networks in buffering against or amplifying the effects of multiple
-stressors.
-
-
-# Non-linear effects
-
-Let's begin by conceptualizing the effects of 2 environmental stressors on a
-simple 3-species omnivory food web (Figure \ref{omniEx}). For our exercise, we are
-not truly interested in the identify of the sources of stress. We rather focus
-on the resulting disturbance on species themselves. This means that we will not
-investigate the effects of multiple stressors applied to a single species in the
-food web. This precludes us from investigating the sensitivity of species to
-each individual stressor. Rather, we investigate the effects of disturbances to
-multiple species simultaneously. But see @thompson2018a and @thompson2018 for
-a description of a modelling approaching incorporating multiple sources of
-stress in a food web.
-
-![Omnivory 3-species motif affected by two different drivers on the left and by 3 unidentified disturbances on the right. Disturbances could stem from multiple stressors or from a single stressor affecting multiple species. \label{omniEx}](./Figures/omnivoryEx.png)
-
-
-# Pathways of multiple effects in motifs
-
-A food web can be decomposed into a sets of smaller $n$-species subgraphs called
-motifs [@milo2004; @stouffer2007].
-For example, there are 13 distinct 3-species motifs composed of 30 unique
-positions [Figure \ref{stouffer}; @stouffer2007; @stouffer2012].
-These motifs form the backbone of food web and their over- or
-under-representation in food webs can provide valuable insights into community
-dynamics.
-Motifs have been used to investigate the persistence of food web to species
-extinctions [@stouffer2010] and the benefit associated to each species in food
-web persistence [@stouffer2012].
-
-![3-soecies food web motifs, from @stouffer2007. ***Cannot be used as is. Simply used as a reference***. \label{stouffer}](./figures/3spMotifs.png)
-
-Here, we use 3-species motifs to investigate whether multiple disturbances
-applied to different motifs are more or less likely to result in non-linear
-effects.
-
-We focus on the four most frequent motifs found in food webs, *i.e.* tri-trophic
-chains, omnivory, exploitative competition and apparent competition
-[Figure \ref{path}; @camacho2007; @stouffer2010].
-Two additional motifs, *i.e.* partially connected and disconnected were also
-considered in order to evaluate whether interactions in food webs are truly more
-likely to be characterized by non-linear effects (Figure \ref{path}).
-
-<!-- This results in 6 distinct motifs, 14 different positions and 74 distinct
-pathways of effect (Figure \ref{path}).
-There are 34 single pathways of effects, of which 14 are direct and 20 are
-strictly indirect.
-There are also 10 strictly indirect (*i.e.*
-only peripheral species disturbed) double pathways of effect, and 21 double and
-10 triple pathways of effects with both direct and indirect effects (*i.e.*
-involving focal and peripheral species; Figure \ref{path}). -->
-
-![Description of distinct pathways of effect on 14 distinct positions in 6 different network motifs. Black nodes are focal species and red circles represent pathways of effects (or points of entry in food webs?). \label{path}](./figures/pathways.png)
-
-\newpage
-
-# Equation systems
-
-Using lotka-volterra predator-prey equations with resource logistic growth, we
-evaluate analytically the effects of multiple disturbances on species contained
-in the different motifs considered. The parameters considered are the following.
-
-| Parameters    | Description                                         | Units           |
-| :-----------: | :-------------------------------------------------- | --------------- |
-| $x$           | Species x abundance                                 | $n$             |
-| $y$           | Species y abundance                                 | $n$             |
-| $z$           | Species z abundance                                 | $n$             |
-| $r$           | Growth rates                                        | $1/t$           |
-| $m$           | Mortality rates                                     | $1/t$           |
-| $\alpha_{ii}$ | Density dependent effect of species i on itself     | $1/At$          |
-| $\alpha_{ij}$ | Effect species j on species i                       | $1/At$          |
-
-
-The effects $\alpha$ of species on each other can be further defined as being
-attack and conversion rates. The conversion rates are equal to a scaling
-parameters ($\mu, \nu, \omega$) multiplied by the attack rate and the conversion
-rate cannot exceed the attack rate, so that the scaling parameters is < 1.
-Hence, the full set of parameters used for the motif models is:
-
-| Parameters    | Description                                         | Units           |
-| :-----------: | :-------------------------------------------------- | --------------- |
-| $x$           | Species x abundance                                 | $n$             |
-| $y$           | Species y abundance                                 | $n$             |
-| $z$           | Species z abundance                                 | $n$             |
-| $r_x$         | Growth rates                                        | $1/t$           |
-| $r_y$         | Growth rates                                        | $1/t$           |
-| $r_z$         | Growth rates                                        | $1/t$           |
-| $m_y$         | Mortality rates                                     | $1/t$           |
-| $m_z$         | Mortality rates                                     | $1/t$           |
-| $\alpha_x$    | Density dependent effect of $i$ on itself           | $1/At$          |
-| $\alpha_y$    | Density dependent effect of $y$ on itself           | $1/At$          |
-| $\alpha_z$    | Density dependent effect of $z$ on itself           | $1/At$          |
-| $\beta$       | Attack rate of $y$ on $x$                           | $1/At$          |
-| $\delta$      | Attack rate of $z$ on $y$                           | $1/At$          |
-| $\gamma$      | Attack rate of $z$ on $x$                           | $1/At$          |
-| $\mu$         | Scaling parameter for conversion rate $y$ on $x$    | $1/At$          |
-| $\nu$         | Scaling parameter for conversion rate $z$ on $x$    | $1/At$          |
-| $\omega$      | Scaling parameter for conversion rate $z$ on $y$    | $1/At$          |
-
-
-The subscript identifying species for growth rates ($r$), density-dependence
-effects ($\alpha$) and mortality rates ($m$) is not used in motifs where the
-parameter exists for a single species.
-
-
-\newpage
-
-
-
-
-
-
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 # Next points
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 
 - Non-linear effects in motifs
 - Species contribution to non-linear effects
@@ -470,11 +464,27 @@ parameter exists for a single species.
 - Graphs to present these results
 - Methods
 
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+# Notes - to explore
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+- With synergies, one should expect higher rates of community collapse, i.e. loss
+of species to extinction, because the effects increase more rapidly. Maybe look
+at Stouffer to better dissect their result on community persistence as a function
+of motifs. Perhaps they also explain which are the motif positions that tend to
+go extinct more rapidly?
+
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 # Interesting points
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 
 - Effect limit [@schafer2018]: maximum effect size for a response (*e.g.* 100% mortality, zero growth or reproduction)
 
+
+
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 # Literature to cite - or at least look at!
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 
 - @adams2005
 - @brown2013
@@ -494,26 +504,11 @@ parameter exists for a single species.
 - @thompson2018a
 - @vinebrooke2004
 
-
-
 \newpage
 
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 # References
- -->
-
-
-
-<!--
-Complex
-interactions between co-occurring stressors remains the largest uncertainty
-in predicting impacts to natural systems [@darling2008; @cote2016], yet most
-assessments still overwhelmingly focus on single stressors [@obrien2019].
-
-
--->
-
-
-
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 
 
 <!--
