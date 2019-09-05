@@ -25,8 +25,6 @@ link-citations: yes
 relativeurls: true
 ---
 
-<!-- Kevin Cazelles -- . -->
-
 
 <!--
 rmarkdown::render('./FoodWebs-MultipleStressors.md', 'pdf_document')
@@ -40,6 +38,23 @@ rmarkdown::render('./FoodWebs-MultipleStressors.md', 'pdf_document')
 **Correspondence**: \newline
 David Beauchesne \newline
 david.beauchesne@uqar.ca \newline
+
+
+\newpage
+
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+# To do:
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+- [X] Check and adjust for unique pathways of effect (exploitative and apparent competition).
+  - They are all unique when you consider the position of the species, except for the disconnected motif.
+- [ ] Think on the best way to establish position profile. At the moment what is used is the mean of individual pathways of effect per position, and I feel we could do better.
+- [ ] Integrate [@hodgson2019] in the introduction
+- [ ] Figure out how to evaluate species motifs position as a probability rather than a frequency. This could make use of empirical diet % available in Ecopath models.
+- [ ] Figure out methology to evaluate species profile through two indices: sensitivity score and amplification score. These could be used to adjust Halpern's equation later on.
+- [ ] Sensitivity and amplification scores for pathways of effect and motif positions, between [-1 1]
+- [ ] Should the delta abundances (%) be divided by the delta parameter (%)?
+- [ ] Should the median be used instead of the mean?
 
 
 \newpage
@@ -286,64 +301,120 @@ univariate disturbance models. A value of 0 equals a null or additive effect,
 a value below 0 is a dominant or antagonistic effect, and a value over 0 is a
 synergistic effect.
 
+## Sensitivity and amplification scores
+
+### Pathways of effects
+
+Sensitivity and amplification scores for individual pathways of effects, motif
+positions and motifs were evaluated by [...]
+
+### Motif positions
+
+The sensitiivity score was calculated for each motif position by taking the
+mean absolute value of the percent abundance change between initial and
+disturbed models for all pathways of effect. This means that a value of 1 is
+a percent change in abundance equal to the percent change in parameter value
+to simulate a disturbance, a value below 1 is a percent abundance change lower
+than the simulated disturbance, and a value above 1 is a percent abundance
+change greater than the percent parameter change.
+
+Similarly, the amplification score was measure by adding 1 to the difference
+between the joint model and the additive model, so that antagonistic and
+synergistic effects are centered on 1 rather than 0.
+
+### Food web
+
+Single species sensitivity and amplification profiles were evaluated by
+multiplying the frequency at which they appear in each motif position by
+the sensitivity and amplification scores.
+
+$$Score_{species} = Frequency * Sensititivity * Amplification$$
+
+
+## Empirical food webs
+
+We used 5 food webs from the Estuary and Gulf of St. Lawrence
+
 \newpage
 
 <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 # Results
 <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 
-## Univariate disturbances
+## Disturbances
 
-## Multivariate disturbances
+\begin{figure}[H]
+\centering
+\includegraphics{./Figures/disturbances.png}
+\caption{Disturbances. Line 1: Univariate disturbances; Line 2: Multivariate disturbances; Line 3: Joint - additive disturbances}
+\label{disturbances}
+\end{figure}
 
-## Additivity
+\newpage
 
-![Disturbances \label{disturbances}](./Figures/disturbances.png)
+\begin{figure}[H]
+\centering
+\includegraphics{./Figures/positions.png}
+\caption{Morif positions and disturbances}
+\label{positions}
+\end{figure}
+
 
 \newpage
 
-![Positions \label{positions}](./Figures/positions.png)
+## Empirical food webs
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+\begin{figure}[H]
+\centering
+\includegraphics{./Figures/positionFrequencySL.png}
+\caption{Frequency in which each species of three empirical food webs are found in each motif position.}
+\label{posFreq}
+\end{figure}
 
 \newpage
+
+\begin{figure}[H]
+\centering
+\includegraphics{./Figures/speciesSensitivity.png}
+\caption{Sensitivity scores for species in the food webs of the southern St. Lawrence, northern St. Lawrence, and the estuary of St. Lawrence}
+\label{spScore}
+\end{figure}
+
+\newpage
+
+\begin{figure}[H]
+\centering
+\includegraphics{./Figures/TL-OM.png}
+\caption{Sensitivity scores as a function of trophic level and omnivory index}
+\label{tlom}
+\end{figure}
+
+\newpage
+
+
+
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+# Supplementary Figures
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+\begin{figure}[H]
+\centering
+\includegraphics{./Figures/nParam.png}
+\caption{Mean delta abundance and difference between joint and additive models as a function of the number of parameters}
+\label{nParam}
+\end{figure}
+
+\newpage
+
+\begin{figure}[H]
+\centering
+\includegraphics{./Figures/paramType.png}
+\caption{Mean delta abundance and difference between joint and additive models as a function of the types of parameters, i.e. growth/mortality rates, attack rates and conversion rates}
+\label{nParam}
+\end{figure}
+
+\newpage
+
 
 <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 # Supplementary Material

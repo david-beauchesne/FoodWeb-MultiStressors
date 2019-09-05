@@ -97,43 +97,43 @@ triadClassification <- function(foodWeb) {
 }
 
 
-triadProbability <- function(foodWeb, mat) {
-  # Triad classification
-  triadClass <- triadClassification(foodWeb)
-
-  # Probabilities
-  motifProba <- numeric(nrow(triadClass))
-  for(i in 1:nrow(triadClass)) {
-    # Parameters
-    x <- triadClass$x[i]
-    y <- triadClass$y[i]
-    z <- triadClass$z[i]
-    motif <- colnames(triadClass)[triadClass[i, ] == 1]
-
-    # Measure probabilities
-    # I put the whole probability statement, but with the way I built the functions,
-    # I could only multiply the actual interactions observed, since all 1-Aij
-    # portions will always equal 1-0 = 1.
-    #
-    # How to read: Axz is effect of species z on species x
-
-    # Tri-trophic food chain: Ayz * Axy * (1-Ayx) * (1-Azy) * (1-Azx) * (1-Axz)
-    if (motif == 'tt') motifProba[i] <- mat[y,z] * mat[x,y] * (1-mat[y,x]) * (1-mat[z,y]) * (1-mat[z,x]) * (1-mat[x,z])
-
-    # Omnivory: Ayz * Axz * Axy * (1-Ayz) * (1-Azx) * (1-Ayx)
-    if (motif == 'om') motifProba[i] <- mat[y,z] * mat[x,z] * mat[x,y] * (1-mat[z,y]) * (1-mat[z,x]) * (1-mat[y,x])
-
-    # Exploitative competition: Axz * Axy * (1-Azx) * (1-Azy) * (1-Ayz) * (1-Ayx)
-    if (motif == 'ex') motifProba[i] <- mat[x,z] * mat[x,y] * (1-mat[z,x]) * (1-mat[z,y]) * (1-mat[y,z]) * (1-mat[y,x])
-
-    # Apparent competition: Axz * Ayz * (1-Azx) * (1-Azy) * (1-Axy) * (1-Ayx)
-    if (motif == 'ap') motifProba[i] <- mat[x,z] * mat[y,z] * (1-mat[z,x]) * (1-mat[z,y]) * (1-mat[x,y]) * (1-mat[y,x])
-  }
-
-  # Add to data.frame
-  triadClass$motifProba <- motifProba
-  triadClass
-}
+# triadProbability <- function(foodWeb, mat) {
+#   # Triad classification
+#   triadClass <- triadClassification(foodWeb)
+#
+#   # Probabilities
+#   motifProba <- numeric(nrow(triadClass))
+#   for(i in 1:nrow(triadClass)) {
+#     # Parameters
+#     x <- triadClass$x[i]
+#     y <- triadClass$y[i]
+#     z <- triadClass$z[i]
+#     motif <- colnames(triadClass)[triadClass[i, ] == 1]
+#
+#     # Measure probabilities
+#     # I put the whole probability statement, but with the way I built the functions,
+#     # I could only multiply the actual interactions observed, since all 1-Aij
+#     # portions will always equal 1-0 = 1.
+#     #
+#     # How to read: Axz is effect of species z on species x
+#
+#     # Tri-trophic food chain: Ayz * Axy * (1-Ayx) * (1-Azy) * (1-Azx) * (1-Axz)
+#     if (motif == 'tt') motifProba[i] <- mat[y,z] * mat[x,y] * (1-mat[y,x]) * (1-mat[z,y]) * (1-mat[z,x]) * (1-mat[x,z])
+#
+#     # Omnivory: Ayz * Axz * Axy * (1-Ayz) * (1-Azx) * (1-Ayx)
+#     if (motif == 'om') motifProba[i] <- mat[y,z] * mat[x,z] * mat[x,y] * (1-mat[z,y]) * (1-mat[z,x]) * (1-mat[y,x])
+#
+#     # Exploitative competition: Axz * Axy * (1-Azx) * (1-Azy) * (1-Ayz) * (1-Ayx)
+#     if (motif == 'ex') motifProba[i] <- mat[x,z] * mat[x,y] * (1-mat[z,x]) * (1-mat[z,y]) * (1-mat[y,z]) * (1-mat[y,x])
+#
+#     # Apparent competition: Axz * Ayz * (1-Azx) * (1-Azy) * (1-Axy) * (1-Ayx)
+#     if (motif == 'ap') motifProba[i] <- mat[x,z] * mat[y,z] * (1-mat[z,x]) * (1-mat[z,y]) * (1-mat[x,y]) * (1-mat[y,x])
+#   }
+#
+#   # Add to data.frame
+#   triadClass$motifProba <- motifProba
+#   triadClass
+# }
 
 # Triad frequency
 triadFrequency <- function(foodWeb) {
@@ -171,7 +171,7 @@ positionFrequency <- function(foodWeb) {
   for(i in 1:nrow(pos)) df[pos$SP[i], pos$position[i]] <- pos$Frequency[i]
 
   # Frequency
-  df <- apply(df, 2, function(x) x/sum(x))
+  df <- apply(df, 1, function(x) x/sum(x)) %>% t()
 
   # Return
   return(df)
@@ -213,43 +213,50 @@ heatmapPos <- function(foodWeb, main = '') {
   for(i in 1:ncol(posFreq)) {
     plotMotifs(motif = motif[i], position = sp[i],
                path = '', x = i+.5, y = -.25, scalingX = .5,
-               scalingY = .5, add = T, cex = 1)
+               scalingY = .5, add = T, cex = 1.45)
   }
 }
 
 
 
 
-# Position probability
-positionProbability <- function(foodWeb, mat) {
-  # Triad classification
-  triadProb <- triadProbability(foodWeb, mat)
-
-  # Probability for motifs
-  pos <- triadProb %>%
-         gather(motif, value, -x, -y, -z, -motifProba) %>%
-         filter(value == 1)
-
-
-  # Reorganize data.frame per position
-  pos <- triadProb %>%
-         gather(motif, value, -x, -y, -z, -motifProba) %>%
-         filter(value == 1) %>%
-         select(-value) %>%
-         gather(species, SP, -motif, -motifProba) %>%
-         mutate(position = paste0(motif, species)) %>%
-         mutate(position = gsub('exy','exz', .$position)) %>%
-         mutate(position = gsub('apy','apx', .$position)) %>%
-         group_by(motif) %>%
-         # group_by(SP, position) %>%
-         summarise(Frequency = n(),
-                   Probability = sum(motifProba))
-
-  # Data.frame for heat map
-  nmEdge <- vertex.attributes(foodWeb)$name
-  nEdge <- length(nmEdge)
-  position <- c('ttx','tty','ttz','omx','omy','omz','exx','exz','apx','apz')
-  nP <- length(position)
-
-  df <- matrix(0, nrow = nEdge, ncol = nP, dimnames = list(nmEdge, position)) %>% as.data.frame()
-  for(i in 1:nrow(pos)) df[pos$SP[i], pos$position[i]] <- pos$Probability[i]
+# # Position probability
+# positionProbability <- function(foodWeb, mat) {
+#   # Triad classification
+#   triadProb <- triadProbability(foodWeb, mat)
+#
+#   # Probability for motifs
+#   pos <- triadProb %>%
+#          gather(motif, value, -x, -y, -z, -motifProba) %>%
+#          filter(value == 1)
+#
+#
+#   # Reorganize data.frame per position
+#   pos <- triadProb %>%
+#          gather(motif, value, -x, -y, -z, -motifProba) %>%
+#          filter(value == 1) %>%
+#          select(-value) %>%
+#          gather(species, SP, -motif, -motifProba) %>%
+#          mutate(position = paste0(motif, species)) %>%
+#          mutate(position = gsub('exy','exz', .$position)) %>%
+#          mutate(position = gsub('apy','apx', .$position)) %>%
+#          # group_by(motif) %>%
+#          group_by(SP, position) %>%
+#          summarise(Frequency = n(),
+#                    Probability = sum(motifProba))
+#
+#   # Multiply by position probability within motifs
+#   posProb <- c(ttx = .33, tty = .33, ttz = .33, omx = .33, omy = .33, omz = .33, exx = .66, exz = .33, apx = .66, apz = .33)
+#   for(i in 1:length(posProb)) {
+#     uid <- pos$position == names(posProb)[i]
+#     pos$Probability[uid] <- pos$Probability[uid] * posProb[i]
+#   }
+#
+#   # Data.frame for heat map
+#   nmEdge <- vertex.attributes(foodWeb)$name
+#   nEdge <- length(nmEdge)
+#   position <- c('ttx','tty','ttz','omx','omy','omz','exx','exz','apx','apz')
+#   nP <- length(position)
+#
+#   df <- matrix(0, nrow = nEdge, ncol = nP, dimnames = list(nmEdge, position)) %>% as.data.frame()
+#   for(i in 1:nrow(pos)) df[pos$SP[i], pos$position[i]] <- pos$Probability[i]
