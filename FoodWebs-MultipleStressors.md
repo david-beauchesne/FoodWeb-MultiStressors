@@ -26,7 +26,19 @@ relativeurls: true
 ---
 
 <!-- Kevin Cazelles -- . -->
+<!-- INDEX -->
+Admettons qu'on est, for a given species:
 
+$$P_{i,j} = P_{position i, motif, i}$$
+
+Then we can define the expected departure/deviance from the additive model, $\bar{D_a}$ as follows:
+
+$$P_{i,j} = \sum_{i,j} D_{a,i,j}P_{position i, motif, i}$$
+
+where $D_{a,i,j}$ is the departure/deviance from the additive model in motif i at postilion j as defined elsewhere.
+
+Tu peux faire ça pour les 2 différentes mesure. Mais ça implique d'avoir les probas! Ça se fait j'imagine, en tout cas on devrais être capable de le faire au moins en simulation.
+<!--END INDEX -->
 
 <!--
 rmarkdown::render('./FoodWebs-MultipleStressors.md', 'pdf_document')
@@ -43,6 +55,8 @@ david.beauchesne@uqar.ca \newline
 
 
 \newpage
+
+
 
 <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 # Introduction
