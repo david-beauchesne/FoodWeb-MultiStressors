@@ -1,11 +1,11 @@
-Group	Description	Species	BLW	WHA	BEW	ODT	HAS	GSL	HAP	SEA	LCO	SCO	LGH	SGH	APL	FLO	SKA	AHA	RED	BDO	WHH	LDF	SDF	CAP	LPF	HER	SPF	SQU	SHR	LCR	SCR	ECH	MOL	POL	INV	LEU	SEU	LHY	MAC	SME	DME	PHY	DET
+Group	Description	Species	BLW	BAW	BEW	ODT	HBS	GRS	HPS	SEA	LCO	SCO	LGH	SGH	APL	FLO	SKA	AHA	RED	BLD	WHH	LDF	SDF	CAP	LPF	HER	SPF	SQU	SHR	LCR	SCR	ECH	MOL	POL	INV	LEU	SEU	LHY	MAC	SME	DME	PHY	DET
 BLW	Blue whales	Balaenoptera musculus	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
-WHA	Other mysticetes or baleen whales	Fin whale Balaenoptera physalus, minke whale Balaenoptera acutorostrata, humpback whale Megaptera novaeangliae	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+BAW	Other mysticetes or baleen whales	Fin whale Balaenoptera physalus, minke whale Balaenoptera acutorostrata, humpback whale Megaptera novaeangliae	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
 BEW	Beluga whales 	Beluga whale Delphinapterus leucas	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
 ODT	Other odontocetes or toothed whales	Common porpoise Phocoena phocoena	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
-HAS	Harbour seals	Phoca vitulina	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
-GSL	Grey seals	Halichoerus grypus	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
-HAP	Harp seals	Pagophilus groenlandica	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+HBS	Harbour seals	Phoca vitulina	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+GRS	Grey seals	Halichoerus grypus	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+HPS	Harp seals	Pagophilus groenlandica	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
 SEA	Seabirds	Double-crested cormorant Phalacrocorax auritus, ringbilled gull Larus delawarensis, herring gull L. argentatus, great black-backed gull L. marinus, common tern Sterna hirundo, Arctic tern S. paradisaea, black guillemot Cepphus grylle, northern gannet Morus bassanus, black-legged kittiwake Rissa tridactyla, common murre Uria aalge, razorbill Alca torda, Atlantic puffin Fratercula arctica, Leach’s storm-petrel Oceanodroma leucorhoa	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
 LCO	Large Atlantic cod	Gadus morhua	0	0	7.1	0.1	10.2	9.8	6.2	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
 SCO	Small Atlantic cod	Gadus morhua	0	1.6	7.1	0.1	15.5	9.8	3.4	0.2	0	0	4.2	2.7	0	0	0	0	0	0	0.3	0	0	0	0.9	0	0	11.4	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
@@ -16,7 +16,7 @@ FLO	Flounders	Witch flounder Glyptocephalus cynoglossus, yellowtail flounder Lim
 SKA	Skates	Thorny skate Amblyraja radiata, smooth skate Malacoraja senta	0	0	2.7	0	0	1.9	0.8	0.2	0	0	0	0	0	0	0	6.5	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
 AHA	Atlantic halibut	Hippoglossus hippoglossus	0	0	0	0	0	0.8	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
 RED	Redfish	Sebastes fasciatus, S. mentella	0	0	2.9	2.3	1.8	2	0.9	0	0	0	4.5	0	0	0	0	0	2.5	8.5	6.4	0	0.5	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
-BDO	Black dogfish	Centroscyllium fabricii	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+BLD	Black dogfish	Centroscyllium fabricii	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
 WHH	White hake	Urophycis tenuis	0	0	8.5	4.5	0.1	0	3.4	0	0	0	0	0	0	0	0	0	0	0	0.2	0	0	0	0	0	0	0.2	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
 LDF	Large demersal feeders	Large eelpouts (genus Lycodes spp.), marlin-spike Nezumia bairdii, common lumpfish Cyclopterus lumpus, longfin hake Urophycis chesteri, haddock Melanogrammus aeglefinus, monkfish Lophius americanus, wrymouth Cryptacanthodes maculatus, sea raven Hemitripterus americanus, and their juveniles	0	0	15.8	4.5	2.6	5.9	1.9	0.1	4.4	2.7	12.1	5.5	0.2	0	0	15.4	1.7	0	3.2	0	0	0	4.8	0	0	2.4	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
 SDF	Small demersal feeders	Atlantic hagfish Myxine glutinosa, shorthorn sculpin Myoxocephalus scorpius, fourbeard rockling Enchelyopus cimbrius, moustache sculpin Triglops murrayi, snakeblenny Lumpenus lampretaeformis, Arctic staghorn sculpin Gymnocanthus tricuspis, daubed shanny Leptoclinus maculatus, snailfishes (Liparidae), Atlantic soft pout Melanostigma atlanticum, Atlantic poacher Leptagonus decagonus, and their juveniles	0	0	12.7	0	3.7	8.7	7.4	4	13.9	3.6	34.9	11.3	0.9	0	11.4	14.2	1.9	9.4	1.9	0	0.6	0	0.1	0	0	1.8	0	3	1.2	0	0	0	0	0	0	0	0	0	0	0	0
@@ -26,8 +26,8 @@ HER	Herring	Atlantic herring Clupea harengus	0	4.8	13.5	43.8	25.6	20.6	26.9	0.8	
 SPF	Small pelagic feeders	White barracudina Arctozenus risso, Arctic cod Boreogadus saida, Atlantic argentine Argentina silus, sand lance Ammodytes spp., other mesopelagics	0	7.6	3.5	11.1	6.5	23.3	5.7	22.4	0.5	0	8.1	2.8	9.7	0	4.3	0	2.1	2.9	44.5	0	0	0	16.7	0.2	5.7	14.9	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
 SQU	Squid	Northern shortfin squid Illex illecebrosus	0	3.4	11	5.5	0	0.3	14.8	0.3	0	0	0	0	0	0	0	0	0	1.8	0.5	0	0	0	0	0	2.1	14	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
 SHR	Shrimp	Northern shrimp Pandalus borealis, striped shrimp P. montagui, pink glass shrimp Pasiphaea multidentata, Arctic argid Argis dentata, Greenland shrimp Eualus macilentus	0	0	0.5	0	17.8	1.6	5.9	0.4	59.4	67.8	17.9	17.7	7.8	1.9	49.6	4.2	36.6	43.9	5.1	1.1	9.4	0	14.7	0.2	1.1	0	0	7.9	0	0	0	0	0	0	0	0	0	0	0	0	0
-LCR	Large crabs	Snow crab Chionoecetes opilio, other non-commercial species (e.g., toad crabs Hyas spp.)	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
-SCR	Small crabs	Snow crab Chionoecetes opilio, rock crab Cancer irroratus, other non-commercial species (e.g., toad crabs Hyas spp.)	0	0	0	0	0	0.1	0.4	0	2.1	2.1	0.8	0	1.8	0	10.1	1.1	0	0	0.3	0	32.5	0	0	0	0	1.1	0	9	1.8	0	0	0	0	0	0	0	0	0	0	0	0
+LCR	Large crustaceans	Snow crab Chionoecetes opilio, other non-commercial species (e.g., toad crabs Hyas spp.)	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+SCR	Small crustaceans	Snow crab Chionoecetes opilio, rock crab Cancer irroratus, other non-commercial species (e.g., toad crabs Hyas spp.)	0	0	0	0	0	0.1	0.4	0	2.1	2.1	0.8	0	1.8	0	10.1	1.1	0	0	0.3	0	32.5	0	0	0	0	1.1	0	9	1.8	0	0	0	0	0	0	0	0	0	0	0	0
 ECH	Echinoderms	Heart urchin Brisaster fragilis, brittle star Ophiura robusta, sea urchin Strongylocentrotus pallidus, sea stars, sand dollar Echinarachnius parma	0	0	0	0	0	0	0	0	0	0	0.1	0.2	7.7	0	0	0	0	0.7	0	16.1	0	0	0	0	0	0	0	17.6	23.6	9.2	0	0	0	0	0	0	0	0	0	0	0
 MOL	Molluscs	Stimpson clam Spisula polynyma, sea scallop Placopecten magellanicus, other Pectinidae, whelks Buccinum spp., wedgeclam Mesodesma deauratum, propeller clam Cyrtodaria siliqua	0	0	0.1	0	0.2	0	0.2	15	1	0	0.8	0	4	0.1	0.4	1.6	0	0	0	12.7	0	0	0	0	0	0	0	17.2	16.8	9.4	0	0	11.6	0	0	0	0	0	0	0	0
 POL	Polychaetes	Exogene hebes, Heteromastus filiformis, Lumbrinereis latreilli, Nephtys ciliata	0	0	0	0	0	0	0	0	0	0.3	0	0	11.9	66.7	0.9	0	0	0	2.2	12.2	0.4	0	0	0	0	0	2.3	19.8	8.3	1.1	0	13.4	2.3	0	0	0	0	0	0	0	0

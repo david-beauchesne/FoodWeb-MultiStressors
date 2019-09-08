@@ -1,9 +1,9 @@
-Group	Description	Species	CET	HAS	HOS	GSE	HAS	SEA	LCO	SCO	GRH	SAP	LAP	FLO	SKA	RED	LDF	SDF	CAP	LPF	PIP	PLP	SHR	LCR	ECH	MOL	POL	OBI	LZO	SZO	PHY	DET
+Group	Description	Species	CET	HPS	HOS	GRS	HBS	SEA	LCO	SCO	GRH	SAP	LAP	FLO	SKA	RED	LDF	SDF	CAP	LPF	PIP	PLP	SHR	LCR	ECH	MOL	POL	INV	LZO	SZO	PHY	DET
 CET	Cetaceans	 Balaenoptera physalus, Balaenoptera acutorostrata, Megaptera novaeangliae, Phocoena phocoena, Lagenorhynchus acutus, Lagenorhynchus albirostris	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
-HAS	Harp seals	 Phoca groenlandica	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+HPS	Harp seals	 Phoca groenlandica	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
 HOS	Hooded seals	 Cystophora cristata	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
-GSE	Grey seals	 Halichoerus grypus	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
-HAS	Harbour seals	 Phoca vitulina	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+GRS	Grey seals	 Halichoerus grypus	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+HBS	Harbour seals	 Phoca vitulina	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
 SEA	Seabirds	 Phalacrocorax carbo, Phalacrocorax auritus, Larus delwarensis, L. argentatus, L. marinus, Sterna hirundo, S. paradisaea, Cepphus grylle, Oceanodroma leucorhoa, Morus bassanus, Rissa tridactyla, Uria aalge, Alca torda, Fratercula arctica	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
 LCO	Large Atlantic cod	 (> 35 cm) Gadus morhua	0	1.2	10.6	11.7	1.9	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
 SCO	Small Atlantic cod	 (? 35 cm) Gadus morhua	1.1	3.5	10.3	11.7	5.6	0.2	3.1	0	0	0	0	0	3.3	0.3	1.1	6	0	0.2	0	0	0	0	0	0	0	0	0	0	0	0
@@ -24,7 +24,7 @@ LCR	Large crustaceans	 Chionoecetes opilio, other non-commercial species (Hyas s
 ECH	Echinoderms	 Echinarachnius parma, Stronglyocentrotus pallidus, Ophiura robusta	0	0	0	0	0	0	2.3	0.1	0	3.1	50	24.6	0.1	0	0	0.1	0	0	0	0	0	15.2	0	0	0	0	0	0	0	0
 MOL	Molluscs	 Mesodesma deauratum, Cyrtodaria siliqua	0	0	0	0	0.2	0	13.4	1.6	0	6	6.9	17.8	0.8	0	0	0.6	0	0	0	0	0	20.8	0	0	0	0	0	0	0	0
 POL	Polychaetes	 Exogene hebes	0	0	0	0	0	0	11.4	6.1	0	6.6	12.7	24.5	4.5	0	4	11.3	0	2	0	0	1.5	12.7	0	0	26	0	0	0	0	0
-OBI	Other benthic invertebrates	 Miscellaneous crustaceans, nematodes, other meiofauna	0	0.2	0	0	0.1	0.5	10.4	13.2	0	15.8	2.5	23.3	0.5	0	0.6	1.3	0	0	0.4	6.1	1.5	4	0	0	0	0	0	0	0	0
+INV	Other benthic invertebrates	 Miscellaneous crustaceans, nematodes, other meiofauna	0	0.2	0	0	0.1	0.5	10.4	13.2	0	15.8	2.5	23.3	0.5	0	0.6	1.3	0	0	0.4	6.1	1.5	4	0	0	0	0	0	0	0	0
 LZO	Large zooplankton	 (> 5 mm) Euphausiids, chaetognaths, hyperiid amphipods, cnidarians and ctenophores (jellyfish), mysids, tunicates >5 mm, ichthyoplankton	1.7	6.6	0	0	0	3.7	20.9	61.7	11.3	65.2	14.6	0.7	0.1	31.9	0.4	9.2	6.3	30.7	24.2	41.6	12	1.8	0	0	0	0	5	0	0	0
 SZO	Small zooplankton	 (< 5 mm) Copepods (mainly Oithona similis, Temora longicornis, Pseudocalanus spp., and Calanus finmarchicus), tunicates < 5 mm, meroplankton, heterotrophic protozoa (flagellates, dinoflagellates, and ciliates)	0	0	0	0	0	0.2	0.3	0.8	0	0.1	0	0	0	7.5	0	0	93.7	0	58.4	52	24	0	0	0	0	0	43	12.5	0	0
 PHY	Phytoplankton	 Diatom species such as Chaetoceros affinis, Chaetoceros spp., Leptocylindrus minimus, Thalassiiosira nordenskioldii, T. spp., Fragilariopsis spp., and a mixture of autotrophic and mixotrophic organisms including Cryptophytes, dinoflagellates, Prasinophytes, and Prymnesiophytes	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	8.5	0	0	50	37	0	37	54.1	0	0
