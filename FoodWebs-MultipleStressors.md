@@ -25,21 +25,6 @@ link-citations: yes
 relativeurls: true
 ---
 
-<!-- Kevin Cazelles -- . -->
-<!-- INDEX -->
-Admettons qu'on est, for a given species:
-
-$$P_{i,j} = P_{position i, motif, i}$$
-
-Then we can define the expected departure/deviance from the additive model, $\bar{D_a}$ as follows:
-
-$$P_{i,j} = \sum_{i,j} D_{a,i,j}P_{position i, motif, i}$$
-
-where $D_{a,i,j}$ is the departure/deviance from the additive model in motif i at postilion j as defined elsewhere.
-
-Tu peux faire ça pour les 2 différentes mesure. Mais ça implique d'avoir les probas! Ça se fait j'imagine, en tout cas on devrais être capable de le faire au moins en simulation.
-<!--END INDEX -->
-
 <!--
 rmarkdown::render('./FoodWebs-MultipleStressors.md', 'pdf_document')
 -->
@@ -71,6 +56,23 @@ david.beauchesne@uqar.ca \newline
 - [ ] Sensitivity and amplification scores for pathways of effect and motif positions, between [-1 1]
 - [ ] Should the delta abundances (%) be divided by the delta parameter (%)?
 - [ ] Should the median be used instead of the mean?
+
+
+# INDEX
+Kevin Cazelles
+Admettons qu'on est, for a given species:
+
+$$P_{i,j} = P_{position i, motif, i}$$
+
+Then we can define the expected departure/deviance from the additive model, $\bar{D_a}$ as follows:
+
+$$P_{i,j} = \sum_{i,j} D_{a,i,j}P_{position i, motif, i}$$
+
+where $D_{a,i,j}$ is the departure/deviance from the additive model in motif i at postilion j as defined elsewhere.
+
+Tu peux faire ça pour les 2 différentes mesure. Mais ça implique d'avoir les probas! Ça se fait j'imagine, en tout cas on devrais être capable de le faire au moins en simulation.
+<!--END INDEX -->
+
 
 
 \newpage
@@ -403,6 +405,27 @@ We used 5 food webs from the Estuary and Gulf of St. Lawrence
 \includegraphics{./Figures/TL-OM.png}
 \caption{Sensitivity scores as a function of trophic level and omnivory index}
 \label{tlom}
+\end{figure}
+
+\newpage
+
+## Empirical food webs impact scores
+
+\begin{figure}[H]
+\centering
+\includegraphics{./Figures/speciesImpact.png}
+\caption{Impact scores for species in the food webs of the southern St. Lawrence, northern St. Lawrence, and the estuary of St. Lawrence}
+\label{spImpact}
+\end{figure}
+
+\newpage
+
+
+\begin{figure}[H]
+\centering
+\includegraphics{./Figures/TL-OM-Impact.png}
+\caption{Impact scores as a function of trophic level and omnivory index}
+\label{tlom-Imp}
 \end{figure}
 
 \newpage
