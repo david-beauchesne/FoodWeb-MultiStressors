@@ -1,0 +1,54 @@
+---
+title: "Yoyo"
+output:
+  html_document:
+    toc: true
+    toc_float: true
+---
+
+# Notations
+
+- $O_i$ = position $i$ => a specific node in a specific motif
+- $a_i$: abundance of species at position i
+- $a_{i,j}$: abundance of node i with pathway of effects
+- $K^i$ set of all pathways of effects possible for position $i$
+- $K_j$ pathway of effects j
+- $k_j$ unitary pathway effects $j$
+- $K_j$ is made of unitary pathway effects
+- $O_i$: event "focal species occupies position i"
+- $P_{K_j | O_i}$: $P(\text{"pathway of effect j"} | \text{"focal species occupies position i"})$
+- NB: $P_{K_j | O_i} = f(\text{"stressors"})$
+
+
+
+# Sensitivity
+
+$$s_{i,j} = \frac{a_{i,j} - a_i}{a_i}$$
+
+$$S_{i, j} = \frac{1}{n} \sum_{l = 1}^n s_{i,j}$$
+
+
+# Amplification
+
+$$A_{i, j} = S_{i, K_j} - \sum_{k_j \in K_j} S_{i, j}$$
+
+
+# Expectations
+
+$$S_i = \sum_{j \in K^i} P_{K_j | O_i}S_{i, j}$$
+
+For a given species the expected sensitivity is
+
+$$S = \sum_i P(O_i) \sum_j P_{K_j | O_i}S_{i, j}$$
+
+NB: $\sum_i P(O_i)$ may not sum to 1 (to be determined).
+
+
+works the same way for $A_{i, j}$
+
+
+## Position sensitivity
+
+$$S_i = \frac{1}{\text{Card}(K^i)}\sum_{j \in K^i} S_{i, j}$$
+
+
