@@ -52,3 +52,8 @@ works the same way for $A_{i, j}$
 $$S_i = \frac{1}{\text{Card}(K^i)}\sum_{j \in K^i} S_{i, j}$$
 
 
+## Position probability
+
+$$P(O_i) = P("occurrence species in motif")P("interactions")$$
+
+
