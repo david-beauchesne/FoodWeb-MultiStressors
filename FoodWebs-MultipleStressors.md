@@ -7,8 +7,8 @@ output:
     toc: false
     number_sections: true
 header-includes:
-   - \usepackage{lineno}
-   - \linenumbers
+   # - \usepackage{lineno}
+   # - \linenumbers
    - \usepackage{listings}
    - \usepackage[svgnames]{xcolor}
    # - \usepackage{titling}
@@ -26,7 +26,7 @@ relativeurls: true
 ---
 
 <!--
-rmarkdown::render('./FoodWebs-MultipleStressors.md', 'pdf_document')
+rmarkdown::render('./FoodWebs-MultipleStressors.md')
 -->
 
 ^1^Institut des sciences de la mer, Université du Québec à Rimouski, Rimouski, QC, Canada \newline
@@ -51,29 +51,17 @@ david.beauchesne@uqar.ca \newline
   - They are all unique when you consider the position of the species, except for the disconnected motif.
 - [ ] Think on the best way to establish position profile. At the moment what is used is the mean of individual pathways of effect per position, and I feel we could do better.
 - [ ] Integrate [@hodgson2019] in the introduction
-- [ ] Figure out how to evaluate species motifs position as a probability rather than a frequency. This could make use of empirical diet % available in Ecopath models.
+- [ ] Figure out how to evaluate species motifs position as a probability rather than a frequency. This could make use of empirical diet % available in Ecopath models. -> This will be discussed in this paper, and developed in the subsequent spatial paper
 - [ ] Figure out methology to evaluate species profile through two indices: sensitivity score and amplification score. These could be used to adjust Halpern's equation later on.
 - [ ] Sensitivity and amplification scores for pathways of effect and motif positions, between [-1 1]
 - [ ] Should the delta abundances (%) be divided by the delta parameter (%)?
 - [ ] Should the median be used instead of the mean?
-
-
-# INDEX
-Kevin Cazelles
-Admettons qu'on est, for a given species:
-
-$$P_{i,j} = P_{position i, motif, i}$$
-
-Then we can define the expected departure/deviance from the additive model, $\bar{D_a}$ as follows:
-
-$$P_{i,j} = \sum_{i,j} D_{a,i,j}P_{position i, motif, i}$$
-
-where $D_{a,i,j}$ is the departure/deviance from the additive model in motif i at postilion j as defined elsewhere.
-
-Tu peux faire ça pour les 2 différentes mesure. Mais ça implique d'avoir les probas! Ça se fait j'imagine, en tout cas on devrais être capable de le faire au moins en simulation.
-<!--END INDEX -->
-
-
+- [ ] Cheung, W.W.L., Sarmiento, J.L., Dunne, J., Frolicher, T.L., Lam, V.W.Y., Palomares, M.L.D., Watson, R., and Pauly, D. 2013. Shrinking of fishes exacerbates impacts of global ocean changes on marine ecosystems. Nature Climate Change 3: 254-258.
+- [ ] Should the sensitivity score be divided by the number of unitary pathways disturbed?
+- [ ] Uniformiser les indices dans les équations de l'article
+- [ ] Modify the score for species using realised pathways of effects. I thougth that this was done, but since we are not using probabilities, I'm not sure what I should be doing anymore with this. Ideally I would still use a probability and have a general function, but we might still want to keep this for the 4th chapter of the thesis.
+- [ ] Verify all codes so that the proper equations are used
+- [ ] Update thresholds used
 
 \newpage
 
@@ -258,9 +246,8 @@ food chain, omnivory, exploitative and apparent competition) in empirical food
 webs [@stouffer2010] were modeled using Lotka-Voltera equation systems (Table S1).
 Two additional motifs were included to serve as controls to test the importance of
 considering species interactions when evaluating environmental effects, *i.e.*
-a partially connected motifs with a disconnected resource and a predator and a prey
-interaction, and a fully disconnected motif with three independent species
-modelled as resources.
+a partially connected motifs with a disconnected species and a predator-prey
+interaction, and a fully disconnected motif with three independent species.
 
 Resources were modeled using logistic growth equations of the form
 $\frac{dX_i}{dt} = X_i(r_i - \alpha_{ii} X_i - \sum \alpha_{ij} X_j)$,
@@ -269,89 +256,165 @@ intrinsic resource growth rate, $\alpha_{ii}$ is the density-dependent effect of
 the resource on itself and $\alpha_{ij}$ is the rate at which consumer $j$
 affects resource $i$, i.e. the attack rate.
 
-Consumers and predators were modeled with a Type I functional response of the form
+Consumers were modeled using a Type I functional response of the form
 $\frac{dX_j}{dt} = X_j(-m_j + \sum e_{ij} \alpha_{ij} X_i - \alpha_{jk} X_k)$,
 where $m$ is the mortality rate and $e$ is the rate at which resource biomass is
-transformed into consumer biomass, *i.e.* the conversion rate. $e$ is a scaling
-parameter of the attack rate which cannot exceed 1, since 1 unit of resource
-biomass cannot be transformed into more than 1 unit of consumer biomass.
+transformed into consumer biomass, *i.e.* the conversion rate, and is a scaling
+parameter of the attack rate which cannot exceed 1.
 
-Models were solved at equilibrium since we wished to study the dynamics of the
-motifs in the context of persistent food webs, which is closer to reality.
+Models were solved at equilibrium to study the effects of disturbances on
+persistent motif dynamics.
 As no equilibrium exists for the exploitative competition motif with
-Lotka-Voltera models of these forms, competitive parameters of the form
+Lotka-Voltera models of the selected forms, competitive parameters of the form
 $\alpha_{jj} \alpha_{jk} X_j X_k - \alpha_{jj} X_j^2$ were included in the
-consumer models to constrain their growth and obtain equilibrium solutions.
-Sage [@ref] was used to solve all equation systems at equilibrium. All other
-analyses were performed using R [@ref]. All code and data used to perform the
-simulations and analyses are available at [...].
+consumer models to constrain their growth.
 
-Initial model parameter values for intrinsic growth ($r$) and resource
-density-dependence ($\alpha_{ii}$) parameters were fixed to 1 and 0.001,
-respectively, to bound all solutions. Competitive parameters for the
+<!-- Sage [@ref] was used to solve all equation systems at equilibrium. All other
+analyses were performed using R [@ref]. All code and data used to perform the
+simulations and analyses are available at [...]. -->
+
+## Disturbances
+
+For each motif, a 1% change in initial equilibria equations parameter values
+was applied to simulate negative disturbances through all possibile unique
+pathways of univariate and multivariate effects. Parameters selected to
+simulate disturbances were those related to population growth ($r$ and $m$)
+and interaction rates ($e$ and $\alpha_{ij}$), as their effects on population
+dynamics can readily be attributed to environmental pressure effects. For
+example, cod mortality will increase through fishing activities, whale attack
+rates on krill will be altered by behavioural changes induced by marine traffic,
+and conversion rates of copepods by capelin will be reduced through
+physiological effects of temperature anomalies on copepods.
+<!-- These examples should be accompanied by references -->
+
+Initial parameter values for intrinsic growth ($r$) and resource
+density-dependence ($\alpha_{ii}$) were fixed to 1 and 0.001,
+respectively, to bound all resource solutions. Competitive parameters for the
 exploitative competition motif were also fixed at 0.001 since those parameters
 were not to be investigated in our analyses. Conversion rates ($e$) were fixed
 to 0.5. Finally, a total of 100 sets of mortality ($m$) and attack rates
 ($\alpha_{ij}$) were evaluated using a simulated annealing
 algorithm optimizing for consumer abundance.
 
-## Disturbances
-
-Parameters selected to simulate disturbances were those related to
-population growth ($r$ and $m$) and interaction rates ($e$ and $\alpha_{ij}$).
-Disturbances were simulated by applying a 1% variation on all combinations of
-selected model parameters to simulate all possible unique pathways of
-univariate and multivariate effects. Parameter variation were only applied as a
-simulation of stress, hence mortality rates were increased, while all other
-parameters were decreased by 1%.
-
-Parameter combinations resulted in between 7 (disconnected) and 511 (omnivory
+<!-- Parameter combinations resulted in between 7 (disconnected) and 511 (omnivory
 possible pathways of effect, for a total of 930 unique pathways of effects
 (*to check, I may be multiplying the number of unique pathways for
-exploitative and apparent competition*).
+exploitative and apparent competition*). -->
 
-The sensitivity to disturbances was measured as percent change between the
-analytical abundance after parameter variation and the initial abundance,
-for each species and each pathway of effect. The amplication potential of
-pathways of multiple effects was measured as percent difference between the
-analytical abundance of the multivariate disturbance model and the sum of the
-univariate disturbance models. A value of 0 equals a null or additive effect,
-a value below 0 is a dominant or antagonistic effect, and a value over 0 is a
-synergistic effect.
 
-## Sensitivity and amplification scores
+## Trophic sensitivity
 
-### Pathways of effects
+For each 13 unique motif positions considered and all unique pathways of effects,
+the variation in abundance between the 100 sets of initial conditions and
+disturbed conditions was used as a proxy of trophic sensitivity ($s_{i,j}$) to
+disturbances:
 
-Sensitivity and amplification scores for individual pathways of effects, motif
-positions and motifs were evaluated by [...]
+$$s_{i,j} = \frac{a_{i,j} - a_i}{a_i}$$
+<!-- Should the sensitivity score be divided by the number of unitary pathways disturbed? -->
 
-### Motif positions
+where $i$ is a motif position, $j$ is a unique pathway of effect, $a_i$ is the
+initial abundance at position $i$, and $a_{i,j}$ is the abundance at position
+$i$ after the simulation of the pathway of effect $j$. Sensitivity scores are
+bounded negatively to -1, as abundances cannot fall below 0. The sensitivity
+score used for a single pathway of effect ($S_{i,j}$) is the mean of the 100
+simulation using all initial conditions:
 
-The sensitiivity score was calculated for each motif position by taking the
-mean absolute value of the percent abundance change between initial and
-disturbed models for all pathways of effect. This means that a value of 1 is
-a percent change in abundance equal to the percent change in parameter value
-to simulate a disturbance, a value below 1 is a percent abundance change lower
-than the simulated disturbance, and a value above 1 is a percent abundance
-change greater than the percent parameter change.
+$$S_{i, j} = \frac{1}{n} \sum_{l = 1}^n s_{i,j}$$
 
-Similarly, the amplification score was measure by adding 1 to the difference
-between the joint model and the additive model, so that antagonistic and
-synergistic effects are centered on 1 rather than 0.
+We define *weak entry pathways* and *sink pathways* as those pathways whose
+effect on the abundance of a motif position exceeds 1% ($S_{i,j} < -1\%$
+or $S_{i,j} > \%1$) and is null (*i.e.* $S_{i,j} = 0$), respectively
+(\ref{concept}).
 
-### Food web
+A score of position sensitivity ($S_i$) was evaluated using the
+mean of the set of all possible pathways of effect ($K^i$) for a give position
+$i$:
 
-Single species sensitivity and amplification profiles were evaluated by
-multiplying the frequency at which they appear in each motif position by
-the sensitivity and amplification scores.
+$$S_i = \frac{1}{\vert K^i \vert}\sum_{j \in K^i} S_{i, j}$$
 
-$$Score_{species} = Frequency * Sensititivity * Amplification$$
+We define *weak entry points* and *biotic sinks* as positions whose
+sensitivity score is significantly different than 1% ($S_i < -1\%$ or
+$S_i > 1\%$) and is null ($S_i = 0$), respectively.
+
+## Trophic amplification
+
+To evaluate whether the effects of disturbances should be investigated
+in combination, a score of trophic amplification was evaluated to
+
+A score of trophic amplification ($A_{i,j}$) was measured to evaluate the
+potential of pathways of effects to result in non-additive effects:
+
+$$A_{i, j} = S_{i, K_j} - \sum_{k_j \in K_j} S_{i, j}$$
+<!-- Not sure whether this is right, because I also evaluate the mean
+of all initial conditions -->
+
+where $K_j$ is a multivariate pathway of effect $j$ and $k_j$ are unitary
+pathways of effect composition $j$. The amplification score evaluates the
+deviance of a multivariate pathway of effect and the sum of the univariate
+effects composing the pathway of effect, *i.e.* the additive model.
+Thus, a value of 0 identifies a null of additive effect, a value below 0
+identifies an antagonistic effect, and a value over 0 identifies synergistic
+effects.
+
+We define *antagonistic pathways* and *synergistic pathways* as those pathways
+whose effect on the abundance of a motif position is significantly different
+than the additive model, while *additive pathways* are those pathways whose
+effect is not significantly different than the additive model (\ref{concept}).
+
+A score of position amplification ($A_i$) was evaluated using the
+mean of the set of all possible pathways of effect ($K^i$) for a give position
+$i$:
+
+$$A_i = \frac{1}{\vert K^i \vert} \sum_{j \in K^i} A_{i, j}$$
+
+We define *biotic buffers* and *biotic multipliers* as positions whose
+amplification score is significantly different than 0, while *biotic invariants*
+are positions whose amplification score is not significantly different than 0
+(\ref{concept}).
+
+
+## Species sensitivity and amplification
+
+We define two sets of scores at the species level. The first requires
+no information on realised pathways of effect and provides a general evaluation
+of a species sensitivity and amplification potential based on the frequency of
+times it occupies a position in a food web:
+
+$$S_m = sum_i f_mi S_i$$
+
+$$A_m = sum_i f_mi A_i$$
+
+where $S_m$ and $A_m$ are the sensitivity and amplification scores of species
+$m$, respectively, $f_mi$ is the frequency at which species $m$ occupies
+position $i$ in a food web, and $S_i$ and $A_i$ are the sensitivity
+amplification scores at position $i$, respectively.
+
+The second set of scores at the species level uses a list of realised pathways
+of effect:
+
+$$S_m = \sum_{j \in K^{i*}}^{position} S_{i,j}$$
+
+$$A_m = \sum_{j \in K^{i*}}^{position} A_{i,j}$$
+
+where $S_m$ and $A_m$ are the sensitivity and amplification scores of species
+$m$, respectively, $j$ are pathways of effect, $K^{i*}$ is the set of realised
+pathways of effects for position $i$, and $S_{i,j}$ and $A_{i,j}$ are the
+sensitivity and amplification scores for pathway of effect $j$ on position $i$
 
 
 ## Empirical food webs
 
-We used 5 food webs from the Estuary and Gulf of St. Lawrence
+We used empirical food web data from the Estuary and Gulf of St. Lawrence,
+in eastern Canada, to evaluate the sensitivity and amplification scores of its
+constituent species. The food webs come from different regions of the St. Lawrence
+and different time periods, and contain different yet overlapping functional
+groups. The Northern [@morrissette2003] and Southern [@savenkoff2004a]
+St. Lawrence food webs were for the mid-1980s, prior to the groundfish stock
+collapses of the early 1990s, and contain the same functional groups. The
+Estuary food web, meanwhile, contains more functional groups and represents
+the beginning of the 2010s [@savenkoff2012]. See supplementary materials for a
+description of the food webs used for this analysis.
+
 
 \newpage
 
@@ -380,7 +443,7 @@ We used 5 food webs from the Estuary and Gulf of St. Lawrence
 
 \newpage
 
-## Empirical food webs
+## Species position frequency
 
 \begin{figure}[H]
 \centering
@@ -391,9 +454,20 @@ We used 5 food webs from the Estuary and Gulf of St. Lawrence
 
 \newpage
 
+## Food web sensitivity and amplification scores
+
 \begin{figure}[H]
 \centering
-\includegraphics{./Figures/speciesSensitivity.png}
+\includegraphics{./Figures/speciesSensitivityPlot.png}
+\caption{Sensitivity scores for species in the food webs of the southern St. Lawrence, northern St. Lawrence, and the estuary of St. Lawrence}
+\label{spScore}
+\end{figure}
+
+\newpage
+
+\begin{figure}[H]
+\centering
+\includegraphics{./Figures/speciesScores.png}
 \caption{Sensitivity scores for species in the food webs of the southern St. Lawrence, northern St. Lawrence, and the estuary of St. Lawrence}
 \label{spScore}
 \end{figure}
@@ -409,7 +483,7 @@ We used 5 food webs from the Estuary and Gulf of St. Lawrence
 
 \newpage
 
-## Empirical food webs impact scores
+## Realised food web sensitivity and amplification scores
 
 \begin{figure}[H]
 \centering
@@ -619,59 +693,3 @@ go extinct more rapidly?
 <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 # References
 <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
-
-
-<!--
-## Tri-trophic chain
-
-\begin{eqnarray}
-  \nonumber \frac{dx}{dt} &=& x(r - \alpha x - \beta y) \\
-  \nonumber \frac{dy}{dt} &=& y(\mu \beta x - \delta z - m_y) \\
-  \nonumber \frac{dz}{dt} &=& z(\omega \delta y - m_z) \\
-\end{eqnarray}
-
-
-## Omnivory
-
-\begin{eqnarray}
-  \nonumber \frac{dx}{dt} &=& x(r - \alpha x - \beta y - \gamma z) \\
-  \nonumber \frac{dy}{dt} &=& y(\mu \beta x - \delta z - m_y) \\
-  \nonumber \frac{dz}{dt} &=& z(\nu \gamma x + \omega \delta y - m_z) \\
-\end{eqnarray}
-
-
-## Exploitative competition
-
-\begin{eqnarray}
-  \nonumber \frac{dx}{dt} &=& -{\left(\mathit{\alpha_{xx}} x + b y + g z - r\right)} x \\
-  \nonumber \frac{dy}{dt} &=& {\left(b u x - \mathit{ajj} \mathit{ajk} z - \mathit{ajj} y - \mathit{my}\right)} y \\
-  \nonumber \frac{dz}{dt} &=& {\left(g v x - \mathit{akj} \mathit{akk} y - \mathit{akk} z - \mathit{mz}\right)} z \\
-\end{eqnarray}
-
-
-## Apparent competition
-
-\begin{eqnarray}
-  \nonumber \frac{dx}{dt} &=& x(r_x - \alpha_x x - \gamma z) \\
-  \nonumber \frac{dy}{dt} &=& y(r_y - \alpha_y y - \delta z) \\
-  \nonumber \frac{dz}{dt} &=& z(\nu \gamma x + \omega \delta y - m_z) \\
-\end{eqnarray}
-
-
-## Partially disconnected
-
-\begin{eqnarray}
-  \nonumber \frac{dx}{dt} &=& x(r_x - \alpha_x x - \beta y) \\
-  \nonumber \frac{dy}{dt} &=& y(\mu \beta x - m_y) \\
-  \nonumber \frac{dz}{dt} &=& z(r_z - \alpha_z z) \\
-\end{eqnarray}
-
-
-## Disconnected
-
-\begin{eqnarray}
-  \nonumber \frac{dx}{dt} &=& x(r_x - \alpha_x x) \\
-  \nonumber \frac{dy}{dt} &=& y(r_y - \alpha_y y) \\
-  \nonumber \frac{dz}{dt} &=& z(r_z - \alpha_z z) \\
-\end{eqnarray}
--->
