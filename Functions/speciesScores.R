@@ -1,21 +1,28 @@
-trophicImpact <- function(foodWeb, stressSources) {
+speciesScores <- function(foodWeb, stressSources) {
+  # ------------------------------------------------
+  #                    Data
+  # ------------------------------------------------
   # Disturbance data
   distSL <- read.table('./Data/FoodWeb/disturbances.txt', sep = '\t', header = T, stringsAsFactors = F)
 
   # Pathways of effect sensitivity
   load('./Data/DisturbancesAll.RData')
 
+  # Pathways of effect amplification
+  load('./Data/AdditiveAll.RData')
+
+  # ------------------------------------------------
+  #           Scores per individual pathway
+  # ------------------------------------------------
   # Calculate score, which is the absolute value of the abundance variation in %
   # int$Score <- abs(int$delta)
 
   # Modify r for r_x -> should be done much sooner in the code hierarchy
   int$pathway <- gsub('r$', 'r_x', int$pathway)
+  intAdd$pathway <- gsub('r$', 'r_x', intAdd$pathway)
 
   # Mean per motif / position / pathway
-  # !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-  # Reevaluate whether the absolute of the delta should really be taken or not,
-  # because it cancels the possibility of antagonistic pathways
-  # !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+  # Sensitivity
   int <- int %>%
          filter(motif %in% c('tt','om','ex','ap')) %>%
          group_by(motif, position, pathway) %>%
@@ -27,23 +34,50 @@ trophicImpact <- function(foodWeb, stressSources) {
                    CIm = Mean - (1.96*SE)) %>%
           as.data.frame()
 
+  # Amplification
+  intAdd <- intAdd %>%
+            group_by(motif,pathway,species,position) %>%
+            summarise(Mean = mean(Int),
+                      SD = sd(Int),
+                      SE = SD/sqrt(n()),
+                      CIp = Mean + (1.96*SE),
+                      CIm = Mean - (1.96*SE)) %>%
+            mutate(param = stringr::str_split(pathway, '-')) %>%
+            as.data.frame()
+
+  # ------------------------------------------------
+  #           Pathways of effect data ID
+  # ------------------------------------------------
   # Parameters disturbed in simulations
   param <- c('r_x','r_y','r_z','m_y','m_z','beta','delta','gamma','mu','nu','omega')
 
   # Pathways of effect in simulations data.frame
-  intPathway <- matrix(FALSE, nrow = nrow(int), ncol = 11,
-                       dimnames = list(c(), param)) %>%
-                as.data.frame()
+  intPathway <-
+    intPathAdd <- matrix(FALSE, nrow = nrow(int), ncol = 11,
+                         dimnames = list(c(), param)) %>%
+                  as.data.frame()
 
-    # Fill it
-    for(i in 1:nrow(int)) {
-      dat <- str_split(int$pathway[i],'-') %>% unlist()
-      intPathway[i, dat] <- T
-    }
+    # Fill em
+      # Sensitivity
+      for(i in 1:nrow(int)) {
+        dat <- str_split(int$pathway[i],'-') %>% unlist()
+        intPathway[i, dat] <- T
+      }
 
-    # Add motif and position info to int
+      # Amplification
+      for(i in 1:nrow(intAdd)) {
+        dat <- str_split(intAdd$pathway[i],'-') %>% unlist()
+        intPathAdd[i, dat] <- T
+      }
+
+    # Add motif and position info to int and intAdd
     int <- cbind(int, intPathway)
+    intAdd <- cbind(intAdd, intPathAdd)
 
+
+  # ------------------------------------------------
+  #             Triad pathways of effects
+  # ------------------------------------------------
   # Triad classification
   triadClass <- triadClassification(foodWeb)
 
@@ -145,8 +179,8 @@ trophicImpact <- function(foodWeb, stressSources) {
                 mutate(position = paste0(motif, position)) %>%
                 select(-value)
 
-  # Score
-  triadClass$Score <- 0
+  # Scores
+  triadClass$Amplification <- triadClass$Sensitivity <- 0
 
   # Evaluate score per triad classification as a function of pathway of effect
   for(i in 1:nrow(triadClass)) {
@@ -155,31 +189,48 @@ trophicImpact <- function(foodWeb, stressSources) {
     motif <- triadClass$motif[i]
     pos <- triadClass$position[i]
 
-    # Locate in simulated dataset - check conditions
-      uid <- which(int$motif == motif &
-                   int$position == pos &
-                   int$r_x == dat$r_x &
-                   int$r_y == dat$r_y &
-                   int$r_z == dat$r_z &
-                   int$m_y == dat$m_y &
-                   int$m_z == dat$m_z &
-                   int$beta == dat$beta &
-                   int$delta == dat$delta &
-                   int$gamma == dat$gamma &
-                   int$mu == dat$mu &
-                   int$nu == dat$nu &
-                   int$omega == dat$omega)
+    # Locate in simulated sensitivity dataset - check conditions
+      uidS <- which(int$motif == motif &
+                    int$position == pos &
+                    int$r_x == dat$r_x &
+                    int$r_y == dat$r_y &
+                    int$r_z == dat$r_z &
+                    int$m_y == dat$m_y &
+                    int$m_z == dat$m_z &
+                    int$beta == dat$beta &
+                    int$delta == dat$delta &
+                    int$gamma == dat$gamma &
+                    int$mu == dat$mu &
+                    int$nu == dat$nu &
+                    int$omega == dat$omega)
 
-    # Score
-    if (length(uid) == 1) triadClass$Score[i] <- int$Mean[uid]
+     # Locate in simulated amplification dataset - check conditions
+       uidA <- which(intAdd$motif == motif &
+                     intAdd$position == pos &
+                     intAdd$r_x == dat$r_x &
+                     intAdd$r_y == dat$r_y &
+                     intAdd$r_z == dat$r_z &
+                     intAdd$m_y == dat$m_y &
+                     intAdd$m_z == dat$m_z &
+                     intAdd$beta == dat$beta &
+                     intAdd$delta == dat$delta &
+                     intAdd$gamma == dat$gamma &
+                     intAdd$mu == dat$mu &
+                     intAdd$nu == dat$nu &
+                     intAdd$omega == dat$omega)
+
+    # Scores
+    if (length(uidS) == 1) triadClass$Sensitivity[i] <- int$Mean[uidS]
+    if (length(uidA) == 1) triadClass$Amplification[i] <- intAdd$Mean[uidA]
   }
 
   # Summarize by species
   scoreSp <- triadClass %>%
-             select(species, Score) %>%
+             select(species, Sensitivity, Amplification) %>%
              group_by(species) %>%
-             summarize(Score = sum(Score)) %>%
-             arrange(Score)
+             summarize(Sensitivity = sum(Sensitivity),
+                       Amplification = sum(Amplification)) %>%
+             arrange(Sensitivity)
 
   # Return
   return(scoreSp)
