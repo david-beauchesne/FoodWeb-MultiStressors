@@ -133,23 +133,6 @@ for(i in 1:length(dat)) {
   spAmplification[[i]] <- rowSums(posFreq) %>% sort()
 }
 
-# # Joint score
-# scores[[1]] <- arrange(scores[[1]], position)
-# scores[[2]] <- arrange(scores[[2]], position)
-# joint <- scores$sensitivity$Mean * scores$amplification$Mean
-# names(joint) <- scores$sensitivity$position
-#
-# spJoint <- vector('list', length(dat))
-# for(i in 1:length(dat)) {
-#   posFreq <- positionFrequency(dat[[i]])
-#   for(j in 1:ncol(posFreq)) {
-#   posFreq[, j] <- posFreq[, j] * joint[names(joint) == colnames(posFreq)[j]]
-#   }
-#   spJoint[[i]] <- rowSums(posFreq) %>% sort()
-# }
-#
-
-
 # Plot
 png('./Figures/speciesSensitivityPlot.png', width = 1200, height = 700, res = 200, pointsize = 6)
 par(mfrow = c(2,3), mar = c(3,4,2,.5))
@@ -273,7 +256,7 @@ png('./Figures/TL-OM.png', width = 800, height = 800,
 par(mfrow = c(2,2), family = 'serif', mar = c(4,4,.5,.5))
   # Sensitivity
   # Plot 1
-  plot0(x = c(0,7), y = c(-5,5))
+  plot0(x = c(0,5), y = c(-5,5))
   axis(1);axis(2)
   mtext(1, text = 'Trophic level', line = 2.25)
   mtext(2, text = 'Sensitivity score', line = 2.25)
@@ -291,7 +274,7 @@ par(mfrow = c(2,2), family = 'serif', mar = c(4,4,.5,.5))
 
   # Amplification
   # Plot 3
-  plot0(x = c(0,7), y = c(-0.02,0.02))
+  plot0(x = c(0,5), y = c(-0.02,0.02))
   axis(1);axis(2)
   mtext(1, text = 'Trophic level', line = 2.25)
   mtext(2, text = 'Amplification score', line = 2.25)

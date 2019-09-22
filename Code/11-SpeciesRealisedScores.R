@@ -68,6 +68,8 @@ stressSources <- list(c('Acidification','DNH','SST','SBT','Shipping'),
 for(i in 1:3) {
   impact[[i]] <- speciesScores(dat[[i]], stressSources[[i]])
 }
+# Export
+save(impact, file = './Data/SpeciesScores.RData')
 
 # In a list
 spSensitivity <- spAmplification <- vector('list', 3)
@@ -202,7 +204,7 @@ png('./Figures/TL-OM-Realised.png', width = 800, height = 800,
 par(mfrow = c(2,2), family = 'serif', mar = c(4,4,.5,.5))
   # Sensitivity
   # Plot 1
-  plot0(x = c(0,7), y = c(-10,10))
+  plot0(x = c(0,5), y = c(-10,10))
   axis(1);axis(2)
   mtext(1, text = 'Trophic level', line = 2.25)
   mtext(2, text = 'Sensitivity score', line = 2.25)
@@ -220,7 +222,7 @@ par(mfrow = c(2,2), family = 'serif', mar = c(4,4,.5,.5))
 
   # Amplification
   # Plot 3
-  plot0(x = c(0,7), y = c(-.2,.2))
+  plot0(x = c(0,5), y = c(-.2,.2))
   axis(1);axis(2)
   mtext(1, text = 'Trophic level', line = 2.25)
   mtext(2, text = 'Amplification score', line = 2.25)
