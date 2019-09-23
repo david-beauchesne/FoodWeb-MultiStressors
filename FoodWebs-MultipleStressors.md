@@ -7,8 +7,8 @@ output:
     toc: false
     number_sections: true
 header-includes:
-   # - \usepackage{lineno}
-   # - \linenumbers
+   - \usepackage{lineno}
+   - \linenumbers
    - \usepackage{listings}
    - \usepackage[svgnames]{xcolor}
    # - \usepackage{titling}
@@ -41,8 +41,6 @@ david.beauchesne@uqar.ca \newline
 
 \newpage
 
-
-
 <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 # To do:
 <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
@@ -62,6 +60,42 @@ david.beauchesne@uqar.ca \newline
 - [ ] Modify the score for species using realised pathways of effects. I thougth that this was done, but since we are not using probabilities, I'm not sure what I should be doing anymore with this. Ideally I would still use a probability and have a general function, but we might still want to keep this for the 4th chapter of the thesis.
 - [ ] Verify all codes so that the proper equations are used
 - [ ] Update thresholds used
+
+\newpage
+
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+# Abstract
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+Global changes are resulting in increasingly intricate environmental stress
+exposure regimes. These can in turn induce complex and unpredictable environmental
+effects permeating entire ecological communities by way of species interactions.
+
+The role of species and their interactions in mediating the effects of multiple
+disturbances on food webs is however still understudied. Experimental and
+*in situ* approaches provide limited insight, while theoretical approaches have
+yet to fully tackle the issue.
+
+Using Lotka-Volterra equilibria models of the 4 most common 3-species motifs in
+empirical food webs, we show that trophic position and interaction type
+influence the sensitivity to and the amplification of the effects of multiple
+disturbances.
+
+We then show that how species are embedded in complex food webs and the types of
+disturbances they are exposed to dictates their sensitivity to multiple sources
+of stress.
+
+Our results illustrate the importance of explictely considering species
+interactions to properly capture the effects of multiple stressors and
+safeguard ecological communities against global changes.
+
+
+
+<!-- Even if evidence indicates that holistic approaches should be favoured to
+study complex environmental phenomena, studies nonetheless still overwhelmingly
+focus on single-stressor and single-species evalutions. -->
+
+
 
 \newpage
 
@@ -243,7 +277,7 @@ david.beauchesne@uqar.ca \newline
 
 The dynamics of the four most abundant 3-species motifs (*i.e.* tri-trophic
 food chain, omnivory, exploitative and apparent competition) in empirical food
-webs [@stouffer2010] were modeled using Lotka-Voltera equation systems (Table S1).
+webs [@stouffer2010] were modeled using Lotka-Volterra equation systems (Table S1).
 Two additional motifs were included to serve as controls to test the importance of
 considering species interactions when evaluating environmental effects, *i.e.*
 a partially connected motifs with a disconnected species and a predator-prey
@@ -265,7 +299,7 @@ parameter of the attack rate which cannot exceed 1.
 Models were solved at equilibrium to study the effects of disturbances on
 persistent motif dynamics.
 As no equilibrium exists for the exploitative competition motif with
-Lotka-Voltera models of the selected forms, competitive parameters of the form
+Lotka-Volterra models of the selected forms, competitive parameters of the form
 $\alpha_{jj} \alpha_{jk} X_j X_k - \alpha_{jj} X_j^2$ were included in the
 consumer models to constrain their growth.
 
@@ -380,9 +414,9 @@ no information on realised pathways of effect and provides a general evaluation
 of a species sensitivity and amplification potential based on the frequency of
 times it occupies a position in a food web:
 
-$$S_m = sum_i f_mi S_i$$
+$$S_m = \sum_i f_mi S_i$$
 
-$$A_m = sum_i f_mi A_i$$
+$$A_m = \sum_i f_mi A_i$$
 
 where $S_m$ and $A_m$ are the sensitivity and amplification scores of species
 $m$, respectively, $f_mi$ is the frequency at which species $m$ occupies
@@ -443,6 +477,43 @@ description of the food webs used for this analysis.
 
 \newpage
 
+\blandscape
+\begin{figure}[H]
+\centering
+\includegraphics{./Figures/ScoreTable.png}
+\caption{Species scores for the St. Lawrence}
+\label{scoreTable}
+\end{figure}
+\elandscape
+
+\newpage
+
+
+
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+# Supplementary Figures
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+## Simulation figures
+
+\begin{figure}[H]
+\centering
+\includegraphics{./Figures/nParam.png}
+\caption{Mean delta abundance and difference between joint and additive models as a function of the number of parameters}
+\label{nParam}
+\end{figure}
+
+\newpage
+
+\begin{figure}[H]
+\centering
+\includegraphics{./Figures/paramType.png}
+\caption{Mean delta abundance and difference between joint and additive models as a function of the types of parameters, i.e. growth/mortality rates, attack rates and conversion rates}
+\label{paramType}
+\end{figure}
+
+\newpage
+
 ## Species position frequency
 
 \begin{figure}[H]
@@ -460,7 +531,7 @@ description of the food webs used for this analysis.
 \centering
 \includegraphics{./Figures/speciesSensitivityPlot.png}
 \caption{Sensitivity scores for species in the food webs of the southern St. Lawrence, northern St. Lawrence, and the estuary of St. Lawrence}
-\label{spScore}
+\label{spScorePlot}
 \end{figure}
 
 \newpage
@@ -487,47 +558,30 @@ description of the food webs used for this analysis.
 
 \begin{figure}[H]
 \centering
-\includegraphics{./Figures/speciesImpact.png}
+\includegraphics{./Figures/speciesRealScoresPlot.png}
 \caption{Impact scores for species in the food webs of the southern St. Lawrence, northern St. Lawrence, and the estuary of St. Lawrence}
-\label{spImpact}
+\label{spRealPlot}
 \end{figure}
 
 \newpage
 
+\begin{figure}[H]
+\centering
+\includegraphics{./Figures/speciesRealisedScores.png}
+\caption{Sensitivity scores for species in the food webs of the southern St. Lawrence, northern St. Lawrence, and the estuary of St. Lawrence}
+\label{spReal}
+\end{figure}
+
+\newpage
 
 \begin{figure}[H]
 \centering
-\includegraphics{./Figures/TL-OM-Impact.png}
+\includegraphics{./Figures/TL-OM-Realised.png}
 \caption{Impact scores as a function of trophic level and omnivory index}
-\label{tlom-Imp}
+\label{tlomReal}
 \end{figure}
 
 \newpage
-
-
-
-<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
-# Supplementary Figures
-<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
-
-\begin{figure}[H]
-\centering
-\includegraphics{./Figures/nParam.png}
-\caption{Mean delta abundance and difference between joint and additive models as a function of the number of parameters}
-\label{nParam}
-\end{figure}
-
-\newpage
-
-\begin{figure}[H]
-\centering
-\includegraphics{./Figures/paramType.png}
-\caption{Mean delta abundance and difference between joint and additive models as a function of the types of parameters, i.e. growth/mortality rates, attack rates and conversion rates}
-\label{nParam}
-\end{figure}
-
-\newpage
-
 
 <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 # Supplementary Material
