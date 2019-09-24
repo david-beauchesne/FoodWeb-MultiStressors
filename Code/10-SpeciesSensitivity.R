@@ -113,6 +113,12 @@ names(dat) <- c('Southern St. Lawrence (mid-1980s)',
                 'Northern St. Lawrence (mid-1980s)',
                 'St. Lawrence Estuary (2010s)')
 
+# Position frequency
+posFreq <- vector('list', 3)
+names(posFreq) <- names(dat)
+for(i in 1:3) posFreq[[i]] <- positionFrequency(dat[[i]])
+save(posFreq, file = './Data/positionFrequency.RData')
+
 # Sensitivity
 spSensitivity <- vector('list', length(dat))
 for(i in 1:length(dat)) {
@@ -132,6 +138,20 @@ for(i in 1:length(dat)) {
   }
   spAmplification[[i]] <- rowSums(posFreq) %>% sort()
 }
+
+# Export scores as data.frames
+scores <- vector('list', 3)
+for(i in 1:3) {
+  sens <- data.frame(Species = names(spSensitivity[[i]]),
+                     SensitivityTopo = spSensitivity[[i]],
+                     stringsAsFactors = F)
+  amp <- data.frame(Species = names(spAmplification[[i]]),
+                     AmplificationTopo = spAmplification[[i]],
+                     stringsAsFactors = F)
+  scores[[i]] <- left_join(sens, amp, by = 'Species')
+}
+
+save(scores, file = './Data/SpeciesTopoScores.RData')
 
 # Plot
 png('./Figures/speciesSensitivityPlot.png', width = 1200, height = 700, res = 200, pointsize = 6)
