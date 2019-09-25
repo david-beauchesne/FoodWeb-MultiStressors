@@ -47,6 +47,9 @@ dat <- data.frame(Sensitivity = c(fwSSL$Sensitivity, fwNSL$Sensitivity, fwESL$Se
 
 
 # Biplots
+cols <- c('#2e53d766','#21944c66','#d18c2c66')
+nm <- c('Southern St. Lawrence (mid-1980s)','Northern St. Lawrence (mid-1980s)',
+        'St. Lawrence Estuary (2010s)')
 png('./Figures/Biplots.png', res = 900, width = 160, height = 80,units = "mm")
 par(mfrow = c(1,2), family = 'serif', mar = c(3,3,1,.5))
 # Sensitivity
@@ -59,10 +62,17 @@ mtext(side = 1, 'Realised', cex = 1, line = 2)
 mtext(side = 2, 'Topological', cex = 1, line = 2)
 mtext(side = 3, 'Sensitivity', font = 2)
 
-points(x = dat$Sensitivity, y = dat$SensitivityTopo, pch = 20, col = '#000000', cex = .75)
+points(x = fwSSL$Sensitivity, y = fwSSL$SensitivityTopo, pch = 20, col = cols[1], cex = .75)
+points(x = fwNSL$Sensitivity, y = fwNSL$SensitivityTopo, pch = 20, col = cols[2], cex = .75)
+points(x = fwESL$Sensitivity, y = fwESL$SensitivityTopo, pch = 20, col = cols[3], cex = .75)
 lines(x,y, lty = 2, col = '#000000aa')
 lines(x, c(0,0), lty = 3, col = '#00000066')
 lines(c(0,0), y, lty = 3, col = '#00000066')
+
+# Legend
+y = c(1.75,1.5,1.25)
+text(x = rep(-9.25,3), y, labels = nm, adj = c(0,.5), cex = .5)
+points(x = rep(-10,3), y, cex = .75, col = cols, bg = cols, pch = 20)
 
 # Amplification
 x = c(-.1,.2)
@@ -73,7 +83,9 @@ axis(2, cex.axis = .75, las = 2)
 mtext(side = 1, 'Realised', cex = 1, line = 2)
 mtext(side = 3, 'Amplification', font = 2)
 
-points(x = dat$Amplification, y = dat$AmplificationTopo, pch = 20, col = '#000000', cex = .75)
+points(x = fwSSL$Amplification, y = fwSSL$AmplificationTopo, pch = 20, col = cols[1], cex = .75)
+points(x = fwNSL$Amplification, y = fwNSL$AmplificationTopo, pch = 20, col = cols[2], cex = .75)
+points(x = fwESL$Amplification, y = fwESL$AmplificationTopo, pch = 20, col = cols[3], cex = .75)
 lines(x,y, lty = 2, col = '#000000aa')
 lines(x, c(0,0), lty = 3, col = '#00000066')
 lines(c(0,0), y, lty = 3, col = '#00000066')
