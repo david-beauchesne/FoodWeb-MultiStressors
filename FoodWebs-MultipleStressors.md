@@ -20,7 +20,7 @@ header-includes:
    - \usepackage{float}
    - \restylefloat{table}
 bibliography: FoodWeb-MultiStressorMS.bib
-csl: frontiers.csl
+csl: EcologyLetters.csl
 link-citations: yes
 relativeurls: true
 ---
@@ -34,16 +34,42 @@ rmarkdown::render('./FoodWebs-MultipleStressors.md')
 ^3^Department of Integrative Biology, University Of Guelph, Guelph, Ontario, Canada N1G 2W1 \newline
 ^4^Département de biologie, Université de Sherbrooke, Sherbrooke, QC, Canada \newline
 
+**Running title**: \newline <!-- < 45 characters including spaces -->
+
+**Keywords**: \newline <!-- <= 10 -->
+
+**Type of article**: Ideas and Perspectives \newline
+
+**Abstract word count**: \newline
+**Main text word count**: \newline<!-- excluding abstract, acknowledgements, references, table and figure legends -->
+<!-- **Text box word count**: One for each box, if applicable -->
+**Number of references**: \newline
+**Number of figures**: \newline
+**Number of tables**: \newline
+**Number of text boxes**: \newline
+
 **Correspondence**: \newline
 David Beauchesne \newline
 david.beauchesne@uqar.ca \newline
+1-514-553-4975\newline
+
+**Statement of authorship**: \newline
+
+**Data accessibility statement**:
+
+
+
+
+
 
 
 \newpage
 
 <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
-# To do:
+# To do: {-}
 <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+- [ ] Proposal for Ecology Letters Ideas and Perspectives
 
 - [X] Check and adjust for unique pathways of effect (exploitative and apparent competition).
   - They are all unique when you consider the position of the species, except for the disconnected motif.
@@ -60,6 +86,70 @@ david.beauchesne@uqar.ca \newline
 - [ ] Modify the score for species using realised pathways of effects. I thougth that this was done, but since we are not using probabilities, I'm not sure what I should be doing anymore with this. Ideally I would still use a probability and have a general function, but we might still want to keep this for the 4th chapter of the thesis.
 - [ ] Verify all codes so that the proper equations are used
 - [ ] Update thresholds used
+- [ ] Give proper credit to icons and images used
+
+
+
+\newpage
+
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+# Proposal letter {-}
+
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+<!-- ## Instructions
+
+*Unsolicited proposals, which will be evaluated by the Ideas
+and Perspectives or Reviews and Syntheses Editors, in consultation with the
+Editorial Board and Editor-in-Chief, prior to a full submission. Proposals
+should be no more than 300 words long, describe the nature and novelty of the
+work, the contribution of the proposed article to the discipline, and the
+qualifications of the author(s) who will write the manuscript. Proposals should
+be sent to the Editorial Office (ecolets@cefe.cnrs.fr).* -->
+
+\newpage
+
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+# Cover letter and novelty statement {-}
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+<!-- ## Instructions
+*The covering letter to the Editorial Office should succinctly describe why the enclosed work is novel, exciting and of
+general interest in ecology.*
+
+*Additionally, the covering letter should include a clear statement of exactly how the present manuscript is
+outstandingly novel relative to recent work by the author or coauthors cited in the present submission. At the time
+of submission, PDFs of any recent manuscripts or book chapters by the author or coauthors and cited in the present
+submission must be uploaded as supporting files. This includes all cited manuscripts by the author or coauthors
+published this year, last year, in press or submitted. These files are made accessible to referees with the
+understanding that "in press" and "submitted" manuscripts represent privileged communications which may not be
+cited or used in any way other than for reference while reviewing the current manuscript. If there is a particular
+reason why a file should not be made available to reviewers, please point this out and provide an explanation in the
+cover letter.* -->
+
+## Letter {-}
+
+
+## Documents joined {-}
+
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+# Reviewers {-}
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+**Proposed reviewers**:
+
+- Reviewer 1
+- Reviewer 2
+- Reviewer 3
+
+**Conflicts of interest**:
+
+- In-conflict individual and reason
+
+
+# Conflict of interest statement {-}
+
+The authors declare that the submitted work was carried out in the absence of
+any personal, professional or financial relationships that could potentially be
+construed as a conflict of interest.
 
 \newpage
 
@@ -739,3 +829,153 @@ go extinct more rapidly?
 <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 # References
 <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+# Ecology Letters formatting and submission
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+## Latex files
+
+**Instructions**: *Ecology Letters does not have a standard LaTex style file. Manuscripts submitted using LaTeX should be accompanied
+by a PDF version of the paper. Upon final acceptance for publication, authors will be requested to send their LaTeX
+source files accompanied by all figures in EPS or TIFF format and also any non-standard LaTeX style files used in the
+manuscript preparation.*
+
+
+## Formatting
+
+- Numbered pages
+
+- Text:
+  - Double-spaced
+  - No hyphenation
+  - No automatic wordwrap
+
+- Tables
+  - As MS Excel or MS Word or equivalent
+  - Cited consecutively in the text
+  - Numbered with Arabic numerals
+  - Grouped together at the end od the paper or in a separate file
+  - Titles and typed double-spaced on a separate sheet
+  - Clearly indicate units for each entries in the table
+  - Footnotes to tables hsould be identified by the sumbols * † ‡ § ¶ (in that order) and placed at the bottom of the table.
+  - No vertical rules should be used
+
+- Figures
+  - Cited consecutively in the text
+  - Numbered with Arabic numerals
+  - Grouped together at the end od the paper or in a separate file
+  - Titles and typed double-spaced on a separate sheet
+  - Line and combination figures should preferably be submitted in vector graphics format (e.g. either embedded as vector graphics in a Word document or saved separately in PDF or eps format). If this is not possible, they should be saved separately as pixel-based graphics at 600 dpi at the required print size, and they should be saved in TIFF (not jpg) format or embedded as such in Word.
+  - Photographic figures should be saved at 300 dpi in TIFF format, or jpg format with low compression
+  - Figures should be drawn/submitted at their smallest practicable size (to fit a single column (82 mm), two-thirds page width (110 mm) or full page width (173 mm). Over-sized figures will be reduced by the Production Editor. If figures are drawn larger than reproduction size, component parts such as symbols and text must be large enough to allow for the necessary reduction. For full instructions on preparing your figures, see our Electronic Artwork Information for Authors page and the electronic artwork guidelines.
+
+- Text boxes
+  - Text boxes may be used for standalone definitions, equations, necessary explanations of concepts, a glossary (if
+    needed only), and other items that disrupt the flow of the manuscript or where repeated reference to them is
+    necessary. Text boxes can include equations and references (included in the main reference list), but not tables,
+    figures or footnotes. Text boxes are limited to 750 words including a title. Items in text boxes that are not logically
+    separate from the main text of the manuscript should be incorporated into the main text. A glossary should only be
+    given if the language is complex enough that it may not be understood by the general readership of the journal or if
+    requested by an editor for the journal. Text boxes should be cited consecutively using Arabic numerals (e.g., Box 1,
+    Box 2). Text for text boxes should be given after figures at the end of the manuscript and the text should begin with a
+    short descriptive title, for instance “Box 1: Calculation of a trophic complexity index.”
+
+- Scientific names
+  - The Latin names of each species should be given in full. Scientific names should be given priority in the text, with
+    colloquial names in parentheses if desired. Please make sure that the identity of species used in your paper can be
+    verified, unless these are very well known (e.g., Homo sapiens, Drosophila melanogaster, Escherichia coli). If the data
+    came from another paper where the species was identified, it must be cited. If fresh data are presented, the name of
+    the taxonomist who identified the specimens should be given, as well as the name of the company or provider of the
+    organisms (e.g., a culture collection or seed company) and/or the reference work used to make the identification.
+    Lodgement of voucher specimens in a recognized museum is desirable, especially for taxa which are poorly known,
+    and should be stated in the manuscript.
+
+- Mathematics
+  - Wherever possible, mathematical equations and symbols should be typed in-line by keyboard entry (using Symbol
+    font for Greek characters, and superscript and subscript options where applicable). Do not embed equations or
+    symbols using Equation Editor or Math Type or equivalents, when simple in-line, keyboard entry is possible. Equation
+    softwares should only be used for displayed, multi-line equations and equations and symbols that cannot be typed.
+    LaTex files are supported, but if submitting in this format authors should also provide an identical PDF file.
+
+
+
+### Title page
+
+- Article title
+- full name(s), affiliation(s) and e-mail address(es) of all author(s)
+- a short running title (abbreviated form of title) of less than 45 characters including spaces
+- up to 10 keywords for indexing purposes. It is very important that the keywords be chosen carefully
+- the type of article (Ideas and Perspectives, Letters, Reviews and Syntheses, or Technical Comments)
+- the number of words in the abstract, the number of words in the main text (excluding abstract, acknowledgements, references, table and figure legends), and the number of words in each text box
+- the number of references
+- the number of figures, tables, and text boxes
+- the name and complete mailing address (including telephone and fax numbers and e-mail address) of the person to whom correspondence should be sent
+- Statement of authorship: Contributions by authors should be listed on the title page and will be printed at the end of
+the manuscript. This statement should be appropriate to the study described in the manuscript and should clarify
+who designed the study, who performed the research, who provided new methods or materials, and who wrote the
+manuscript. We encourage concise statements such as “JW performed phylogenetic analyses, MH collected data,
+performed modeling work and analyzed output data, and PK performed the meta-analysis. MH wrote the first draft
+of the manuscript, and all authors contributed substantially to revisions.”
+- Data accessibility statement: The statement must confirm that, should the manuscript be accepted, the data
+supporting the results will be archived in an appropriate public repository such as Dryad or Figshare and the data DOI
+will be included at the end of the article.
+
+### Abstract
+
+- The abstract page should contain a short summary not exceeding 200 words for Ideas and Perspectives and Reviews and Syntheses.
+
+### Main text
+
+- (a)Introduction. The introduction should summarize briefly the background and aims, and end with a very brief statement of what has been achieved by the work.
+- (b) Material and methods. This section should contain sufficient detail so that all procedures can be repeated (in
+conjunction with cited references). A checklist is provided so that authors can check that their methods report
+details which our editors regard as essential (please refer to the Checklist). Where specific equipment and materials
+are named, the manufacturer's name, city and country should be given (generally in parentheses after first mention).
+- (c) Results. The Results section should present the experiments that support the conclusions to be drawn later in the
+Discussion. The Results section should conform to a high standard of rigour. Extended lines of inference, arguments
+or speculations should not be placed in the Results.
+- (d) Discussion. The Discussion section should be separate from the Results section. It allows authors to propose their
+interpretation of the results, and to suggest what they might mean in a wider context in general and relative to
+published literature. It should end with a clear statement of the main conclusions of the research, and a clear
+explanation of their importance and relevance.
+- (e) Acknowledgements. Acknowledgements should be brief and concise.
+- (f) References. See below for detailed information to in-text citations and Reference list.
+
+### In-text citations
+
+- Chronological order
+- Fully, except if > 2 authors
+
+### Reference list
+
+- All authors, up to 6 authors
+• Journal articles Last name, Initials. et al. (Year). Full title of article. Abbreviated journal title (standard abbreviations), Volume number, page range.
+• Books Last name, Initials. et al. (Year). Full title of book. Edition (only include this if not the first edition). Publisher, place (cities only except for USA and UK), pp. (page range)
+• Chapters in books Last name, Initials. et al. (Year). Full title of chapter. In: (Full title of book), Edition (only include this if not the first edition) { [ed(s).] [Editors(s) last name, initials] }. Publisher, City (Include state and country for USA and UK), pp. (page range).
+• Data Last name, Initials. et al. (Year). Data from: (Title of article). Dryad Digital Repository. Available at: http://dx.doi.org/10.5061/dryad.585t4.
+• Websites Authorship or Source. (Year). Title of web document or web page. Available at: [URL]. Last accessed DD MONTH YYYY. References to material available on the World Wide Web can be given only if the information is available on an official site and without charge to readers. Authors may provide electronic copies of the cited material for inclusion on the Ecology Letters Homepage at the discretion of the Editors.
+
+
+### Unpublished works
+
+• “In press”: nly permissible for papers that have been accepted for publication (documentary evidence of acceptance must be provided). Example: Vázquez, D.P. & Simberloff, D. (2003). Changes in interaction biodiversity induced by an introduced ungulate. Ecol. Lett., in press (accepted).
+• “Personal communication”: Citation must be accompanied by the names of all persons concerned. Any person cited as the source of a ' personal communication' must have approved the reference.
+
+### Data archiving
+
+- Data are important products of scientific enterprise, and they should be preserved and remain usable in future
+decades. Ecology Letters requires, as a condition for publication, that the data supporting the results in the paper
+will be archived in an appropriate public repository such as Dryad or Figshare. Whenever possible the scripts and
+other artefacts used to generate the analyses presented in the paper should also be publicly archived. Exceptions
+may be granted at the discretion of the Editor-in-Chief, especially for sensitive information such as human subject
+data or the location of endangered species. Authors will be required to complete a data accessibility statement for all accepted papers.
+
+### Online supplementary information
+
+Supporting Information should be cited within the article text, and a descriptive
+legend should be included in each Supporting Information file. It is published as supplied by the author, and a proof
+is not made available prior to publication; for these reasons, authors should provide any Supporting Information in
+the desired final format.
+- Include sensitivity and amplification score data?
