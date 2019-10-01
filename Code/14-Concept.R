@@ -82,11 +82,11 @@ lines(x = c(-.4725,-.325), y = c(.36,-.52), col = colB[1]) # hump to kri
 
 # Pathways of effect
 # lines(x = c(-.4,-.31), y = c(1.3,-.52), col = colP[2], lty = 4) # SST to kri
-lines(x = c(-.4,.25), y = c(1.3,-.52), col = colP[2], lty = 4) # SST to cop
-lines(x = c(0,0), y = c(1.3,1.1), col = colB[2], lty = 4) # SHP to bew
-lines(x = c(0,-.435), y = c(1.3,.6), col = colB[2], lty = 4) # SHP to hump
-lines(x = c(.4,.485), y = c(1.3,.75), col = colM[2], lty = 4) # FISH to cod
-lines(x = c(.4,.03), y = c(1.3,.1), col = colM[2], lty = 4) # FISH to cap
+lines(x = c(-.4,.25), y = c(1.3,-.52), col = '#00000044', lty = 4) # SST to cop
+lines(x = c(0,0), y = c(1.3,1.1), col = '#00000044', lty = 4) # SHP to bew
+lines(x = c(0,-.435), y = c(1.3,.6), col = '#00000044', lty = 4) # SHP to hump
+lines(x = c(.4,.485), y = c(1.3,.75), col = '#00000044', lty = 4) # FISH to cod
+lines(x = c(.4,.03), y = c(1.3,.1), col = '#00000044', lty = 4) # FISH to cap
 
 # Species
 pchImage(x = -.5, .5, obj = hump, cex.x = 1.4, cex.y = .55, col = colB[1])
@@ -112,7 +112,7 @@ lines(x = c(-.5725, -.6575), y = c(-1.6, -1.225), col = colB[1])
 lines(x = c(-.5275, -.4475), y = c(-1.6, -1.225))
 pchImage(x = -.68, -1.125, obj = hump, cex.x = .77, cex.y = .32, col = colB[1])
 pchImage(x = -.42, -1.1, obj = cod, cex.x = .7, cex.y = .25, col = colM[1])
-pchImage(x = -.55, -1.7, obj = cap, cex.x = .55, cex.y = .25)#, col = colM[1])
+pchImage(x = -.55, -1.7, obj = cap, cex.x = .55, cex.y = .25, col = colM[1])
 
 # Motif 2
 lines(x = c(-.15, -.15), y = c(-1.2, -1.3))
@@ -137,17 +137,22 @@ pchImage(x = .65, -1.33, obj = cod, cex.x = .7, cex.y = .25, col = colM[1])
 pchImage(x = .45, -1.7, obj = cap, cex.x = .55, cex.y = .25, col = colM[1])
 
 # Emphasis
-polygon(x = c(.35,.35,.75,.75), y = c(-1.77,-1.025,-1.025,-1.77), col = '#00000000', border = colP[1], lty = 4)
+polygon(x = c(.35,.35,.75,.75), y = c(-1.77,-1.025,-1.025,-1.77), col = '#00000000', border = colP[1], lty = 2)
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #
 # Legend
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #
-posY <- c(1.2,1.075,.95)
-text(x = rep(-.7,3), y = posY, adj = c(0,.5),
-     labels = c('Mortality','Physiology','Behaviour'), cex = .65)
-lines(x = c(-.8,-.725), y = rep(posY[1], 2), col = colM[1], lwd = 1.25)
-lines(x = c(-.8,-.725), y = rep(posY[2], 2), col = colP[1], lwd = 1.25)
-lines(x = c(-.8,-.725), y = rep(posY[3], 2), col = colB[1], lwd = 1.25)
+posY <- c(0,-.125,-.25,-.375,-.5,-.625)+.225
+text(x = rep(-.7,3), y = posY, adj = c(0,.5), cex = .65,
+     labels = c('Mortality','Physiology','Behaviour','Attack rate',
+                'Conversion rate','Driver exposure'))
+pchImage(x = -0.7625, posY[1], obj = cap, cex.x = .55, cex.y = .25, col = colM[1])
+pchImage(x = -0.7625, posY[2], obj = cap, cex.x = .55, cex.y = .25, col = colP[1])
+pchImage(x = -0.7625, posY[3], obj = cap, cex.x = .55, cex.y = .25, col = colB[1])
+# lines(x = c(-.8,-.725), y = rep(posY[1], 2), col = colM[1], lwd = 1.25)
+lines(x = c(-.8,-.725), y = rep(posY[4], 2), col = colP[1], lwd = 1.25)
+lines(x = c(-.8,-.725), y = rep(posY[5], 2), col = colB[1], lwd = 1.25)
+lines(x = c(-.8,-.725), y = rep(posY[6], 2), col = '#00000044', lwd = 1.25, lty = 4)
 
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #
@@ -158,6 +163,7 @@ library(deSolve)
 load('./Data/ParamInit/omParam.RData')
 omParam <- as.data.frame(omParam)
 uid = 88
+lwdD <- .75
 
 # initial state
 init <- c(x = omParam$x[uid],
@@ -177,8 +183,8 @@ deriv <- function(t, state, pars) {
 }
 
 # Parameters
-p <- c(r = 1,
-   alpha = 0.001,
+p <- c(r = 1.02,
+   alpha = 0.0009,
     beta = omParam$beta[uid],
    delta = omParam$delta[uid],
    gamma = omParam$gamma[uid],
@@ -192,16 +198,19 @@ plotDynamic <- function() {
   plot0(x = c(-3.5,60), y = c(-60,550))
   arrows(-2, 0, 59, 0, length = .05, code = 2, xpd = TRUE)
   arrows(-2, 0, -2, 550, length = .05, code = 2, xpd = TRUE)
-  lines(x = c(5,5), y = c(0,550), lty = 2, col = '#00000088')
-  text(x = 30, y = -15, adj = c(.5,1), 'Time', cex = .75)
+  lines(x = c(5,5), y = c(-25,575), lty = 2, col = '#00000088')
+  lines(x = c(5,5), y = c(-25,0), col = '#000000')
+  text(x = 56, y = -15, adj = c(1,1), 'Time', cex = .75)
   text(x = -3, y = 275, adj = c(.5,0), 'Abundance (a)', cex = .75, srt = 90)
-  for(i in 1:3) lines(x = c(0,5), y = rep(init[i], 2), col = '#000000', lwd = 1.25)
-  # box(which = 'plot', lty = 4, col = colP[1])
+  text(x = 6, y = -15, adj = c(0,1), 'Disturbances', cex = .55)
+  for(i in 1:3) lines(x = c(0,5), y = rep(init[i], 2), col = '#000000', lwd = .75)
+  arrows(8, 540, 5.5, 530, length = .025, code = 2, xpd = TRUE)
+  arrows(6, 20, 10, 20, length = .025, code = 2, xpd = TRUE)
 }
 
 # Disturbances 1
 p1 <- p
-p1['r'] <- p1['r']*.85
+p1['r'] <- p1['r']*.8
 p1['m_y'] <- p1['m_y']*1.15
 
 # Solve system of equations
@@ -210,17 +219,17 @@ res1 <- ode(init, times, deriv, p1)
 # Disturbances
 p2 <- p
 p2['gamma'] <- p2['gamma']*.75
-p2['delta'] <- p2['delta']*.75
+p2['delta'] <- p2['delta']*.8
 
 # Solve system of equations
 res2 <- ode(init, times, deriv, p2)
 
 # Disturbances
 p3 <- p
-p3['r'] <- p3['r']*.85
+p3['r'] <- p3['r']*.8
 p3['m_y'] <- p3['m_y']*1.15
 p3['gamma'] <- p3['gamma']*.75
-p3['delta'] <- p3['delta']*.75
+p3['delta'] <- p3['delta']*.8
 
 # Solve system of equations
 res3 <- ode(init, times, deriv, p3)
@@ -230,6 +239,7 @@ res3 <- ode(init, times, deriv, p3)
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #
 par(mar = c(0,0,0,0))
 plotDynamic()
+box2(side = '234', which = 'figure', lty = 2, col = colP[1])
 
 # Delta abundances
 lines(x = c(5,55), y = rep(init['x'],2), lty = 4, col = '#000000aa', lwd = .75)
@@ -241,17 +251,16 @@ arrows(55, xM-(xI-xM)*.35, 55, xE+8.5, length = .025, code = 2, xpd = TRUE)
 text(x = 55, y = xM, adj = c(.5,.5), labels = TeX('$\\Delta a$'), cex = .55)
 
 # Disturbances
-arrows(8, xI+40, 5.5, xI+10, length = .025, code = 2, xpd = TRUE)
 pchImage(x = 10, xI+50, obj = DD, cex.x = .4, cex.y = .75)#, col = colB[1])
 
 
 # Population dynamics
-lines(x = c(5:55), y = res1[,'x'], lwd = 1.25, col = colM[1])
-lines(x = c(5:55), y = res1[,'y'], lwd = 1.25, col = colM[1])
-lines(x = c(5:55), y = res1[,'z'], lwd = 1.25)
+lines(x = c(5:55), y = res1[,'x'], lwd = lwdD)
+lines(x = c(5:55), y = res1[,'y'], lwd = lwdD)
+lines(x = c(5:55), y = res1[,'z'], lwd = lwdD)
 pchImage(x = 1.5, 110, obj = bew, cex.x = .8, cex.y = .9)
-pchImage(x = 1.5, 300, obj = cod, cex.x = .7, cex.y = .8)
-pchImage(x = 1.5, 460, obj = cap, cex.x = .5, cex.y = .7)
+pchImage(x = 1.5, 220, obj = cod, cex.x = .7, cex.y = .8, col = colM[1])
+pchImage(x = 1.5, 460, obj = cap, cex.x = .5, cex.y = .7, col = colM[1])
 
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #
@@ -260,16 +269,16 @@ pchImage(x = 1.5, 460, obj = cap, cex.x = .5, cex.y = .7)
 # Plot
 par(mar = c(0,0,0,0))
 plotDynamic()
+box2(side = '24', which = 'figure', lty = 2, col = colP[1])
 
 # Disturbances
-arrows(8, xI+40, 5.5, xI+10, length = .025, code = 2, xpd = TRUE)
 pchImage(x = 10, xI+50, obj = Shipping, cex.x = .4, cex.y = .75)#, col = colB[1])
 
-lines(x = c(5:55), y = res2[,'x'], lwd = 1.25)
-lines(x = c(5:55), y = res2[,'y'], lwd = 1.25)
-lines(x = c(5:55), y = res2[,'z'], lwd = 1.25, col = colB[1])
-pchImage(x = 1.5, 110, obj = bew, cex.x = .8, cex.y = .9)
-pchImage(x = 1.5, 300, obj = cod, cex.x = .7, cex.y = .8)
+lines(x = c(5:55), y = res2[,'x'], lwd = lwdD)
+lines(x = c(5:55), y = res2[,'y'], lwd = lwdD)
+lines(x = c(5:55), y = res2[,'z'], lwd = lwdD)
+pchImage(x = 1.5, 110, obj = bew, cex.x = .8, cex.y = .9, col = colB[1])
+pchImage(x = 1.5, 220, obj = cod, cex.x = .7, cex.y = .8)
 pchImage(x = 1.5, 460, obj = cap, cex.x = .5, cex.y = .7)
 
 
@@ -279,33 +288,44 @@ pchImage(x = 1.5, 460, obj = cap, cex.x = .5, cex.y = .7)
 # Plot
 par(mar = c(0,0,0,0))
 plotDynamic()
+box2(side = '124', which = 'figure', lty = 2, col = colP[1])
 
 # Disturbances
 #Joint
-arrows(8, xI+40, 5.5, xI+10, length = .025, code = 2, xpd = TRUE)
 pchImage(x = 10, xI+50, obj = DD, cex.x = .4, cex.y = .75)#, col = colB[1])
 pchImage(x = 15, xI+50, obj = Shipping, cex.x = .4, cex.y = .75)#, col = colB[1])
-text(x = 11.75, y = xI+50, adj = c(.5,.5), labels = ',')
-lines(x = c(17.5,22.5), y = rep(xI+45,2))
+# text(x = 11.75, y = xI+50, adj = c(.5,.5), labels = ',')
+lines(x = c(18,23), y = rep(xI+45,2))
+text(x = 26, y = xI+50, adj = c(0,.5), labels = 'Full model', cex = .55)
 # Additive
 pchImage(x = 10, xI-15, obj = DD, cex.x = .4, cex.y = .75)#, col = colB[1])
 pchImage(x = 15, xI-15, obj = Shipping, cex.x = .4, cex.y = .75)#, col = colB[1])
 text(x = 12.65, y = xI-15, adj = c(.5,.5), labels = '+', cex = .65)
-lines(x = c(17.5,22.5), y = rep(xI-20,2), lty = 3)
+lines(x = c(18,23), y = rep(xI-20,2), lty = 3)
+text(x = 26, y = xI-15, adj = c(0,.5), labels = 'Additive model', cex = .55)
 
+
+# Enveloppes
+envelop(x = 5:55, upper = init['x']-((init['x']-res1[,'x'])+(init['x']-res2[,'x'])), lower = res3[,'x'], col = '#00000022', border = '#00000000')
+envelop(x = 5:55, upper = init['y']-((init['y']-res1[,'y'])+(init['y']-res2[,'y'])), lower = res3[,'y'], col = '#00000022', border = '#00000000')
+envelop(x = 5:55, upper = init['z']-((init['z']-res1[,'z'])+(init['z']-res2[,'z'])), lower = res3[,'z'], col = '#00000022', border = '#00000000')
 
 # Joint model
-lines(x = c(5:55), y = res3[,'x'], lwd = 1.25, col = colM[1])
-lines(x = c(5:55), y = res3[,'y'], lwd = 1.25, col = colM[1])
-lines(x = c(5:55), y = res3[,'z'], lwd = 1.25, col = colB[1])
-pchImage(x = 1.5, 110, obj = bew, cex.x = .8, cex.y = .9)
-pchImage(x = 1.5, 300, obj = cod, cex.x = .7, cex.y = .8)
-pchImage(x = 1.5, 460, obj = cap, cex.x = .5, cex.y = .7)
+lines(x = c(5:55), y = res3[,'x'], lwd = lwdD)
+lines(x = c(5:55), y = res3[,'y'], lwd = lwdD)
+lines(x = c(5:55), y = res3[,'z'], lwd = lwdD)
+pchImage(x = 1.5, 110, obj = bew, cex.x = .8, cex.y = .9, col = colB[1])
+pchImage(x = 1.5, 220, obj = cod, cex.x = .7, cex.y = .8, col = colM[1])
+pchImage(x = 1.5, 460, obj = cap, cex.x = .5, cex.y = .7, col = colM[1])
 
 # Additive model
-lines(x = c(5:55), y = init['x']-((init['x']-res1[,'x'])+(init['x']-res2[,'x'])), lwd = 1, lty = 3, col = colM[1])
-lines(x = c(5:55), y = init['y']-((init['y']-res1[,'y'])+(init['y']-res2[,'y'])), lwd = 1, lty = 3, col = colM[1])
-lines(x = c(5:55), y = init['z']-((init['z']-res1[,'z'])+(init['z']-res2[,'z'])), lwd = 1, lty = 3, col = colB[1])
+lines(x = c(5:55), y = init['x']-((init['x']-res1[,'x'])+(init['x']-res2[,'x'])), lwd = lwdD, lty = 3)
+lines(x = c(5:55), y = init['y']-((init['y']-res1[,'y'])+(init['y']-res2[,'y'])), lwd = lwdD, lty = 3)
+lines(x = c(5:55), y = init['z']-((init['z']-res1[,'z'])+(init['z']-res2[,'z'])), lwd = lwdD, lty = 3)
 
-
+# Non-additive
+xI <- init['x']-((init['x']-res1[,'x'])+(init['x']-res2[,'x']))[50]
+xE <- res3[50,'x']
+xM <- mean(c(xI,xE))
+text(x = 54, y = xM, labels = 'Synergy', cex = .55, adj = c(1,.5))
 dev.off()
