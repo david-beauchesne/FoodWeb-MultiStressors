@@ -2,6 +2,8 @@
 # Libraries
 library(graphicsutils)
 library(latex2exp)
+library(tidyverse)
+library(deSolve)
 
 # ----------------------------------------------------------------------
 # Species
@@ -44,122 +46,96 @@ SST <- png::readPNG('./img/SST.png', native = T) # modified from https://fontawe
 Shipping <- png::readPNG('./img/ship-solid.png', native = T) # https://fontawesome.com/icons/ship?style=solid
 DD <- png::readPNG('./img/trawl.png', native = T)
 
+
+
+
 # ----------------------------------------------------------------------
 # Figure
 # ----------------------------------------------------------------------
-png('./Figures/Concept.png', res = 900, width = 120, height = 95, units = "mm")
-# Layout
-mat <- matrix(0, nrow = 5, ncol = 4)
-mat[,2] <- 1
-mat[2,3] <- 2
+mat <- matrix(0, 6, 4)
+mat[cbind(2:4,2)] <- 1
+mat[5,2] <- 2
+mat[2,3] <- 6
 mat[3,3] <- 3
 mat[4,3] <- 4
-layout(mat, widths = c(.1,1,.66,.1), height = c(.6,1,1,1,.6))
+mat[5,3] <- 5
+colP <- c('#a84d4dcc','#a84d4d44')
+colB <- c('#196f6fcc','#196f6f44')
+colM <- c('#db9f38cc','#db9f3844')
+# vars
+cx_title <- 1.2
+
+
+
+
+png('./Figures/Concept.png', res = 900, width = 120, height = 100, units = "mm")
+
+# Layout
+layout(mat, widths = c(.05, 1, 1,.05), heights = c(.15, 1.4, 1, 1, 1, .15))
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #
 # Plot 1
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #
-par(mar = c(0,0,0,0), family = 'serif')
-plot0(x = c(-.75,.8), y = c(-1.8,1.55))
-# abline(v=0,lty=2,col = '#00000044')
-# abline(h=0,lty=2,col = '#00000044')
-# lines(x = c(-.55,.55), y = rep(1.3, 2), lty = 2, col = '#00000099')
-colP <- c('#a84d4dcc','#a84d4d44')
-colB <- c('#196f6fcc','#196f6f44')
-colM <- c('#db9f38cc','#db9f3844')
+par(mar = c(0, 0, 0, 1), family = 'serif')
+plot0(x = c(-.62, .82), y = c(-.75, 1.9))
+text(x = -.64, y = 1.82, labels = "NETWORK", pos = 4, cex = cx_title)
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #
 # Food web
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #
 # Interactions
-lines(x = c(0,0), y = c(.15,.85), col = colB[1]) # bel to cap
-lines(x = c(-.1,-.4), y = c(.1,.4), col = colB[1]) # hump to cap
-lines(x = c(.1,.4), y = c(.1,.52)) # cod to cap
-lines(x = c(.1,.4), y = c(.9325,.7275), col = colB[1]) # bel to cod
-lines(x = c(.045,.2375), y = c(-.1,-.52), col = colP[1]) # cap to cop
-lines(x = c(-.045,-.2375), y = c(-.1,-.52)) # cap to kri
-lines(x = c(-.4725,-.325), y = c(.36,-.52), col = colB[1]) # hump to kri
+lines(x = c(0, 0), y = c(.15,.85), col = colB[1]) # bel to cap
+lines(x = c(-.1, -.4), y = c(.1,.4), col = colB[1]) # hump to cap
+lines(x = c(.1, .4), y = c(.1,.52)) # cod to cap
+lines(x = c(.1, .4), y = c(.9325,.7275), col = colB[1]) # bel to cod
+lines(x = c(.045, .2375), y = c(-.1,-.52), col = colP[1]) # cap to cop
+lines(x = c(-.045, -.2375), y = c(-.1,-.52)) # cap to kri
+lines(x = c(-.4725, -.325), y = c(.36,-.52), col = colB[1]) # hump to kri
 
 # Pathways of effect
 # lines(x = c(-.4,-.31), y = c(1.3,-.52), col = colP[2], lty = 4) # SST to kri
-lines(x = c(-.4,.25), y = c(1.3,-.52), col = '#00000044', lty = 4) # SST to cop
-lines(x = c(0,0), y = c(1.3,1.1), col = '#00000044', lty = 4) # SHP to bew
-lines(x = c(0,-.435), y = c(1.3,.6), col = '#00000044', lty = 4) # SHP to hump
-lines(x = c(.4,.485), y = c(1.3,.75), col = '#00000044', lty = 4) # FISH to cod
-lines(x = c(.4,.03), y = c(1.3,.1), col = '#00000044', lty = 4) # FISH to cap
+lines(x = c(-.4, .25), y = c(1.3,-.52), col = '#00000044', lty = 4) # SST to cop
+lines(x = c(0, 0), y = c(1.3,1.1), col = '#00000044', lty = 4) # SHP to bew
+lines(x = c(0, -.41), y = c(1.3,.6), col = '#00000044', lty = 4) # SHP to hump
+lines(x = c(.4, .485), y = c(1.3,.75), col = '#00000044', lty = 4) # FISH to cod
+lines(x = c(.4, .03), y = c(1.3,.1), col = '#00000044', lty = 4) # FISH to cap
 
 # Species
-pchImage(x = -.5, .5, obj = hump, cex.x = 1.4, cex.y = .55, col = colB[1])
-pchImage(x = 0, 1, obj = bew, cex.x = 1.3, cex.y = .5, col = colB[1])
-pchImage(x = .5, .66, obj = cod, cex.x = 1.2, cex.y = .4, col = colM[1])
-pchImage(x = 0, 0, obj = cap, cex.x = .85, cex.y = .4, col = colM[1])
-pchImage(x = -.3, -.66, obj = kri, cex.x = .75, cex.y = .35)#, col = colP[1])
-pchImage(x = .3, -.66, obj = cop, cex.x = .65, cex.y = .5, col = colP[1])
+cxy <- .6
+pchImage(x = -.51, .5, obj = hump, cex.x = 2.2, cex.y = cxy+.1, col = colB[1])
+pchImage(x = .01, 1, obj = bew, cex.x = 2, cex.y = cxy, col = colB[1])
+pchImage(x = .5, .66, obj = cod, cex.x = 1.55, cex.y = cxy, col = colM[1])
+pchImage(x = 0, .04, obj = cap, cex.x = 1.25, cex.y = cxy, col = colM[1])
+pchImage(x = -.3, -.66, obj = kri, cex.x = .85, cex.y = cxy-.1)#, col = colP[1])
+pchImage(x = .3, -.66, obj = cop, cex.x = .7, cex.y = cxy, col = colP[1])
+
 
 # Drivers
-pchImage(x = -.4, 1.45, obj = SST, cex.x = .5, cex.y = .55)#, col = colP[1])
-pchImage(x = 0, 1.45, obj = Shipping, cex.x = .7, cex.y = .5)#, col = colB[1])
-pchImage(x = .4, 1.45, obj = DD, cex.x = .75, cex.y = .45)#, col = colM[1])
-
-# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #
-# Motifs
-# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #
-polygon(x = c(.3,.3,.7,.7), c(.52,.80,.80,.52), lty = 2)
-polygon(x = c(-.8,-.8,.8,.8), c(-1,-1.8,-1.8,-1), lty = 2)
-
-# Motif 1
-lines(x = c(-.5725, -.6575), y = c(-1.6, -1.225), col = colB[1])
-lines(x = c(-.5275, -.4475), y = c(-1.6, -1.225))
-pchImage(x = -.68, -1.125, obj = hump, cex.x = .77, cex.y = .32, col = colB[1])
-pchImage(x = -.42, -1.1, obj = cod, cex.x = .7, cex.y = .25, col = colM[1])
-pchImage(x = -.55, -1.7, obj = cap, cex.x = .55, cex.y = .25, col = colM[1])
-
-# Motif 2
-lines(x = c(-.15, -.15), y = c(-1.2, -1.3))
-lines(x = c(-.15, -.15), y = c(-1.5, -1.6))
-pchImage(x = -.15, -1.1, obj = cod, cex.x = .7, cex.y = .25, col = colM[1])
-pchImage(x = -.15, -1.4, obj = cap, cex.x = .55, cex.y = .25, col = colM[1])
-pchImage(x = -.15, -1.7, obj = kri, cex.x = .45, cex.y = .2)#, col = colP[1])
-
-# Motif 3
-lines(x = c(.15, .15), y = c(-1.2, -1.3))
-lines(x = c(.15, .15), y = c(-1.5, -1.6), col = colP[1])
-pchImage(x = .15, -1.1, obj = cod, cex.x = .7, cex.y = .25, col = colM[1])
-pchImage(x = .15, -1.4, obj = cap, cex.x = .55, cex.y = .25, col = colM[1])
-pchImage(x = .15, -1.7, obj = cop, cex.x = .45, cex.y = .25, col = colP[1])
-
-# Motif 4
-lines(x = c(.45, .45), y = c(-1.2, -1.6), col = colB[1])
-lines(x = c(.51, .6), y = c(-1.17, -1.27), col = colB[1])
-lines(x = c(.6075, .4875), y = c(-1.41, -1.63))
-pchImage(x = .45, -1.1, obj = bew, cex.x = .75, cex.y = .3, col = colB[1])
-pchImage(x = .65, -1.33, obj = cod, cex.x = .7, cex.y = .25, col = colM[1])
-pchImage(x = .45, -1.7, obj = cap, cex.x = .55, cex.y = .25, col = colM[1])
+pchImage(x = -.4, 1.45, obj = SST, cex.x = .8, cex.y = .65)#, col = colP[1])
+pchImage(x = 0, 1.45, obj = Shipping, cex.x = .8, cex.y = .6)#, col = colB[1])
+pchImage(x = .4, 1.45, obj = DD, cex.x = .8, cex.y = .6)#, col = colM[1])
 
 # Emphasis
-polygon(x = c(.35,.35,.75,.75), y = c(-1.77,-1.025,-1.025,-1.77), col = '#00000000', border = colP[1], lty = 2)
+circles(.5, .64, .17, lwd = 1)
+
+
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #
 # Legend
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #
-posY <- c(0,-.125,-.25,-.375,-.5,-.625)+.225
-text(x = rep(-.7,3), y = posY, adj = c(0,.5), cex = .65,
-     labels = c('Mortality','Physiology','Behaviour','Attack rate',
-                'Conversion rate','Driver exposure'))
-pchImage(x = -0.7625, posY[1], obj = cap, cex.x = .55, cex.y = .25, col = colM[1])
-pchImage(x = -0.7625, posY[2], obj = cap, cex.x = .55, cex.y = .25, col = colP[1])
-pchImage(x = -0.7625, posY[3], obj = cap, cex.x = .55, cex.y = .25, col = colB[1])
-# lines(x = c(-.8,-.725), y = rep(posY[1], 2), col = colM[1], lwd = 1.25)
-lines(x = c(-.8,-.725), y = rep(posY[4], 2), col = colP[1], lwd = 1.25)
-lines(x = c(-.8,-.725), y = rep(posY[5], 2), col = colB[1], lwd = 1.25)
-lines(x = c(-.8,-.725), y = rep(posY[6], 2), col = '#00000044', lwd = 1.25, lty = 4)
+plot0()
+legend("left", c('Attack rate', 'Conversion rate','Stressor exposure'), lty = c(1, 1, 2), col = c(colP[1], colB[1], '#00000044'), bty = 'n', lwd = 1.2)
+legend("right", c('Mortality','Physiology','Behaviour'), col = rep(NA, 3), bty = 'n', seg.len = 3)
+pchImage(x = .4, .37, obj = cap, cex.x = .8, cex.y = 1, col = colM[1])
+pchImage(x = .4, 0, obj = cap, cex.x = .8, cex.y = 1, col = colP[1])
+pchImage(x = .4, -.37, obj = cap, cex.x = .8, cex.y = 1, col = colB[1])
+
 
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #
 # Disturbances & dynamics
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #
-library(tidyverse)
-library(deSolve)
+
 load('./Data/ParamInit/omParam.RData')
 omParam <- as.data.frame(omParam)
 uid = 88
@@ -237,7 +213,7 @@ res3 <- ode(init, times, deriv, p3)
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #
 # Plot 2
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #
-par(mar = c(0,0,0,0))
+par(mar = c(.5, .5, 0, 0))
 plotDynamic()
 box2(side = '234', which = 'figure', lty = 2, col = colP[1])
 
@@ -255,9 +231,7 @@ pchImage(x = 10, xI+50, obj = DD, cex.x = .4, cex.y = .75)#, col = colB[1])
 
 
 # Population dynamics
-lines(x = c(5:55), y = res1[,'x'], lwd = lwdD)
-lines(x = c(5:55), y = res1[,'y'], lwd = lwdD)
-lines(x = c(5:55), y = res1[,'z'], lwd = lwdD)
+for (i in 2:4) lines(x = c(5:55), y = res1[,i], lwd = lwdD)
 pchImage(x = 1.5, 110, obj = bew, cex.x = .8, cex.y = .9)
 pchImage(x = 1.5, 220, obj = cod, cex.x = .7, cex.y = .8, col = colM[1])
 pchImage(x = 1.5, 460, obj = cap, cex.x = .5, cex.y = .7, col = colM[1])
@@ -267,16 +241,14 @@ pchImage(x = 1.5, 460, obj = cap, cex.x = .5, cex.y = .7, col = colM[1])
 # Plot 3
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #
 # Plot
-par(mar = c(0,0,0,0))
+par(mar = c(.5, .5, 0, 0))
 plotDynamic()
 box2(side = '24', which = 'figure', lty = 2, col = colP[1])
 
 # Disturbances
 pchImage(x = 10, xI+50, obj = Shipping, cex.x = .4, cex.y = .75)#, col = colB[1])
 
-lines(x = c(5:55), y = res2[,'x'], lwd = lwdD)
-lines(x = c(5:55), y = res2[,'y'], lwd = lwdD)
-lines(x = c(5:55), y = res2[,'z'], lwd = lwdD)
+for (i in 2:4) lines(x = c(5:55), y = res2[,i], lwd = lwdD)
 pchImage(x = 1.5, 110, obj = bew, cex.x = .8, cex.y = .9, col = colB[1])
 pchImage(x = 1.5, 220, obj = cod, cex.x = .7, cex.y = .8)
 pchImage(x = 1.5, 460, obj = cap, cex.x = .5, cex.y = .7)
@@ -286,21 +258,21 @@ pchImage(x = 1.5, 460, obj = cap, cex.x = .5, cex.y = .7)
 # Plot 4
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #
 # Plot
-par(mar = c(0,0,0,0))
+par(mar = c(.5, .5, 0, 0))
 plotDynamic()
 box2(side = '124', which = 'figure', lty = 2, col = colP[1])
 
 # Disturbances
 #Joint
-pchImage(x = 10, xI+50, obj = DD, cex.x = .4, cex.y = .75)#, col = colB[1])
-pchImage(x = 15, xI+50, obj = Shipping, cex.x = .4, cex.y = .75)#, col = colB[1])
+pchImage(x = 10, xI+50, obj = DD, cex.x = .4, cex.y = 1)#, col = colB[1])
+pchImage(x = 15, xI+50, obj = Shipping, cex.x = .4, cex.y = 1)#, col = colB[1])
 # text(x = 11.75, y = xI+50, adj = c(.5,.5), labels = ',')
 lines(x = c(18,23), y = rep(xI+45,2))
 text(x = 26, y = xI+50, adj = c(0,.5), labels = 'Full model', cex = .55)
 # Additive
-pchImage(x = 10, xI-15, obj = DD, cex.x = .4, cex.y = .75)#, col = colB[1])
-pchImage(x = 15, xI-15, obj = Shipping, cex.x = .4, cex.y = .75)#, col = colB[1])
-text(x = 12.65, y = xI-15, adj = c(.5,.5), labels = '+', cex = .65)
+pchImage(x = 10, xI-15, obj = DD, cex.x = .4, cex.y = 1)#, col = colB[1])
+pchImage(x = 15, xI-15, obj = Shipping, cex.x = .4, cex.y = 1)#, col = colB[1])
+text(x = 12.65, y = xI-15, adj = c(.5,.5), labels = '+', cex = .95)
 lines(x = c(18,23), y = rep(xI-20,2), lty = 3)
 text(x = 26, y = xI-15, adj = c(0,.5), labels = 'Additive model', cex = .55)
 
@@ -328,4 +300,62 @@ xI <- init['x']-((init['x']-res1[,'x'])+(init['x']-res2[,'x']))[50]
 xE <- res3[50,'x']
 xM <- mean(c(xI,xE))
 text(x = 54, y = xM, labels = 'Synergy', cex = .55, adj = c(1,.5))
+
+
+
+
+
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #
+# Motifs
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #
+par(mar = c(0, 0, 0, 0))
+plot0(x = c(-.75, .8), y = c(-2, -.9))
+text(x = -.75, y = -.9, labels = "MOTIFS", pos = 4, cex = cx_title)
+text(x = -.75, y = -1.95, labels = "DYNAMICS", pos = 4, cex = cx_title)
+# polygon(x = c(.3,.3,.7,.7), c(.52,.80,.80,.52), lty = 2)
+
+# polygon(x = c(-.8,-.8,.8,.8), c(-1,-1.8,-1.8,-1), lty = 2)
+
+# Motif 1
+cxy1 <- .9
+# text(-.6, -.95, labels = "Motifs involving", cex = 2.8)
+# pchImage(x = -.4, -.9, obj = cod, cex.x = .7, cex.y = cxy1, col = colM[1])
+lines(x = c(-.5725, -.6575), y = c(-1.6, -1.225), col = colB[1])
+lines(x = c(-.5275, -.4475), y = c(-1.6, -1.225))
+pchImage(x = -.68, -1.125, obj = hump, cex.x = .8, cex.y = cxy1, col = colB[1])
+pchImage(x = -.42, -1.1, obj = cod, cex.x = .8, cex.y = cxy1, col = colM[1])
+circles(-.42, -1.1, .08)
+pchImage(x = -.55, -1.7, obj = cap, cex.x = .6, cex.y = cxy1, col = colM[1])
+
+# Motif 2
+lines(x = c(-.15, -.15), y = c(-1.2, -1.3))
+lines(x = c(-.15, -.15), y = c(-1.5, -1.6))
+pchImage(x = -.15, -1.1, obj = cod, cex.x = .8, cex.y = cxy1, col = colM[1])
+circles(-.15, -1.1, .08)
+pchImage(x = -.15, -1.4, obj = cap, cex.x = .8, cex.y = cxy1, col = colM[1])
+pchImage(x = -.15, -1.7, obj = kri, cex.x = .5, cex.y = cxy1)#, col = colP[1])
+
+# Motif 3
+lines(x = c(.15, .15), y = c(-1.2, -1.3))
+lines(x = c(.15, .15), y = c(-1.5, -1.6), col = colP[1])
+pchImage(x = .15, -1.1, obj = cod, cex.x = .8, cex.y = 1, col = colM[1])
+circles(.15, -1.1, .08)
+pchImage(x = .15, -1.4, obj = cap, cex.x = .8, cex.y = 1, col = colM[1])
+pchImage(x = .15, -1.7, obj = cop, cex.x = .6, cex.y = 1, col = colP[1])
+
+# Motif 4
+lines(x = c(.45, .45), y = c(-1.2, -1.6), col = colB[1])
+lines(x = c(.51, .6), y = c(-1.17, -1.27), col = colB[1])
+lines(x = c(.6075, .4875), y = c(-1.41, -1.63))
+pchImage(x = .45, -1.1, obj = bew, cex.x = .8, cex.y = 1, col = colB[1])
+pchImage(x = .65, -1.33, obj = cod, cex.x = .8, cex.y = 1, col = colM[1])
+circles(.65, -1.33, .08)
+pchImage(x = .45, -1.7, obj = cap, cex.x = .6, cex.y = 1, col = colM[1])
+
+# Emphasis
+polygon(x = c(.35,.35,.75,.75), y = c(-1.77,-1.025,-1.025,-1.77), col = '#00000000', border = colP[1], lty = 2)
+
+
+
 dev.off()
+
