@@ -19,6 +19,7 @@ header-includes:
    - \newcommand{\elandscape}{\end{landscape}}
    - \usepackage{float}
    - \restylefloat{table}
+   - \usepackage{subcaption}
 bibliography: FoodWeb-MultiStressorMS.bib
 csl: EcologyLetters.csl
 link-citations: yes
@@ -57,6 +58,158 @@ david.beauchesne@uqar.ca \newline
 
 **Data accessibility statement**:
 
+\newpage
+
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+# Checklist {-}
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+- [ ] Proposal letter Ecology Letters - Ideas and Perspectives
+- [ ] Cover letter and novelty statement
+- [x] Conflict of interest statement
+- [ ] Statement of authorship
+- [ ] Data accessibility statement
+- [ ] Reviewers
+- [ ] Keywords
+- [ ] Abstract
+- [ ] Introduction
+- [ ] Of food webs and multiple disturbances (concept)
+- [ ] Simulations
+- [ ] Sensitivity
+- [ ] Amplification
+- [ ] Food web sensitivity & amplification
+- [ ] Conclusions
+- [ ] Acknowledgements
+- [ ] References
+- [ ] Figure 1 - Concept
+- [ ] Figure 2 - Sensitivity
+- [ ] Figure 3 - Amplification
+- [ ] Figure 4 - Food web scores table
+- [ ] Figure 5 - Topological ~ Realised scores
+- [ ] Figure 6 - Scores ~ Trophic level & degree
+- [ ] Table S1 - Systems of equations
+- [ ] Article formatting
+
+
+\newpage
+
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+# Plan {-}
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+- **Abstract**
+
+- **Introduction**
+  - Global changes and disturbances propagation through food webs
+  - Uncertainty associated with multiple disturbances
+  - Limits of *in situ* and experimental approaches to study multiple disturbances
+  - Limited insights from null model testing
+  - Shift towards ecological modelling to better understand mecanisms
+  - Insights on the effects of disturbances on ecological communities from theoretical ecology
+  - Theoretical focus on single disturbances, coexistence and extinctions
+
+- **Objectives**
+  - Investigate the role of species and their interactions in mediating the effects of multiple
+      disturbances on food webs.
+  - Questions of particular significance to management:
+    1) should interactions be considered in impact assessments?
+    2) can the effects of stressors be evaluated seperately or should they be considered in combination?
+    3) which species are most sensitive to disturbances based on their trophic position?
+
+- Of food webs and multiple disturbances
+  <!-- - Concepts underlying the study of disturbances on food webs -->
+  - Whole food webs & disturbances (pathways of effects)
+  - Motifs to understand how topology (species position and interaction type) influences the observed effects of disturbances
+  - Dynamics of motifs
+    - Trophic sensitivity and define weak entry points and biotic/trophic sinks
+    - Trophic amplification and define biotic/trophic buffers and biotic/trophic multipliers
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.25\columnwidth]{./Figures/Concept.png}
+\label{f1}
+\end{figure}
+
+- **Simulating multiple disturbances**
+  - Method for simulations:
+    - Exhaustive investigation of how topology affects species abundance at
+    - equilibrium to univariate and multivariate pathways of effects
+
+- **Topology and sensitivity**
+  - Method: Comparison between initial and disturbed abundance: trophic sensitivity
+  - Amplitude of effects is highly variable, and much higher for multivariate pathways of effects
+  - Importance of considering species interactions
+    - Univariate pathways of effects simulations clearly show that interactions influence the amplitude of the effects of disturbances
+    - Complex interactions = greater variability
+    - Control motifs (disconnected & )
+  - Species position and interaction type leads to varying sensitivity
+    - Control motifs largely unaffected
+    - Complex interactions more sensitive (i.e. tri-trophic food chain and omnivory)
+    - Competitive interactions (Competitive and apparent competition)
+    - Basal resources and top predators generally more sensitive
+    <!-- Look at position frequency ~ defined position (sinks and weak entry points) -->
+    <!-- Direct vs indirect effects -->
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.25\columnwidth]{./Figures/disturbances.png}
+\label{f2}
+\end{figure}
+
+- **Topology and amplification**
+  - Method: Comparison between full models considering all pathways of effects simultaneously and additive models considering the sum of the effects of univariate pathways of effect to identify antagonistic, additive and synergistic pathways of effect: trophic amplification
+  - Frequency and variability of non-additive effects more important for omnivory and tri-trophic chain.
+  - Predator release for resources or meso-predators (positive effects)
+  - Limited non-additive effects for control motifs
+  <!-- Look at position frequency ~ defined position (buffers and multipliers) -->
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.25\columnwidth]{./Figures/positions.png}
+\label{f3}
+\end{figure}
+
+- **Complex food webs**
+  - Method: Topological and realised sensitivity and amplification scores; expert opinion on effects of drivers on mortality, physiology and behaviour.
+  - Empirical food web: Northern Gulf of St. Lawrence, prior to the groundfish stock collapse in the 1990s
+  - Topological vs realised scores
+    - Interpret biplots
+  - Trophic level
+    - Realised sensitivity non-linear with trophic level. Lower and higher trophic levels have low sensitivity scores, while intermediate trophic levels have null or positive sensitivity scores
+    - Realised Aaplification looks like a sinusoid, with antagonism at low trophic levels which increases to synergism towards intermediate trophic levels. It then drops to antagonisms again at intermediate trophic levels and then increases again towards synergisms for higher trophic levels.
+  - Food web:
+    - Few biotic sinks, more negative weak entry points
+    - Very few biotic buffers, many biotic multipliers
+    - A species does not have to be impacted directly to have large trophic sensitivity and amplification scores (*e.g.* seals and seabirds), and direct disturbances do not necessarily result in sensitivity or amplification.
+    - Groundfish collapse: decrease in groundfish species and increase in invertebrates, crustaceans and shrimp (economical shift ensued with fisheries now focused on those species)
+      - Groundfish species are negative weak entry points and biotic multipliers
+      - Large crustaceans positive weak entry point and biotic multiplier
+      - Shrimp biotic sink
+      - Check up on capelin populations post stock collapse
+
+\begin{figure}[H]
+\centering
+  \begin{subfigure}[b]{0.25\textwidth}
+    \includegraphics[width=\textwidth]{./Figures/ScoreTableNSL.png}
+  \end{subfigure}
+  \begin{subfigure}[b]{0.25\textwidth}
+    \includegraphics[width=\textwidth]{./Figures/TL-OM.png}
+  \end{subfigure}
+  \begin{subfigure}[b]{0.25\textwidth}
+    \includegraphics[width=\textwidth]{./Figures/Biplots.png}
+  \end{subfigure}
+\end{figure}
+
+- **Conclusions**
+  - Complex interactions = more sensitive and non-additive effects
+  - Meso-predator in complex interactions or resources in apparent competition = predator release
+  - Competitive interactions = less sensitive and more antagonism
+  - Mecanistic understanding
+  - Probabilities
+  - Management
+
+
+
 
 
 
@@ -70,23 +223,24 @@ david.beauchesne@uqar.ca \newline
 <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 
 - [ ] Proposal for Ecology Letters Ideas and Perspectives
-
-- [X] Check and adjust for unique pathways of effect (exploitative and apparent competition).
+- [x] Check and adjust for unique pathways of effect (exploitative and apparent competition).
   - They are all unique when you consider the position of the species, except for the disconnected motif.
-- [ ] Think on the best way to establish position profile. At the moment what is used is the mean of individual pathways of effect per position, and I feel we could do better.
+- [ ] Think on the best way to establish position profile. At the moment what is used is the mean of individual pathways of effect per position, and I feel we could do better. ***Perhaps with maximal positional scores.***
 - [ ] Integrate [@hodgson2019] in the introduction
-- [ ] Figure out how to evaluate species motifs position as a probability rather than a frequency. This could make use of empirical diet % available in Ecopath models. -> This will be discussed in this paper, and developed in the subsequent spatial paper
-- [ ] Figure out methology to evaluate species profile through two indices: sensitivity score and amplification score. These could be used to adjust Halpern's equation later on.
-- [ ] Sensitivity and amplification scores for pathways of effect and motif positions, between [-1 1]
-- [ ] Should the delta abundances (%) be divided by the delta parameter (%)?
-- [ ] Should the median be used instead of the mean?
+- [x] Figure out how to evaluate species motifs position as a probability rather than a frequency. This could make use of empirical diet % available in Ecopath models. -> This will be discussed in this paper, and developed in the subsequent spatial paper
+- [x] Figure out methology to evaluate species profile through two indices: sensitivity score and amplification score. These could be used to adjust Halpern's equation later on.
 - [ ] Cheung, W.W.L., Sarmiento, J.L., Dunne, J., Frolicher, T.L., Lam, V.W.Y., Palomares, M.L.D., Watson, R., and Pauly, D. 2013. Shrinking of fishes exacerbates impacts of global ocean changes on marine ecosystems. Nature Climate Change 3: 254-258.
-- [ ] Should the sensitivity score be divided by the number of unitary pathways disturbed?
 - [ ] Uniformiser les indices dans les équations de l'article
-- [ ] Modify the score for species using realised pathways of effects. I thougth that this was done, but since we are not using probabilities, I'm not sure what I should be doing anymore with this. Ideally I would still use a probability and have a general function, but we might still want to keep this for the 4th chapter of the thesis.
+- [x] Modify the score for species using realised pathways of effects. I thougth that this was done, but since we are not using probabilities, I'm not sure what I should be doing anymore with this. Ideally I would still use a probability and have a general function, but we might still want to keep this for the 4th chapter of the thesis. -> in 4th chapter.
 - [ ] Verify all codes so that the proper equations are used
 - [ ] Update thresholds used
 - [ ] Give proper credit to icons and images used
+- [ ] Sensitivity and amplification ~ in- and out-degree
+- [ ] Figure ex. biotic multiplier ~ position
+- [ ] Evaluate realised score potential (maximum) for each position. Not all pathways could be realised simultaneously, since when a multivariate pathway of effect exists, all of its constituent pathways cannot exist anymore. We could therefore come up with a maximal sensitivity and amplification score. We could then check the maximal possible score for a species and see whether we are close to it or not. Since there can only be a single realised pathway between 3 species, the maximum score would be the pathway of effect with the highest sensitivity and the one with the higher amplification score.
+- [ ] Check whether the unsensitivity of resources in competitive exploitation is due to the competitive parameters added to the models to get to equilibrium
+- [ ] If indirect effects are as important as direct effects, then it means that to better understand the impacts of disturbances, it may be as important to look at species beyond our focal species of interest.
+- [ ] ***HAve to look into the importance of direct vs indirect effects***
 
 
 
@@ -193,10 +347,6 @@ focus on single-stressor and single-species evalutions. -->
 # Introduction
 <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 
-<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
-## Context
-<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
-
 - **Global changes, multiple stressors and food webs**
   - Global changes are resulting in increasingly intricate environmental stress
     exposure regimes [@halpern2015a; @cote2016; @bowler2019]. These can in turn
@@ -251,32 +401,25 @@ focus on single-stressor and single-species evalutions. -->
   - Little on the role of species and their interactions in propagating or
     buffering against disturbances
 
-
-<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
-## Objectives
-<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
-
-1. Objective
-2. Pathways of effect
-3. Archetypes
-4. Motifs
-5. Terminology
-
-
-
 - **State the objective**
   - Here, we investigate the role of species in mediating the effects of multiple
-    disturbances on food webs. We also seek to answer questions of particular
-    significance for management: 1) should species interactions be considered in
-    impact assessments, and 2) should the effects of stressors be evaluated
-    seperately or in combination?
-  - OR
-  - Here, we focus on evaluating the structural role of species and their
-    trophic interactions in mediating food web sensitivity to multiple stressors.
-    We also seek to answer questions of particular significance for management:
-    1) should species interactions be considered in impact assessments, and
-    2) should the effects of stressors be evaluated seperately or in combination?
+    disturbances on food webs. In doing so, we seek to answer questions of particular
+    significance to management: 1) should species interactions be considered in
+    impact assessments, 2) should the effects of stressors be evaluated
+    seperately or in combination, and 3) which species are most sensitive to
+    disturbances?
 
+# Of food webs and multiple disturbances
+
+
+
+
+
+
+
+
+
+# Others
 - **How we do this**
   - To do so, we focus on how trophic position and interaction types affect
     species sensitivity to disturbances and the likelihood of species acting as
@@ -346,7 +489,7 @@ focus on single-stressor and single-species evalutions. -->
     disturbances:
 
 
-![Conceptualize the effects of multiple disturbances on food webs \label{concept}](./Figures/sketch.png)
+![Conceptualize the effects of multiple disturbances on food webs \label{concept}](./Figures/Concept.png)
 
 
 \newpage
@@ -562,7 +705,7 @@ description of the food webs used for this analysis.
 \blandscape
 \begin{figure}[H]
 \centering
-\includegraphics{./Figures/ScoreTable.png}
+\includegraphics{./Figures/ScoreTableNSL.png}
 \caption{Species scores for the St. Lawrence}
 \label{scoreTable}
 \end{figure}
