@@ -29,3 +29,9 @@ source('./Functions/plotMotifs.R')
 
 # Disturbance value to use
 distValue = .01 # (1%)
+
+# Colors
+cols <- c('#4B7894','#B45423')
+colP <- c('#a84d4dcc','#a84d4d44')
+colB <- c('#196f6fcc','#196f6f44')
+colM <- c('#db9f38cc','#db9f3844')
