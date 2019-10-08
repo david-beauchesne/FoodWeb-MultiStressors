@@ -116,13 +116,25 @@ david.beauchesne@uqar.ca \newline
     2) can the effects of stressors be evaluated seperately or should they be considered in combination?
     3) which species are most sensitive to disturbances based on their trophic position?
 
-- Of food webs and multiple disturbances
+- **Of food webs and multiple disturbances**
   <!-- - Concepts underlying the study of disturbances on food webs -->
-  - Whole food webs & disturbances (pathways of effects)
-  - Motifs to understand how topology (species position and interaction type) influences the observed effects of disturbances
-  - Dynamics of motifs
-    - Trophic sensitivity and define weak entry points and biotic/trophic sinks
-    - Trophic amplification and define biotic/trophic buffers and biotic/trophic multipliers
+  - [1] Food web dynamics
+  - [2] Indirect effects
+  - [3] Environmental pressures
+  - [4] Effects of disturbances on food webs
+    - What we know: robustness to extinctions, importance of indirect effects
+  - [5] Pathways of effects
+  - [6] Non-additive effects
+  - [7] Topology (trophic position and interaction types)
+  - [8] Motifs
+    - to understand how topology influences sensitivity to and amplification of disturbances
+  - [9] Archetypes
+  - [10] Subweb dynamics/insights (Holt 1997; Stouffer 2007)
+  - [11] Definitions - pathway, trophic (position), biotic (species)
+    - Weak entry points
+    - Sinks
+    - Buffers (cite Montoya et al. 2009)
+    - Multipliers
 
 \begin{figure}[H]
 \centering
@@ -130,7 +142,7 @@ david.beauchesne@uqar.ca \newline
 \label{f1}
 \end{figure}
 
-- **Simulating multiple disturbances**
+- **Simulating multiple disturbances on food webs**
   - Method for simulations:
     - Exhaustive investigation of how topology affects species abundance at
     - equilibrium to univariate and multivariate pathways of effects
@@ -143,16 +155,17 @@ david.beauchesne@uqar.ca \newline
     - Complex interactions = greater variability
     - Control motifs (disconnected & )
   - Species position and interaction type leads to varying sensitivity
+    - Interactions generaly amplify effects on species
     - Control motifs largely unaffected
     - Complex interactions more sensitive (i.e. tri-trophic food chain and omnivory)
-    - Competitive interactions (Competitive and apparent competition)
+    - Competitive interactions (Competitive and apparent competition) less sensitive
     - Basal resources and top predators generally more sensitive
     <!-- Look at position frequency ~ defined position (sinks and weak entry points) -->
     <!-- Direct vs indirect effects -->
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.25\columnwidth]{./Figures/disturbances.png}
+\includegraphics[width=0.25\columnwidth]{./Figures/sensitivity.png}
 \label{f2}
 \end{figure}
 
@@ -161,11 +174,13 @@ david.beauchesne@uqar.ca \newline
   - Frequency and variability of non-additive effects more important for omnivory and tri-trophic chain.
   - Predator release for resources or meso-predators (positive effects)
   - Limited non-additive effects for control motifs
+  - Competition: antagonisme
+  - Complex interactions: more non-additive effects, dominated by synergistic effects for consumers
   <!-- Look at position frequency ~ defined position (buffers and multipliers) -->
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.25\columnwidth]{./Figures/positions.png}
+\includegraphics[width=0.25\columnwidth]{./Figures/amplification.png}
 \label{f3}
 \end{figure}
 
@@ -333,7 +348,13 @@ Our results illustrate the importance of explictely considering species
 interactions to properly capture the effects of multiple stressors and
 safeguard ecological communities against global changes.
 
+Global changes are creating intricate stress exposure regimes that induce unpredictable environmental effects permeating entire ecological communities by way of species interactions. The role of species and their interactions in mediating the effects of multiple disturbances on food webs remains understudied. Experimental and *in situ* approaches provide contextual insights, while theory has yet to fully tackle the issue. Using Lotka-Volterra models, we show that topology (i.e. trophic position and interaction type) influences the sensitivity to and the amplification of the effects of multiple disturbances. We show that species position in complex food webs and the types and combinations of disturbances they are exposed to dictates their sensitivity to multiple sources of stress. Our results illustrate the importance of considering species interactions and non-additive effects to capture the effects of multiple disturbances and safeguard ecological communities against global changes.
 
+Contribution: we define multiple types of ecological outcomes from different pathways of effects, i.e. weak entry points, biotic sinks, biotic buffers and biotic amplifiers.
+
+Surprises: non-additive effects
+Interactions: affects the amplitude of the predicted effects of disturbances
+Explain why 2 disturbances make the situation more complex when considering interactions
 
 <!-- Even if evidence indicates that holistic approaches should be favoured to
 study complex environmental phenomena, studies nonetheless still overwhelmingly
@@ -409,17 +430,27 @@ focus on single-stressor and single-species evalutions. -->
     seperately or in combination, and 3) which species are most sensitive to
     disturbances?
 
+
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 # Of food webs and multiple disturbances
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+- Species are linked
+- Disturbing one means that you will likely disturb another one
+- The position andtypes of interactions a species in involed in will affect it's sensitivity ot multuiple disturbances
+
+
+- In real systems, food webs are threatened by many environmental pressures that can penetrate them in many different ways.
 
 
 
 
+The tole of species and their interactions in food web sensitivity to multiple Disturbances
+  "The prevailing notion is that the ecological role of a species in a network is a direct result of its interactions with other species" - Stouffer
+  "Unclear how to extrapolate the structural role of species to its dynamic relevance to complex food webs" - Stouffer
 
 
-
-
-
-# Others
+## Other thoughts, clean up
 - **How we do this**
   - To do so, we focus on how trophic position and interaction types affect
     species sensitivity to disturbances and the likelihood of species acting as
@@ -495,7 +526,7 @@ focus on single-stressor and single-species evalutions. -->
 \newpage
 
 <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
-# Methodology
+# Sumulating disturbances on food webs
 <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 
 ## Models
@@ -561,7 +592,9 @@ possible pathways of effect, for a total of 930 unique pathways of effects
 exploitative and apparent competition*). -->
 
 
-## Trophic sensitivity
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+# Trophic sensitivity
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 
 For each 13 unique motif positions considered and all unique pathways of effects,
 the variation in abundance between the 100 sets of initial conditions and
@@ -595,7 +628,23 @@ We define *weak entry points* and *biotic sinks* as positions whose
 sensitivity score is significantly different than 1% ($S_i < -1\%$ or
 $S_i > 1\%$) and is null ($S_i = 0$), respectively.
 
-## Trophic amplification
+\begin{figure}[H]
+\centering
+\includegraphics{./Figures/sensitivity.png}
+\caption{Disturbances. Line 1: Univariate disturbances; Line 2: Multivariate disturbances}
+\label{sensitivity}
+\end{figure}
+
+
+
+
+
+
+
+
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+# Trophic amplification
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 
 To evaluate whether the effects of disturbances should be investigated
 in combination, a score of trophic amplification was evaluated to
@@ -632,7 +681,24 @@ are positions whose amplification score is not significantly different than 0
 (\ref{concept}).
 
 
-## Species sensitivity and amplification
+\begin{figure}[H]
+\centering
+\includegraphics{./Figures/amplification.png}
+\caption{Motif positions and disturbances}
+\label{amplification}
+\end{figure}
+
+
+
+
+
+
+
+
+
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+# Species role to food web sensitivity to multiple disturbances
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 
 We define two sets of scores at the species level. The first requires
 no information on realised pathways of effect and provides a general evaluation
@@ -675,33 +741,6 @@ the beginning of the 2010s [@savenkoff2012]. See supplementary materials for a
 description of the food webs used for this analysis.
 
 
-\newpage
-
-<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
-# Results
-<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
-
-## Disturbances
-
-\begin{figure}[H]
-\centering
-\includegraphics{./Figures/disturbances.png}
-\caption{Disturbances. Line 1: Univariate disturbances; Line 2: Multivariate disturbances; Line 3: Joint - additive disturbances}
-\label{disturbances}
-\end{figure}
-
-\newpage
-
-\begin{figure}[H]
-\centering
-\includegraphics{./Figures/positions.png}
-\caption{Morif positions and disturbances}
-\label{positions}
-\end{figure}
-
-
-\newpage
-
 \blandscape
 \begin{figure}[H]
 \centering
@@ -739,33 +778,20 @@ description of the food webs used for this analysis.
 
 \newpage
 
-## Species position frequency
-
 \begin{figure}[H]
 \centering
-\includegraphics{./Figures/positionFrequencySL.png}
-\caption{Frequency in which each species of three empirical food webs are found in each motif position.}
-\label{posFreq}
-\end{figure}
-
-\newpage
-
-## Food web sensitivity and amplification scores
-
-\begin{figure}[H]
-\centering
-\includegraphics{./Figures/speciesSensitivityPlot.png}
-\caption{Sensitivity scores for species in the food webs of the southern St. Lawrence, northern St. Lawrence, and the estuary of St. Lawrence}
-\label{spScorePlot}
+\includegraphics{./Figures/directEffect.png}
+\caption{Direct vs indirect effects}
+\label{direcctEffect}
 \end{figure}
 
 \newpage
 
 \begin{figure}[H]
 \centering
-\includegraphics{./Figures/speciesScores.png}
-\caption{Sensitivity scores for species in the food webs of the southern St. Lawrence, northern St. Lawrence, and the estuary of St. Lawrence}
-\label{spScore}
+\includegraphics{./Figures/Biplots.png}
+\caption{Realised vs topological scores}
+\label{biplot}
 \end{figure}
 
 \newpage
@@ -775,26 +801,6 @@ description of the food webs used for this analysis.
 \includegraphics{./Figures/TL-OM.png}
 \caption{Sensitivity scores as a function of trophic level and omnivory index}
 \label{tlom}
-\end{figure}
-
-\newpage
-
-## Realised food web sensitivity and amplification scores
-
-\begin{figure}[H]
-\centering
-\includegraphics{./Figures/speciesRealScoresPlot.png}
-\caption{Impact scores for species in the food webs of the southern St. Lawrence, northern St. Lawrence, and the estuary of St. Lawrence}
-\label{spRealPlot}
-\end{figure}
-
-\newpage
-
-\begin{figure}[H]
-\centering
-\includegraphics{./Figures/speciesRealisedScores.png}
-\caption{Sensitivity scores for species in the food webs of the southern St. Lawrence, northern St. Lawrence, and the estuary of St. Lawrence}
-\label{spReal}
 \end{figure}
 
 \newpage
