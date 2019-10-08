@@ -69,7 +69,7 @@ if(check[[3]]) {
   lines(x = rep(id0[1]-.5,2), y = c(u[3]+yG, u[4]-yG), lty = 4, col = cols[1])
   lines(x = rep(id0[2]+.5,2), y = c(u[3]+yG, u[4]-yG), lty = 4, col = cols[1])
   polygon(x = c(id0[1]-.5,id0[2]+.5, id0[2]+.5,id0[1]-.5), y = c(u[3]+yG, u[3]+yG, u[4]-yG,u[4]-yG), border = 'transparent', col = paste0(cols[1], '11'))
-  text(x = mean(id0), y = u[4]-.01, labels = 'Buffer pathways', adj = c(.5,.5), font = 4, cex = 1.25)
+  text(x = mean(id0), y = u[4]-.01, labels = 'Sink pathways', adj = c(.5,.5), font = 4, cex = 1.25)
 }
 
 # Data
@@ -148,7 +148,7 @@ if(check[[3]]) {
   lines(x = rep(id0[1]-.5,2), y = c(u[3]+yG, u[4]-yG), lty = 4, col = cols[1])
   lines(x = rep(id0[2]+.5,2), y = c(u[3]+yG, u[4]-yG), lty = 4, col = cols[1])
   polygon(x = c(id0[1]-.5,id0[2]+.5, id0[2]+.5,id0[1]-.5), y = c(u[3]+yG, u[3]+yG, u[4]-yG,u[4]-yG), border = 'transparent', col = paste0(cols[2], '11'))
-  text(x = mean(id0), y = u[4]-.0053, labels = 'Trophic buffers', adj = c(.5,.5), font = 4, cex = 1.25)
+  text(x = mean(id0), y = u[4]-.0053, labels = 'Trophic sinks', adj = c(.5,.5), font = 4, cex = 1.25)
 }
 
 # Add motifs
@@ -206,7 +206,7 @@ if(check[[3]]) {
   lines(x = rep(id0[1]-.5,2), y = c(u[3]+yG, u[4]-yG), lty = 4, col = cols[1])
   lines(x = rep(id0[2]+.5,2), y = c(u[3]+yG, u[4]-yG), lty = 4, col = cols[1])
   polygon(x = c(id0[1]-.5,id0[2]+.5, id0[2]+.5,id0[1]-.5), y = c(u[3]+yG, u[3]+yG, u[4]-yG,u[4]-yG), border = 'transparent', col = paste0(cols[1], '11'))
-  text(x = mean(id0), y = u[4]-.027, labels = 'Buffer pathways', adj = c(.5,.5), font = 4, cex = 1.25)
+  text(x = mean(id0), y = u[4]-.027, labels = 'Sink pathways', adj = c(.5,.5), font = 4, cex = 1.25)
 }
 
 # ---------------------------------------
@@ -258,7 +258,7 @@ if(check[[3]]) {
   lines(x = rep(id0[1]-.5,2), y = c(u[3]+yG, u[4]-yG), lty = 4, col = cols[1])
   lines(x = rep(id0[2]+.5,2), y = c(u[3]+yG, u[4]-yG), lty = 4, col = cols[1])
   polygon(x = c(id0[1]-.5,id0[2]+.5, id0[2]+.5,id0[1]-.5), y = c(u[3]+yG, u[3]+yG, u[4]-yG,u[4]-yG), border = 'transparent', paste0(cols[1], '11'))
-  text(x = mean(id0), y = u[4]-.0106, labels = 'Biotic buffers', adj = c(.5,.5), font = 4, cex = 1.25)
+  text(x = mean(id0), y = u[4]-.0106, labels = 'Trophic sinks', adj = c(.5,.5), font = 4, cex = 1.25)
 }
 
 # Add motifs
