@@ -20,6 +20,7 @@ header-includes:
    - \usepackage{float}
    - \restylefloat{table}
    - \usepackage{subcaption}
+   - \usepackage{setspace}
 bibliography: FoodWeb-MultiStressorMS.bib
 csl: EcologyLetters.csl
 link-citations: yes
@@ -58,40 +59,125 @@ david.beauchesne@uqar.ca \newline
 
 **Data accessibility statement**:
 
+
 \newpage
 
 <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
-# Checklist {-}
+# Literature to cite - or at least look at! {-}
 <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 
-- [ ] Proposal letter Ecology Letters - Ideas and Perspectives
-- [ ] Cover letter and novelty statement
-- [x] Conflict of interest statement
-- [ ] Statement of authorship
-- [ ] Data accessibility statement
-- [ ] Reviewers
-- [ ] Keywords
-- [ ] Abstract
-- [ ] Introduction
-- [ ] Of food webs and multiple disturbances (concept)
-- [ ] Simulations
-- [ ] Sensitivity
-- [ ] Amplification
-- [ ] Food web sensitivity & amplification
-- [ ] Conclusions
-- [ ] Acknowledgements
-- [ ] References
-- [ ] Figure 1 - Concept
-- [ ] Figure 2 - Sensitivity
-- [ ] Figure 3 - Amplification
-- [ ] Figure 4 - Food web scores table
-- [ ] Figure 5 - Topological ~ Realised scores
-- [ ] Figure 6 - Scores ~ Trophic level & degree
-- [ ] Table S1 - Systems of equations
-- [ ] Article formatting
+- @adams2005
+- @brown2013
+- @brown2014
+- @christensen2006
+- @crain2008
+- @darling2013
+- @folt1999
+- @galic2018 *
+- @jackson2016
+- @kath2018
+- @lange2018
+- @piggott2015
+- @schafer2018 *
+- @segner2014
+- @thompson2018
+- @thompson2018a
+- @vinebrooke2004
+- @montoya2009
+- @hodgson2019
+- @holt1997
+- @stouffer2007
+- @stouffer2010
+- @stouffer2012
+- @ogorman2009
+- @wootton1993
+- @wootton2002
+- @yodzis2000
+- @vinebrooke2004
 
+To reread:
+
+- @delaender2018 for conceptual portion of my text, should aim for something similar.
+- @montoya2009
+- @stouffer2007 for motifs, with @milo2004
+- @stouffer2010
+- @stouffer2012
+- thompson2018 Ecosphere
+- gellner2016 introduction for motifs
+
+**Latest**:
+
+- Abdala-Roberts2019
+- ogorman2010 -> intro on food webs
+- ogorman2009
+- yodzis2000
+- bascompte2009a
+- bascompte2009
+- giakoumi2015
+- hodgson2017
+- hodgson2019
+- hodgson2019a
+- hale2018
+- griffen2016
+- klaise2017
+- wootton2002
+- menge1995
+- kissling2015
+- holt2017
+- Tylianakis2017
+- williams2000
+- polis1996
+- estes2011
+- milo2004
+- strogatz2001
+- wootton2017
+- guiden2019
+- stouffer2007
+- stouffer2010
+- stouffer2012
+- galic2018
+- dempsey2017
+- borrelli2015
+- saterberg 2013
+- Woodworth-Jefcoats 2019
+
+Ecology Letters structure ideas
+- guiden2019
+-
+
+Conceptual description:
+- @delaender2018
+
+Relevant for this paper:
+- letten2019: non-additive effects
+- guiden2019: disturbances
 
 \newpage
+
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+# Notes {-}
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+## Modelling disturbances on food webs {-}
+
+- @thompson2018
+- @thompson2018a
+- @galic2018
+
+thompson2018: Trophic interations: synergistic effects due to supressed spcies compensation
+  Species at higher trophic levels are more sensitive because of both direct and indirect interacton mediated effects
+    We find that this should also hold true for lower trophic level species
+
+## Points to make {-}
+
+- Most empirical and theoretical exercises have focused on 2 or 3 sources of stress tops
+  - We provide the most comprehensive evaluation of simulated stressors ever published, testing all possible
+  - Slightly different definition of disturbances than what is usually used.
+    - We define disturbances as any single pathway of effect affected
+    - In this sense we ignore that a single pathway of effect may be impacted by multiple sources of stress
+      - While this may be critisized, this allows us to infer on the effects of multivariate pathways of effects and it provides a theoretical framework to test for combinations of stressors affecting the same pathways of effects.
+
+- Variations in abundance (sensitivity) are consistently greater than variations in abundance due to amplification of the effects. Considering the additive effects will therefore capture most of the impacts observed, yet there may still be surprises creeping up depending on topology and the specific pathways of effects that are targetted by disturbances.
 
 <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 # Plan {-}
@@ -104,7 +190,7 @@ david.beauchesne@uqar.ca \newline
   - Uncertainty associated with multiple disturbances
   - Limits of *in situ* and experimental approaches to study multiple disturbances
   - Limited insights from null model testing
-  - Shift towards ecological modelling to better understand mecanisms
+  - Shift towards ecological modelling to better understand mechanisms
   - Insights on the effects of disturbances on ecological communities from theoretical ecology
   - Theoretical focus on single disturbances, coexistence and extinctions
 
@@ -185,6 +271,7 @@ david.beauchesne@uqar.ca \newline
 \end{figure}
 
 - **Complex food webs**
+  - Simulations provide theory informed heuristics that can be used to infer species sensitivity to and amplification of disturbances
   - Method: Topological and realised sensitivity and amplification scores; expert opinion on effects of drivers on mortality, physiology and behaviour.
   - Empirical food web: Northern Gulf of St. Lawrence, prior to the groundfish stock collapse in the 1990s
   - Topological vs realised scores
@@ -219,15 +306,56 @@ david.beauchesne@uqar.ca \newline
   - Complex interactions = more sensitive and non-additive effects
   - Meso-predator in complex interactions or resources in apparent competition = predator release
   - Competitive interactions = less sensitive and more antagonism
-  - Mecanistic understanding
+  - Mechanistic understanding
   - Probabilities
   - Management
+  - Talk about hte potential to use expert ilicitation to come up with species vulnerabilities (giakoumi2015), and the fact that we could use this as a probability of exposure (which we will do in my last chapter).
 
 
+Trame narrative :
 
+**Intro**:
+- [1] Cumulative stressors and the problematics that arise from them
+- [2] Connaissances empiriques et théoriques limitées
+- [3] Some insights from theory
+- [4] Theory meets practice
+- [5] In a management context, we wish to know the effects before we begin to observe extinctions
+- [6] Objectives
 
+**Food webs and multiple stressors**:
+- [1] Food web dynamics
+- [2] Indirect effects
+- [3] Environmental pressures
+- [4] Effects of disturbances on food webs
+- [5] Pathways of effects
+- [6] Non-additive effects
+- [7] Topology (trophic position and interaction types)
+- [8] Motifs
+- [9] Archetypes
+- [10] Subweb dynamics/insights (Holt 1997; Stouffer 2007)
+- [11] Definitions - pathway, trophic (position), biotic (species)
 
+**Simulated disturbances**:
+- [1] Models formulation
+- [2] Models parameterization
+- [3] Simulated disturbances
 
+**Trophic sensitivity**:
+- [1] Measuring trophic sensitivity
+- [2] Main results:
+  - Interactions amplify the effects of disturbances
+
+- Amplitude of effects is highly variable, and much higher for multivariate pathways of effects
+- Importance of considering species interactions
+  - Univariate pathways of effects simulations clearly show that interactions influence the amplitude of the effects of disturbances
+  - Complex interactions = greater variability
+  - Control motifs (disconnected & )
+- Species position and interaction type leads to varying sensitivity
+  - Interactions generaly amplify effects on species
+  - Control motifs largely unaffected
+  - Complex interactions more sensitive (i.e. tri-trophic food chain and omnivory)
+  - Competitive interactions (Competitive and apparent competition) less sensitive
+  - Basal resources and top predators generally more sensitive
 
 
 
@@ -263,17 +391,51 @@ david.beauchesne@uqar.ca \newline
 
 <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 # Proposal letter {-}
-
 <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
-<!-- ## Instructions
 
-*Unsolicited proposals, which will be evaluated by the Ideas
+## Instructions {-}
+
+> *Unsolicited proposals, which will be evaluated by the Ideas
 and Perspectives or Reviews and Syntheses Editors, in consultation with the
 Editorial Board and Editor-in-Chief, prior to a full submission. Proposals
 should be no more than 300 words long, describe the nature and novelty of the
 work, the contribution of the proposed article to the discipline, and the
 qualifications of the author(s) who will write the manuscript. Proposals should
-be sent to the Editorial Office (ecolets@cefe.cnrs.fr).* -->
+be sent to the Editorial Office (ecolets@cefe.cnrs.fr).*
+
+## Notes {-}
+
+- In it's current form, I believe that the contribution portion is not good enough
+- I wonder whether the qualitications should be more in depth.
+- Right now, the letter is 43 words over the word limit.
+- Also, this text might be better than the current abstract
+
+## Letter {-}
+
+Evaluating the effects of multiple sources of stress in natural environments has become an increasingly important issue
+as the effects of intensifying global change and expanding human activities result in complex stress exposure regimes.
+Even though the non-additive effects of multiple stressors have been investigated empirically for a few decades now, there remains
+a general lack of theoretical understanding of their impacts on natural systems.
+In particular, the role of species and their interactions in mediating the effects of multiple disturbances through
+ecological communities, although widely acknowledged, has yet to be formally explored.
+We propose the first such formal exploration by exhaustively simulating the impacts of all possible pathways of effects
+on the dynamics of 3-species motifs using Lotka-Volterra models.
+We uncover that interaction types and species position greatly influence sensitivity to and amplification of multiple
+disturbances and that indirect pathways of effects are the main cause of non-additive effects.
+In particular, predators in food chain and omnivory interactions act as both weak entry points (*i.e.* highly sensitive
+to disturbances) and biotic amplifiers (*i.e.* affected synergistically by disturbances).
+We then use the simluated sensitivity and amplification scores as heuristics to infer trophic vulnerability of
+species based on topology and realised pathways of effects in the food web of the Northern Gulf of St. Lawrence, Canada,
+prior to a groundfish stock collapse in the 1990s.
+We find that heavily exploited species appear to be the most vulnerable trophically,
+while fisheries transitioned to insensitive or beneficiary <!--change--> species post-collapse.
+This contribution is significant and timely theoretically as the first exploration of the effects of multiple disturbances on
+structual properties of food webs, as well as practically by answering questions crucial to management.
+Our group of co-authors is singularly positioned to write this paper. D. Beauchesne and P. Archambault both have strong backgrounds
+in environmental assessments in general and cumulative impacts in particular. K. Cazelles and D. Gravel are both experts
+in theoretical ecology with strong backgrounds and recognition in the field.
+
+
 
 \newpage
 
@@ -322,6 +484,8 @@ construed as a conflict of interest.
 
 \newpage
 
+\doublespacing
+
 <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 # Abstract
 <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
@@ -348,7 +512,24 @@ Our results illustrate the importance of explictely considering species
 interactions to properly capture the effects of multiple stressors and
 safeguard ecological communities against global changes.
 
-Global changes are creating intricate stress exposure regimes that induce unpredictable environmental effects permeating entire ecological communities by way of species interactions. The role of species and their interactions in mediating the effects of multiple disturbances on food webs remains understudied. Experimental and *in situ* approaches provide contextual insights, while theory has yet to fully tackle the issue. Using Lotka-Volterra models, we show that topology (i.e. trophic position and interaction type) influences the sensitivity to and the amplification of the effects of multiple disturbances. We show that species position in complex food webs and the types and combinations of disturbances they are exposed to dictates their sensitivity to multiple sources of stress. Our results illustrate the importance of considering species interactions and non-additive effects to capture the effects of multiple disturbances and safeguard ecological communities against global changes.
+
+
+
+Global changes are creating intricate stress exposure regimes that induce
+unpredictable environmental effects permeating entire ecological communities by
+way of species interactions. The role of species and their interactions in
+mediating the effects of multiple disturbances on food webs remains understudied.
+Experimental and *in situ* approaches provide contextual insights, while theory
+has yet to fully tackle the issue. Using Lotka-Volterra models, we show that
+topology (i.e. trophic position and interaction type) influences the sensitivity
+to and the amplification of the effects of multiple disturbances.
+
+We show that
+species position in complex food webs and the types and combinations of
+disturbances they are exposed to dictates their sensitivity to multiple sources
+of stress. Our results illustrate the importance of considering species
+interactions and non-additive effects to capture the effects of multiple
+disturbances and safeguard ecological communities against global changes.
 
 Contribution: we define multiple types of ecological outcomes from different pathways of effects, i.e. weak entry points, biotic sinks, biotic buffers and biotic amplifiers.
 
@@ -356,11 +537,138 @@ Surprises: non-additive effects
 Interactions: affects the amplitude of the predicted effects of disturbances
 Explain why 2 disturbances make the situation more complex when considering interactions
 
+We provide theory-driven heuristics to inform the likely effects of multiple stressors based on trophic knowledge [see @hodgson2019]
+
 <!-- Even if evidence indicates that holistic approaches should be favoured to
 study complex environmental phenomena, studies nonetheless still overwhelmingly
 focus on single-stressor and single-species evalutions. -->
 
 
+\newpage
+
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+# Introduction 2
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+Global changes and human activities result in increasingly intricate
+environmental stress exposure regimes that can induce complex and unpredictable
+effects [@halpern2019; @cote2016; @bowler2019].
+This cocktail of environmental pressures impedes our ability to evaluate and
+partition the effects of interacting drivers in cumulative effects assessments
+[@canter2010; @jones2016; @sinclair2017].
+This is in part due to the breadth and interaction potential of environmental
+pressures operating on natural systems [@cote2016], compounding the pathways of
+effects through which natural systems can be impacted.
+Another aspect is the potential for non-additive affects, *i.e.* when the effect
+of multiple interacting drivers is greater (*i.e.* synergism) or lower (*i.e.*
+antagonism) than the sum of their individual parts, which have been found to be
+the norm rather than the exception in multiple drivers metaanalyses
+[*e.g.* @darling2008; @crain2008; @piggot2015; @jackson2016].
+
+Common drivers of environmental stress include climate change, resource
+exploitation and pollution [@boonstra2015; @halpern2019].
+Drivers have typically been described according to their effects on habitats
+[*e.g. @ban2010; @halpern2019].
+For instance, fisheries can destroy benthic habitats and extract biomass.
+Focusing on habitats conveniently circumscribes assessments to a set of
+tractable units, yet it has the drawback of aggregating processes
+operating at lower levels of ecological organization
+that we know respond differently to driver exposure [halpern2013; giakoumi2015].
+For example, hypoxia decreases overall habitat quality but has species-dependent
+effects, ranging from well-adapted [@pillet2016] to avoidance behaviour
+[@chabot2008], reduced growth [@dupont-prinet2013] and mortality
+[@eby2005; @belley2010; @gilbert2007].
+As a consequence, current practice to assess the effects of multiple drivers
+has provided little insight into underlying ecological mechanisms
+[@jackson2016; @delaender2018; @griffen2016; @schafer2018].
+Focusing on ecosystem components such as species and communities has thus been
+deemed necessary to provide a mechanistic understanding of the effects of
+multiple drivers [@giakoumi2015; @refs?]
+
+<!-- At the species and community scales, drivers may be more appropriately described as ecological modifiers, which we define as natural or anthropogenic processes resulting in a disturbance to ecological processes. -->
+Drivers may disturb a variety of ecological processes such as behaviour
+[*e.g.* @chabot2008; @hale2018], reproduction [*e.g.* @ref],
+physiology [*e.g.* @dupont-prinet2013], mortality [*e.g.* @belley2010],
+and species interactions [*e.g.* @ref].
+Multiple processes may be modified by a single drivers, while multiple drivers
+may target a single pathway of effect.
+Irrespective of driver identity, disturbances to ecological processes may thus
+arise through univariate or multivariate pathways of effects.
+Through this lens, fisheries may be a modifier of cod behaviour and mortality
+by destroying benthic habitats and by direct extraction, respectively.
+
+While plenty of work has been done on the effects of multiple drivers on
+univariate pathways of effects [*e.g.* @refs], few attention has been given to
+multiple processes impacted simultaneously by disturbances.
+Species interactions are of particularly relevant in the context of multiple
+disturbances, as they may serve as the
+indirect pathways through which pressures permeate entire ecological communities
+[@wootton2002; @bascompte2009a; @montoya2009; @thompson2018a].
+Indirect effects, *i.e.* when two or more direct effects are linked by a single
+species involved in both effects, may be as important of, and propagate faster
+than, direct effects [@menge1995; @wootton1993; @yodzis2000; @wootton2002].
+In multi-species systems, where both direct and indirect effects are
+operating simultaneously, it is expected that the effects of environmental
+pressures will be amplified or dampened through biotic interactions
+[@ives1995; @wootton2002; @thompson2018a].
+Interaction strength and type (*e.g.* omnivory vs apparent competition) have
+also been linked to enhanced or decreased community persistance
+[@mccann1998; @wooton2002; @allesina2008].
+How species are embedded in complex communities is therefore likely to affect
+their sensitivity to and amplification of single and multiple disturbances.
+
+The complexity of empirical food webs is however prohibitive to investigations
+of community dynamics.
+Studying smaller subgraphs - community motifs or modules - has thus emerged as
+an alternative to gather insights into the dynamics and stability of complex
+ecological communities [@holt1997; @holt2001].
+Motifs are collections of $n$-species that, when put together, construct whole
+food webs [@milo2002; @stouffer2007].
+
+Link to conceptual figure here,
+A species can be described as a function of all $n$-species motifs it is involved
+in in an empirical food web.
+
+They form the backbone of food webs and provide a mesoscale
+characterization of community structure [@bascompte2005; @stouffer2007].
+Four 3-species motifs have received particular attention in theoretical and
+empirical studies due to their roles [@refs]
+and prevalance [@camacho2007; @stouffer2010] in food webs:
+tri-trophic food chain, omnivory or intraguild predation, exploitative
+competition and apparent competition.
+
+
+
+Their dynamics has been studied extensively to uncover how structural properties
+of food webs can benefit community persistence and stability
+[@kondoh2008; @allesina2008; @stouffer2010; @stouffer2011; @monteiro2016] and to
+assess the structural roles of species within food webs
+[@stouffer2012; @cirtwill2015].
+
+
+
+
+Meaningful insights for conservation are provided by investigations using motifs
+to study community stability and persistence.
+For example, results from @stouffer2012 suggests that species trophic benefits
+to community persistence could be a valuable conservation target, as role
+diversity does not directly correlate to species richness.
+In the context of the management of the effects of multiple stressors,
+additional insights could be gleaned from studying motifs at equilibrium,
+*i.e.* when the dynamics of the system is constrained by species coexistance.
+This is of particular relevance to managers using ecosystem-based approaches
+to manage and maintain exploited populations.
+Dynamic models of motifs could then help us in
+
+
+
+Here, we study the equilibrium dynamics of the most prevalent 3-species motifs
+in food webs (*i.e.* food chain, omnivory, exploitative competition, and
+apparent competition) to investigate the role of species in mediating the effects
+of multiple disturbances on food webs. In doing so, we seek to answer questions
+of particular significance to management: 1) should species interactions be
+considered in impact assessments, 2) should the effects of stressors be evaluated
+seperately or in combination, and 3) which species are most sensitive to
+disturbances?
 
 \newpage
 
@@ -368,72 +676,252 @@ focus on single-stressor and single-species evalutions. -->
 # Introduction
 <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 
-- **Global changes, multiple stressors and food webs**
-  - Global changes are resulting in increasingly intricate environmental stress
-    exposure regimes [@halpern2015a; @cote2016; @bowler2019]. These can in turn
-    induce complex and unpredictable environmental effects that propagate through
-    entire ecological communities by way of species interactions
-    [@bascompte2009a; @montoya2009].
+Global changes and human activities result in increasingly intricate
+environmental stress exposure regimes that can induce complex and unpredictable
+effects [@halpern2015a; @cote2016; @bowler2019].
+Common drivers of stress include climate change, resource exploitation and
+pollution [@boonstra2015].
+This cocktail of environmental pressures impedes our ability to evaluate and
+partition the effects of interacting stressors in cumulative effects assessments
+[@canter2010; @jones2016; @sinclair2017].
+This is in part due to the breadth of environmental pressures operating on
+natural systems and their interaction potential [@cote2016], effectively
+constraining *in situ* and experimental approaches to simplified and contextual
+conclusions.
 
-- **Uncertainty associated with mutliple stressors**
-  - Largest uncertainty in predicting environmental effects is the potential for
-    complex driver interactions [@cote2016; @darling2008].
-  - Stressors can combine non-additively and result in effects that are greater
-    (*i.e.* synergistic) or lower (*i.e.* antagonistic) than the sum of
-    individual effects [@cote2016; @crain2008; @darling2008]
-  - Net effects of multiple stressors can be additive (*i.e.* joint effect
-    equal to the sum of individual effects), synergistic (joint effect superior
-    to the sum of individual effects), antagonistic (joint effect inferior to
-    the sum of individual effects) or dominant (joint effect equal to an
-    individual effect) [e.g. @crain2008; @darling2008; @cote2016].
-  - This is of particular significance for management, because we have mostly been
-    operating under the assumption that stressors are mostly additive and thus
-    can be managed independently.
-  - Maybe cite [@hodgson2019] (cite it for certain in the article).
-  - most research on driver effects in marine environments remains overwhelmingly
-    focused on single driver assessments [@obrien2019].
+Thus far, much of the evidence gathered on the cumulative effects of multiple
+stressors has focused on identifying the prevalence of non-additive effects.
 
-- **Limits of *in situ* and experimental approaches to study multiple disturbances**
-  - The number of stressors and of their potential interactions limits the
-    insights we can glean into the effects of multiple disturbances *in situ*
-    and in experimental settings such as mesocosm [@cote2016].
-  - In food webs, this is compounded by the myriad of possible interactions
+Non-additive effects are...
+
+This is of particular relevance to management, as single-driver assessments
+<!-- maybe push this down to say that both species interactions and multiple stressors are of particular relevance to management -->
+are still overwhelmingly applied [@obrien2019] even though evidence suggests
+that non-additive effects are the norm rather than the exception when dealing
+with the effects of multiple stressors
+[*e.g.* @darling2008; @crain2008; @piggot2015; @jackson2016].
+
+<!-- Feels like there is a missing link between these two paragraphs, which makes me wonder whether the first paragraph is useful -->
+
+Current practice to identify the effects of multiple stressors has been
+relying on approaches that provide little
+insight into the mechanisms underlying the effects of multiple stressors
+[@jackson2016; @delaender2018; @griffen2016; @schafer2018].
+There has been an upsurge of theory-driven modelling approaches
+to address this lack of mechanistic understanding
+[*e.g.* @hodgson2017; @delaender2018; @galic2018; @thompson2018a].
+These approaches provide frameworks under which
+predictions can be tested against well-defined underlying assumptions
+[@delaender2018].
+Crucially, they also provide the ability to explore the many different pathways
+of effects through which stressors can affect ecosystems across scales of
+biological organization [@galic2018; @hodgson2019; @hodgson2019a; @guiden2019].
+
+Stressors can affect numerous biological processes such as behaviour
+[*e.g.* @hale2018], reproduction [*e.g.* @ref], physiology [*e.g.* @ref],
+mortality [*e.g.* @ref] and species interactions [*e.g.* @ref].
+Species interactions are of particular interest for the evaluation of the effects
+of single and multiple stressors, as they may serve as the indirect pathway
+through which pressures permeate entire ecological communities
+[@wootton2002; @bascompte2009a; @montoya2009; @thompson2018a].
+Indirect effects, *i.e.* when two or more direct effects are linked by a single
+species involved in both effects, may be as important of, and propagate faster
+than, direct effects [@menge1995; @wootton1993; @yodzis2000; @wootton2002].
+In multi-species systems, where both direct and indirect effects are
+operating simultaneously, it is expected that the effects of environmental
+pressures will be amplified or dampened through biotic interactions
+[@ives1995; @wootton2002; @thompson2018a]. How species are embedded in complex
+communities is therefore likely to affect its sensitivity to and amplification
+of single and multiple stressors.
+
+Here, we investigate the
+
+Here, we investigate the role of species in mediating the effects of multiple
+disturbances on food webs. In doing so, we seek to answer questions of particular
+significance to management: 1) should species interactions be considered in
+impact assessments, 2) should the effects of stressors be evaluated
+seperately or in combination, and 3) which species are most sensitive to
+disturbances?
+
+
+
+
+
+  <!-- - In food webs, this is compounded by the myriad of possible interactions
   - between species
-
-- **Limited insights from null model testing**
-  - The knowledge we do have has mostly been gleaned from null model testing
-    providing little insights into ecological mecanisms underlying non-additive
-    stressor effects [@delaender2018].
-
-- **Shift towards ecological modelling to better understand mecanisms**
-  - [@delaender2018; @schafer2018; @thompson2018]
 
 - **Some insights on the effects of disturbances on ecological communities from theoretical ecology**
   - Importance of interactions and web complexity
   - Indirect effects [@wootton1993; @yodzis2000; @wootton2002; @montoya2009; ogorman2009]; see intro séminaire 1
-  - Different types of interactions will lead to different overall effects [@refs].
-    - Different sensitivity for species involved in different types of interactions (segway to motifs)
-  - How direct and indirect effects combine to affect food web sensitivity to disturbances
+  - Much litterature on indirect effects.
+  - Expected that direct and indirect effects will combine to affect food webs
 
 - **Theoretical has thus far mostly been concerned mostly with single disturbances and
   resistance of communities to extinctions**
+  - Pathways of effects
   - Little insights into how different pathways of effect influences food webs, let
     alone pathways of multiple effects.
   - Little on the role of species and their interactions in propagating or
     buffering against disturbances
 
 - **State the objective**
-  - Here, we investigate the role of species in mediating the effects of multiple
-    disturbances on food webs. In doing so, we seek to answer questions of particular
-    significance to management: 1) should species interactions be considered in
-    impact assessments, 2) should the effects of stressors be evaluated
-    seperately or in combination, and 3) which species are most sensitive to
-    disturbances?
 
+Outstanding questions remain -->
 
 <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 # Of food webs and multiple disturbances
 <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+Food web structure
+Stressors and how they penetrate food webs (act as factors modifying community dynamics)
+Simplifying community dynamics throush motifs
+Studying motif dynamics to better understand how interaction type and position (*i.e.* topology) influences sensitivity to and amplification of disturbances
+Definitions that we provide in the paper
+Sprinkle examples throughout
+
+drivers are biotic modifiers
+
+The complexity of empirical food webs is prohibitive when studying community
+dynamics.
+Studying smaller subgraphs - community motifs or modules - has thus emerged as
+an alternative to gather insights into the dynamics and stability of complex
+ecological communities [@holt1997; @holt2001].
+Motifs are collections of $n$-species that, when put together, construct whole
+food webs [@milo2002; @stouffer2007].
+They form the backbone of food webs and provide a mesoscale
+characterization of community structure [@bascompte2005; @stouffer2007].
+Their dynamics has been studied extensively to uncover how structural properties
+of food webs can benefit community persistence and stability
+[@kondoh2008; @allesina2008; @stouffer2010; @stouffer2011; @monteiro2016] and to
+assess the structural roles of species within food webs
+[@stouffer2012; @cirtwill2015].
+
+<!-- There are 13 distinct 3-species motifs composed of 30 unique positions [@milo2002; @stouffer2007; @stouffer2012]. -->
+Four 3-speciees motifs have received particular attention in
+theoretical and empirical studies due to their roles [@refs]
+and prevalance [@camacho2007; @stouffer2010] in food webs:
+tri-trophic food chain, omnivory or intraguild predation, exploitative competition and
+apparent competition.
+-> Paragraph(s) on them, with some archetypes as examples
+
+
+Meaningful insights for conservation are provided by investigations using motifs
+to study community stability and persistence.
+For example, results from @stouffer2012 suggests that species trophic benefits
+to community persistence could be a valuable conservation target, as role
+diversity does not directly correlate to species richness.
+In the context of the management of the effects of multiple stressors,
+additional insights could be gleaned from studying motifs at equilibrium,
+*i.e.* when the dynamics of the system is constrained to the space in which
+all species coexist.
+This is of particular relevance to managers using ecosystem-based approaches
+to manage and maintain exploited populations.
+Dynamic models of motifs could then help us in
+
+
+
+
+@delaender2018 discusses how the effects of multiple stressors could affect the coexistence of two species competing for shared resources through different pathways of effects.
+
+
+
+insights for management, whose interest focuses on what happens between persistence and extinction.
+
+
+  - *The ecological role of a species in a network is a direct result of its
+    interactions with other species (Luczkovich 2003; Olesen 2007; Allesina 2009)
+    (in Stouffer 2012)*
+
+
+
+
+
+For amplification, reread and cite Thompson's article.
+
+
+
+- Weak entry points
+- Sinks
+- Buffers (cite Montoya et al. 2009)
+- Multipliers
+
+
+
+
+
+
+[1] Food web dynamics
+- The dynamics of multi-species systems is governed by species interactions.
+- Trophic interactions in particular are essential to energy and nutrient flows in complex systems.
+
+[2] Indirect effects
+- Through these interactions arise indirect effects, *i.e.* two or more direct effects linked by a single species involved in both effects (@wootton1993; @wootton2002).
+- For example, [...]
+- Indirect effects may be as important of, and propagate faster than, direct effects (@menge1995; @wootton2002).
+- In multi-species systems, both direct and indirect effects are expected to operate simultaneously, with the potential to amplify or dampen their individual effects (@wootton2002)
+
+[3] Environmental pressures
+- Density-mediated effects as well as effects affecting species interactions, which gathers the different types of indirect effects discussed by wooton2002.
+- Consequently, it is expected that the effects of environmental pressures will also be amplified or dampened through biotic interactions as a function of their configuration and strength (@wootton2002; @thompson2018).
+
+
+- Different types of interactions will lead to different overall effects [@refs].
+  - Different sensitivity for species involved in different types of interactions (segway to motifs) -> concept
+
+
+
+- [1] Food web dynamics
+  - Energy flow in complex systems is dependent on species trophic interactions
+  - Importance of species interactions
+  - Energy flow in complex systems
+  - indirect effects can be as important as direct effects, and may propagate through food webs faster than food webs by affecting pathways that may be impacted instantaneously (wootton2002; menge1995)
+  - suggesting that species co-tolerance must be taken into account (vinebrooke2004)
+    - If we break down the complexity of the trophic position of a species, we can evaluate the total sensitivity of a species as the sum of all the interaction types it is involved i
+- [2] Indirect effects
+  - Multiplies the number of pathways of effects (@wooton2002)
+  - We focus on density-mediated indirect effects (see wooton2002 and menge1995)
+  - In complex multi-species communities, multiple direct and indirect pathways are likely to be operating simultaneously, potentially reinforcing or cancelling each other's overall effects (@wooton2002)
+  - the role of biotic interactions in transmitting environmental vairation may be either amplified or dampened, depending on the configuraiton and strength of direct and indirect effects (@ives1995; @wooton2002)
+  - Infinitely more indirect than direct pathways (@wooton20022)
+
+
+- [3] Environmental pressures
+  - Global changes and direct human activities -> environmental pressures / drivers / disturbances
+  - In a food web context, it depends on species tolerance and co-tolerance to drivers
+  - Species tolerance (@vinebrooke2004)
+  - Multiple
+
+- Global changes and human activities impose environmental pressures on ecological communities.
+  - For example
+-
+- These pressures may penetrate food webs via many direct and indirect pathways of effects.
+  - For example
+- Species co-tolerance
+
+
+
+  - Species interactions play a role in mediating non-linear effects of environmental stressors (thompson2018 Ecography)
+  - Importance of ecological novelties and how they can induce non-additive effects through predator-prey interactions (@guiden2019)
+- [4] Effects of disturbances on food webs
+  - What we know: robustness to extinctions, importance of indirect effects
+- [5] Pathways of effects
+- [6] Non-additive effects
+- [7] Topology (trophic position and interaction types)
+  - Position of species in complex food webs affects their benegits to community persistence (@stouffer2012)
+- [8] Motifs
+  - to understand how topology influences sensitivity to and amplification of disturbances
+- [9] Archetypes
+- [10] Subweb dynamics/insights (Holt 1997; Stouffer 2007)
+- [11] Definitions - pathway, trophic (position), biotic (species)
+  - Weak entry points
+  - Sinks
+  - Buffers (cite Montoya et al. 2009)
+  - Multipliers
+
+
+
+
+
 
 - Species are linked
 - Disturbing one means that you will likely disturb another one
@@ -451,13 +939,6 @@ The tole of species and their interactions in food web sensitivity to multiple D
 
 
 ## Other thoughts, clean up
-- **How we do this**
-  - To do so, we focus on how trophic position and interaction types affect
-    species sensitivity to disturbances and the likelihood of species acting as
-    buffer against or amplifiers of the effects of multiple disturbances.
-
-- **Transition to motifs**
-  - ...?
 
 - **Motif description and use**
   - A food web can be decomposed into a set of smaller $n$-species subgraphs
@@ -501,16 +982,6 @@ The tole of species and their interactions in food web sensitivity to multiple D
     rates at which species interact (*i.e.* attack and conversion rates).
 
 
-- **Pathways of effect**
-  - Studying the effects of multiple disturbances means that we will be focusing
-    on disturbances affecting multiple species, referred to as pathways of
-    multiple effects ($D_{i,j}$, $D_{i,k}$, $D_{j,k}$, and $D_{i,j,k}$).
-  - In a food web context, we will define linear and non-linear effect as a
-    function of whether these pathways of multiple effects result in
-    additive ($D_{i,j} = D_i + D_j$), synergistic ($D_{i,j} >> D_i + D_j$),
-    antagonistic ($D_{i,j} << D_i + D_j$) or dominant ($D_{i,j} = D_i \veebar D_j$)
-    effects.
-
 - **Terminology for types of pathways and position profile**
   - Species can occupy different roles in these pathways of multiple effects.
     Investigating species profile [e.g.* @stouffer2012] could thus inform us on
@@ -540,14 +1011,29 @@ a partially connected motifs with a disconnected species and a predator-prey
 interaction, and a fully disconnected motif with three independent species.
 
 Resources were modeled using logistic growth equations of the form
-$\frac{dX_i}{dt} = X_i(r_i - \alpha_{ii} X_i - \sum \alpha_{ij} X_j)$,
+
+<!--
+Change for:
+
+$$\frac{dX_i}{dt} = X_i[b_i - \alpha_{ii} X_i - \sum \alpha_{ij} X_j)$$,
+
+b_i for resources is the growth rate r_i minus density dependent effects
+\alpha_{ii} X_i, while it represents the mortality
+
+
+ -->
+
+$$\frac{dX_i}{dt} = X_i(r_i - \alpha_{ii} X_i - \sum \alpha_{ij} X_j)$$,
+
 where $X$ are species, $i$ is the resource, $j$ are the consumers, $r_i$ is the
 intrinsic resource growth rate, $\alpha_{ii}$ is the density-dependent effect of
 the resource on itself and $\alpha_{ij}$ is the rate at which consumer $j$
 affects resource $i$, i.e. the attack rate.
 
 Consumers were modeled using a Type I functional response of the form
-$\frac{dX_j}{dt} = X_j(-m_j + \sum e_{ij} \alpha_{ij} X_i - \alpha_{jk} X_k)$,
+
+$$\frac{dX_j}{dt} = X_j(-m_j + \sum e_{ij} \alpha_{ij} X_i - \alpha_{jk} X_k)$$,
+
 where $m$ is the mortality rate and $e$ is the rate at which resource biomass is
 transformed into consumer biomass, *i.e.* the conversion rate, and is a scaling
 parameter of the attack rate which cannot exceed 1.
@@ -556,8 +1042,10 @@ Models were solved at equilibrium to study the effects of disturbances on
 persistent motif dynamics.
 As no equilibrium exists for the exploitative competition motif with
 Lotka-Volterra models of the selected forms, competitive parameters of the form
-$\alpha_{jj} \alpha_{jk} X_j X_k - \alpha_{jj} X_j^2$ were included in the
-consumer models to constrain their growth.
+
+$$\alpha_{jj} \alpha_{jk} X_j X_k - \alpha_{jj} X_j^2$$
+
+were included in the consumer models to constrain their growth.
 
 <!-- Sage [@ref] was used to solve all equation systems at equilibrium. All other
 analyses were performed using R [@ref]. All code and data used to perform the
@@ -566,7 +1054,7 @@ simulations and analyses are available at [...]. -->
 ## Disturbances
 
 For each motif, a 1% change in initial equilibria equations parameter values
-was applied to simulate negative disturbances through all possibile unique
+was applied to simulate negative disturbances through all possible unique
 pathways of univariate and multivariate effects. Parameters selected to
 simulate disturbances were those related to population growth ($r$ and $m$)
 and interaction rates ($e$ and $\alpha_{ij}$), as their effects on population
@@ -699,6 +1187,10 @@ are positions whose amplification score is not significantly different than 0
 <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 # Species role to food web sensitivity to multiple disturbances
 <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+<!--
+decreases overall habitat quality but has variable effects that are species-dependent, ranging from well-adapted (e.g. northern shrimp Pandalus borealis and Greenland halibut Reinhardtius hippoglossoides; Pillet et al., 2016) to reduced growth rates (Dupont-Prinet et al., 2013) and avoidance of oxygen depleted habitats (e.g. Atlantic cod Gadus morhua; Chabot and Claireaux, 2008) to increased mortality (e.g. sessile benthic invertebrates; Eby et al., 2005; Belley et al., 2010; Gilbert et al., 2007).
+-->
 
 We define two sets of scores at the species level. The first requires
 no information on realised pathways of effect and provides a general evaluation
@@ -950,36 +1442,6 @@ go extinct more rapidly?
 - Effect limit [@schafer2018]: maximum effect size for a response (*e.g.* 100% mortality, zero growth or reproduction)
 
 
-
-<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
-# Literature to cite - or at least look at!
-<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
-
-- @adams2005
-- @brown2013
-- @brown2014
-- @christensen2006
-- @crain2008
-- @darling2013
-- @folt1999
-- @galic2018 *
-- @jackson2016
-- @kath2018
-- @lange2018
-- @piggott2015
-- @schafer2018 *
-- @segner2014
-- @thompson2018
-- @thompson2018a
-- @vinebrooke2004
-
-\newpage
-
-<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
-# References
-<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
-
-
 <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 # Ecology Letters formatting and submission
 <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
@@ -1128,3 +1590,7 @@ legend should be included in each Supporting Information file. It is published a
 is not made available prior to publication; for these reasons, authors should provide any Supporting Information in
 the desired final format.
 - Include sensitivity and amplification score data?
+
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+# References
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
