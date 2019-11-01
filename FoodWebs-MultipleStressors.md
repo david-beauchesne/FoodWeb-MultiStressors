@@ -384,7 +384,7 @@ Trame narrative :
 - [ ] Check whether the unsensitivity of resources in competitive exploitation is due to the competitive parameters added to the models to get to equilibrium
 - [ ] If indirect effects are as important as direct effects, then it means that to better understand the impacts of disturbances, it may be as important to look at species beyond our focal species of interest.
 - [ ] ***HAve to look into the importance of direct vs indirect effects***
-
+- [ ] Justify the fact that we do not look at positive effects of disturbances.
 
 
 \newpage
@@ -547,7 +547,7 @@ focus on single-stressor and single-species evalutions. -->
 \newpage
 
 <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
-# Introduction 2
+# Introduction
 <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 Global changes and human activities result in increasingly intricate
 environmental stress exposure regimes that can induce complex and unpredictable
@@ -558,10 +558,10 @@ partition the effects of interacting drivers in cumulative effects assessments
 This is in part due to the breadth and interaction potential of environmental
 pressures operating on natural systems [@cote2016], compounding the pathways of
 effects through which natural systems can be impacted.
-Another aspect is the potential for non-additive affects, *i.e.* when the effect
+Another factor is the potential for non-additive affects, when the effect
 of multiple interacting drivers is greater (*i.e.* synergism) or lower (*i.e.*
 antagonism) than the sum of their individual parts, which have been found to be
-the norm rather than the exception in multiple drivers metaanalyses
+the norm rather than the exception
 [*e.g.* @darling2008; @crain2008; @piggot2015; @jackson2016].
 
 Common drivers of environmental stress include climate change, resource
@@ -570,46 +570,57 @@ Drivers have typically been described according to their effects on habitats
 [*e.g. @ban2010; @halpern2019].
 For instance, fisheries can destroy benthic habitats and extract biomass.
 Focusing on habitats conveniently circumscribes assessments to a set of
-tractable units, yet it has the drawback of aggregating processes
+tractable units.
+It also has the drawback of aggregating processes
 operating at lower levels of ecological organization
-that we know respond differently to driver exposure [halpern2013; giakoumi2015].
+that we know respond differently to driver exposure [@halpern2013; @giakoumi2015].
 For example, hypoxia decreases overall habitat quality but has species-dependent
 effects, ranging from well-adapted [@pillet2016] to avoidance behaviour
 [@chabot2008], reduced growth [@dupont-prinet2013] and mortality
 [@eby2005; @belley2010; @gilbert2007].
 As a consequence, current practice to assess the effects of multiple drivers
-has provided little insight into underlying ecological mechanisms
+has offered little insight into underlying ecological mechanisms
 [@jackson2016; @delaender2018; @griffen2016; @schafer2018].
 Focusing on ecosystem components such as species and communities has thus been
 deemed necessary to provide a mechanistic understanding of the effects of
 multiple drivers [@giakoumi2015; @refs?]
 
-<!-- At the species and community scales, drivers may be more appropriately described as ecological modifiers, which we define as natural or anthropogenic processes resulting in a disturbance to ecological processes. -->
+At the species and community scales, drivers may be more appropriately
+described as ecological process modifiers, which we define as natural or
+anthropogenic processes resulting in a disturbance to ecological processes
+(Figure \ref{concept}A).
 Drivers may disturb a variety of ecological processes such as behaviour
 [*e.g.* @chabot2008; @hale2018], reproduction [*e.g.* @ref],
 physiology [*e.g.* @dupont-prinet2013], mortality [*e.g.* @belley2010],
 and species interactions [*e.g.* @ref].
-Multiple processes may be modified by a single drivers, while multiple drivers
-may target a single pathway of effect.
-Irrespective of driver identity, disturbances to ecological processes may thus
-arise through univariate or multivariate pathways of effects.
-Through this lens, fisheries may be a modifier of cod behaviour and mortality
-by destroying benthic habitats and by direct extraction, respectively.
+Multiple processes may be affected by a single driver, while multiple drivers
+may target a single process.
+<!-- Irrespective of driver identity, disturbances to ecological processes may thus
+arise through univariate or multivariate pathways of effects. -->
+Through this lens, disturbances to cod behaviour and mortality may arise from
+benthic habitat destruction and from direct extraction, respectively.
 
-While plenty of work has been done on the effects of multiple drivers on
+<!-- While plenty of work has been done on the effects of multiple drivers on
 univariate pathways of effects [*e.g.* @refs], few attention has been given to
 multiple processes impacted simultaneously by disturbances.
-Species interactions are of particularly relevant in the context of multiple
+Talk about experimental work looking at how individual ecological processes have
+been thoroughly tested, but they are concextual and their conclusions are limited.
+Few work has been targetting multiple simultaneaous ecological processes simultaneously.
+Look at Crowe lab for more, maybe cite an article in preparation. -->
+
+Species interactions are particularly relevant in the context of multiple
 disturbances, as they may serve as the
 indirect pathways through which pressures permeate entire ecological communities
 [@wootton2002; @bascompte2009a; @montoya2009; @thompson2018a].
 Indirect effects, *i.e.* when two or more direct effects are linked by a single
 species involved in both effects, may be as important of, and propagate faster
-than, direct effects [@menge1995; @wootton1993; @yodzis2000; @wootton2002].
+than, direct effects [@menge1995; @wootton1993; @yodzis2000; -@wootton2002].
 In multi-species systems, where both direct and indirect effects are
 operating simultaneously, it is expected that the effects of environmental
 pressures will be amplified or dampened through biotic interactions
 [@ives1995; @wootton2002; @thompson2018a].
+**Provide examples here, cite ogorman2009; ogorman2012;ghedi2015**
+<!-- Here cite @ghedi2015 and the fact that compensatory mechanisms can rise through interactions -->
 Interaction strength and type (*e.g.* omnivory vs apparent competition) have
 also been linked to enhanced or decreased community persistance
 [@mccann1998; @wooton2002; @allesina2008].
@@ -620,55 +631,90 @@ The complexity of empirical food webs is however prohibitive to investigations
 of community dynamics.
 Studying smaller subgraphs - community motifs or modules - has thus emerged as
 an alternative to gather insights into the dynamics and stability of complex
-ecological communities [@holt1997; @holt2001].
+ecological communities [@holt1997; -@holt2001].
 Motifs are collections of $n$-species that, when put together, construct whole
 food webs [@milo2002; @stouffer2007].
-
-Link to conceptual figure here,
-A species can be described as a function of all $n$-species motifs it is involved
-in in an empirical food web.
-
 They form the backbone of food webs and provide a mesoscale
 characterization of community structure [@bascompte2005; @stouffer2007].
+A species can be described as a function of all $n$-species motifs it is
+involved in in an empirical food web [Figure \ref{concept}B; @stouffer2012].
+
+There are 13 distinct 3-species motifs composed of 30 unique positions
+[@milo2002; @stouffer2007; @stouffer2012].
 Four 3-species motifs have received particular attention in theoretical and
 empirical studies due to their roles [@refs]
 and prevalance [@camacho2007; @stouffer2010] in food webs:
 tri-trophic food chain, omnivory or intraguild predation, exploitative
 competition and apparent competition.
+**Add some discussion here on archetypes of each motifs, trophic cascades and
+compensatory dynamics. To cite: cote1995; ogorman2010; ogorman2012;**
+<!-- Archetypes -->
 
-
-
-Their dynamics has been studied extensively to uncover how structural properties
+Motif dynamics has been studied extensively to uncover how structural properties
 of food webs can benefit community persistence and stability
 [@kondoh2008; @allesina2008; @stouffer2010; @stouffer2011; @monteiro2016] and to
 assess the structural roles of species within food webs
 [@stouffer2012; @cirtwill2015].
-
-
-
-
-Meaningful insights for conservation are provided by investigations using motifs
-to study community stability and persistence.
-For example, results from @stouffer2012 suggests that species trophic benefits
-to community persistence could be a valuable conservation target, as role
-diversity does not directly correlate to species richness.
-In the context of the management of the effects of multiple stressors,
-additional insights could be gleaned from studying motifs at equilibrium,
-*i.e.* when the dynamics of the system is constrained by species coexistance.
+These provide meaningful insights for conversation efforts.
+For example, results from @stouffer2012 suggest that species benefit
+whole community persistence based on their trophic position and that the
+diversity of trophic roles found in empirical food webs does not correlate
+to species richness.
+Using roles as targets may thus be valuable for community conservation
+[@stouffer2012].
+Additional insights into the structural propesties of food webs could be gathered
+by studying motifs at equilibrium, *i.e.* when system dynamics is constrained
+by species coexistance (Figure \ref{concept}C).
 This is of particular relevance to managers using ecosystem-based approaches
-to manage and maintain exploited populations.
-Dynamic models of motifs could then help us in
-
+to manage and maintain exploited populations, rather than ensure the
+persistance of species.
 
 
 Here, we study the equilibrium dynamics of the most prevalent 3-species motifs
 in food webs (*i.e.* food chain, omnivory, exploitative competition, and
-apparent competition) to investigate the role of species in mediating the effects
-of multiple disturbances on food webs. In doing so, we seek to answer questions
-of particular significance to management: 1) should species interactions be
-considered in impact assessments, 2) should the effects of stressors be evaluated
-seperately or in combination, and 3) which species are most sensitive to
-disturbances?
+apparent competition) to investigate and infer the structural role of species
+and their interactions in mediating the effects of individual and multiple
+disturbances on food webs.
+In doing so, we seek to answer questions of particular significance to
+management:
+1) should species interactions be considered in impact assessments,
+2) should the effects of stressors be evaluated seperately or in combination, and
+3) which species are most vulnerable to disturbances based on their trophic position?
+
+
+\newpage
+
+\begin{figure}[H]
+\centering
+\includegraphics{./Figures/Concept.png}
+\caption{
+Conceptualization of the effects of multiple sources of environmental stress
+on the dynamics of a theoretical food web.
+A) Drivers such as sea surface temperature, marine traffic and fisheries
+penetrate food webs through various pathways of effects by disturbing
+ecological processes governing populations and communities.
+For instance, marine traffic disturbs whale feeding behaviour, which may lead to
+decreased attack rates on prey species.
+B) A species position in a food web can be decomposed in a suite of
+$n$-species submodules called motifs that are informative of the role played
+by a species in the entire food web.
+Different types of interaction types will lead to different types of community
+dynamics and a species can be described as a function of the number and
+types of interactions it is involved in.
+For instance, the interactions of the meso-predator can be decomposed into 1
+exploitative competition, 2 food chains and 1 omnivory motifs.
+C) The dynamics of motifs can uncover if and how disturbances arising from
+individual and multiple drivers are propagated and amplified through different
+types of species interactions.
+Variations in species abundance due to driver induced
+disturbances provide an evaluation of motif species sensitivity (C1-3).
+The difference between the summed effects of individual drivers (\textit{i.e.} additive
+model; C1-2) and the joint effects of multiple drivers (\textit{i.e.} full model; C3)
+provides an evaluation of disturbance amplification.
+}
+\label{concept}
+\end{figure}
+
 
 \newpage
 
@@ -991,13 +1037,12 @@ The tole of species and their interactions in food web sensitivity to multiple D
     disturbances:
 
 
-![Conceptualize the effects of multiple disturbances on food webs \label{concept}](./Figures/Concept.png)
 
 
 \newpage
 
 <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
-# Sumulating disturbances on food webs
+# Sumulating disturbances
 <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 
 ## Models
