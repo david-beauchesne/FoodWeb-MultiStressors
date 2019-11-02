@@ -159,7 +159,7 @@ Another factor is the potential for non-additive affects, when the effect
 of multiple interacting drivers is greater (*i.e.* synergism) or lower (*i.e.*
 antagonism) than the sum of their individual parts, which have been found to be
 the norm rather than the exception
-[*e.g.* @darling2008; @crain2008; @piggot2015; @jackson2016].
+[*e.g.* @darling2008; @crain2008; @piggott2015; @jackson2016].
 
 Common drivers of environmental stress include climate change, resource
 exploitation and pollution [@boonstra2015; @halpern2019].
@@ -174,22 +174,22 @@ that we know respond differently to driver exposure [@halpern2013; @giakoumi2015
 For example, hypoxia decreases overall habitat quality but has species-dependent
 effects, ranging from well-adapted [@pillet2016] to avoidance behaviour
 [@chabot2008], reduced growth [@dupont-prinet2013] and mortality
-[@eby2005; @belley2010; @gilbert2007].
+[@eby2005; @belley2010].
 As a consequence, current practice to assess the effects of multiple drivers
 has offered little insight into underlying ecological mechanisms
 [@jackson2016; @delaender2018; @griffen2016; @schafer2018].
 Focusing on ecosystem components such as species and communities has thus been
 deemed necessary to provide a mechanistic understanding of the effects of
-multiple drivers [@giakoumi2015; @refs?]
+multiple drivers [@giakoumi2015; refs?]
 
 At the species and community scales, drivers may be more appropriately
 described as ecological process modifiers, which we define as natural or
 anthropogenic processes resulting in a disturbance to ecological processes
 (Figure \ref{concept}A).
 Drivers may disturb a variety of ecological processes such as behaviour
-[*e.g.* @chabot2008; @hale2018], reproduction [*e.g.* @ref],
+[*e.g.* @chabot2008; @hale2017], reproduction [*e.g.* ref],
 physiology [*e.g.* @dupont-prinet2013], mortality [*e.g.* @belley2010],
-and species interactions [*e.g.* @ref].
+and species interactions [*e.g.* ref].
 Multiple processes may be affected by a single driver, while multiple drivers
 may target a single process.
 <!-- Irrespective of driver identity, disturbances to ecological processes may thus
@@ -198,7 +198,7 @@ Through this lens, disturbances to cod behaviour and mortality may arise from
 benthic habitat destruction and from direct extraction, respectively.
 
 <!-- While plenty of work has been done on the effects of multiple drivers on
-univariate pathways of effects [*e.g.* @refs], few attention has been given to
+univariate pathways of effects [*e.g.* refs], few attention has been given to
 multiple processes impacted simultaneously by disturbances.
 Talk about experimental work looking at how individual ecological processes have
 been thoroughly tested, but they are concextual and tand it may be worth giving an example at some point in the intro heir conclusions are limited.
@@ -220,7 +220,7 @@ pressures will be amplified or dampened through biotic interactions
 <!-- Here cite @ghedi2015 and the fact that compensatory mechanisms can rise through interactions -->
 Interaction strength and type (*e.g.* omnivory vs apparent competition) have
 also been linked to enhanced or decreased community persistance
-[@mccann1998; @wooton2002; @allesina2008].
+[@mccann1998; @wootton2002; @allesina2008].
 How species are embedded in complex communities is therefore likely to affect
 their sensitivity to and amplification of single and multiple disturbances.
 
@@ -239,7 +239,7 @@ involved in in an empirical food web [Figure \ref{concept}B; @stouffer2012].
 There are 13 distinct 3-species motifs composed of 30 unique positions
 [@milo2002; @stouffer2007; @stouffer2012].
 Four 3-species motifs have received particular attention in theoretical and
-empirical studies due to their roles [@refs]
+empirical studies due to their roles [ref]
 and prevalance [@camacho2007; @stouffer2010] in food webs:
 tri-trophic food chain, omnivory or intraguild predation, exploitative
 competition and apparent competition.
@@ -366,8 +366,8 @@ $$\alpha_{jj} \alpha_{jk} X_j X_k - \alpha_{jj} X_j^2$$
 
 were included in the consumer models to constrain their growth.
 
-<!-- Sage [@ref] was used to solve all equation systems at equilibrium. All other
-analyses were performed using R [@ref]. All code and data used to perform the
+<!-- Sage [ref] was used to solve all equation systems at equilibrium. All other
+analyses were performed using R [ref]. All code and data used to perform the
 simulations and analyses are available at [...]. -->
 
 ## Disturbances
@@ -521,14 +521,16 @@ sensitivity and amplification scores for pathway of effect $j$ on position $i$
 
 We used empirical food web data from the Estuary and Gulf of St. Lawrence,
 in eastern Canada, to evaluate the sensitivity and amplification scores of its
-constituent species. The food webs come from different regions of the St. Lawrence
+constituent species. The food web we use comes from Northern Gulf of St.
+Lawrence for the mid-1980s, prior to a groundfish stock collapse [@morissette2003].
+<!-- the St. Lawrence
 and different time periods, and contain different yet overlapping functional
 groups. The Northern [@morrissette2003] and Southern [@savenkoff2004a]
 St. Lawrence food webs were for the mid-1980s, prior to the groundfish stock
 collapses of the early 1990s, and contain the same functional groups. The
 Estuary food web, meanwhile, contains more functional groups and represents
 the beginning of the 2010s [@savenkoff2012]. See supplementary materials for a
-description of the food webs used for this analysis.
+description of the food webs used for this analysis. -->
 
 
 \blandscape
