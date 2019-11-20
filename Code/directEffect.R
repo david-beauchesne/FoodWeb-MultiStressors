@@ -12,7 +12,7 @@ library(latex2exp)
 load('./Data/DisturbancesAll.RData')
 
 # Absolute values
-# int <- int %>% mutate(delta = abs(delta))
+int <- int %>% mutate(delta = abs(delta))
 
 #
 int$pathway <- gsub('^r$','r_x', int$pathway)

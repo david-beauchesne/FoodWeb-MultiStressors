@@ -179,6 +179,57 @@ thompson2018: Trophic interations: synergistic effects due to supressed spcies c
 
 - Variations in abundance (sensitivity) are consistently greater than variations in abundance due to amplification of the effects. Considering the additive effects will therefore capture most of the impacts observed, yet there may still be surprises creeping up depending on topology and the specific pathways of effects that are targetted by disturbances.
 
+## Other notes {-}
+
+- Trophic interactions: synergistic effects due to suppressed species compensation (thompson2018a).
+  - Higher trophic levels species are more sensitive
+  - US: It seems that this might hold true for resources as well.
+- Most studies have focused on stressor effects on interaction, but little on the effects of interactions on stressors net efects (thompson2018a)
+  - We do both !
+  - Some evidence for top predators (Hansson et al. 2012; Shurin et al. 2012) in thompson2018a
+- Importance of interactions for multiple stressors studies (thompson2018a)
+- Stressors target specific pathways of effect (galic2018)
+- There is evidence for both strong (galic2018) and weak (kath2018) effects of multiple Stressors
+- It would be ideal if stressors can be managed individually (kath2018)
+- Different pathways of effect of stressors (segner2014)
+  - Multiple biological targets at multiple levels of arganization
+  - Biological receptors differ in their sensitivities, vulnerabilities and response dynamics to Stressors
+  - Biological receptors act as networks: affecting one can affect others(!), leading to unexpected outcomes
+    - We test these outcomes
+  - Organismal level could work the same as the network level
+- Hypersensitivity when multiple pathways are targetted (jackson2016?) ## Good point to use when I talk about sensitivity to multiple pathways of effect
+- Importance of species co-tolerance to understand the effects of multiple stressors (vinebrooke2004).
+- christensen2006 and multiple stressors in boreal lakes - look at their results to see if different types of interactions could explain their results
+- Disturbances to species with few connections have larger net effects (both direct and indirect) on the rest of the food web than to highly connected species (montoya2009)
+  - At some point, I will have to address the fact that I imply that species that are more connected may be more vulnerable, which goes against this observation.
+  - I need to go through the literature on the effects of disturbances on food webs, compensatory mechanisms, etc.
+  - To help this, I should look at the degree of species for the analysis at the food web scale.
+- Indirect interactions may be as important as direct interactions (yodzis2000; yodzis1998; menge1995; wootton2002)
+- Indirect disturbances may propagate faster than direct effects (menge1995; ***could we test that?***)
+- Poorly connected species have considerably stronger net effects on other species within the food web than most highly connected species (montoya2009)
+- ***Simple topological explanation for the effects of disturbances (montoya2009)***
+- Position of species in complex food webs affects their benefits to community persistence (stouffer2012)
+- Role of biotic interactions in transmitting environmental variation may be either amplified or dampened, depending on the configuration and strength of direct and indirect effects (ives1995 in wootton2002).
+
+
+@estes2011
+- the sixth mass extinction has been characterized by the loss of larger-bodied animals in general and of apex consumers in particular (4, 5).
+- Recent research suggests that the disappearance of these animals reverberates further than previously anticipated (6–8), with far-reaching effects on processes as diverse as the dynamics of disease; fire; carbon sequestration; invasive species; and biogeochemical exchanges among Earth’s soil, water, and atmosphere.
+- Ecological theory has long predicted that major shifts in ecosystems can follow changes in the abundance and distribution of apex consumers (9, 10).
+- This concept was later formalized as the dynamic notion of “trophic cascades,” broadly defined as the propagation of impacts by consumers on their prey downward through food webs (11).
+- The loss of apex consumers reduces food chain length, thus altering the intensity of herbivory and the abundance and composition of plants in largely predictable ways (10).
+- Top-down forcing and trophic cascades often have striking effects on the abundance and species composition of autotrophs, leading to regime shifts and alternative states of ecosystems (15).
+- The link between apex consumers and species diversity can occur via a number of interaction pathways, for example, by blocking competitive exclusion [predatory seastars in the rocky intertidal (59)], mesopredator release [coyotes (Canis latrans) maintaining small vertebrate species in chaparral habitats (Fig. 4) (60)]
+
+4. F. A. Smith et al., Ecology 84, 3403 (2003).
+5. J. Ray, K. H. Redford, R. Steneck, J. Berger, Eds., Large Carnivores and the Conservation of Biodiversity (Island, Washington, DC, 2005).
+
+9. N. G. Hairston, F. E. Smith, L. B. Slobodkin, Am. Nat. 94, 421 (1960).
+10. S. D. Fretwell, Oikos 50, 291 (1987).
+11. R. T. Paine, J. Anim. Ecol. 49, 667 (1980).
+59. R. T. Paine, Am. Nat. 103, 91 (1969).
+60. K. R. Crooks, M. E. Soulé, Nature 400, 563 (1999).
+
 <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 # Plan {-}
 <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
