@@ -10,7 +10,7 @@ header-includes:
    - \usepackage{lineno}
    - \linenumbers
    - \usepackage{listings}
-   - \usepackage[svgnames]{xcolor}
+   # - \usepackage[svgnames]{xcolor}
    # - \usepackage{titling}
    # - \pretitle{\begin{flushleft}}
    # - \posttitle{\end{flushleft}}
@@ -119,6 +119,7 @@ in theoretical ecology with strong backgrounds and recognition in the field.
 
 \doublespacing
 
+
 <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 # Abstract
 <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
@@ -202,7 +203,7 @@ effects, ranging from
 well-adapted  [*e.g.* northern shrimp *Pandalus borealis* and Greenland halibut *Reinhardtius hippoglossoides*; @pillet2016]
 to avoidance behaviour [*e.g.* Atlantic cod *Gadus morhua*; @chabot2008],
 and mortality [*e.g.* sessile benthic invertebrates; @eby2005; @belley2010].
-Species are also embedded in a complex web
+Moreovers, species are also embedded in a complex web
 of interactions that provides indirect pathways of effects through which
 pressures may permeate entire ecological communities
 [@wootton2002; @bascompte2009a; @montoya2009; @ogorman2009; @ogorman2012].
@@ -223,7 +224,7 @@ there is an urgent need for the development of theoretical frameworks that
 properly consider the complexities of multiple drivers and ecological networks
 in ways that are informative to management.
 From a practical standpoint, single-driver and single-species assessments
-reamin overwhelmingly applied [@obrien2019], while most multiple drivers studies
+remain overwhelmingly applied [@obrien2019], while most multiple drivers studies
 have typically focused on habitats [*e.g.* @ban2010; @halpern2019].
 This conveniently circumscribes assessments to a set of tractable units, but it
 also ignores systems complexity and aggregates biological processes operating at
@@ -247,6 +248,7 @@ In doing so, we seek to answer questions of particular significance to managemen
 3) which species are most vulnerable to disturbances based on their trophic position, and
 4) what types of pathways of effect most influences species vulnerability?
 
+<!-- KC: comme tu ne dis pas ne dis pas ce qu'on fait dans l'intro pour être plus large je pense qu'il serait bien de mentionner ce qu'on fait de manière large : du development conceptuel/théorique qu'on applique a un system juste pour que le lecteur sache ce qu'on va faire. Aussi dire qu'on essaye d'etre holistique -->
 
 
 <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
@@ -270,6 +272,7 @@ Multiple processes may be affected by a single driver, while multiple drivers
 may target a single process.
 For instance, fishing could affect the behaviour and the mortality of cod, while
 hypoxia and ocean acidification may affect the physiology of benthic invertebrates.
+<!-- KC: le dernier physiology est peut etre un peu large, utilise mortality pour coller a la suite non? -->
 The potential number of univariate and multivariate pathways of effects through
 which community dynamics may be affected is extensive and increases
 exponentially with the number of species and the number on links in a network.
@@ -309,7 +312,8 @@ For example, results from @stouffer2012 suggest that species benefit
 whole community persistence based on their trophic position and that the
 diversity of trophic roles found in empirical food webs does not correlate
 to species richness.
-Using roles as targets may thus be valuable for community conservation
+<!-- KC: Ce qui suite est moins bien articulé que la première partie du paragraphe -->
+Using trophic roles as targets may thus be valuable for community conservation
 [@stouffer2012].
 Additional insights into the structural properties of food webs could be gathered
 by studying motifs at equilibrium, *i.e.* when system dynamics is constrained
@@ -376,20 +380,23 @@ species.
 
 Resources were modeled using logistic growth equations of the form
 
-$$\frac{dX_i}{dt} = X_i(r_i - \alpha_{ii} X_i - \sum \alpha_{ij} X_j)$$,
+$$\frac{dX_i}{dt} = X_i(r_i - \alpha_{ii} X_i - \sum_j \alpha_{ij} X_j)$$,
 
-where $X$ are species, $i$ is the resource, $j$ are the consumers, $r_i$ is the
-intrinsic resource growth rate, $\alpha_{ii}$ is the density-dependent effect of
-the resource on itself and $\alpha_{ij}$ is the rate at which consumer $j$
-affects resource $i$, i.e. the attack rate.
+<!-- KC: les virgules doivent etre dedans le $$ et utilise \text{,} pour le bon format -->
+
+where $X_i$ denotes species $i$, $r_i$ is the intrinsic resource growth rate,
+$\alpha_{ii}$ is the density-dependent effect of the resource on itself and
+$\alpha_{ij}$ is the rate at which consumer $j$ affects resource $i$, i.e. the
+attack rate.
 
 Consumers were modeled using a Type I functional response of the form
 
-$$\frac{dX_j}{dt} = X_j(-m_j + \sum e_{ij} \alpha_{ij} X_i - \alpha_{jk} X_k)$$,
+$$\frac{dX_j}{dt} = X_j(-m_j + \sum_i e_{ij} \alpha_{ij} X_i - \alpha_{jk} X_k)$$,
 
-where $m$ is the mortality rate and $e$ is the rate at which resource biomass is
-transformed into consumer biomass, *i.e.* the conversion rate, and is a scaling
-parameter of the attack rate which cannot exceed 1.
+where $m_j$ is the mortality rate of species $j$ and $e_{ij}$ is the rate at
+which resource $i$ biomass is transformed into consumer $j$ biomass, *i.e.* the
+conversion rate, and is a scaling parameter of the attack rate which cannot
+exceed 1.
 
 Models were solved at equilibrium to study the effects of disturbances on
 persistent motif dynamics.
@@ -401,6 +408,8 @@ $$\alpha_{jj} \alpha_{jk} X_j X_k - \alpha_{jj} X_j^2$$
 were included to the consumer models to constrain growth and limit competitive
 exclusion.
 
+<!-- KC: je pense qu'il faut écrire l'équation dans ce cas pou une des consumer -->
+
 
 <!-- ~~~~~~~~~~~~~~~~~~~~~~ -->
 ### Models parameterization
@@ -410,12 +419,12 @@ Initial parameter values for intrinsic growth ($r$) and resource
 density-dependence ($\alpha_{ii}$) were fixed to 1 and 0.001,
 respectively, to bound all resource solutions. Competitive parameters for the
 exploitative competition motif were also fixed at 0.001.
-Conversion rates ($e$) were fixed
+Conversion rates ($e$) were fixed arbitrarily
 to 0.5.
 A total of 100 sets of mortality ($m$) and attack rates
 ($\alpha_{ij}$) were evaluated using a simulated annealing
 algorithm optimizing for consumer abundance.
-
+<!-- je suis pas sur que la dernière phrase est claire sur ce qui a été fait -->
 
 <!-- ~~~~~~~~~~~~~~~~~~~~~~ -->
 ### Disturbances
@@ -442,28 +451,25 @@ disconnected: 3 parameters, 7 pathways of effects).
 <!-- ~~~~~~~~~~~~~~~~~~~~~~ -->
 
 For all 13 unique motif positions considered and all unique pathways of effects,
-the variation in abundance between the 100 sets of initial conditions and
-disturbed conditions was used as a proxy of trophic sensitivity ($s_{i,j}$) to
-disturbances:
+we define $s_{i,j}$ as:
+<!-- KC: c'est un proxy, c'est toi qui le defini non? -->
 
 $$s_{i,j} = \frac{a_{i,j} - a_i}{a_i}$$
 <!-- Should the sensitivity score be divided by the number of unitary pathways disturbed? -->
 
-where $i$ is a motif position, $j$ is a unique pathway of effect, $a_i$ is the
-initial abundance at position $i$, and $a_{i,j}$ is the abundance at position
-$i$ due to pathway of effect $j$. Sensitivity scores are
-bounded negatively to -1, as abundances cannot fall below 0.
-The sensitivity
-score used for a single pathway of effect ($S_{i,j}$) is the mean of the 100
-simulations using all initial conditions:
+where $a_i$ is the initial abundance at position $i$ without disturbance, and $a_{i,j}$ is the abundance at position $i$ with disturbance due to pathway of effect $j$.
+<!-- KC: décris les valeurs avec les indices, pas les indices tous seul, le lecteur infère leur signification de cette manière -->
+Note that, by definition, $s_{i,j}$ is bounded negatively to -1, as abundances
+cannot fall below 0. We define the sensitivity score of position $i$ for single
+pathway of effect $j$ $S_{i,j}$ as the mean of $s_{i,j}$ over the 100 sets of
+initial conditions.
+<!-- KC: je ne pense pas qu'on a besosin d,une formule pour une moyenne! -->
 
-$$S_{i, j} = \frac{1}{n} \sum_{l = 1}^n s_{i,j}$$
-
-Overall position sensitivity ($S_i$) was evaluated using the
-mean of the set of all possible pathways of effect ($K^i$) for a given position
+The overall position sensitivity $S_i$ was evaluated using the mean of $S_{i,j}$
+over the set of all possible pathways of effect ($K^{(i)}$) for a given position
 $i$:
 
-$$S_i = \frac{1}{\vert K^i \vert}\sum_{j \in K^i} S_{i, j}$$
+$$S_i = \frac{1}{\vert K^{(i)} \vert}\sum_{j \in K^{(i)}} S_{i, j}$$
 
 We define *weak entry points* as particularly sensitive pathways of effect
 ($\vert S_{i,j} \vert > 1%$) or motif positions ($\vert S_i \vert > 1%$), while
@@ -514,12 +520,15 @@ no information on realised pathways of effect and provides a topological
 evaluation of a species trophic sensitivity and trophic amplification potential
 based on the frequency of times it occupies a position in a food web:
 
-$$S_m = \sum_i f_mi S_i$$
+$$S_m = \sum_i f_{m,i} S_i$$
 
-$$A_m = \sum_i f_mi A_i$$
+$$A_m = \sum_i f_{m,i} A_i$$
+
+<!-- KC: don't think you should use the same names I used * for te second set
+which is not the best idea I came up with recently :) -->
 
 where $S_m$ and $A_m$ are the sensitivity and amplification scores of species
-$m$, respectively, $f_mi$ is the frequency at which species $m$ occupies
+$m$, respectively, $f_{m,i}$ is the frequency at which species $m$ occupies
 position $i$ in a food web, and $S_i$ and $A_i$ are the sensitivity
 amplification scores at position $i$, respectively.
 
@@ -528,11 +537,11 @@ amplification scores at position $i$, respectively.
 The second set of scores at the species level uses a list of realised pathways
 of effect:
 
-$$S_m = \sum_{j \in K^{i*}}^{position} S_{i,j}$$
+$$S^\ast_m = \sum_{j \in K^{i*}}^{position} S_{i,j}$$
 
-$$A_m = \sum_{j \in K^{i*}}^{position} A_{i,j}$$
+$$A^\ast_m = \sum_{j \in K^{i*}}^{position} A_{i,j}$$
 
-where $S_m$ and $A_m$ are the sensitivity and amplification scores of species
+where $S^\ast_m$ and $A^\ast_m$ are the sensitivity and amplification scores of species
 $m$, respectively, $j$ are pathways of effect, $K^{i*}$ is the set of realised
 pathways of effects for position $i$, and $S_{i,j}$ and $A_{i,j}$ are the
 sensitivity and amplification scores for pathway of effect $j$ on position $i$
@@ -640,7 +649,7 @@ to disturbances) are identified by the red and blue regions, respectively.
 \caption{
 Absolute values of the mean trophic sensitivity (A) and amplification (B) as a
 function of disturbed parameter type and direct or indirect effects.
-All pathways of effect targetting a specific parameter type (\textit{i.e.}
+All pathways of effect targeting a specific parameter type (\textit{i.e.}
 mortality, attack and conversion rates) were grouped to evaluate their
 respective and combined effect on trophic sensitivity and amplification.
 Direct and indirect pathways of effect were similarly grouped.
