@@ -593,9 +593,10 @@ Discussion:
 
 - Multivariate pathways of effect result in heightened sensitivity (Figure \ref{sensitivity}B)
 <!-- - Hypersensitivity when multiple pathways are targetted (jackson2016?) ## Good point to use when I talk about sensitivity to multiple pathways of effect -->
-- Targetting multiple biological process increases sensitivity (Figure with parameter types)
-- Mortality and conversion rates result in slightly higher sensitivities
-- Combinations of direct and indirect effect result in greater sensitivity (Figure with direct & indirect effects)
+- Targetting multiple biological process increases sensitivity (Figure \ref{pathway}A)
+- Mortality and conversion rates result in slightly higher sensitivities (Figure \ref{pathway}A)
+- Combinations of direct and indirect effect result in greater sensitivity (Figure \ref{pathway}A)
+- Indirect effects result in higher sensitivities (Figure \ref{pathway}A)
 
 <!--
 TO DO:
@@ -614,6 +615,27 @@ highly sensitive to disturbances) and biotic sinks (\textit{i.e.} insensitive
 to disturbances) are identified by the red and blue regions, respectively.
 }
 \label{sensitivity}
+\end{figure}
+
+
+\begin{figure}[H]
+\centering
+\includegraphics{./Figures/pathways.png}
+\caption{
+Absolute values of the mean trophic sensitivity (A) and amplification (B) as a
+function of disturbed parameter type and direct or indirect effects.
+All pathways of effect targetting a specific parameter type (\textit{i.e.}
+mortality, attack and conversion rates) were grouped to evaluate their
+respective and combined effect on trophic sensitivity and amplification.
+Direct and indirect pathways of effect were similarly grouped.
+A direct or indirect pathway of effect on a motif position is any pathway that
+directly or indirectly involves a species, respectively.
+For example, the conversion rate of a resource by a predator in competitive
+exploitation is a direct pathway of effect for both the resource and the
+predator, and an indirect pathway of effect for the second predator involved
+in the interaction.
+}
+\label{pathway}
 \end{figure}
 
 
@@ -639,10 +661,10 @@ to disturbances) are identified by the red and blue regions, respectively.
 
 ***Disturbances***:
 
-- Mortality parameters have additive effects (Figure to come)
-- Attack rates are most prevalent in non-additive effects (Figure to come)
-- Affecting combinations of biological processes results in most important non-additive effects (Figure to come)
-- Direct effects are mostly additive, while non-additive affects result from indirect or combinations of indirect and direct effects. (Figure to come)
+- Mortality parameters have additive effects (Figure \ref{pathway}B)
+- Disturbances to interaction parameters (*i.e. attack and conversion rates) cause most important non-additive effects (Figure \ref{pathway}B)
+- Affecting combinations of biological processes results in most important non-additive effects (Figure \ref{pathway}B)
+- Direct effects are mostly additive, while non-additive affects result from indirect or combinations of indirect and direct effects.(Figure \ref{pathway}B)
 
 \begin{figure}[H]
 \centering

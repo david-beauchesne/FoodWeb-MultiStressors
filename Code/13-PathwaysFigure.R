@@ -288,6 +288,7 @@ lines(x = c(7.5, 7.5), y = c(-wd, yM), lty = 2, col = '#5e5e5e')
 mtext(text = TeX('|\\textbf{Trophic sensitivity}|'), side = 2, line = 5, cex = 1.5)
 mtext(text = TeX('|Mean $\\s_{i,j}$ $\\pm$ 95% CI|'), side = 2, line = 3.5, cex = 1.25)
 mtext(text = 'Pathways', side = 2, line = 0.5, at = -wd*.85, cex = 1.25, las = 1, adj = c(.5,.5), col = '#5e5e5e')
+mtext(text = '(n = 2522)', side = 2, line = 0.5, at = -wd*1.5, cex = 1, las = 1, adj = c(.5,.5), col = '#5e5e5e')
 text(x = mean(c(1,7)), y = 0.0725, labels = 'Parameter type\ncombinations', font = 2, adj = c(.5,.5), cex = 1.25)
 text(x = mean(c(8,10)), y = 0.0725, labels = 'Direct vs Indirect\neffects', font = 2, adj = c(.5,.5), cex = 1.25)
 text(x = rep(.5,5), y = seq(.07, by = -.005, length.out = 5), adj = c(0,.5), cex = 1,
@@ -325,6 +326,7 @@ lines(x = c(7.5, 7.5), y = c(-wd, yM), lty = 2, col = '#5e5e5e')
 mtext(text = TeX('|\\textbf{Trophic amplification}|'), side = 2, line = 5, cex = 1.5)
 mtext(text = TeX('|Mean $\\A_{i,j}$ $\\pm$ 95% CI|'), side = 2, line = 3.5, cex = 1.25)
 mtext(text = 'Pathways', side = 2, line = 0.5, at = -wd*.85, cex = 1.25, las = 1, adj = c(.5,.5), col = '#5e5e5e')
+mtext(text = '(n = 2428)', side = 2, line = 0.5, at = -wd*1.55, cex = 1, las = 1, adj = c(.5,.5), col = '#5e5e5e')
 # mtext(text = 'Number\nof pathways', side = 2, line = 0.5, at = -wd/1.25, cex = 1.25, las = 1, adj = c(.5,.5))
 
 # Data
