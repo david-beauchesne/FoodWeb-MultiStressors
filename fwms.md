@@ -507,7 +507,9 @@ are less afefcted than expected from an additive model
 ## Species vulnerability
 <!-- ~~~~~~~~~~~~~~~~~~~~~~ -->
 
-We define two sets of scores at the species level. The first requires
+We define species vulnerability as the combination of trophic sensitivity and
+trophic amplification, as described in the methodology.
+Two sets of scores are used at the species level. The first requires
 no information on realised pathways of effect and provides a topological
 evaluation of a species trophic sensitivity and trophic amplification potential
 based on the frequency of times it occupies a position in a food web:
@@ -542,66 +544,80 @@ in Eastern Canada, prior to a groundfish stock collapse in the early 1990s
 
 ***Describe how driver effects on biological processes were identified.***
 
+***Explain here that this evaluation is not one of the vulnerability of species
+from their biological perspective, but rather their vulnerability based
+on the types of drivers in the system and their trophic position***
+
+
 <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 # Results <!-- other section title -->
 <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 <!-- ~~~~~~~~~~~~~~~~~~~~~~ -->
-## Motifs
-<!-- ~~~~~~~~~~~~~~~~~~~~~~ -->
-<!-- ~~~~~~~~~~~~~~~~~~~~~~ -->
-### Sensitivity {-}
+## Motifs vulnerability
 <!-- ~~~~~~~~~~~~~~~~~~~~~~ -->
 
-***Interactions***:
+The simulations uncover, as anticipated, that interaction motifs (*i.e.* food
+chain, omnivory, exploitative and apparent competition) are more sensitive
+and more likely to amplify the effects of multiples disturbances than
+control motifs (Figures \ref{sensitivity}, \ref{amplification}).
+Species in omnivory and food chain motifs are generally more sensitive and
+likely to amplify the effects of disturbances than species in competitive
+interaction motifs (Figures \ref{sensitivity}, \ref{amplification}).
 
-- Interaction motifs are more sensitive than control motifs to disturbances (Figure \ref{sensitivity}A).
-- Control motifs are, overall, less sensitive to disturbances than control motifs.
-- Biotic sinks are composed almost exclusively of pathways targetting control motifs
-<!--
-Discussion:
-- The importance of the role played by interactions in spreading the effects of disturbances
-- @wootton2002, read introduction
-- Importance of interactions for multiple stressors studies (thompson2018a)
--->
+Biotic sinks are composed almost exclusively of pathways targeting control
+motif positions (Figure \ref{sensitivity}) and simulations on control motifs
+largely result in additive affects (Figure \ref{amplification}).
+Weak entry points, biotic buffers and biotic amplifiers, meanwhile, are
+prevalent for all interaction motifs (Figures \ref{sensitivity},
+\ref{amplification}).
+This is particularly true for species in the omnivory motif and for the top
+predator in the food chain motif, whose trophic sensitivity and amplification
+scores are highly variable (Figures \ref{sensitivity}, \ref{amplification}).
 
-***Motifs***:
+Species position also greatly influences trophic sensitivity to and
+amplification of disturbances.
+In general, top predators are weak entry points for all interaction types
+(Figure \ref{sensitivity}).
+In contrast, non-additive effects on top predators depends on interaction type.
+Pathways of effect on top predators in omnivory and food chain interactions
+largely result in synergistic or antagonistic effects, and predators are, on
+average, biotic amplifiers (Figure \{amplification).
+Predators in competitive interactions, meanwhile, are less affected by
+non-additive effects and are fringe biotic buffers (Figure \{amplification).
 
-- Food chain and omnivory are more sensitive than competitive motifs (Figure \ref{sensitivity}C-D)
-- The average sensitivity of omnivory and food chain motif positions is higher than that of competitive motifs
-- Omnivory > Food chain > competitive exploitation > apparent competition
-<!--
-Discussion:
-- Trophic cascades, compensatory effects
-- @estes2011;
-- Compensatory effect suppression @thompson2018a
-- Read up on individual modules and the work done by Stouffer
--->
+Resources are largely weak entry points for all motifs, yet the effect are
+typically negative in food chain and omnivory interactions, and positive in
+competitive interactions (Figure \ref{sensitivity}).
+Altough resources are, on average, neither biotic buffers or amplifiers,
+the effects of individual pathways of effects are mostly non-additive
+(Figure \ref{amplification}).
+The effects of disturbances through the other interactions are mostly additive.
+(Figure \ref{amplification}).
 
-***Position***:
+Meso-predators, which are found only in omnivory and food chain interactions,
+are weak entry points and benefit from disturbances in general
+(Figure \ref{sensitivity}).
+Meso-predators in omnivory interactions are, on average, fringe biotic buffers,
+but like all other positions in the omnivory motif, most individual pathways
+of effect result in either antagonistic or synergistic effects
+Figure \ref{amplification}).
 
-- Predators and resources in omnivory and food chains are negative weak entry points, while consumers are positive weak entry points (Figure \ref{sensitivity}C-D)
-- Consumers in omnivory and food chains are positive weak entry points (Figure \ref{sensitivity}C-D)
-- Resources in competitive motifs benefit from disturbances (Figure \ref{sensitivity}C-D)
-- Consumers in competitive motifs are negatively affected by disturbances
-<!--
-Discussion:
-- (link with trophic cascades)
-- The fact that resources and predators are most affected, look at @ogorman2012
--->
-
-***Disturbances***:
-
-- Multivariate pathways of effect result in heightened sensitivity (Figure \ref{sensitivity}B)
-<!-- - Hypersensitivity when multiple pathways are targetted (jackson2016?) ## Good point to use when I talk about sensitivity to multiple pathways of effect -->
-- Targetting multiple biological process increases sensitivity (Figure \ref{pathway}A)
-- Mortality and conversion rates result in slightly higher sensitivities (Figure \ref{pathway}A)
-- Combinations of direct and indirect effect result in greater sensitivity (Figure \ref{pathway}A)
-- Indirect effects result in higher sensitivities (Figure \ref{pathway}A)
-
-<!--
-TO DO:
-  - Go take a look at weak entry points and biotic sinks group composition and discuss (Figure or anova analysis with group comparison on the basis of the number )
- -->
+The nature of the pathways of effects also influences trophic sensitivity and
+amplification.
+Unsurprisingly, multivariate pathways of effects are generally more impactful
+to species sensitivity and hold a higher proportion of weak entry points than
+univariate pathways (Figure \ref{sensitivity}).
+Similarly, targeting multiple biological processes and combining direct
+and indirect effects will always result in greater sensitivity and amplification
+(Figure \ref{pathway}).
+There are however a few generalities worth noting.
+Mortality and growth rates are driving heightened trophic sensitivities, yet
+do not individually contribute to non-additive effects (Figure \ref{amplification}).
+Trophic amplification is rather driven by attack and conversion rates
+(Figure \ref{amplification}).
+Most strikingly, indirect effects are more impactful to both trophic sensitivity
+and amplification (Figure \ref{amplification}), with direct effects largely
+resulting in additive impacts (Figure \ref{amplification}).
 
 
 \begin{figure}[H]
@@ -638,34 +654,6 @@ in the interaction.
 \label{pathway}
 \end{figure}
 
-
-
-<!-- ~~~~~~~~~~~~~~~~~~~~~~ -->
-### Amplification
-<!-- ~~~~~~~~~~~~~~~~~~~~~~ -->
-
-***Interactions***:
-
-- Control motifs do not amplify disturbances (Figure \ref{amplification}).
-- Biotic buffers and amplifiers more frequent in interaction motifs (Figure \ref{amplification}).
-
-***Motifs***:
-
-- Biotic buffers and amplifiers are prevalent in food chain and, in particular, omnivory motifs (Figure \ref{amplification}).
-- Competitive motifs are less affected by non additive effects (Figure \ref{amplification}).
-
-***Position***:
-
-- Predators in omnivory and food chain motifs are particularly susceptible to be biotic amplifiers (Figure \ref{amplification}).
-- There are no clear biotic buffers (Figure \ref{amplification}).
-
-***Disturbances***:
-
-- Mortality parameters have additive effects (Figure \ref{pathway}B)
-- Disturbances to interaction parameters (*i.e. attack and conversion rates) cause most important non-additive effects (Figure \ref{pathway}B)
-- Affecting combinations of biological processes results in most important non-additive effects (Figure \ref{pathway}B)
-- Direct effects are mostly additive, while non-additive affects result from indirect or combinations of indirect and direct effects.(Figure \ref{pathway}B)
-
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.7\columnwidth]{./Figures/amplification.png}
@@ -680,28 +668,36 @@ regions, respectively.
 \label{amplification}
 \end{figure}
 
+
+
 <!-- ~~~~~~~~~~~~~~~~~~~~~~ -->
-## Empirical networks
+## Network-scale vulnerability
 <!-- ~~~~~~~~~~~~~~~~~~~~~~ -->
 
-***Species position in food web matters***:
+<!-- Might be better in the discussion -->
+<!-- Should I add trophic level in the tables? -->
+Using the most common environmental pressures in the Northern Gulf of St.
+Lawrence with the topology of a food web from the mid-1980s to identify realised
+pathways of effect between all 3-species combinations, and their simulated
+scores as heuristics, we ranked species and functional groups as a function
+of their overall trophic sensitivity and amplification.
 
-- Top predators in the system are most vulnerable due to their trophic position.
-- Species trophic vulnerability is not necessarily explained by direct exposure to multiple drivers.
-- Species with few direct impacts (\\textit{e.g.} harp seals) may be highly sensitive due to their trophic position.
+We find that sensitivity and amplification scores do not co-vary (Figure \ref{scoreTable}).
+We also find that species targeted by multiple drivers are not necessarily
+the most vulnerable based on their trophic position.
+For example, even though the mortality, physiology and behaviour of shrimp were
+expected to be impacted by drivers, it is nonetheless insensitive based on its
+trophic position (Figure \ref{scoreTable}).
+Similarly, species impacted by few drivers like sea birds, or no drivers at all
+like seals, may nonetheless be highly vulnerable due to its trophic position
+(Figure \ref{scoreTable}).
 
-
-***Sensitivity does not equal amplification***:
-
-- Amplification and sensitivity have different trends.
-
-
-***Groundfish stock collapse: a trophic hint?***:
-
-- Exploited species before the groundfish stock collapse of the 1990s (\\textit{e.g.} demersal feeders, Atlantic cod, Greenland halibut) are all negative weak entry points and biotic amplifiers.
-- Exploited species after the collapse are either positive weak entry points and biotic amplifiers (\\textit{e.g.} large crustaceans) or biotic sinks (\\textit{e.g.} shrimp).
-
-
+Large demersal predators, sea birds and seals are mostly weak entry points and
+biotic amplifiers (Figure \ref{scoreTable}).
+Prey species and large crustaceans appear to benefit from disturbances and may
+act as positive weak entry points in the St. Lawrence (Figure \ref{scoreTable}).
+Invertebrates in general and species like shrimp and redfish appear largely
+insensitive to disturbances (Figure \ref{scoreTable}).
 
 
 <!-- \blandscape -->
@@ -744,9 +740,57 @@ amplifiers, respectively.
 <!-- \elandscape -->
 
 
+
 <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 # What it all means <!-- Conclusions and perspectives -->
 <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+<!--
+- Interaction motifs are more sensitive than control motifs to disturbances (Figure \ref{sensitivity}A).
+- Control motifs are, overall, less sensitive to disturbances than control motifs.
+- Biotic sinks are composed almost exclusively of pathways targetting control motifs
+Discussion:
+- The importance of the role played by interactions in spreading the effects of disturbances
+- @wootton2002, read introduction
+- Importance of interactions for multiple stressors studies (thompson2018a)
+-->
+
+<!-- TO DISCUSS: HARD TO PREDICT FOR OMNIVORY, LOTS OF VARIABILITY!!! -->
+
+
+<!--
+- Food chain and omnivory are more sensitive than competitive motifs (Figure \ref{sensitivity}C-D)
+- The average sensitivity of omnivory and food chain motif positions is higher than that of competitive motifs
+- Omnivory > Food chain > competitive exploitation > apparent competition
+Discussion:
+- Trophic cascades, compensatory effects
+- @estes2011;
+- Compensatory effect suppression @thompson2018a
+- Read up on individual modules and the work done by Stouffer
+-->
+
+
+<!--
+- Predators and resources in omnivory and food chains are negative weak entry points, while consumers are positive weak entry points (Figure \ref{sensitivity}C-D)
+- Consumers in omnivory and food chains are positive weak entry points (Figure \ref{sensitivity}C-D)
+- Resources in competitive motifs benefit from disturbances (Figure \ref{sensitivity}C-D)
+- Consumers in competitive motifs are negatively affected by disturbances
+Discussion:
+- (link with trophic cascades)
+- The fact that resources and predators are most affected, look at @ogorman2012
+-->
+
+<!--
+- Multivariate pathways of effect result in heightened sensitivity (Figure \ref{sensitivity}B)
+- Hypersensitivity when multiple pathways are targetted (jackson2016?) ## Good point to use when I talk about sensitivity to multiple pathways of effect -->
+
+
+<!--
+***Groundfish stock collapse: a trophic hint?***:
+
+- Exploited species before the groundfish stock collapse of the 1990s (\\textit{e.g.} demersal feeders, Atlantic cod, Greenland halibut) are all negative weak entry points and biotic amplifiers.
+- Exploited species after the collapse are either positive weak entry points and biotic amplifiers (\\textit{e.g.} large crustaceans) or biotic sinks (\\textit{e.g.} shrimp). -->
+
 
 <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 # The way forward
