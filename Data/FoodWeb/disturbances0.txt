@@ -1,0 +1,51 @@
+Group	Description	Species	Acidification	Hypoxia	SBT	SST	Shipping	DD	DNH	PHB	Hunting
+ACO	Arctic cod	 Boreogadus saida	NA	b	NA	NA	NA	NA	NA	NA	NA
+AHA	Atlantic halibut	Hippoglossus hippoglossus	NA	b	NA	NA	NA	m	m	m	NA
+BAW	Other mysticetes	Fin whale Balaenoptera physalus, minke whale Balaenoptera acutorostrata, humpback whale Megaptera novaeangliae	NA	NA	NA	NA	b	NA	NA	m	NA
+BEW	Beluga whales 	Beluga whale Delphinapterus leucas	NA	NA	NA	NA	b	NA	NA	m	NA
+BLD	Black dogfish	Centroscyllium fabricii	NA	b	NA	NA	NA	m	NA	NA	NA
+BLW	Blue whales	Balaenoptera musculus	NA	NA	NA	NA	b	NA	NA	NA	NA
+CAP	Capelin	 Mallotus villosus	NA	NA	NA	NA	NA	NA	m	NA	NA
+CET	Cetaceans	 Balaenoptera physalus, Balaenoptera acutorostrata, Megaptera novaeangliae, Phocoena phocoena, Lagenorhynchus acutus, Lagenorhynchus albirostris	NA	NA	NA	NA	NA	NA	NA	m	NA
+DET	Detritus	 Sinking particulate organic matter including both large particles (consisting of animal carcasses and debris of terrigenous and coastal plants) and fine particles (mostly from planktonic organisms, including feces, moults, phytoplankton aggregates, bacteria)	NA	NA	NA	NA	NA	NA	NA	NA	NA
+DME	Deep mesozooplankton	Copepods (Calanus finmarchicus and C. hyperboreus)	p	NA	NA	p	NA	NA	NA	NA	NA
+ECH	Echinoderms	 Echinarachnius parma, Stronglyocentrotus pallidus, Ophiura robusta	p	p	p	NA	NA	NA	NA	NA	NA
+FLO	Flounders	 Limanda ferruginea, Glyptocephalus cynoglossus, Pseudopleuronectes americanus	NA	b	NA	NA	NA	m	m	m	NA
+GRS	Grey seals	 Halichoerus grypus	NA	NA	NA	NA	NA	NA	NA	NA	m
+HBS	Harbour seals	 Phoca vitulina	NA	NA	NA	NA	NA	NA	NA	NA	NA
+HER	Herring	Atlantic herring Clupea harengus	NA	NA	NA	NA	NA	NA	m	m	NA
+HOS	Hooded seals	 Cystophora cristata	NA	NA	NA	NA	NA	NA	NA	NA	NA
+HPS	Harp seals	 Phoca groenlandica	NA	NA	NA	NA	NA	NA	NA	NA	m
+INV	Other benthic invertebrates	 Miscellaneous crustaceans, nematodes, other meiofauna	p	p	p	NA	NA	NA	NA	NA	NA
+LAP	Large American plaice	 (> 35 cm) Hippoglossoides platessoides	NA	b	NA	NA	NA	m	m	m	NA
+LCO	Large Atlantic cod	 (> 35 cm) Gadus morhua	NA	b	NA	NA	NA	m	m	m	NA
+LCR	Large crustaceans	 Chionoecetes opilio, other non-commercial species (Hyas spp.)	p	p	p	NA	NA	NA	m	NA	NA
+LDF	Large demersal feeders	 Urophycis tenuis, Melanogrammus aeglefinnus, Centroscyllium fabricii, Anarhichas spp., Cyclopterus lumpus, Lycodes spp., Macrouridae, Zoarcidae, Lophius americanus, Hippoglossus hippoglossus	NA	b	NA	NA	NA	m	m	NA	NA
+LEU	Large euphausiids	Meganyctiphanes norvegica	NA	NA	NA	NA	NA	NA	NA	NA	NA
+LGH	Large Greenland halibut	 Reinhardtius hippoglossoides	NA	b	NA	NA	NA	m	m	m	NA
+LHY	Large hyperiid	amphipods Themisto libellula	p	NA	NA	NA	NA	NA	NA	NA	NA
+LPF	Large pelagic feeders	 Squalus acanthias, Pollachius virens, Merluccius bilinearis, Cetorhinus maximus	NA	NA	NA	NA	NA	NA	NA	NA	NA
+LZO	Large zooplankton	 (> 5 mm) Euphausiids, chaetognaths, hyperiid amphipods, cnidarians and ctenophores (jellyfish), mysids, tunicates >5 mm, ichthyoplankton	NA	NA	NA	p	NA	NA	NA	NA	NA
+MAC	Other macrozooplankton	Chaetognaths (mainly Sagitta elegans, Pseudosagitta maxima, and Eukrohnia hamata), mysids (mainly Boreomysis artica, Mysis mixta, and Erythrops erythrophthalma), small hyperiid amphipods (Themisto gaudichaudi, T. abyssorum, T. compressa), cnidarians (mainly Aglantha digitalis, Dimophyes arctica, and Obelia spp.), ctenophores (mainly Beroe spp.), molluscs (gastropoda, mainly Clione limacina and Limacina helicina), decapod larvae, polychaetes (mainly Tomopteris spp.), tunicates > 5 mm, ichthyoplankton	NA	NA	NA	p	NA	NA	NA	NA	NA
+MOL	Molluscs	 Mesodesma deauratum, Cyrtodaria siliqua	p	p	p	NA	NA	m	m	NA	NA
+ODT	Other odontocetes	Common porpoise Phocoena phocoena	NA	NA	NA	NA	b	NA	NA	m	NA
+PHY	Phytoplankton	 Diatom species such as Chaetoceros affinis, Chaetoceros spp., Leptocylindrus minimus, Thalassiiosira nordenskioldii, T. spp., Fragilariopsis spp., and a mixture of autotrophic and mixotrophic organisms including Cryptophytes, dinoflagellates, Prasinophytes, and Prymnesiophytes	NA	NA	NA	p	NA	NA	NA	NA	NA
+PIP	Piscivorous small pelagic feeders	 Scomber scombrus, piscivorous myctophids and other mesopelagics, Illex illecebrosus, piscivorous large pelagic juveniles	NA	NA	NA	NA	NA	NA	NA	m	NA
+PLP	Planktivorous small pelagic feeders	 Clupea harengus harengus, planktivorous myctophids and other mesopelagics, Scomberesox saurus, Gonatus sp., planktivorous large pelagic juveniles	NA	NA	NA	NA	NA	NA	NA	m	NA
+POL	Polychaetes	 Exogene hebes	NA	p	p	NA	NA	NA	NA	NA	NA
+RED	Redfish	 Sebastes mentella, Sebastes fasciatus	NA	b	NA	NA	NA	m	m	m	NA
+SAL	Sand lance	 Ammodytes americanus, A. dubius	NA	b	NA	NA	NA	NA	NA	NA	NA
+SAP	Small American plaice	 (? 35 cm) Hippoglossoides platessoides	NA	b	NA	NA	NA	NA	NA	NA	NA
+SCO	Small Atlantic cod	 (? 35 cm) Gadus morhua	NA	b	NA	NA	NA	m	m	m	NA
+SCR	Small crustaceans	Snow crab Chionoecetes opilio, rock crab Cancer irroratus, other non-commercial species (e.g., toad crabs Hyas spp.)	p	p	p	NA	NA	NA	NA	NA	NA
+SDF	Small demersal feeders	 Myoxocephalus spp., Tautogolabrus adspersus, Macrozoarces americanus, large demersal juveniles	NA	b	NA	NA	NA	m	m	NA	NA
+SEA	Seabirds	 Phalacrocorax carbo, Phalacrocorax auritus, Larus delwarensis, L. argentatus, L. marinus, Sterna hirundo, S. paradisaea, Cepphus grylle, Oceanodroma leucorhoa, Morus bassanus, Rissa tridactyla, Uria aalge, Alca torda, Fratercula arctica	NA	NA	NA	NA	b	NA	NA	NA	m
+SEU	Small euphausiids	Thysanoessa raschii, T. inermis	p	NA	NA	p	NA	NA	NA	NA	NA
+SGH	Small Greenland halibut	 Reinhardtius hippoglossoides	NA	b	NA	NA	NA	m	m	m	NA
+SHR	Shrimp	Northern shrimp Pandalus borealis, striped shrimp P. montagui, pink glass shrimp Pasiphaea multidentata, Arctic argid Argis dentata, Greenland shrimp Eualus macilentus	p	b	NA	NA	NA	m	m	NA	NA
+SKA	Skates	 Amblyraja radiata, Malacoraja senta, Leucoraja ocellata	NA	b	NA	NA	NA	NA	NA	m	NA
+SME	Surface mesozooplankton	Copepods (mainly Calanus finmarchicus, C. hyperboreus, and Oithona similis), tunicates < 5 mm, meroplankton	NA	NA	NA	p	NA	NA	NA	NA	NA
+SPF	Small pelagic feeders	White barracudina Arctozenus risso, Arctic cod Boreogadus saida, Atlantic argentine Argentina silus, sand lance Ammodytes spp., other mesopelagics	NA	NA	NA	NA	NA	NA	NA	m	NA
+SQU	Squid	Northern shortfin squid Illex illecebrosus	NA	NA	NA	NA	NA	NA	NA	m	NA
+SZO	Small zooplankton	 (< 5 mm) Copepods (mainly Oithona similis, Temora longicornis, Pseudocalanus spp., and Calanus finmarchicus), tunicates < 5 mm, meroplankton, heterotrophic protozoa (flagellates, dinoflagellates, and ciliates)	NA	NA	NA	p	NA	NA	NA	NA	NA
+WHH	White hake	Urophycis tenuis	NA	b	NA	NA	NA	m	m	NA	NA

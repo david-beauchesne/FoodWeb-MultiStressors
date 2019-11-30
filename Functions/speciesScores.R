@@ -1,9 +1,9 @@
-speciesScores <- function(foodWeb, stressSources) {
+speciesScores <- function(foodWeb, stressSources, triadFreq = F) {
   # ------------------------------------------------
   #                    Data
   # ------------------------------------------------
   # Disturbance data
-  distSL <- read.table('./Data/FoodWeb/disturbances.txt', sep = '\t', header = T, stringsAsFactors = F)
+  distSL <- read.table('./Data/FoodWeb/disturbances0.txt', sep = '\t', header = T, stringsAsFactors = F)
 
   # Pathways of effect sensitivity
   load('./Data/DisturbancesAll.RData')
@@ -224,13 +224,29 @@ speciesScores <- function(foodWeb, stressSources) {
     if (length(uidA) == 1) triadClass$Amplification[i] <- intAdd$Mean[uidA]
   }
 
+  # Add pathways frequency
+  triadClass$pathFreq <- apply(triadClass[, param], 1, any)
+
+
   # Summarize by species
-  scoreSp <- triadClass %>%
-             select(species, Sensitivity, Amplification) %>%
-             group_by(species) %>%
-             summarize(Sensitivity = sum(Sensitivity),
-                       Amplification = sum(Amplification)) %>%
-             arrange(Sensitivity)
+  if (!triadFreq) {
+    scoreSp <- triadClass %>%
+               select(species, Sensitivity, Amplification) %>%
+               group_by(species) %>%
+               summarize(Sensitivity = sum(Sensitivity),
+                         Amplification = sum(Amplification)) %>%
+               arrange(Sensitivity)
+  }
+  if (triadFreq) {
+    scoreSp <- triadClass %>%
+               select(species, Sensitivity, Amplification, pathFreq) %>%
+               group_by(species) %>%
+               summarize(Sensitivity = sum(Sensitivity),
+                         Amplification = sum(Amplification),
+                         PathwayFrequency = sum(pathFreq)) %>%
+               arrange(Sensitivity)
+  }
+
 
   # Return
   return(scoreSp)

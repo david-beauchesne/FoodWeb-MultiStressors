@@ -10,7 +10,7 @@ load('./Data/SpeciesScores.RData') # Realised scores
 load('./Data/SpeciesTopoScores.RData') # Realised scores
 load('./Data/positionFrequency.RData') # Position frequency
 for(i in 1:3) posFreq[[i]] <- as.data.frame(posFreq[[i]]) %>% mutate(Species = rownames(.))
-fw <- read.table('./Data/FoodWeb/disturbances.txt', sep = '\t', header = T, stringsAsFactors = F) # FW
+fw <- read.table('./Data/FoodWeb/disturbances0.txt', sep = '\t', header = T, stringsAsFactors = F) # FW
 
 # Build dataset for figure per food web
 # Southern St. Lawrence
@@ -42,6 +42,6 @@ fwESL <- fw %>%
 
 
 # Figures
-scoreTable(fwSSL, output = "./Figures/ScoreTableSSL.png")
-scoreTable(fwNSL, output = "./Figures/ScoreTableNSL.png")
-scoreTable(fwESL, output = "./Figures/ScoreTableESL.png")
+scoreTable(fwSSL, output = "./Figures/ScoreTableSSL2.png")
+scoreTable(fwNSL, output = "./Figures/ScoreTableNSL2.png")
+scoreTable(fwESL, output = "./Figures/ScoreTableESL2.png")

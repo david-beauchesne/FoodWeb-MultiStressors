@@ -54,6 +54,7 @@ scoreTable <- function(foodWeb, output) {
   DD <- png::readPNG('./img/trawl.png', native = T)
   PHB <- png::readPNG('./img/PHB.png', native = T)
   DNH <- png::readPNG('./img/DNH.png', native = T)
+  Hunting <- png::readPNG('./img/rifle.png', native = T)
 
   # Transparency
   Acidification[Acidification == -1] <- 0
@@ -64,16 +65,18 @@ scoreTable <- function(foodWeb, output) {
   DD[DD == -1] <- 0
   PHB[PHB == -1] <- 0
   DNH[DNH == -1] <- 0
+  Hunting[Hunting == -1] <- 0
 
   # Icon parameters
-  drivers <- data.frame(drivers = c('Acidification','Hypoxia','SBT','SST','Shipping','DD','DNH','PHB'),
+  drivers <- data.frame(drivers = c('Acidification','Hypoxia','SBT','SST','Shipping','DD','DNH','PHB','Hunting'),
                         name = c('Acidification','Hypoxia','Bottom temperature \nanomalies',
                                  'Surface temperature \nanomalies','Shipping',
                                  'Demersal destructive \nfisheries',
                                  'Demersal non-destructive \nhigh-bycatch fisheries',
-                                 'Pelagic high-bycatch \nfisheries'),
-                        width = c(.13,.11,.11,.11,.13,.11,.13,.13),
-                        height = c(.15,.15,.2,.2,.2,.12,.12,.12),
+                                 'Pelagic high-bycatch \nfisheries',
+                                 'Hunting'),
+                        width = c(.13,.11,.11,.11,.13,.11,.13,.13,.13),
+                        height = c(.15,.15,.2,.2,.2,.12,.12,.12,.15),
                         stringsAsFactors = F)
 
   # Icons
@@ -105,8 +108,8 @@ scoreTable <- function(foodWeb, output) {
 
   # Legend
   xI <- -10.5
-  xP <- c(rep(xI,2), rep(xI+1.55, 2), rep(xI+3.7, 2), rep(xI+5.95,2))
-  yP <- rep(c(-.2, -1.45), 4)
+  xP <- c(rep(xI,2), rep(xI+1.35, 2), rep(xI+3.2, 2), rep(xI+5,2), xI+7.15)
+  yP <- c(rep(c(-.2, -1.45), 4), -.2)
   for(k in 1:length(xP)) {
     pchImage(x = xP[k], yP[k], obj = get(drivers$drivers[k]), col = '#000000',
              cex.x = drivers$width[k],

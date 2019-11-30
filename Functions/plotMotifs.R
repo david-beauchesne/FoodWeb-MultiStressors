@@ -1,7 +1,7 @@
 # source('./Functions/plotMotifs.R')
 plotMotifs <- function(motif, position = '', path = '', x = 0, y = 0,
                        scalingX = 1, scalingY = 1, cex = 2, lwd = 2, lwd2 = 2, add = F, posCol = '#000000',
-                       growth = '#db5656', attack = '#db5656',
+                       growth = '#db5656', attack = '#db5656', colLine = '#000000',
                        conversion = '#53998e') {
   # motif = 'di'
   # position = 'z'
@@ -36,7 +36,7 @@ plotMotifs <- function(motif, position = '', path = '', x = 0, y = 0,
 
     # Lines
     l <- data.frame(x1 = c(0,0), x2 = c(0,0), y1 = c(-1,0), y2 = c(0,1),
-                     col = '#000000', stringsAsFactors = F)
+                     col = colLine, stringsAsFactors = F)
 
     if (path == 'beta') l$col[1] <- attack
     if (path == 'delta') l$col[2] <- attack
@@ -65,7 +65,7 @@ plotMotifs <- function(motif, position = '', path = '', x = 0, y = 0,
     # Lines
     l <- data.frame(x1 = c(-.35,.35,.35), x2 = c(.35,-.35,.35),
                     y1 = c(.3,1,1), y2 = c(-1,.3,-1),
-                    col = '#000000', stringsAsFactors = F)
+                    col = colLine, stringsAsFactors = F)
 
     if (path == 'beta') l$col[1] <- attack
     if (path == 'delta') l$col[2] <- attack
@@ -96,7 +96,7 @@ plotMotifs <- function(motif, position = '', path = '', x = 0, y = 0,
     # Lines
     l <- data.frame(x1 = c(-.4,.4), x2 = c(0,0),
                     y1 = c(1,1), y2 = c(-1,-1),
-                    col = '#000000', stringsAsFactors = F)
+                    col = colLine, stringsAsFactors = F)
 
     if (path == 'gamma') l$col[1] <- attack
     if (path == 'beta') l$col[2] <- attack
@@ -125,7 +125,7 @@ plotMotifs <- function(motif, position = '', path = '', x = 0, y = 0,
     # Lines
     l <- data.frame(x1 = c(-.4,.4), x2 = c(0,0),
                     y1 = c(-1,-1), y2 = c(1,1),
-                    col = '#000000', stringsAsFactors = F)
+                    col = colLine, stringsAsFactors = F)
 
     if (path == 'gamma') l$col[1] <- attack
     if (path == 'delta') l$col[2] <- attack
@@ -154,7 +154,7 @@ plotMotifs <- function(motif, position = '', path = '', x = 0, y = 0,
     # Lines
     l <- data.frame(x1 = 0, x2 = 0,
                     y1 = 0, y2 = 1,
-                    col = '#000000', stringsAsFactors = F)
+                    col = colLine, stringsAsFactors = F)
 
     if (path == 'gamma') l$col[1] <- attack
     if (path == 'nu') l$col[1] <- conversion

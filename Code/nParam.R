@@ -31,7 +31,8 @@ par(mfrow = c(2,2), family = 'serif')
 
 # Plot 1
 par(mar = c(2,5,.5,.5))
-plot0(x = c(1,nrow(dat)), y = c(0, .15))
+# plot0(x = c(1,nrow(dat)), y = c(0, .15))
+plot0(x = c(1,nrow(dat)), y = c(-.15, .15))
 axis(2, at = round(seq(0,.15,by=.05),2), las = 2)
 axis(1, at = 1:9)
 mtext(text = TeX('Mean $\\delta_A$ (%) $\\pm$ 95% CI'), side = 2, line = 3, cex = .75)
@@ -86,7 +87,8 @@ dat[1, ] <- 0
 
 # Plot
 par(mar = c(2,5,.5,.5))
-plot0(x = c(0,nrow(dat)+1), y = c(0, .0015))
+plot0(x = c(0,nrow(dat)+1), y = c(-.0015, .0015))
+# plot0(x = c(0,nrow(dat)+1), y = c(0, .0015))
 axis(2, at = seq(0, .0015, by = .0005), las = 2)
 axis(1, at = 1:9)
 mtext(text = '| Additivity |', side = 2, line = 4, cex = 1)
@@ -186,7 +188,8 @@ par(mfrow = c(2,2), family = 'serif')
 
 # Plot
 par(mar = c(2,5,.5,.5))
-plot0(x = c(0,nrow(dat)+1), y = c(0, .075))
+# plot0(x = c(0,nrow(dat)+1), y = c(0, .075))
+plot0(x = c(0,nrow(dat)+1), y = c(-.075, .075))
 axis(2, at = round(seq(0, .075, by = .025),3), las = 2)
 axis(1, at = 1:15, labels = dat$param, las = 2)
 mtext(text = TeX('Mean $\\delta_A$ (%) $\\pm$ 95% CI'), side = 2, line = 3, cex = .75)
@@ -269,7 +272,8 @@ dat <- dat1 %>%
 
 # Plot
 par(mar = c(4,5,.5,.5))
-plot0(x = c(0,nrow(dat)+1), y = c(0, .0015))
+# plot0(x = c(0,nrow(dat)+1), y = c(0, .0015))
+plot0(x = c(0,nrow(dat)+1), y = c(-.0015, .0015))
 axis(2, at = seq(0, .0015, by = .0005), las = 2)
 axis(1, at = 1:15, labels = dat$param, las = 2)
 mtext(text = 'Additivity', side = 2, line = 4, cex = 1)
