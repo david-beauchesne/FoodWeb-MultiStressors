@@ -6,7 +6,9 @@ scoreTable <- function(foodWeb, output) {
   textCex <- .5
   headCex <- .65
   cols <- c('#444643','#b55151')
+  cols <- c('#4B7894','#B45423')
   pal1 <- colorRampPalette(c('#ffffff', '#444643'))
+  pal1 <- colorRampPalette(c('#ffffff',cols[2],cols[1]))
 
   # Graph
   png(output, res = 900, width = 260, height = 180,units = "mm")
@@ -68,15 +70,14 @@ scoreTable <- function(foodWeb, output) {
   Hunting[Hunting == -1] <- 0
 
   # Icon parameters
-  drivers <- data.frame(drivers = c('Acidification','Hypoxia','SBT','SST','Shipping','DD','DNH','PHB','Hunting'),
+  drivers <- data.frame(drivers = c('Acidification','Hypoxia','SBT','SST','Shipping','DD','DNH','PHB'),
                         name = c('Acidification','Hypoxia','Bottom temperature \nanomalies',
                                  'Surface temperature \nanomalies','Shipping',
                                  'Trawl\nfisheries',
                                  'Trap\nfisheries',
-                                 'Pelagic\nfisheries',
-                                 'Hunting'),
-                        width = c(.13,.11,.11,.11,.13,.11,.13,.13,.13),
-                        height = c(.15,.15,.2,.2,.2,.12,.12,.12,.15),
+                                 'Pelagic\nfisheries'),
+                        width = c(.13,.11,.11,.11,.13,.11,.13,.13),
+                        height = c(.15,.15,.2,.2,.2,.12,.12,.12),
                         stringsAsFactors = F)
 
   # Icons
@@ -107,9 +108,9 @@ scoreTable <- function(foodWeb, output) {
   }
 
   # Legend
-  xI <- -10.5
-  xP <- c(rep(xI,2), rep(xI+1.7, 2), rep(xI+4.1, 2), rep(xI+5.55,2), xI+6.9)
-  yP <- c(rep(c(-.2, -1.45), 4), -.2)
+  xI <- -9.75
+  xP <- c(rep(xI,2), rep(xI+1.7, 2), rep(xI+4.1, 2), rep(xI+5.55,2))
+  yP <- c(rep(c(-.2, -1.45), 4))
   for(k in 1:length(xP)) {
     pchImage(x = xP[k], yP[k], obj = get(drivers$drivers[k]), col = '#000000',
              cex.x = drivers$width[k],
@@ -204,7 +205,7 @@ scoreTable <- function(foodWeb, output) {
   dat <- ((foodWeb$Amplification / .2) * 2.5) + x0
   for(i in 1:length(dat)) {
     if(!is.na(dat[i])) {
-      lines(x = c(x0, dat[i]), y = rep(i, 2), lwd = 10, col = cols[1])
+      lines(x = c(x0, dat[i]), y = rep(i, 2), lwd = 10, col = cols[2])
     } else {
       next
     }

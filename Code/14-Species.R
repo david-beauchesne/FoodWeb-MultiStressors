@@ -68,11 +68,11 @@ for(i in 1:3) impact[[i]] <- vector('list',7)
 
 stressSources <- list(c('Acidification','Hypoxia','SBT','SST'),
                       c('Shipping'),
-                      c('DD','PHB','DNH','Hunting'),
+                      c('DD','PHB','DNH'),
                       c('Acidification','Hypoxia','SBT','SST','Shipping'),
-                      c('Acidification','Hypoxia','SBT','SST','DD','PHB','DNH','Hunting'),
-                      c('Shipping','DD','PHB','DNH','Hunting'),
-                      c('Acidification','Hypoxia','Shipping','SBT','SST','DD','PHB','DNH','Hunting'))
+                      c('Acidification','Hypoxia','SBT','SST','DD','PHB','DNH'),
+                      c('Shipping','DD','PHB','DNH'),
+                      c('Acidification','Hypoxia','Shipping','SBT','SST','DD','PHB','DNH'))
 
 for(i in 1:3) {
   for(j in 1:7) {

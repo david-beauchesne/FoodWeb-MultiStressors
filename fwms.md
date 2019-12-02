@@ -619,6 +619,10 @@ Realized pathways of effect are identified using the following rules:
 3. impacts on the physiology of resources and consumers are considered as disturbances to consumer conversation rates ($e$).
 <!-- Should I provide more details here, or in the next section? -->
 
+By using these scores, we essentially assume that the realized vulnerability
+of a species will be the sum of all individual 3-species pathways of effect
+through which a species may be impacted.
+
 <!-- ~~~~~~~~~~~~~~~~~~~~~~ -->
 ### Empirical food webs
 <!-- ~~~~~~~~~~~~~~~~~~~~~~ -->
@@ -849,28 +853,80 @@ regions, respectively.
 ## Species vulnerability
 <!-- ~~~~~~~~~~~~~~~~~~~~~~ -->
 
+Based on their trophic position, the most vulnerable species in the Northern
+St. Lawrence are large predators that are never or rarely resources themselves
+such large demersal fish (*i.e.* demersals, atlantic cod and
+greenland halibut; Figure \ref{scoreTable}).
+These species largely appear to be both weak entry points and biotic amplifiers
+(Figure \ref{scoreTable}).
+Resources are generally less sensitive, depending on their position in food webs.
+Large crustaceans, for example, are positive weak entry points and biotic
+amplifiers, which is likely due to their position as both predator and resource
+in the food web (*e.g.* resource in apparent competition;
+Figure \ref{scoreTable}).
+Other species like redfish and shrimp are in motif positions leading both to
+positive (*e.g.* meso-predator in omnivory interaction) and negative
+(*e.g.* resources in omnivory interations) effects in motif-scale simulations
+(Figure \ref{scoreTable}).
+This likely leads to counteracting effects that dampen their overal sensitivity
+to disturbances.
+Species sensitivity and amplification scores do not co-vary.
+In fact, few species are biotic buffers, with most acting as biotic
+amplifiers to some degree (Figure \ref{scoreTable}).
+
+<!-- While differences in species vulnerability are driven by the species themselves,
+drivers and food web topology influence species vulnerability.  -->
+Focusing on cod, shrimp and large crustaceans, 3 species with contrasting
+vulnerabilities in the St. Lawrence, we see that drivers and food web topology
+influence a species vulnerability (Figure \ref{species}).
+Different combinations of drivers may lead to drastic variations in sensitivity
+to and amplification of the effects of disturbances.
+For cod, the effects of shipping might slightly dampen the effects of
+climate drivers and fisheries,
+
+
+
+Different food webs
+
+Focusing on species with contrasting
+
+The same species
+
+
+Resources in tri-trophic food chains vs resources in competitive exploitation
+
+
+Many prey species and large crustaceans appear to as positive weak entry points
+or 2 (Figure \ref{scoreTable}).
+
+
+Invertebrates in general and species like shrimp and redfish appear largely
+insensitive to disturbances (Figure \ref{scoreTable}).
+
+# Score table
 - No score co-variation
 - The number of drivers impacting a species is not necessarily synonymous with high vulnerability
+- Predators more sensitive
 -
 
+- Predators are most vulnerable species,
 
-Species sensitivity and amplification scores do not co-vary
-(Figure \ref{scoreTable}).
-We also find that species targeted by multiple drivers are not necessarily
+
+
+
+Species targeted by multiple drivers are not necessarily
 the most vulnerable based on their trophic position.
 For example, even though the mortality, physiology and behaviour of shrimp were
 expected to be impacted by drivers, it is nonetheless insensitive based on its
 trophic position (Figure \ref{scoreTable}).
-Similarly, species impacted by few drivers like sea birds, or no drivers at all
-like seals, may nonetheless be highly vulnerable due to its trophic position
-(Figure \ref{scoreTable}).
+In contrast, species impacted by few drivers like cetaceans, or no drivers at all
+like harbour seals, may nonetheless be highly vulnerable due to their trophic
+position (Figure \ref{scoreTable}).
 
-Large demersal predators, sea birds and seals are mostly weak entry points and
-biotic amplifiers (Figure \ref{scoreTable}).
-Prey species and large crustaceans appear to benefit from disturbances and may
-act as positive weak entry points in the St. Lawrence (Figure \ref{scoreTable}).
-Invertebrates in general and species like shrimp and redfish appear largely
-insensitive to disturbances (Figure \ref{scoreTable}).
+Use capelin as a counter example
+Our approach does not consider the intensity of the drivers. So if there is overfishing, as was the case with capelin, which drives
+the population down, we would not necessarily capture it here.
+
 
 
 <!-- \blandscape -->

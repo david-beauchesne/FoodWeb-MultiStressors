@@ -60,9 +60,9 @@ names(dat) <- c('Southern St. Lawrence (mid-1980s)',
                 'Northern St. Lawrence (mid-1980s)',
                 'St. Lawrence Estuary (2010s)')
 impact <- vector('list', 3)
-stressSources <- list(c('Acidification','DNH','SST','SBT','Shipping','Hunting'),
-                      c('Acidification','Hypoxia','Shipping','SBT','SST','DD','PHB','Hunting'),
-                      c('Acidification','Hypoxia','Shipping','SBT','SST','DD','PHB','Hunting'))
+stressSources <- list(c('Acidification','DNH','SST','SBT','Shipping'),
+                      c('Acidification','Hypoxia','Shipping','SBT','SST','DD','PHB'),
+                      c('Acidification','Hypoxia','Shipping','SBT','SST','DD','PHB'))
 
 for(i in 1:3) {
   impact[[i]] <- speciesScores(dat[[i]], stressSources[[i]])
