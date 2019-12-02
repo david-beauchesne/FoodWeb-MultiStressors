@@ -560,7 +560,9 @@ are less afefcted than expected from an additive model
 
 We broadly refer to species vulnerability as the combination of trophic
 sensitivity and trophic amplification, as defined in this study.
-Two sets of scores are presented at the species level.
+Two sets of scores are presented at the species level, using the simulated
+disturbances for all possible pathways of effects as heuristics to infer
+species trophic vulnerability.
 
 The first set are topological scores of trophic sensitivity and amplification
 based on the frequency at which species occupy one of the 4 main motif positions
@@ -844,19 +846,16 @@ regions, respectively.
 
 
 <!-- ~~~~~~~~~~~~~~~~~~~~~~ -->
-## Network-scale vulnerability
+## Species vulnerability
 <!-- ~~~~~~~~~~~~~~~~~~~~~~ -->
 
-<!-- Might be better in the discussion -->
-<!-- Should I add trophic level in the tables? -->
-<!-- Review!!!!!! -->
-Using the most common environmental pressures in the Northern Gulf of St.
-Lawrence with the topology of a food web from the mid-1980s to identify realised
-pathways of effect between all 3-species combinations, and their simulated
-scores as heuristics, we ranked species and functional groups as a function
-of their overall trophic sensitivity and amplification.
+- No score co-variation
+- The number of drivers impacting a species is not necessarily synonymous with high vulnerability
+-
 
-We find that sensitivity and amplification scores do not co-vary (Figure \ref{scoreTable}).
+
+Species sensitivity and amplification scores do not co-vary
+(Figure \ref{scoreTable}).
 We also find that species targeted by multiple drivers are not necessarily
 the most vulnerable based on their trophic position.
 For example, even though the mortality, physiology and behaviour of shrimp were
@@ -935,6 +934,14 @@ Species vulnerability in three different food webs.
 <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 # What it all means <!-- Conclusions and perspectives -->
 <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+<!-- Using the most common offshore environmental pressure in the St. Lawrence System,
+food webs and simulations as heuristics, we find that
+Using the most common environmental pressures in the Northern Gulf of St.
+Lawrence with the topology of a food web from the mid-1980s to identify realised
+pathways of effect between all 3-species combinations, and their simulated
+scores as heuristics, we ranked species and functional groups as a function
+of their overall trophic sensitivity and amplification. -->
 
 - Amplification increases with interaction complexity
 
