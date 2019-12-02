@@ -16,7 +16,7 @@ ampTh <- .0002
 load('./Data/DisturbancesAll.RData')
 
 # Absolute values
-# int <- int %>% mutate(delta = abs(delta))
+int <- int %>% mutate(delta = abs(delta))
 
 #
 int$pathway <- gsub('^r$','r_x', int$pathway)
@@ -44,15 +44,26 @@ param <- int %>%
                 mu = str_detect(pathway, 'mu'),
                 nu = str_detect(pathway, 'nu'),
                 omega = str_detect(pathway, 'omega')) %>%
-          mutate(x = r_x | beta | gamma | mu | nu,
-                 y = r_y | beta | mu | delta | omega | m_y,
+          # mutate(x = r_x | beta | gamma | mu | nu,
+          #        y = r_y | beta | mu | delta | omega | m_y,
+          #        z = r_z | gamma | delta | nu | omega | m_z,
+          #        xI = r_y | delta | omega | m_y | r_z | m_z,
+          #        yI = r_x | r_z | gamma | nu | m_z,
+          #        zI = r_x | r_y | m_y | beta | mu,
+          #        pX = species == 'x',
+          #        pY = species == 'y',
+          #        pZ = species == 'z') %>%
+          #
+          mutate(x = r_x | beta | gamma,
+                 y = r_y | beta | mu | delta | m_y,
                  z = r_z | gamma | delta | nu | omega | m_z,
-                 xI = r_y | delta | omega | m_y | r_z | m_z,
-                 yI = r_x | r_z | gamma | nu | m_z,
+                 xI = r_y | delta | omega | m_y | r_z | m_z | mu | nu,
+                 yI = r_x | r_z | gamma | nu | m_z | omega,
                  zI = r_x | r_y | m_y | beta | mu,
                  pX = species == 'x',
                  pY = species == 'y',
                  pZ = species == 'z') %>%
+
           mutate(Dx = x & !xI & pX,
                  Ix = !x & xI & pX,
                  DIx = x & xI & pX,
@@ -121,7 +132,7 @@ sensDir <- sensDir %>%
 load('./Data/AdditiveAll.RData')
 
 # Absolute values
-# intAdd <- intAdd %>% mutate(Int = abs(Int))
+intAdd <- intAdd %>% mutate(Int = abs(Int))
 
 #
 intAdd$pathway <- gsub('^r$','r_x', intAdd$pathway)
@@ -149,15 +160,25 @@ param <- intAdd %>%
                 mu = str_detect(pathway, 'mu'),
                 nu = str_detect(pathway, 'nu'),
                 omega = str_detect(pathway, 'omega')) %>%
-         mutate(x = r_x | beta | gamma | mu | nu,
-                y = r_y | beta | mu | delta | omega | m_y,
+         # mutate(x = r_x | beta | gamma | mu | nu,
+         #        y = r_y | beta | mu | delta | omega | m_y,
+         #        z = r_z | gamma | delta | nu | omega | m_z,
+         #        xI = r_y | delta | omega | m_y | r_z | m_z,
+         #        yI = r_x | r_z | gamma | nu | m_z,
+         #        zI = r_x | r_y | m_y | beta | mu,
+         #        pX = species == 'x',
+         #        pY = species == 'y',
+         #        pZ = species == 'z') %>%
+         mutate(x = r_x | beta | gamma,
+                y = r_y | beta | mu | delta | m_y,
                 z = r_z | gamma | delta | nu | omega | m_z,
-                xI = r_y | delta | omega | m_y | r_z | m_z,
-                yI = r_x | r_z | gamma | nu | m_z,
+                xI = r_y | delta | omega | m_y | r_z | m_z | mu | nu,
+                yI = r_x | r_z | gamma | nu | m_z | omega,
                 zI = r_x | r_y | m_y | beta | mu,
                 pX = species == 'x',
                 pY = species == 'y',
                 pZ = species == 'z') %>%
+
          mutate(Dx = x & !xI & pX,
                 Ix = !x & xI & pX,
                 DIx = x & xI & pX,
@@ -256,7 +277,7 @@ points(x = c(.75,.75), y = c(.0015,.0012), col = c('#476091','#c25454'))
 load('./Data/DisturbancesAll.RData')
 
 # Absolute values
-# int <- int %>% mutate(delta = abs(delta))
+int <- int %>% mutate(delta = abs(delta))
 
 # Filter out partially connected and disconnected motifs
 int <- int %>%
@@ -346,7 +367,7 @@ sensParam <- sensParam %>%
 load('./Data/AdditiveAll.RData')
 
 # Absolute values
-# intAdd <- intAdd %>% mutate(Int = abs(Int))
+intAdd <- intAdd %>% mutate(Int = abs(Int))
 
 # Filter out partially connected and disconnected motifs
 intAdd <- intAdd %>%
