@@ -59,11 +59,6 @@ david.beauchesne@uqar.ca \newline
 
 **Data accessibility statement**:
 
-
-<!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
-<!-- CHECK REALISED VS REALIZED -->
-<!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
-
 \newpage
 
 <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
@@ -683,7 +678,7 @@ trophic vulnerability based of its trophic position and the supposed
 effects of drivers on biological processes driving community dynamics.
 Detailed literature search or expert knowledge could be used to get a better
 sense of the proximate effects of drivers on species, but this is beyond the
-scope of our objective.
+scope of our objectives.
 
 The first criteria used to evaluate the effect of drivers on species and
 functional groups was a broad evaluation of direct exposure to individual
@@ -693,9 +688,10 @@ deep habitats of the St. Lawrence, while surface temperature anomalies and
 marine traffic are operating on the surface layer [@beauchesne2019].
 As such, species of functional groups in deep or surface habitats were
 considered as exposed to deep or surface drivers, respectively.
-The effects of hypoxia and temperature anomalies was then considered as
-impacting the physiology or behaviour of exposed species with low or high
-mobility, respectively.
+Hypoxia was condired as impacting the physiology or behaviour of species or
+functional groups with low or high mobility, respectively [@ref].
+Temperature anomalies were considered as impacting the physiology of species
+with low mobility only.
 Ocean acidification was assumed to affect the physiology of exposed
 carbonate-secreting organisms [*e.g.* mollusks and crustaceans; @kroeker2013].
 Marine traffic was considered as primarily impacting whale behaviour
@@ -710,7 +706,7 @@ reported catches was disturbed.
 
 
 <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
-# Results <!-- other section title -->
+# Food web vulnerability to multiple disturbances <!-- other section title -->
 <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 <!-- ~~~~~~~~~~~~~~~~~~~~~~ -->
 ## Motifs vulnerability
@@ -740,13 +736,13 @@ In general, top predators are weak entry points for all interaction types
 In contrast, non-additive effects on top predators depends on interaction type.
 Pathways of effect on top predators in omnivory and food chain interactions
 largely result in synergistic or antagonistic effects, and predators are, on
-average, biotic amplifiers (Figure \{position).
+average, biotic amplifiers (Figure ref\{position).
 Predators in competitive interactions, meanwhile, are less affected by
-non-additive effects and are fringe biotic buffers (Figure \{position).
+non-additive effects and are fringe biotic buffers (Figure ref\{position).
 
 Resources are largely weak entry points for all motifs, yet the effect are
 typically negative in food chain and omnivory interactions, and positive in
-competitive interactions (Figures \ref{vulnerability}, ref\{position}).
+competitive interactions (Figures \ref{vulnerability}, \ref{position}).
 Altough resources are, on average, neither biotic buffers or amplifiers,
 the effects of individual pathways of effects are mostly non-additive
 (Figure \ref{vulnerability}).
@@ -770,21 +766,34 @@ Similarly, targeting multiple biological processes results in greater
 sensitivity and amplification (Figure \ref{vulnerability}).
 There are however a few generalities worth noting.
 Mortality and growth rates are driving heightened trophic sensitivities, yet
-do not individually contribute to non-additive effects (Figure \ref{pathways}).
+do not individually contribute to non-additive effects (Figure \ref{pathway}).
 Instead, trophic amplification is largely driven by disturbances on species
 species interactions (*i.e.* attack ($\alpha_{ij}$) and conversion ($e$) rates;
-Figure \ref{pathways}).
+Figure \ref{pathway}).
 
 
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.7\columnwidth]{./Figures/vulnerability.png}
 \caption{
-Ranking of all univariate and multivariate pathways of effect as a function
-of trophic (A,B) and position (C,D) sensitivity.
-Pathways and motif positions identified as weak entry points (\textit{i.e.}
+Ranking of trophic sensitivity ($S_{i,j}$) and amplification ($A_{i,j}$) scores for all univariate
+and multivariate pathways of effects on all 13 unique motif positions in
+the three-species motifs explored, \textit{i.e.} tri-trophic food chain, omnivory,
+exploitative competition, apparent competition, partially connected and
+disconnected.
+Trophic sensitivity is the variation in species initial abundance at equilibrium
+and the abundance after disturbances are simulated through univariate or
+multivariate pathways of effect.
+Pathways of effects identified as weak entry points (\textit{i.e.}
 highly sensitive to disturbances) and biotic sinks (\textit{i.e.} insensitive
-to disturbances) are identified by the red and blue regions, respectively.
+to disturbances) are identified by red and blue regions, respectively.
+Trophic amplification is the deviance of a multivariate pathway of effect and
+the sum of the univariate effects composing the pathway of effect, \textit{i.e.} the
+additive model.
+Pathways of effect identified as biotic buffers (\textit{i.e.}
+synergistic effect of disturbances) and biotic buffers (\textit{i.e.}
+antagonistic effect of disturbances) are identified by the red and blue
+regions, respectively.
 }
 \label{vulnerability}
 \end{figure}
@@ -793,11 +802,23 @@ to disturbances) are identified by the red and blue regions, respectively.
 \centering
 \includegraphics{./Figures/positionVulnerability.png}
 \caption{
-Ranking of all univariate and multivariate pathways of effect as a function
-of trophic (A,B) and position (C,D) sensitivity.
-Pathways and motif positions identified as weak entry points (\textit{i.e.}
+Ranking of 13 motif positions as a function of position sensitivity ($S_i$)
+and amplification ($A_i$) scores in
+the three-species motifs explored, \textit{i.e.} tri-trophic food chain, omnivory,
+exploitative competition, apparent competition, partially connected and
+disconnected.
+Position sensitivity is mean value of the variation in species initial abundance at equilibrium
+and the abundance after disturbances are simulated for all univariate and multivariate pathways of effect
+on a motif position.
+Motif positions identified as weak entry points (\textit{i.e.}
 highly sensitive to disturbances) and biotic sinks (\textit{i.e.} insensitive
-to disturbances) are identified by the red and blue regions, respectively.
+to disturbances) are identified by the blue regions.
+Position amplification is the mean deviance of a multivariate pathway of effect and
+the sum of the univariate effects composing the pathway of effect, \textit{i.e.} the
+additive model, for all multivariate pathways of effect on a motif position.
+Motif positions identified as biotic buffers (\textit{i.e.}
+synergistic effect of disturbances) and biotic buffers (\textit{i.e.}
+antagonistic effect of disturbances) are identified by the red regions.
 }
 \label{position}
 \end{figure}
@@ -807,8 +828,8 @@ to disturbances) are identified by the red and blue regions, respectively.
 \centering
 \includegraphics{./Figures/pathways.png}
 \caption{
-Absolute values of the mean trophic sensitivity (A) and amplification (B) as a
-function of disturbed parameter type and direct or indirect effects.
+Absolute values of the mean trophic sensitivity ($S_{i,j}$; A) and amplification ($A_{i,j}$; B) as a
+function of the types of parameter composing a pathway of effect.
 All pathways of effect targeting a specific parameter type (\textit{i.e.}
 mortality, attack and conversion rates) were grouped to evaluate their
 respective and combined effect on trophic sensitivity and amplification.
@@ -874,46 +895,6 @@ Species sensitivity and amplification scores do not co-vary.
 In fact, few species are biotic buffers, with most acting as biotic
 amplifiers to some degree (Figure \ref{scoreTable}).
 
-<!-- While differences in species vulnerability are driven by the species themselves,
-drivers and food web topology influence species vulnerability.  -->
-Focusing on cod, shrimp and large crustaceans, 3 species with contrasting
-vulnerabilities in the St. Lawrence, we see that drivers and food web topology
-influence a species vulnerability (Figure \ref{species}).
-Different combinations of drivers may lead to drastic variations in sensitivity
-to and amplification of the effects of disturbances.
-For cod, the effects of shipping might slightly dampen the effects of
-climate drivers and fisheries,
-
-
-
-Different food webs
-
-Focusing on species with contrasting
-
-The same species
-
-
-Resources in tri-trophic food chains vs resources in competitive exploitation
-
-
-Many prey species and large crustaceans appear to as positive weak entry points
-or 2 (Figure \ref{scoreTable}).
-
-
-Invertebrates in general and species like shrimp and redfish appear largely
-insensitive to disturbances (Figure \ref{scoreTable}).
-
-# Score table
-- No score co-variation
-- The number of drivers impacting a species is not necessarily synonymous with high vulnerability
-- Predators more sensitive
--
-
-- Predators are most vulnerable species,
-
-
-
-
 Species targeted by multiple drivers are not necessarily
 the most vulnerable based on their trophic position.
 For example, even though the mortality, physiology and behaviour of shrimp were
@@ -923,11 +904,35 @@ In contrast, species impacted by few drivers like cetaceans, or no drivers at al
 like harbour seals, may nonetheless be highly vulnerable due to their trophic
 position (Figure \ref{scoreTable}).
 
-Use capelin as a counter example
+<!-- While differences in species vulnerability are driven by the species themselves,
+drivers and food web topology influence species vulnerability.  -->
+Focusing on cod, shrimp and large crustaceans, 3 species with contrasting
+vulnerabilities in the St. Lawrence, we see that different driver combinations
+and food web topologies lead to differet species vulnerability
+(Figure \ref{species}).
+Combinations of drivers may increase or dampen over effects on species
+sensitivity.
+For instance, fisheries and climate combine to increase and decrease sensitivity
+of cod and shrimp, respectively (Figure \ref{species}).
+Driver combinations may also lead to effect amplification even though
+a driver group has no effect.
+The combined effect of fisheries and climate drivers on shrimp leads to
+drastically increased amplification scores even if fisheries in isolation does
+not lead to non-additive effects (Figure \ref{species}).
+
+Food web topology also impacts a species vulnerability.
+Based on topology, cod seem more vulnerable in the Northern Gulf of St. Lawrence
+than in the Estuary and Southern Gulf (Figure \ref{species}).
+Shrimp and crustaceans, meanwhile, are more sensitive in the Estuary, altough
+amplification is more important in the Gulf (Figure \ref{species}).
+Contrasts between food webs may even lead to flipped species vulnerabilities.
+Large crustaceans seem to be negative entry points and biotic buffers in the
+Estuary, yet they positive weak entry points and biotic amplifiers in the Gulf
+(Figure \ref{species}).
+
+<!-- Use capelin as a counter example
 Our approach does not consider the intensity of the drivers. So if there is overfishing, as was the case with capelin, which drives
-the population down, we would not necessarily capture it here.
-
-
+the population down, we would not necessarily capture it here. -->
 
 <!-- \blandscape -->
 \begin{figure}[H]
@@ -935,7 +940,7 @@ the population down, we would not necessarily capture it here.
 \includegraphics{./Figures/ScoreTableNSL.png}
 \caption{
 Change in species and functional groups sensitivity and amplification scores
-as a function of realised pathways of effects for an empirical food web of the
+as a function of realized pathways of effects for an empirical food web of the
 Northern Gulf of St. Lawrence in the mid-1980s \cite{morrissette2003}.
 The left-hand side of the table presents the species and functional groups,
 the drivers supposed to be affecting population level mortality,
@@ -948,11 +953,11 @@ pelagic high-bycatch), climate change (\textit{i.e.} ocean acidification,
 hypoxia and bottom and surface temperature anomalies), and shipping
 \cite{beauchesne2019}.
 Species position and driver effects on biological processes were used to
-identify realised pathways of effects between all 3-species combinations in
+identify realized pathways of effects between all 3-species combinations in
 the food web.
 The right-hand side of the table presents the species sensitivity and
 amplification scores, which corresponds to the sum of the simulated effects
-of all realised pathways of effects for each species and functional group
+of all realized pathways of effects for each species and functional group
 (Figure \ref{vulnerability}).
 Negative and positive sensitivity scores mean that overall pathways affecting a
 species have negative or positive effects, respectively.
@@ -972,7 +977,13 @@ amplifiers, respectively.
 \centering
 \includegraphics{./Figures/species.png}
 \caption{
-Species vulnerability in three different food webs.
+Realized sensitivity ($S^\ast_m$) and amplification ($A^\ast_m$) scores for
+Atlantic cod (\textit{Gadus morhua}), shrimp (\textit{Pandalus borealis}) and
+large crustaceans (\textit{Crustacea}), 3 species or functional groups part of
+the food webs of the Southern and Northern Gulf of St. Lawrence in the mid-1980s
+\cite{morissette2003; savenkoff2004} and the St. LAwrence Estuary \cite{savenkoff2012}.
+Scores are presented when groups of drivers are considered individually and in
+combination.
 }
 \label{species}
 \end{figure}
@@ -981,150 +992,122 @@ Species vulnerability in three different food webs.
 \centering
 \includegraphics{./Figures/Biplots.png}
 \caption{
-Species vulnerability in three different food webs.
+Biplot of the realized and topological species sensitivity ($S^\ast_m, S_m$)
+and amplification ($A^\ast_m, A_m$) scores in the food webs of the Southern and
+Northern Gulf of St. Lawrence in the mid-1980s \cite{morissette2003; savenkoff2004}
+and the St. LAwrence Estuary \cite{savenkoff2012}.
 }
-\label{species}
+\label{biplot}
 \end{figure}
 
 
+
+
 <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
-# What it all means <!-- Conclusions and perspectives -->
+# What it all means <!-- Discussion -->
 <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 
-<!-- Using the most common offshore environmental pressure in the St. Lawrence System,
-food webs and simulations as heuristics, we find that
-Using the most common environmental pressures in the Northern Gulf of St.
-Lawrence with the topology of a food web from the mid-1980s to identify realised
-pathways of effect between all 3-species combinations, and their simulated
-scores as heuristics, we ranked species and functional groups as a function
-of their overall trophic sensitivity and amplification. -->
-
-- Amplification increases with interaction complexity
-
-***First try: using introductory questions to structure discussion***
+<!-- ***First try: using introductory questions to structure discussion*** -->
 
 In conceptualizing the effects of multiple environmental pressures on food webs
 and the role of species and their interactions in spreading disturbances, we
 sought to use well-established ecological theory to answer questions of
 particular relevance to management.
 
-<!-- ***Should species interactions be considered in impact assessments?*** -->
+
+
+
+
+***Should species interactions be considered in impact assessments?***
+
 We first find, as expected, that species interactions should be explicitely
 considered in impact assessments, as they greatly influence trophic
 vulnerability to the effects of disturbances.
 This supports longstanding evidence that interactions play
 a crucial role in spreading the effects of individual disturbances through
-food webs [*e.g.*@menge1995; @wootton1993; @yodzis2000; @wootton2002], <!-- verify references -->
+food webs [*e.g.* @menge1995; @wootton1993; @yodzis2000; @wootton2002], <!-- verify references -->
 and unsurprisingly extends this conclusion to multiple disturbances. <!-- Hypersensitivity (Jackson2016; thompson2018a) -->
 
 We further uncover the that type of interactions a species is involved in
 influences its vulnerability to disturbances.
-
-Omnivory and food chain in particular are responsive to disturbances, while
-exploitative and apparent competition are less vulnerable.
+Omnivory and food chain in particular are highly responsive to disturbances,
+while exploitative and apparent competition are less vulnerable.
 [...]
-<!-- Read up on individual modules and the work done by Stouffer -->
-<!-- "Additionally, note that the exploitative competition module is unstable in isolation due to competitive exclusion." (In Stouffer2012, but I doubt I should cite him for this. This is just a placeholder) -->
 
-We provide evidence that indirect effects are at least as important as direct
-effects in driving species vulnerability and that they are they seem to be the
-main source of non-additive effects at the community scale.
-[...].
-This means that when studying population dynamics, the effects of multiple
-drivers cannot be studied outside of the context of species interactions.
-<!-- KEV: Importance of interaction paramters (McCann, from Kev, about reactivity(?) of interaction paramters in Lotka-Voltera models) -->
+**Notes**:
+
+- Read up on individual modules and the work done by Stouffer
+- "Additionally, note that the exploitative competition module is unstable in isolation due to competitive exclusion." (In Stouffer2012, but I doubt I should cite him for this. This is just a placeholder)
 
 
-<!-- ***Should the effects of stressors be evaluated separately or in combination?*** -->
+
+We also provide evidence that species interactions rather than population
+growth or mortality are driving non-additive effects at the community scale.
+[...]
+This means that the effects of drivers should not be studied outside of the
+context of species interactions when studying population dynamics.
+
+**Notes**:
+
+- KEV: Importance of interaction paramters (McCann, from Kev, about reactivity(?) of interaction paramters in Lotka-Voltera models)
+
+
+
+
+
+
+
+
+
+
+***Should the effects of stressors be evaluated separately or in combination?***
+
 Secondly, we find that the effects of multiple disturbances should be considered
 in combination, as non-additive effects often arise from disturbances to two
 or more biological processes.
 
-Pathways of effect to omnivory and top predator in food chain interations
+**Notes**:
 
-Au final, ce que je veux dire c<et que les interactions d'omnivorie et le top prédateur
-de la chaîne tri-trophique en particulier sont caractérisés par des effects non-additifs.
-La majorité des pathways
-
-Ça va dépendre de chemins d'effects spécifiques, pas de généralité possible sur ces positions!
-
-<!-- Need to better explore this, I am not satisfied with what I can say -->
-<!-- I may want to explore that a little bit more and look biotic buffers and amplifiers directly instead! -->
-Additionally, there are no specific property of individual pathways of
-effect that conclusively differentiate biotic buffers and amplifiers.
-
-Pathways of effects
-
-Omnivory interactions and the top predator in the food chain motif in particular
-are characterized mostly
-
-However, non-additive effects are however highly variable between interaction type
-and species position.
-In particular, pathways of effect on omnivory interacations largely lead to
-both biotic buffers and biotic amplifiers.
-Aditionnally, we
-
-Predicting non-additive effects there seems pretty damn hard.
-
-
-what differentiates biotic buffers and biotic amplifiers.
-
-the types of pathways of effects that
-either
-
-as to specific types of pathways of effects
-
-
-accumulation of pathways of effects that lead to non-additive effects.
-
-
-
-In general, omnivory and food chain interactions tend to
-
-There is however a lot of variability
-
-- Many non-additive effects arise from
+- Species in omnivory interactions and top predator in food chain are particularly susceptible to non-additive effects, with most pathways resulting in either synergistic or antagonistic effects.
+- There is a lot of variability among individual pathways of effect, so that predicting whether a species will be a biotic buffer or a biotic amplifier is particularly challenging. Indeed, differentiating between biotic buffers and amplifiers seems to require a thorough understanding of the pathways of effects at play, as there is so much variability.
 - Lot of variability in the nature of the non-additive effect, with no precise indication of what drives a species to be a biotic buffer or a biotic amplifier, suggesting that considering effects of pressures in combination is the only valid way to truly capture the effects of multiple disturbances.
-- Multivariate pathways of effect result in heightened sensitivity (Figure \ref{sensitivity}B)
-- Hypersensitivity when multiple pathways are targetted (jackson2016?) ## Good point to use when I talk about sensitivity to multiple pathways of effect
-- HARD TO PREDICT FOR OMNIVORY, LOTS OF VARIABILITY
-- Non-additive effects
 
 
-<!-- ***Which species are most vulnerable to disturbances based on their trophic position?*** -->
+
+
+
+
+
+
+
+
+
+***Which species are most vulnerable to disturbances based on their trophic position?***
+
 Lastly, we identify species that are particularly vulnerable to disturbances at
 the motif-scale, and use these generalities as heuristics to infer species
 trophic vulnerability in complex networks.
 
+At the motif scale, predators in food chain and omnivory interactions are the
+most vulnerable by acting as both weak entry points and biotic amplifiers.
 
-Finally, species themselves are more or less sensitivity, with predators
-in omnivory and food chain both weak entry points and biotic amplifiers.
-- Trophic cascades, compensatory effects
-- @estes2011;
-- Compensatory effect suppression @thompson2018a
-- The fact that resources and predators are most affected, look at @ogorman2012
+**Notes**:
+- Species themselves are more or less sensitivite, with predators in omnivory and food chain both weak entry points and biotic amplifiers.
+  - Trophic cascades, compensatory effects
+  - @estes2011;
+  - Compensatory effect suppression @thompson2018a
+  - The fact that resources and predators are most affected, look at @ogorman2012
+  - Predators and resources
 
+At the species scale:
 
-In particular, predators in food chain and omnivory interactions are both
-weak entry points and biotic amplifiers.
-
-
-Predators and resources
-
--Groundfish stock collapse: a trophic hint?
-- Exploited species before the groundfish stock collapse of the 1990s (\\textit{e.g.} demersal feeders, Atlantic cod, Greenland halibut) are all negative weak entry points and biotic amplifiers.
-- Exploited species after the collapse are either positive weak entry points and biotic amplifiers (\\textit{e.g.} large crustaceans) or biotic sinks (\\textit{e.g.} shrimp). -->
-
-
-We then use the simulated sensitivity and amplification scores as heuristics to infer trophic vulnerability of
-species based on topology and realized pathways of effects in the food web of the Northern Gulf of St. Lawrence, Canada,
-prior to a groundfish stock collapse in the 1990s.
-We find that heavily exploited species appear to be the most vulnerable trophically,
-while fisheries transitioned to insensitive or beneficiary <!--change--> species post-collapse.
-
-
-
-
+**Notes**:
+- Groundfish stock collapse: a trophic hint?
+  - Exploited species before the groundfish stock collapse of the 1990s (\\textit{e.g.} demersal feeders, Atlantic cod, Greenland halibut) are all negative weak entry points and biotic amplifiers.
+  - Exploited species after the collapse are either positive weak entry points and biotic amplifiers (\\textit{e.g.} large crustaceans) or biotic sinks (\\textit{e.g.} shrimp).
+  - We find that heavily exploited species appear to be the most vulnerable trophically, while fisheries transitioned to insensitive or beneficiary <!--change--> species post-collapse.
+  - Using the most common offshore environmental pressure in the St. Lawrence System, food webs and simulations as heuristics, we find that [...]
+  - Using the most common environmental pressures in the Northern Gulf of St. Lawrence with the topology of a food web from the mid-1980s to identify realized pathways of effect between all 3-species combinations, and their simulated scores as heuristics, we ranked species and functional groups as a function of their overall trophic sensitivity and amplification.
 
 
 
@@ -1132,16 +1115,39 @@ while fisheries transitioned to insensitive or beneficiary <!--change--> species
 # The way forward
 <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 
+- Limits:
+  - No interaction strength
+  - No driver intensity
+  - Simple model formulations
 
-- Ignoring the importance of species interactions and pressure at bla bla
+- In the absence of appropriate knowledge, it is reasonable to first explore the simplest possibilities, which will provide novel hypotheses to test theoretically and empirically in follow-up studies [@wootton2002].
 
-- Provide novel hypothesis to test experimentally.
+- Even if our simulations are simplifications of realworld system, they still provide compelling evidence that reinforce the need to explicitely consider the complexity of ecological systems.
+- Name new hypotheses to test theoretically and empirically.
+  - a) IDEAS?
+  - b)
+  - ...
 
-- Our results reinforce that holistic approaches are necessary to properly consider the effects of environmental pressures on complex communities. Although this has been hinted at, no other study [...]
+- This framework is also so flexible that we could easily include other drivers typically found in systems, such as pollution or seal hunting.
 
-- Management
+- Spatial and temproral vulnerability of species.
+
+- Other models could be used to explicitely incorporate things like competition,
+
+- Positive effects of drivers (*e.g.* nutrients on growth, at least initially)
+
+- Management and conservation:
+  - Our results reinforce that holistic approaches are necessary to properly consider the effects of environmental pressures on complex communities. Although this has been hinted at, no other study [...]
+  - Single species may be vulnerable (or not) in different contexts, so that the structure of a network should be considered and conservation targets may change as the vulnerability of species changes in time and space as a function of network structure and driver combinations.
+
 
 \newpage
+
+
+
+
+
+
 
 <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 # Supplementary Material
@@ -1244,7 +1250,7 @@ $\begin{array} {lcl}
   \end{array}$ \\
 \hline
 \end{tabular}
-\caption{Systems of Lotka-Volterra equations used to model the effect of multiple disturbances}
+\caption{Systems of Lotka-Volterra equations used to model the effects of multiple disturbances on the six 3-species motifs selected explored.}
 \label{equations}
 \end{table}
 
@@ -1257,7 +1263,7 @@ $\begin{array} {lcl}
 \includegraphics{./Figures/ScoreTableSSL.png}
 \caption{
 Change in species and functional groups sensitivity and amplification scores
-as a function of realised pathways of effects for an empirical food web of the
+as a function of realized pathways of effects for an empirical food web of the
 Southern Gulf of St. Lawrence in the mid-1980s \cite{savenkoff2004}.
 The left-hand side of the table presents the species and functional groups,
 the drivers supposed to be affecting population level mortality,
@@ -1270,11 +1276,11 @@ pelagic high-bycatch), climate change (\textit{i.e.} ocean acidification,
 hypoxia and bottom and surface temperature anomalies), and shipping
 \cite{beauchesne2019}.
 Species position and driver effects on biological processes were used to
-identify realised pathways of effects between all 3-species combinations in
+identify realized pathways of effects between all 3-species combinations in
 the food web.
 The right-hand side of the table presents the species sensitivity and
 amplification scores, which corresponds to the sum of the simulated effects
-of all realised pathways of effects for each species and functional group
+of all realized pathways of effects for each species and functional group
 (Figure \ref{vulnerability}).
 Negative and positive sensitivity scores mean that overall pathways affecting a
 species have negative or positive effects, respectively.
@@ -1293,10 +1299,10 @@ amplifiers, respectively.
 
 \begin{figure}[H]
 \centering
-\includegraphics{./Figures/ScoreTableSSL.png}
+\includegraphics{./Figures/ScoreTableESL.png}
 \caption{
 Change in species and functional groups sensitivity and amplification scores
-as a function of realised pathways of effects for an empirical food web of the
+as a function of realized pathways of effects for an empirical food web of the
 St. Lawrence Estuary in the mid-1980s \cite{savenkoff2012}.
 The left-hand side of the table presents the species and functional groups,
 the drivers supposed to be affecting population level mortality,
@@ -1309,11 +1315,11 @@ pelagic high-bycatch), climate change (\textit{i.e.} ocean acidification,
 hypoxia and bottom and surface temperature anomalies), and shipping
 \cite{beauchesne2019}.
 Species position and driver effects on biological processes were used to
-identify realised pathways of effects between all 3-species combinations in
+identify realized pathways of effects between all 3-species combinations in
 the food web.
 The right-hand side of the table presents the species sensitivity and
 amplification scores, which corresponds to the sum of the simulated effects
-of all realised pathways of effects for each species and functional group
+of all realized pathways of effects for each species and functional group
 (Figure \ref{vulnerability}.
 Negative and positive sensitivity scores mean that overall pathways affecting a
 species have negative or positive effects, respectively.
@@ -1332,7 +1338,11 @@ amplifiers, respectively.
 \centering
 \includegraphics{./Figures/TL-OM-Realised.png}
 \caption{
-Sensitibity and amplification as a function of common network metrics.
+Species sensitivity and amplification scores as a function of network metrics:
+1) trophic level, 2) omnivory index, 3) in-degree, 4) out-degree, 5) degree and
+6) number of pathways of effect for the food webs of the Southern and Northern
+Gulf of St. Lawrence in the mid-1980s \cite{morissette2003; savenkoff2004} and
+the St. LAwrence Estuary in the 2010s \cite{savenkoff2012}.
 }
 \label{network}
 \end{figure}
