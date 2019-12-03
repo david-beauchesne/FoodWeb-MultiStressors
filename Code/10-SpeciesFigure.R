@@ -42,6 +42,6 @@ fwESL <- fw %>%
 
 
 # Figures
-scoreTable(fwSSL, output = "./Figures/ScoreTableSSL2.png")
-scoreTable(fwNSL, output = "./Figures/ScoreTableNSL2.png")
-scoreTable(fwESL, output = "./Figures/ScoreTableESL2.png")
+scoreTable(fwSSL, output = "./Figures/ScoreTableSSL.png")
+scoreTable(fwNSL, output = "./Figures/ScoreTableNSL.png")
+scoreTable(fwESL, output = "./Figures/ScoreTableESL.png")
