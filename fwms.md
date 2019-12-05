@@ -29,6 +29,7 @@ relativeurls: true
 
 <!--
 rmarkdown::render('./fwms.md')
+r -e "rmarkdown::render('./fwms.md')"
 -->
 
 ^1^Institut des sciences de la mer, Université du Québec à Rimouski, Rimouski, QC, Canada \newline
@@ -165,7 +166,10 @@ trophic level in coastal and oceanic environments by targetting large predators
 and impaired a variety of essential ecosystem services
 [@pauly1998; @myers2003; @worm2006].
 
-Rarely do drivers occur individually, and the list of potentially interacting drivers
+
+Rarely do drivers
+<!-- KC: drivers or stressors? -->
+occur individually, and the list of potentially interacting drivers
 affecting an ecosystem at any given point in time or space can be extensive [@halpern2019].
 Global changes and local human activities thus result in increasingly
 intricate environmental stress exposure regimes, compounding the pathways of
@@ -174,35 +178,38 @@ effects through which natural systems can be impacted
 For example, coral reefs contend with a suite of pressures including fishing,
 warming temperatures, ocean acidification and water quality that may
 impact species in contrasting ways [@mcclanahan2014a; @harborne2017].
-Drivers can then combine to induce complex and sometimes unpredictable effects
-[@cote2016].
-Dramatic examples include up to 100-fold increases of the sensitivity
-of certain organisms to toxicants (*e.g.* pesticides) when exposed to
-other environmental stressors [*e.g.* parasites; @liess2016]
-and the reversal of the positive effects of acidification on primary
-producer biomass by warmer waters in boreal lakes [@christensen2006].
+<!-- KC: I think you can expand on driver interactions here so the "ex-next" paragraph does not overlap I've edited the end of this paragraph and removed the ex-next" one -->
+Moreover, the concomitance of stressors may perturb ecosystems in a way that
+cannot be explained by the examination of individual pressures. Dramatic
+examples of these non-additive effects include up to 100-fold increases of the
+sensitivity of certain organisms to toxicants (*e.g.* pesticides) when exposed
+to other environmental stressors [*e.g.* parasites; @liess2016] and the reversal
+of the positive effects of acidification on primary producer biomass by warmer
+waters in boreal lakes [@christensen2006]. Such interactions between drivers is
+extremely alarming not only because of their dreadful impacts but also because,
+so far, they remain largely unpredictable [@darling2008; @cote2016] and
+pervasive [*e.g.* @crain2008; @piggott2015; @jackson2016].
+
+<!-- KC: I would define synergism and antagosnim in method if needed -->
+ <!-- Interactive drivers effects have thus been extensively investigated to uncover -->
+<!-- instances of non-additive effects, *i.e.* when the effect of multiple
+interacting drivers is greater (synergism) or lower (antagonism) than the sum
+of their individual parts. -->
+<!-- These studies have found non-additive effects of multiple drivers to be the norm
+rather than the exception across ecosystems globally -->
 <!-- The cocktail of environmental drivers impedes our ability to evaluate and
 partition the effects of interacting drivers [@canter2010; @jones2016; @sinclair2017]. -->
 
-The potential for complex interactions between drivers remains the largest
-uncertainty when studying or predicting environmental impacts
-[@darling2008; @cote2016].
-Interactive drivers effects have thus been extensively investigated to uncover
-instances of non-additive effects, *i.e.* when the effect of multiple
-interacting drivers is greater (synergism) or lower (antagonism) than the sum
-of their individual parts.
-These studies have found non-additive effects of multiple drivers to be the norm
-rather than the exception across ecosystems globally
-[*e.g.* @darling2008; @crain2008; @piggott2015; @jackson2016].
+
 
 Species sensitivity to environmental pressures can be highly variable, which
-further compounds the complexity of mutliple drivers studies.
+further compounds the complexity of multiple drivers studies.
 For example, hypoxia decreases overall habitat quality but has species-dependent
 effects, ranging from
-well-adapted  [*e.g.* northern shrimp *Pandalus borealis* and Greenland halibut *Reinhardtius hippoglossoides*; @pillet2016]
+well-adapted [*e.g.* northern shrimp *Pandalus borealis* and Greenland halibut *Reinhardtius hippoglossoides*; @pillet2016]
 to avoidance behaviour [*e.g.* Atlantic cod *Gadus morhua*; @chabot2008],
 and mortality [*e.g.* sessile benthic invertebrates; @eby2005; @belley2010].
-Moreovers, species are also embedded in a complex web
+Moreover, species are also embedded in a complex web
 of interactions that provides indirect pathways of effects through which
 pressures may permeate entire ecological communities
 [@wootton2002; @bascompte2009a; @montoya2009; @ogorman2009; @ogorman2012].
@@ -228,19 +235,25 @@ have typically focused on habitats [*e.g.* @ban2010; @halpern2019].
 This conveniently circumscribes assessments to a set of tractable units, but it
 also ignores systems complexity and aggregates biological processes operating at
 lower levels organization [@halpern2013; @giakoumi2015].
+<!--
+KC: Le bloc qui suit me semble moins évident a suivre, j'essairais de dire qu'il faut faire un framework avec toutes les complexités enoncées ci-dessus de manière plu direct. Du genre: "A framework that properly integrates ecosystem complexity (2B made more explicit) towards fine grain and dynamic identification of conservation targets is very much needed (c,est la qu'on veut aller mais on y est pas encore). Such framework should be theory-grounded, data-oriented XXX. Here we do XXX (what we do as a major step forward)"
+ -->
 Studies have also relied on the use of null models that provide little
 insights into the mechanisms underlying ecological responses to the effects
-of multiple drivers [@jackson2016; @delaender2018; @griffen2016; @schafer2018].
+of multiple drivers [@jackson2016; @delaender2018; @griffen2016; @schafer2018]
 Theoretically, species interactions have long been identified as key
 components to the sensitivity of whole networks to disturbances
 [*e.g.* @ives1995; @wootton2002; @ogorman2009; @ogorman2012],
 but the effects of multiple disturbances on networks have yet to be formally
 explored.
+<!--  -->
 
 In this paper, we address this issue by exhaustively investigating
 how multiple environmental pressures permeate complex ecological networks
 and the role of species and their interactions (*i.e.* food web topology) in
 buffering against or amplifying the effects of disturbances.
+<!-- KC: je pense que tu peux mettre de coté la fin de l'intro pour le moment
+(il y aura sûrement des commentaires des autres co-auteurs). Perso j’essaierai d'abord de mettre des questions théoriques en occultant l'aspect management et puis je dirais, en finissant, que ces questions sont d’intérêt premier pour le management. -->
 In doing so, we seek to answer questions of particular significance to management:
 1) should species interactions be considered in impact assessments,
 2) should the effects of stressors be evaluated separately or in combination,
@@ -254,7 +267,7 @@ In doing so, we seek to answer questions of particular significance to managemen
 # Of food web and multiple disturbances
 <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 <!-- ~~~~~~~~~~~~~~~~~~~~~~ -->
-## Conceptulizing disturbances
+## Conceptualizing disturbances
 <!-- ~~~~~~~~~~~~~~~~~~~~~~ -->
 <!--
 Interaction strength and type (*e.g.* omnivory vs apparent competition) have
@@ -270,10 +283,11 @@ and species interactions [*e.g.* @wootton2002; @guiden2019].
 Multiple processes may be affected by a single driver, while multiple drivers
 may target a single process.
 For instance, fishing could affect the behaviour and the mortality of cod, while
-ocean warming and ocean acidification may affect physiological processes of
+ocean warming and ocean acidification may jointly affect physiological processes of
 benthic invertebrates such as calcification rates. <!-- if citation needed: kroeker2013 -->
 <!-- KC: le dernier physiology est peut etre un peu large, utilise mortality pour coller a la suite non? -->
 <!-- DB: mieux? -->
+<!-- KC: I added jointly / just wanna emphasize that the two affect the same process -->
 The potential number of univariate and multivariate pathways of effects through
 which community dynamics may be affected is extensive and increases
 exponentially with the number of species and the number on links in a network.
@@ -318,6 +332,7 @@ ignore the benefits to community persistence provided by the trophic roles of
 individual species. Using trophic roles as targets may thus be valuable for
 community conservation [@stouffer2012].
 
+<!-- KC I wonder if the sentences below are necessary. Here we are delving into theory and this may bring some confusion even though the intention is to stress out that this is not just abstraction -->
 Managers are not only tasked with species conservation, however.
 For example, the dynamics of coexisting species is particularly important to
 practitioners whose mandate is to monitor and manage exploited populations
@@ -338,6 +353,7 @@ food webs as a function of species position in food web and realized pathways
 of effects.
 
 
+<!-- KC: pas oublier de rajouter les lettres -->
 \begin{figure}[H]
 \centering
 \includegraphics{./Figures/Concept.png}
@@ -371,7 +387,7 @@ provides an evaluation of disturbance amplification.
 
 
 <!-- ~~~~~~~~~~~~~~~~~~~~~~ -->
-## Sumulating disturbances
+## Simulating disturbances
 <!-- ~~~~~~~~~~~~~~~~~~~~~~ -->
 <!-- ~~~~~~~~~~~~~~~~~~~~~~ -->
 ### Models formulation
@@ -381,7 +397,7 @@ The dynamics of tri-trophic food chain, omnivory, exploitative and apparent
 competition motifs were modeled using Lotka-Volterra equation systems
 (Table S1).
 Two additional motifs were included as controls to test the importance of
-species interactions in mediating the effecs of disturbances, *i.e.*
+species interactions in mediating the effects of disturbances, *i.e.*
 a partially connected motifs with a disconnected species and a predator-prey
 interaction, and a fully disconnected motif with three fully independent
 species.
@@ -390,7 +406,6 @@ Resources were modeled using logistic growth equations of the form
 
 $$\frac{dX_i}{dt} = X_i(r_i - \alpha_{ii} X_i - \sum_j \alpha_{ij} X_j)\text{,}$$
 
-<!-- KC: les virgules doivent etre dedans le $$ et utilise \text{,} pour le bon format -->
 
 where $X_i$ denotes species $i$, $r_i$ is the intrinsic resource growth rate,
 $\alpha_{ii}$ is the density-dependent effect of the resource on itself and
@@ -428,6 +443,7 @@ l'affaire?
 ### Models parameterization
 <!-- ~~~~~~~~~~~~~~~~~~~~~~ -->
 
+<!-- KC: was to be constrained -> was constrained ? -->
 Model dynamics was to be constrained by species coexistence, meaning that
 abundances for all species was to be positive before and after disturbances
 were simulated.
@@ -438,9 +454,8 @@ fixed to 1 and 0.001, respectively, to bound all resource solutions.
 Competitive parameters for the exploitative competition motif were also fixed
 at 0.001, and conversion rates ($e$) were fixed to 0.5.
 We then set an interval of possible values for mortality ($m \in [0.01, 0.5]$)
-and attack ($\alpha_{ij} \in [0.0001, 0.01]$) in which we extracted 100 sets of
-initial values.
-Values were identified using a simulated annealing algorithm optimizing for
+and attack rate ($\alpha_{ij} \in [0.0001, 0.01]$) in which we extracted 100 sets of initial values.
+Values maximising stability (i.e. XXX) were identified using a simulated annealing algorithm optimizing for
 consumer abundance.
 Sets of parameters were only retained if initial abundances and abundances
 resulting from all possible pathways of effect were positive (see next section).
@@ -466,12 +481,18 @@ attack rates parameter combinations were simulated.
 <!--
 DB: Review this, it's not true, because pathways of effect are at the scale
 of the position, not the motifs
+KC: Also, instead of "were simulated" I would mention what is computed, i.e. abundance at equilibrium for the three species so the reader know what you'll
+use in the following steps
 -->
 This resulted in a total of 930 unique pathways of effects for all motifs
+<!-- KC: I wonder to what extent pathways of effects is clear at that point. May be worth saying what it is briefly (unless I missed the def above) and
+it is worth explaining here multivariate vs single pathways of effects!
+-->
 combined (food chain, competitive exploitation and apparent competition: 7
 parameters, 127 pathways of effects; omnivory: 9 parameters, 511 pathways of
 effects; partially connected 5 parameters, 31 pathways of effects;
 disconnected: 3 parameters, 7 pathways of effects).
+
 
 <!-- ~~~~~~~~~~~~~~~~~~~~~~ -->
 ## Motifs vulnerability
@@ -484,7 +505,9 @@ For all 13 unique motif positions considered and all unique pathways of effects,
 we define $s_{i,j}$ as:
 
 $$s_{i,j} = \frac{a_{i,j} - a_i}{a_i}\text{,}$$
-<!-- Should the sensitivity score be divided by the number of unitary pathways disturbed? -->
+<!-- Should the sensitivity score be divided by the number of unitary pathways disturbed?
+KC: it'd be quite arbitrary and hard to say why dividing makes the index more comparable. I like it better this was, yes there are some simulation with more pathways, may be worth mentioning this here.  
+-->
 
 where $a_i$ is the initial abundance at position $i$ without disturbance,
 and $a_{i,j}$ is the abundance at position $i$ with disturbance due to pathway
@@ -512,10 +535,10 @@ or motif positions ($\vert S_i \vert = 0%$).
 A score of trophic amplification ($A_{i,j}$) was measured to evaluate
 non-additive arising through trophic pathways of effects:
 
-$$A_{i, j} = S_{i, K_j} - \sum_{k_j \in K_j} S_{i, j}\text{,}$$
+$$A_{i, j} = S_{i, K_j} - \sum_{k \in K_j} S_{i, k}\text{,}$$
 
-where $K_j$ is a multivariate pathway of effect $j$ and $k_j$ are unitary
-pathways of effect composition $j$. The amplification score evaluates the
+where $K_j$ is a multivariate pathway of effect $j$ and $k$ denote the n unitary
+pathways included in $K_j$. The amplification score evaluates the
 deviance of a multivariate pathway of effect and the sum of the univariate
 effects composing the pathway of effect, *i.e.* the additive model.
 Thus, a value of 0 identifies a null of additive effect, a value below 0
@@ -528,12 +551,13 @@ $i$:
 
 $$A_i = \frac{1}{\vert K^{(i)} \vert} \sum_{j \in K^{(i)}} A_{i, j}$$
 
-We define biotic amplifiers as multivariate pathways of effect or motif
+We define *biotic amplifiers* as multivariate pathways of effect or motif
 positions that are more affected than expected from an additive model
 ($A_{i,j} > 0.0002$, $A_i > 0.0002$).
-Biotic buffers are multivariate pathways of effect or motif positions that
-are less afefcted than expected from an additive model
+*Biotic buffers* are multivariate pathways of effect or motif positions that
+are less affected than expected from an additive model
 ($A_{i,j} < 0.0002$, $A_i < 0.0002$).
+<!-- KC: may be worth stating that threshold are arbitrary -->
 
 
 <!-- ~~~~~~~~~~~~~~~~~~~~~~ -->
@@ -552,6 +576,7 @@ are less afefcted than expected from an additive model
 > vulnerability when actual drivers are considered. This is not so true for
 > sensitivity, but it certainly is for amplification. See Figure \ref{biplot}
 > for a biplot of topological vs realized scores.
+<!-- Given the amount of concept already introduced, I lean toward not using the topological index  -->
 
 We broadly refer to species vulnerability as the combination of trophic
 sensitivity and trophic amplification, as defined in this study.
@@ -572,7 +597,7 @@ $$A_m = \sum_i f_{m,i} A_i\text{,}$$
 KC: don't think you should use the same names I used * for te second set
 which is not the best idea I came up with recently :)
 
-DB: 1. What would be a good idea then? Plus, we have discussed this but we did
+DB: 1. What would be a good idea then? (KC: des syboles plus fancy haha ) Plus, we have discussed this but we did
 not decide on anything: should the topological sensitivities and amplification
 score really be presented? If so, I should show the biplot of the realised vs
 topological scores to show that scores change as a function of realised pathways
@@ -580,7 +605,7 @@ of effects and that while the topological score can be informative, it is
 not necessarily representative of the actual vulnerability of species in a
 system. There is a lot of variability to the effects of individual pathways of
 effects, especially for ominvory interactions. For example, the predator in
-omnivory interactions, altough on average a biotic amplifier, is characterized
+omnivory interactions, although on average a biotic amplifier, is characterized
 by numerous pathways of effects that are ultimately biotic buffers. The actual
 amplification of a species will therefore be highly dependent on the realized
 pathways of effect in the system.
@@ -598,12 +623,12 @@ based on realized pathways of effects, *i.e.* known or suspected effects of
 drivers affecting mortality, behaviour or physiology of species in empirical
 food webs:
 
-$$S^\ast_m = \sum_{j \in K^{i*}}^{position} S_{i,j}\text{,}$$
+$$S^\star_m = \sum_{j \in K^{i*}}^{position} S_{i,j}\text{,}$$
 
-$$A^\ast_m = \sum_{j \in K^{i*}}^{position} A_{i,j}\text{,}$$
+$$A^\star_m = \sum_{j \in K^{i*}}^{position} A_{i,j}\text{,}$$
 
-where $S^\ast_m$ and $A^\ast_m$ are the sensitivity and amplification scores of species
-$m$, respectively, $j$ are pathways of effect, $K^{i*}$ is the set of realised
+where $S^\star_m$ and $A^\star_m$ are the sensitivity and amplification scores of species
+$m$, respectively, $j$ are pathways of effect, $K^{i*}$ is the set of realized
 pathways of effects for position $i$, and $S_{i,j}$ and $A_{i,j}$ are the
 sensitivity and amplification scores for pathway of effect $j$ on position $i$
 
@@ -623,6 +648,7 @@ through which a species may be impacted.
 <!-- ~~~~~~~~~~~~~~~~~~~~~~ -->
 <!-- ***Version 1***: -->
 
+<!-- KC: here I would try to explain why we do this a bit more. I would mention that we apply the framework and what we are trying to show by using 3 different webs -->
 We evaluated the vulnerability of species in 3 empirical webs from the
 Southern (SSL) and Northern (NSL) Gulf, and Estuary (ESL) of St. Lawrence
 in eastern Canada [@morissette2003; @savenkoff2004; @savenkoff2012].
@@ -647,7 +673,7 @@ Northern Gulf of St. Lawrence in eastern Canada
 [@morissette2003].
 The Northern Gulf of St. Lawrence food webs correspond to the
 mid-1980s, prior to a groundfish stock collapse in the early 1990s. -->
-<!-- The food web is composed of 32 species and functional groups. <!-- add supplementary materials? --> -->
+<!-- The food web is composed of 32 species and functional groups. <!-- add supplementary materials? -->
 <!-- Food webs resolution is biased towards commercial fish for all food webs.
 In the food web, interactions are identified as a percent of species or
 functional group in the diet of another species or functional group.
@@ -668,7 +694,7 @@ Species affected by fisheries were identified using the catch data provided in
 the description of the food web models
 [@morissette2003; @savenkoff2004; @savenkoff2012].
 Geartype used was identified using landing data from logbooks from the
-Department of Fisheries and Ocean's Canada [dfo2016b].
+Department of Fisheries and Ocean's Canada [@dfo2016b].
 
 The impacts of specific drivers on species and functional groups was done
 following broad rules to simplify the number of assumptions required.
@@ -688,7 +714,7 @@ deep habitats of the St. Lawrence, while surface temperature anomalies and
 marine traffic are operating on the surface layer [@beauchesne2019].
 As such, species of functional groups in deep or surface habitats were
 considered as exposed to deep or surface drivers, respectively.
-Hypoxia was condired as impacting the physiology or behaviour of species or
+Hypoxia was considered as impacting the physiology or behaviour of species or
 functional groups with low or high mobility, respectively [@ref].
 Temperature anomalies were considered as impacting the physiology of species
 with low mobility only.
@@ -743,7 +769,7 @@ non-additive effects and are fringe biotic buffers (Figure ref\{position).
 Resources are largely weak entry points for all motifs, yet the effect are
 typically negative in food chain and omnivory interactions, and positive in
 competitive interactions (Figures \ref{vulnerability}, \ref{position}).
-Altough resources are, on average, neither biotic buffers or amplifiers,
+Although resources are, on average, neither biotic buffers or amplifiers,
 the effects of individual pathways of effects are mostly non-additive
 (Figure \ref{vulnerability}).
 The effects of disturbances on other interactions are mostly additive.
@@ -817,7 +843,7 @@ Position amplification is the mean deviance of a multivariate pathway of effect 
 the sum of the univariate effects composing the pathway of effect, \textit{i.e.} the
 additive model, for all multivariate pathways of effect on a motif position.
 Motif positions identified as biotic buffers (\textit{i.e.}
-synergistic effect of disturbances) and biotic buffers (\textit{i.e.}
+synergistic effect of disturbances) and biotic amplifiers (\textit{i.e.}
 antagonistic effect of disturbances) are identified by the red regions.
 }
 \label{position}
@@ -908,7 +934,7 @@ position (Figure \ref{scoreTable}).
 drivers and food web topology influence species vulnerability.  -->
 Focusing on cod, shrimp and large crustaceans, 3 species with contrasting
 vulnerabilities in the St. Lawrence, we see that different driver combinations
-and food web topologies lead to differet species vulnerability
+and food web topologies lead to different species vulnerability
 (Figure \ref{species}).
 Combinations of drivers may increase or dampen over effects on species
 sensitivity.
@@ -923,7 +949,7 @@ not lead to non-additive effects (Figure \ref{species}).
 Food web topology also impacts a species vulnerability.
 Based on topology, cod seem more vulnerable in the Northern Gulf of St. Lawrence
 than in the Estuary and Southern Gulf (Figure \ref{species}).
-Shrimp and crustaceans, meanwhile, are more sensitive in the Estuary, altough
+Shrimp and crustaceans, meanwhile, are more sensitive in the Estuary, although
 amplification is more important in the Gulf (Figure \ref{species}).
 Contrasts between food webs may even lead to flipped species vulnerabilities.
 Large crustaceans seem to be negative entry points and biotic buffers in the
@@ -977,11 +1003,11 @@ amplifiers, respectively.
 \centering
 \includegraphics{./Figures/species.png}
 \caption{
-Realized sensitivity ($S^\ast_m$) and amplification ($A^\ast_m$) scores for
+Realized sensitivity ($S^\star_m$) and amplification ($A^\star_m$) scores for
 Atlantic cod (\textit{Gadus morhua}), shrimp (\textit{Pandalus borealis}) and
 large crustaceans (\textit{Crustacea}), 3 species or functional groups part of
 the food webs of the Southern and Northern Gulf of St. Lawrence in the mid-1980s
-\cite{morissette2003; savenkoff2004} and the St. LAwrence Estuary \cite{savenkoff2012}.
+\cite{morissette2003; savenkoff2004} and the St. Lawrence Estuary \cite{savenkoff2012}.
 Scores are presented when groups of drivers are considered individually and in
 combination.
 }
@@ -992,8 +1018,8 @@ combination.
 \centering
 \includegraphics{./Figures/Biplots.png}
 \caption{
-Biplot of the realized and topological species sensitivity ($S^\ast_m, S_m$)
-and amplification ($A^\ast_m, A_m$) scores in the food webs of the Southern and
+Biplot of the realized and topological species sensitivity ($S^\star_m, S_m$)
+and amplification ($A^\star_m, A_m$) scores in the food webs of the Southern and
 Northern Gulf of St. Lawrence in the mid-1980s \cite{morissette2003; savenkoff2004}
 and the St. LAwrence Estuary \cite{savenkoff2012}.
 }
@@ -1011,16 +1037,18 @@ and the St. LAwrence Estuary \cite{savenkoff2012}.
 
 In conceptualizing the effects of multiple environmental pressures on food webs
 and the role of species and their interactions in spreading disturbances, we
-sought to use well-established ecological theory to answer questions of
-particular relevance to management.
+sought to use well-established ecological theory to answer questions of particular relevance to management.
+
+<!-- KC: Je commencerai par redire le pourquoi de la démarche => intégrer la complexity et mettre en avant les points forts -->
 
 
-
-
+<!-- KC: J'aime les 3 questions posées - clair pertinentes et on a de l'eau à apporter au moulin  -->
 
 ***Should species interactions be considered in impact assessments?***
 
-We first find, as expected, that species interactions should be explicitely
+<!--  -->
+
+We first find, as expected, that species interactions should be explicitly
 considered in impact assessments, as they greatly influence trophic
 vulnerability to the effects of disturbances.
 This supports longstanding evidence that interactions play
@@ -1050,8 +1078,7 @@ context of species interactions when studying population dynamics.
 **Notes**:
 
 - KEV: Importance of interaction paramters (McCann, from Kev, about reactivity(?) of interaction paramters in Lotka-Voltera models)
-
-
+<!-- Je le ferai asap!  -->
 
 
 
@@ -1092,7 +1119,7 @@ At the motif scale, predators in food chain and omnivory interactions are the
 most vulnerable by acting as both weak entry points and biotic amplifiers.
 
 **Notes**:
-- Species themselves are more or less sensitivite, with predators in omnivory and food chain both weak entry points and biotic amplifiers.
+- Species themselves are more or less sensitive, with predators in omnivory and food chain both weak entry points and biotic amplifiers.
   - Trophic cascades, compensatory effects
   - @estes2011;
   - Compensatory effect suppression @thompson2018a
@@ -1115,14 +1142,17 @@ At the species scale:
 # The way forward
 <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 
+
 - Limits:
+<!-- KC: et dans le meme temps se sont des pistes en théories à explorer -->
   - No interaction strength
   - No driver intensity
   - Simple model formulations
 
+
 - In the absence of appropriate knowledge, it is reasonable to first explore the simplest possibilities, which will provide novel hypotheses to test theoretically and empirically in follow-up studies [@wootton2002].
 
-- Even if our simulations are simplifications of realworld system, they still provide compelling evidence that reinforce the need to explicitely consider the complexity of ecological systems.
+- Even if our simulations are simplifications of realworld system, they still provide compelling evidence that reinforce the need to explicitly consider the complexity of ecological systems.
 - Name new hypotheses to test theoretically and empirically.
   - a) IDEAS?
   - b)
@@ -1132,7 +1162,7 @@ At the species scale:
 
 - Spatial and temproral vulnerability of species.
 
-- Other models could be used to explicitely incorporate things like competition,
+- Other models could be used to explicitly incorporate things like competition,
 
 - Positive effects of drivers (*e.g.* nutrients on growth, at least initially)
 
