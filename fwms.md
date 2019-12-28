@@ -428,7 +428,7 @@ at 0.001, and conversion rates ($e$) were fixed to 0.5.
 We then set an interval of possible values for mortality ($m \in [0.01, 0.5]$)
 and attack rate ($\alpha_{ij} \in [0.0001, 0.01]$) in which we extracted 100 sets of initial values.
 Values maximising stability (i.e. XXX) were identified using a simulated annealing algorithm optimizing for
-consumer abundance.
+consumer abundance. <!-- Remodify this, this is not true -->
 Sets of parameters were only retained if initial abundances and abundances
 resulting from all possible pathways of effect were positive (see next section).
 
@@ -444,7 +444,7 @@ Those parameters were used as they can be linked to disturbance effects
 on common biological processes affected by disturbances, *i.e.* mortality,
 physiology and behaviour.
 
-For each motif, all possible mortality, resource growth, conversion and
+For each motif position, all possible mortality, resource growth, conversion and
 attack rates parameter combinations were simulated.
 <!--
 DB: Review this, it's not true, because pathways of effect are at the scale
@@ -452,14 +452,11 @@ of the position, not the motifs
 KC: Also, instead of "were simulated" I would mention what is computed, i.e. abundance at equilibrium for the three species so the reader know what you'll
 use in the following steps
 -->
-This resulted in a total of 930 unique pathways of effects for all motifs
+This resulted in a total of 930 unique pathways of effects for all motif positions
 <!-- KC: I wonder to what extent pathways of effects is clear at that point. May be worth saying what it is briefly (unless I missed the def above) and
 it is worth explaining here multivariate vs single pathways of effects!
 -->
-combined (food chain, competitive exploitation and apparent competition: 7
-parameters, 127 pathways of effects; omnivory: 9 parameters, 511 pathways of
-effects; partially connected 5 parameters, 31 pathways of effects;
-disconnected: 3 parameters, 7 pathways of effects).
+combined (food chain, competitive exploitation and apparent competition motif positions: 7 parameters, 127 pathways of effects; omnivory motif positions: 9 parameters, 511 pathways of effects; partially connected motif positions: 5 parameters, 31 pathways of effects; disconnected motif position: 3 parameters, 7 pathways of effects).
 
 
 <!-- ~~~~~~~~~~~~~~~~~~~~~~ -->
