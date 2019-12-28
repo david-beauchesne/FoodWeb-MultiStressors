@@ -78,7 +78,7 @@ layout(mat, widths = c(.05, 1, 1,.05), heights = c(.15, 1.4, 1, 1, 1, .15))
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #
 par(mar = c(0, 0, 0, 1), family = 'serif')
 plot0(x = c(-.62, .82), y = c(-.75, 1.9))
-text(x = -.64, y = 1.82, labels = "NETWORK", pos = 4, cex = cx_title)
+text(x = -.64, y = 1.82, labels = "A) Network", pos = 4, cex = cx_title, font = 2)
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #
 # Food web
@@ -136,15 +136,19 @@ pchImage(x = .4, -.37, obj = cap, cex.x = .8, cex.y = 1, col = colB[1])
 # Disturbances & dynamics
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #
 
-load('./Data/ParamInit/omParam.RData')
-omParam <- as.data.frame(omParam)
-uid = 88
+# load('./Data/ParamInit/omParam.RData')
+# omParam <- as.data.frame(omParam)
+# uid = 88
 lwdD <- .75
 
+# # initial state
+# init <- c(x = omParam$x[uid],
+#           y = omParam$y[uid],
+#           z = omParam$z[uid])
 # initial state
-init <- c(x = omParam$x[uid],
-          y = omParam$y[uid],
-          z = omParam$z[uid])
+init <- c(x = 497.6478,
+          y = 259.8222,
+          z = 155.5680)
 
 # times
 times <- seq(0, 50, by = 1)
@@ -158,17 +162,28 @@ deriv <- function(t, state, pars) {
   })
 }
 
+# # Parameters
+# p <- c(r = 1.02,
+#    alpha = 0.0009,
+#     beta = omParam$beta[uid],
+#    delta = omParam$delta[uid],
+#    gamma = omParam$gamma[uid],
+#       mu = .5,
+#       nu = .5,
+#    omega = .5,
+#      m_y = omParam$m_y[uid],
+#      m_z = omParam$m_z[uid])
 # Parameters
-p <- c(r = 1.02,
-   alpha = 0.0009,
-    beta = omParam$beta[uid],
-   delta = omParam$delta[uid],
-   gamma = omParam$gamma[uid],
-      mu = .5,
-      nu = .5,
-   omega = .5,
-     m_y = omParam$m_y[uid],
-     m_z = omParam$m_z[uid])
+p <- c(r = 1.0200000000,
+   alpha = 0.0009000000,
+    beta = 0.0017214390,
+   delta = 0.0026447249,
+   gamma = 0.0003540844,
+      mu = 0.5000000000,
+      nu = 0.5000000000,
+   omega = 0.5000000000,
+     m_y = 0.0169005008,
+     m_z = 0.4316837251)
 
 plotDynamic <- function() {
   plot0(x = c(-3.5,60), y = c(-60,550))
@@ -215,26 +230,27 @@ res3 <- ode(init, times, deriv, p3)
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #
 par(mar = c(.5, .5, 0, 0))
 plotDynamic()
-box2(side = '234', which = 'figure', lty = 2, col = colP[1])
+box2(side = '234', which = 'figure', lty = 2, col = colP[1], lwd = lwdD)
 
 # Delta abundances
-lines(x = c(5,55), y = rep(init['x'],2), lty = 4, col = '#000000aa', lwd = .75)
+lines(x = c(5,55), y = rep(init['x'],2), lty = 4, col = '#000000aa', lwd = lwdD)
 xI <- init['x']
 xE <- res1[50,'x']
 xM <- mean(c(xI,xE))
-arrows(55, xM+(xI-xM)*.35, 55, xI-8.5, length = .025, code = 2, xpd = TRUE)
-arrows(55, xM-(xI-xM)*.35, 55, xE+8.5, length = .025, code = 2, xpd = TRUE)
-text(x = 55, y = xM, adj = c(.5,.5), labels = TeX('$\\Delta a$'), cex = .55)
+arrows(55, xM+(xI-xM)*.35, 55, xI-8.5, length = .025, code = 2, xpd = TRUE, lwd = lwdD)
+arrows(55, xM-(xI-xM)*.35, 55, xE+8.5, length = .025, code = 2, xpd = TRUE, lwd = lwdD)
+text(x = 55, y = xM, adj = c(.5,.5), labels = TeX('Sensitivity'), cex = .55)
+# text(x = 55, y = xM, adj = c(.5,.5), labels = TeX('$\\Delta a$'), cex = .55)
 
 # Disturbances
-pchImage(x = 10, xI+50, obj = DD, cex.x = .4, cex.y = .75)#, col = colB[1])
+pchImage(x = 10, xI+50, obj = DD, cex.x = .4, cex.y = 1)#, col = colB[1])
 
 
 # Population dynamics
 for (i in 2:4) lines(x = c(5:55), y = res1[,i], lwd = lwdD)
-pchImage(x = 1.5, 110, obj = bew, cex.x = .8, cex.y = .9)
-pchImage(x = 1.5, 220, obj = cod, cex.x = .7, cex.y = .8, col = colM[1])
-pchImage(x = 1.5, 460, obj = cap, cex.x = .5, cex.y = .7, col = colM[1])
+pchImage(x = 1.5, 110, obj = bew, cex.x = .8, cex.y = 1)
+pchImage(x = 1.5, 220, obj = cod, cex.x = .7, cex.y = .9, col = colM[1])
+pchImage(x = 1.5, 460, obj = cap, cex.x = .5, cex.y = .9, col = colM[1])
 
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #
@@ -243,15 +259,15 @@ pchImage(x = 1.5, 460, obj = cap, cex.x = .5, cex.y = .7, col = colM[1])
 # Plot
 par(mar = c(.5, .5, 0, 0))
 plotDynamic()
-box2(side = '24', which = 'figure', lty = 2, col = colP[1])
+box2(side = '24', which = 'figure', lty = 2, col = colP[1], lwd = lwdD)
 
 # Disturbances
-pchImage(x = 10, xI+50, obj = Shipping, cex.x = .4, cex.y = .75)#, col = colB[1])
+pchImage(x = 10, xI+50, obj = Shipping, cex.x = .4, cex.y = 1)#, col = colB[1])
 
 for (i in 2:4) lines(x = c(5:55), y = res2[,i], lwd = lwdD)
-pchImage(x = 1.5, 110, obj = bew, cex.x = .8, cex.y = .9, col = colB[1])
-pchImage(x = 1.5, 220, obj = cod, cex.x = .7, cex.y = .8)
-pchImage(x = 1.5, 460, obj = cap, cex.x = .5, cex.y = .7)
+pchImage(x = 1.5, 110, obj = bew, cex.x = .8, cex.y = 1, col = colB[1])
+pchImage(x = 1.5, 220, obj = cod, cex.x = .7, cex.y = .9)
+pchImage(x = 1.5, 460, obj = cap, cex.x = .5, cex.y = .9)
 
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #
@@ -260,20 +276,19 @@ pchImage(x = 1.5, 460, obj = cap, cex.x = .5, cex.y = .7)
 # Plot
 par(mar = c(.5, .5, 0, 0))
 plotDynamic()
-box2(side = '124', which = 'figure', lty = 2, col = colP[1])
+box2(side = '124', which = 'figure', lty = 2, col = colP[1], lwd = lwdD)
 
 # Disturbances
 #Joint
 pchImage(x = 10, xI+50, obj = DD, cex.x = .4, cex.y = 1)#, col = colB[1])
 pchImage(x = 15, xI+50, obj = Shipping, cex.x = .4, cex.y = 1)#, col = colB[1])
-# text(x = 11.75, y = xI+50, adj = c(.5,.5), labels = ',')
-lines(x = c(18,23), y = rep(xI+45,2))
+lines(x = c(18,23), y = rep(xI+45,2), lwd = lwdD)
 text(x = 26, y = xI+50, adj = c(0,.5), labels = 'Full model', cex = .55)
 # Additive
 pchImage(x = 10, xI-15, obj = DD, cex.x = .4, cex.y = 1)#, col = colB[1])
 pchImage(x = 15, xI-15, obj = Shipping, cex.x = .4, cex.y = 1)#, col = colB[1])
 text(x = 12.65, y = xI-15, adj = c(.5,.5), labels = '+', cex = .95)
-lines(x = c(18,23), y = rep(xI-20,2), lty = 3)
+lines(x = c(18,23), y = rep(xI-20,2), lty = 3, lwd = lwdD)
 text(x = 26, y = xI-15, adj = c(0,.5), labels = 'Additive model', cex = .55)
 
 
@@ -286,32 +301,30 @@ envelop(x = 5:55, upper = init['z']-((init['z']-res1[,'z'])+(init['z']-res2[,'z'
 lines(x = c(5:55), y = res3[,'x'], lwd = lwdD)
 lines(x = c(5:55), y = res3[,'y'], lwd = lwdD)
 lines(x = c(5:55), y = res3[,'z'], lwd = lwdD)
-pchImage(x = 1.5, 110, obj = bew, cex.x = .8, cex.y = .9, col = colB[1])
-pchImage(x = 1.5, 220, obj = cod, cex.x = .7, cex.y = .8, col = colM[1])
-pchImage(x = 1.5, 460, obj = cap, cex.x = .5, cex.y = .7, col = colM[1])
+pchImage(x = 1.5, 110, obj = bew, cex.x = .8, cex.y = 1, col = colB[1])
+pchImage(x = 1.5, 220, obj = cod, cex.x = .7, cex.y = .9, col = colM[1])
+pchImage(x = 1.5, 460, obj = cap, cex.x = .5, cex.y = .9, col = colM[1])
 
 # Additive model
-lines(x = c(5:55), y = init['x']-((init['x']-res1[,'x'])+(init['x']-res2[,'x'])), lwd = lwdD, lty = 3)
-lines(x = c(5:55), y = init['y']-((init['y']-res1[,'y'])+(init['y']-res2[,'y'])), lwd = lwdD, lty = 3)
-lines(x = c(5:55), y = init['z']-((init['z']-res1[,'z'])+(init['z']-res2[,'z'])), lwd = lwdD, lty = 3)
+lines(x = c(5:55), y = init['x']-((init['x']-res1[,'x'])+(init['x']-res2[,'x'])), lwd = .4, lty = 3)
+lines(x = c(5:55), y = init['y']-((init['y']-res1[,'y'])+(init['y']-res2[,'y'])), lwd = .4, lty = 3)
+lines(x = c(5:55), y = init['z']-((init['z']-res1[,'z'])+(init['z']-res2[,'z'])), lwd = .4, lty = 3)
 
 # Non-additive
 xI <- init['x']-((init['x']-res1[,'x'])+(init['x']-res2[,'x']))[50]
 xE <- res3[50,'x']
 xM <- mean(c(xI,xE))
-text(x = 54, y = xM, labels = 'Synergy', cex = .55, adj = c(1,.5))
-
-
-
+text(x = 54, y = xM, labels = 'Amplification', cex = .55, adj = c(1,.5))
+# text(x = 54, y = xM, labels = 'Synergy', cex = .55, adj = c(1,.5))
 
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #
 # Motifs
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #
 par(mar = c(0, 0, 0, 0))
-plot0(x = c(-.75, .8), y = c(-2, -.9))
-text(x = -.75, y = -.9, labels = "MOTIFS", pos = 4, cex = cx_title)
-text(x = -.75, y = -1.95, labels = "DYNAMICS", pos = 4, cex = cx_title)
+plot0(x = c(-.75, .8), y = c(-2.1, -.8))
+text(x = -.75, y = -.9, labels = "B) Motifs", pos = 4, cex = cx_title, font = 2)
+text(x = -.75, y = -2.05, labels = "C) Dynamics", pos = 4, cex = cx_title, font = 2)
 # polygon(x = c(.3,.3,.7,.7), c(.52,.80,.80,.52), lty = 2)
 
 # polygon(x = c(-.8,-.8,.8,.8), c(-1,-1.8,-1.8,-1), lty = 2)
@@ -320,40 +333,40 @@ text(x = -.75, y = -1.95, labels = "DYNAMICS", pos = 4, cex = cx_title)
 cxy1 <- .9
 # text(-.6, -.95, labels = "Motifs involving", cex = 2.8)
 # pchImage(x = -.4, -.9, obj = cod, cex.x = .7, cex.y = cxy1, col = colM[1])
-lines(x = c(-.5725, -.6575), y = c(-1.6, -1.225), col = colB[1])
-lines(x = c(-.5275, -.4475), y = c(-1.6, -1.225))
+lines(x = c(-.5725, -.6575), y = c(-1.6, -1.225), col = colB[1], lwd = lwdD)
+lines(x = c(-.5275, -.4475), y = c(-1.6, -1.225), lwd = lwdD)
 pchImage(x = -.68, -1.125, obj = hump, cex.x = .8, cex.y = cxy1, col = colB[1])
 pchImage(x = -.42, -1.1, obj = cod, cex.x = .8, cex.y = cxy1, col = colM[1])
 circles(-.42, -1.1, .08)
 pchImage(x = -.55, -1.7, obj = cap, cex.x = .6, cex.y = cxy1, col = colM[1])
 
 # Motif 2
-lines(x = c(-.15, -.15), y = c(-1.2, -1.3))
-lines(x = c(-.15, -.15), y = c(-1.5, -1.6))
+lines(x = c(-.15, -.15), y = c(-1.2, -1.3), lwd = lwdD)
+lines(x = c(-.15, -.15), y = c(-1.5, -1.6), lwd = lwdD)
 pchImage(x = -.15, -1.1, obj = cod, cex.x = .8, cex.y = cxy1, col = colM[1])
-circles(-.15, -1.1, .08)
+circles(-.15, -1.1, .08, lwd = lwdD)
 pchImage(x = -.15, -1.4, obj = cap, cex.x = .8, cex.y = cxy1, col = colM[1])
 pchImage(x = -.15, -1.7, obj = kri, cex.x = .5, cex.y = cxy1)#, col = colP[1])
 
 # Motif 3
-lines(x = c(.15, .15), y = c(-1.2, -1.3))
-lines(x = c(.15, .15), y = c(-1.5, -1.6), col = colP[1])
+lines(x = c(.15, .15), y = c(-1.2, -1.3), lwd = lwdD)
+lines(x = c(.15, .15), y = c(-1.5, -1.6), col = colP[1], lwd = lwdD)
 pchImage(x = .15, -1.1, obj = cod, cex.x = .8, cex.y = 1, col = colM[1])
-circles(.15, -1.1, .08)
+circles(.15, -1.1, .08, lwd = lwdD)
 pchImage(x = .15, -1.4, obj = cap, cex.x = .8, cex.y = 1, col = colM[1])
 pchImage(x = .15, -1.7, obj = cop, cex.x = .6, cex.y = 1, col = colP[1])
 
 # Motif 4
-lines(x = c(.45, .45), y = c(-1.2, -1.6), col = colB[1])
-lines(x = c(.51, .6), y = c(-1.17, -1.27), col = colB[1])
-lines(x = c(.6075, .4875), y = c(-1.41, -1.63))
+lines(x = c(.45, .45), y = c(-1.2, -1.6), col = colB[1], lwd = lwdD)
+lines(x = c(.51, .6), y = c(-1.17, -1.27), col = colB[1], lwd = lwdD)
+lines(x = c(.6075, .4875), y = c(-1.41, -1.63), lwd = lwdD)
 pchImage(x = .45, -1.1, obj = bew, cex.x = .8, cex.y = 1, col = colB[1])
 pchImage(x = .65, -1.33, obj = cod, cex.x = .8, cex.y = 1, col = colM[1])
-circles(.65, -1.33, .08)
+circles(.65, -1.33, .08, lwd = lwdD)
 pchImage(x = .45, -1.7, obj = cap, cex.x = .6, cex.y = 1, col = colM[1])
 
 # Emphasis
-polygon(x = c(.35,.35,.75,.75), y = c(-1.77,-1.025,-1.025,-1.77), col = '#00000000', border = colP[1], lty = 2)
+polygon(x = c(.35,.35,.75,.75), y = c(-1.77,-1.025,-1.025,-1.77), col = '#00000000', border = colP[1], lty = 2, lwd = lwdD)
 
 
 
