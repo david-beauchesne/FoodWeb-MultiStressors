@@ -4,7 +4,8 @@ load('./Data/DisturbancesAll.RData')
 
 # Score position
 sensitivity <- int %>%
-               mutate(sensitivity = (int$delta) * 100) %>%
+               # mutate(sensitivity = (int$delta) * 100) %>%
+               mutate(sensitivity = abs((int$delta) * 100)) %>%
                group_by(position) %>%
                summarise(Med = median(sensitivity),
                          Mean = mean(sensitivity),
@@ -20,7 +21,8 @@ load('./Data/AdditiveAll.RData')
 
 # Score position
 amplification <- intAdd %>%
-                 mutate(amplification = (Int * 100)) %>%
+                 # mutate(amplification = (Int * 100)) %>%
+                 mutate(amplification = abs(Int * 100)) %>%
                  group_by(position) %>%
                  summarise(Med = median(amplification),
                            Mean = mean(amplification),
