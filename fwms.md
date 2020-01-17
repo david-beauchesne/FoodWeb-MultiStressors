@@ -455,6 +455,7 @@ use in the following steps
 This resulted in a total of 930 unique pathways of effects for all motif positions
 <!-- KC: I wonder to what extent pathways of effects is clear at that point. May be worth saying what it is briefly (unless I missed the def above) and
 it is worth explaining here multivariate vs single pathways of effects!
+DB: Needs to be much better explained here, its crucial to the paper.
 -->
 combined (food chain, competitive exploitation and apparent competition motif positions: 7 parameters, 127 pathways of effects; omnivory motif positions: 9 parameters, 511 pathways of effects; partially connected motif positions: 5 parameters, 31 pathways of effects; disconnected motif position: 3 parameters, 7 pathways of effects).
 
@@ -763,6 +764,33 @@ regions, respectively.
 
 \begin{figure}[H]
 \centering
+\includegraphics[width=0.7\columnwidth]{./Figures/vulnerability2.png}
+\caption{
+Ranking of trophic sensitivity ($S_{i,j}$) and amplification ($A_{i,j}$) scores for all univariate
+and multivariate pathways of effects on all 13 unique motif positions in
+the three-species motifs explored, \textit{i.e.} tri-trophic food chain, omnivory,
+exploitative competition, apparent competition, partially connected and
+disconnected.
+Trophic sensitivity is the variation in species initial abundance at equilibrium
+and the abundance after disturbances are simulated through univariate or
+multivariate pathways of effect.
+Pathways of effects identified as weak entry points (\textit{i.e.}
+highly sensitive to disturbances) and biotic sinks (\textit{i.e.} insensitive
+to disturbances) are identified by red and blue regions, respectively.
+Trophic amplification is the deviance of a multivariate pathway of effect and
+the sum of the univariate effects composing the pathway of effect, \textit{i.e.} the
+additive model.
+Pathways of effect identified as biotic buffers (\textit{i.e.}
+synergistic effect of disturbances) and biotic buffers (\textit{i.e.}
+antagonistic effect of disturbances) are identified by the red and blue
+regions, respectively.
+}
+\label{vulnerability2}
+\end{figure}
+
+
+\begin{figure}[H]
+\centering
 \includegraphics{./Figures/positionVulnerability.png}
 \caption{
 Ranking of 13 motif positions as a function of position sensitivity ($S_i$)
@@ -988,6 +1016,8 @@ Structure:
 
 <!-- KC: Je commencerai par redire le pourquoi de la démarche => intégrer la complexity et mettre en avant les points forts -->
 
+Start with a bit more context
+
 In this paper, we conceptualized how multiple sources of environmental pressure may permeate entire ecological communities by way of species interactions and hypothesized that the position of a species in a food web and the types of interactions it is involved in would dictate its sensitivity to and amplification of pressures. To do so, we simulated disturbances on the dynamics of the four most common 3-species motifs (*i.e.* tri-trophic food chain, omnivory, competitive and apparent competition) using Lotka-Volterra models. Disturbances were simulated numerically through all possible univariate and multivariate pathways of effects targetting species mortality, growth, attack and conversion rates. Numerical simulations were then used as heuristics to infer species vulnerability in empirical food webs on the basis of their trophic position and local sources of stress.
 
 We found that, indeed, the vulnerability of species to multiple disturbances is largely influenced by the types of interactions and the trophic position of a species. In particular, predators involved in omnivory and food chain interactions are highly vulnerable to multiple disturbances by acting as both weak entry points and biotic amplifiers. This observation scales up to empirical food webs, in which predators are the most vulnerable species, and they need not be directly impacted to be highly vulnerable to environmental pressures.
@@ -999,6 +1029,8 @@ In conceptualizing the effects of multiple disturbances on food webs, we sought 
 ## 1. Should species interactions be considered in impact assessments? {-}
 
 We find, as expected, that species interactions should be explicitly considered in impact assessments, as they drive the vulnerability of species to the effects of disturbances. This supports longstanding evidence that interactions play a crucial role in spreading the effects of individual disturbances through food webs [*e.g.* @menge1995; @wootton1993; @yodzis2000; @wootton2002], and unsurprisingly extends this conclusion to multiple  disturbances. <!-- Hypersensitivity (Jackson2016; thompson2018a) -->
+
+<!-- Maybe also cite experimental evidence with ogorman and liguinasbla -->
 
 <!-- First (and only?) paragragh -->
 We further uncover that species vulnerability is modulated by interaction type.
@@ -1012,7 +1044,7 @@ Omnivory and food chains are particularly responsive to disturbances, while expl
 ## 2. Should joint stressors assessments be prioritized? {-}
 
 <!-- First paragragh -->
-We find that the effects of multiple disturbances should be considered in combination, there non-additive effects arising through species interactions are prevalent. Omnivory interactions and food chains top predators in particular are susceptible to non-additive effects, with little indication as to whether a pathway of effect will result in antagonistic or synergistic effects.
+We find that the effects of multiple disturbances should be considered in combination, as non-additive effects arising through species interactions are prevalent. Omnivory interactions and the top predators in food chains in particular are susceptible to non-additive effects, with little indication as to whether an individual pathway of effect will result in antagonistic or synergistic effects.
 
 This suggests that food webs with high proportions of omnivory and food chain motifs might be particularly prone to ecological surprises.
 
@@ -1042,7 +1074,7 @@ Resources negatively affected in food chain and omnivory, positively affected in
 
 At the motif scale, predators in food chain and omnivory interactions are the most vulnerable species, by acting as both weak entry points and biotic amplifiers. Talk about predators and their vulnerability [...].
 
-All species involved in omnivory or food chains are however susceptible to disturbances, with impact on resources mirroring to a lesser degree those on predators, while mesopredators tend to be positively affected by disturbances. This is likely due to trophic cascades [*e.g.* @estes2010]
+All species involved in omnivory or food chains are however susceptible to disturbances, with impact on resources mirroring to a lesser degree those on predators, while mesopredators tend to be positively affected by disturbances. This is likely due to trophic cascades [*e.g.* @estes2011]
 <!-- The fact that resources and predators are most affected, look at @ogorman2012 -->
 
 In contrast, exploitative and apparent competition then to be [...].
@@ -1058,21 +1090,20 @@ This led to a shift in fisheries activities towards large crustaceans and shrimp
 
 
 
-At the species scale:
+<!-- At the species scale:
 
 **Notes**:
 - Groundfish stock collapse: a trophic hint?
   - Exploited species before the groundfish stock collapse of the 1990s (\\textit{e.g.} demersal feeders, Atlantic cod, Greenland halibut) are all negative weak entry points and biotic amplifiers.
   - Exploited species after the collapse are either positive weak entry points and biotic amplifiers (\\textit{e.g.} large crustaceans) or biotic sinks (\\textit{e.g.} shrimp).
-  - We find that heavily exploited species appear to be the most vulnerable trophically, while fisheries transitioned to insensitive or beneficiary <!--change--> species post-collapse.
+  - We find that heavily exploited species appear to be the most vulnerable trophically, while fisheries transitioned to insensitive or beneficiary species post-collapse.
   - Using the most common offshore environmental pressure in the St. Lawrence System, food webs and simulations as heuristics, we find that [...]
-  - Using the most common environmental pressures in the Northern Gulf of St. Lawrence with the topology of a food web from the mid-1980s to identify realized pathways of effect between all 3-species combinations, and their simulated scores as heuristics, we ranked species and functional groups as a function of their overall trophic sensitivity and amplification.
+  - Using the most common environmental pressures in the Northern Gulf of St. Lawrence with the topology of a food web from the mid-1980s to identify realized pathways of effect between all 3-species combinations, and their simulated scores as heuristics, we ranked species and functional groups as a function of their overall trophic sensitivity and amplification. -->
 
 
 
 
-### Perspectives (last paragraph(s) 1-2)
-- Limits:
+- Limits & opportunities:
 <!-- KC: et dans le meme temps se sont des pistes en théories à explorer -->
   - No interaction strength
   - No driver intensity
@@ -1114,146 +1145,17 @@ At the species scale:
 
 
 
-We then use the simulated sensitivity and amplification scores as heuristics to infer trophic vulnerability of
+<!-- We then use the simulated sensitivity and amplification scores as heuristics to infer trophic vulnerability of
 species based on topology and realized pathways of effects in the food web of the Northern Gulf of St. Lawrence, Canada,
 prior to a groundfish stock collapse in the 1990s.
 We find that heavily exploited species appear to be the most vulnerable trophically,
-while fisheries transitioned to insensitive or beneficiary <!--change--> species post-collapse.
+while fisheries transitioned to insensitive or beneficiary species post-collapse. -->
 
 
 
-Context dependent and we would do well in seeking no universal rule to identify the most vulnerable species in a system.
+<!-- Context dependent and we would do well in seeking no universal rule to identify the most vulnerable species in a system. -->
 
 <!-- Considering the general lack of mechanistic understanding, our approach is head and shoulders above the fray. (pompous, won't stay in of course!) -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
