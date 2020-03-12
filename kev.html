@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
 
 <head>
 
 <meta charset="utf-8" />
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="generator" content="pandoc" />
 <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
@@ -1404,6 +1403,7 @@ summary {
   border: none;
   display: inline-block;
   border-radius: 4px;
+  background-color: transparent;
 }
 
 .tabset-dropdown > .nav-tabs.nav-tabs-open > li {
@@ -1432,6 +1432,12 @@ summary {
 }
 }
 
+@media print {
+.toc-content {
+  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
+  float: right;
+}
+}
 
 .toc-content {
   padding-left: 30px;
@@ -1545,6 +1551,10 @@ div.tocify {
 <div id="position-probability" class="section level2">
 <h2>Position probability</h2>
 <p><span class="math display">\[P(O_i) = P(&quot;occurrence species in motif&quot;)P(&quot;interactions&quot;)\]</span></p>
+</div>
+<div id="amplification-variance-style" class="section level2">
+<h2>Amplification variance style</h2>
+<p><span class="math display">\[A_{m, K_j} = \sum_{k \in K_j} \left(S_{m, k} - \frac{1}{|K_j|} S_{m, K_j} \right)^2\]</span></p>
 </div>
 </div>
 
