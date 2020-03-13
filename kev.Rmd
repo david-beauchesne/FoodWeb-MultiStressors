@@ -57,3 +57,9 @@ $$S_i = \frac{1}{\text{Card}(K^i)}\sum_{j \in K^i} S_{i, j}$$
 $$P(O_i) = P("occurrence species in motif")P("interactions")$$
 
 
+
+## Amplification variance style
+
+
+$$A_{m, K_j} = \sum_{k \in K_j} \left(S_{m, k} - \frac{1}{|K_j|} S_{m, K_j} \right)^2$$
+
