@@ -1,5 +1,6 @@
 # Check initial parameters and remove those that do not provide
 # positive abundances for all species after disturbances are applied
+# To run after 2.ParamInit.R
 source('./Code/0-Param.R')
 
 # Data

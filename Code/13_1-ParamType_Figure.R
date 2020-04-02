@@ -145,10 +145,11 @@ amp <- amp[match(uid, amp$param,), ]
 # ------------------------------------------------------------------------------
 # Figure
 # ------------------------------------------------------------------------------
-png('./Figures/pathways.png', width = 1000, height = 1000, res = 200, pointsize = 6)
-
+png('./Figures/paramType.png', width = 1000, height = 1000, res = 200, pointsize = 6)
 paramType <- c('M','A','C','MA','MC','AC','MAC')
-lab <- c('M','A','C','M-A','M-C','A-C','M-A-C')
+lab <- c('$\\textit{m}$','$\\alpha$','$\\textit{e}$','$\\textit{m}$,$\\alpha$',
+         '$\\textit{m}$,$\\textit{e}$','$\\alpha$,$\\textit{e}$',
+         '$\\textit{m}$,$\\alpha$,$\\textit{e}$')
 par(mfrow = c(2,1))
 par(family = 'serif')
 
@@ -160,26 +161,27 @@ yM <- .075
 wd <- .1*yM
 plot0(x = c(.5,nrow(sens)), y = c(-wd, yM))
 axis(2, at = round(seq(0, yM, by = .025),3), las = 2, cex.axis = 1)
-axis(1, at = 1:nrow(sens), labels = lab, las = 1, cex.axis = 1)
+axis(1, at = 1:nrow(sens), labels = TeX(lab), las = 1, cex.axis = 1)
+abline(h = 0, lty = 2)
 
 # Legends
-mtext(text = TeX('|\\textbf{Trophic sensitivity}|'), side = 2, line = 5, cex = 1.5)
-mtext(text = TeX('|Mean $\\s_{i,j}$ $\\pm$ 95% CI|'), side = 2, line = 3.5, cex = 1.25)
+mtext(text = TeX('| \\textbf{Trophic sensitivity} |'), side = 2, line = 5, cex = 1.5)
+mtext(text = TeX('| Mean $\\S_{i,K}$ $\\pm$ 95% CI |'), side = 2, line = 3.5, cex = 1.25)
 mtext(text = 'Pathways', side = 2, line = 0.5, at = -wd*.85, cex = 1.25, las = 1, adj = c(.5,.5), col = '#5e5e5e')
 nTot <- sum(sens$freq[sens$param %in% paramType])
 mtext(text = paste0('(n = ',nTot,')'), side = 2, line = 0.5, at = -wd*1.55, cex = 1, las = 1, adj = c(.5,.5), col = '#5e5e5e')
 text(x = rep(.5,3), y = seq(.07, by = -.005, length.out = 3), adj = c(0,.5), cex = 1,
-     labels = c('M: mortality','A: attack rate','C: conversion rate'))
+     labels = TeX(c('Mortality: $\\textit{m}$','Attack rate: $\\alpha$','Conversion rate: $\\textit{e}$')))
 
 # Data
 for(i in 1:nrow(sens)) {
   # All
-  lines(x = c(i,i), y = c(sens$Mean[i], sens$CIp[i]), col = cols[1])
-  lines(x = c(i,i), y = c(sens$CIm[i], sens$Mean[i]), col = cols[1])
-  lines(x = c(i-.1, i+.1), y = c(sens$CIp[i], sens$CIp[i]), col = cols[1])
-  lines(x = c(i-.1, i+.1), y = c(sens$CIm[i], sens$CIm[i]), col = cols[1])
+  lines(x = c(i,i), y = c(sens$Mean[i], sens$CIp[i]), col = cols[3])
+  lines(x = c(i,i), y = c(sens$CIm[i], sens$Mean[i]), col = cols[3])
+  lines(x = c(i-.1, i+.1), y = c(sens$CIp[i], sens$CIp[i]), col = cols[3])
+  lines(x = c(i-.1, i+.1), y = c(sens$CIm[i], sens$CIm[i]), col = cols[3])
 }
-points(x = 1:nrow(sens), y = sens$Mean, col = cols[1], cex = 1.25, pch = 15)
+points(x = 1:nrow(sens), y = sens$Mean, col = cols[3], cex = 1.25, pch = 15)
 
 # Frequency
 freq <- -wd + sens$relFreq*wd*.85
@@ -195,10 +197,12 @@ yM <- .001
 wd <- .1*yM
 plot0(x = c(.5,nrow(amp)), y = c(-wd, yM))
 axis(2, at = seq(0, yM, by = .0005), las = 2, cex.axis = 1)
-axis(1, at = 1:nrow(amp), labels = lab, las = 1, cex.axis = 1)
+axis(1, at = 1:nrow(amp), labels = TeX(lab), las = 1, cex.axis = 1)
+abline(h = 0, lty = 2)
+
 lines(x = c(7.5, 7.5), y = c(-wd, yM), lty = 2, col = '#5e5e5e')
-mtext(text = TeX('|\\textbf{Trophic amplification}|'), side = 2, line = 5, cex = 1.5)
-mtext(text = TeX('|Mean $\\A_{i,j}$ $\\pm$ 95% CI|'), side = 2, line = 3.5, cex = 1.25)
+mtext(text = TeX('| \\textbf{Trophic amplification} |'), side = 2, line = 5, cex = 1.5)
+mtext(text = TeX('| Mean $\\A_{i,K}$ $\\pm$ 95% CI |'), side = 2, line = 3.5, cex = 1.25)
 mtext(text = 'Pathways', side = 2, line = 0.5, at = -wd*.85, cex = 1.25, las = 1, adj = c(.5,.5), col = '#5e5e5e')
 mtext(text = 'Parameter type', side = 1, line = 3, cex = 1.5, font = 2)
 nTot <- sum(amp$freq[amp$param %in% paramType])
@@ -207,12 +211,12 @@ mtext(text = paste0('(n = ',nTot,')'), side = 2, line = 0.5, at = -wd*1.55, cex 
 # Data
 for(i in 1:nrow(amp)) {
   # All
-  lines(x = c(i,i), y = c(amp$Mean[i], amp$CIp[i]), col = cols[1])
-  lines(x = c(i,i), y = c(amp$CIm[i], amp$Mean[i]), col = cols[1])
-  lines(x = c(i-.1, i+.1), y = c(amp$CIp[i], amp$CIp[i]), col = cols[1])
-  lines(x = c(i-.1, i+.1), y = c(amp$CIm[i], amp$CIm[i]), col = cols[1])
+  lines(x = c(i,i), y = c(amp$Mean[i], amp$CIp[i]), col = cols[3])
+  lines(x = c(i,i), y = c(amp$CIm[i], amp$Mean[i]), col = cols[3])
+  lines(x = c(i-.1, i+.1), y = c(amp$CIp[i], amp$CIp[i]), col = cols[3])
+  lines(x = c(i-.1, i+.1), y = c(amp$CIm[i], amp$CIm[i]), col = cols[3])
 }
-points(x = 1:nrow(amp), y = amp$Mean, col = cols[1], cex = 1.25, pch = 15)
+points(x = 1:nrow(amp), y = amp$Mean, col = cols[3], cex = 1.25, pch = 15)
 
 # Frequency
 freq <- -wd + amp$relFreq*wd*.85

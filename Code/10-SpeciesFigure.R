@@ -1,8 +1,9 @@
-# source('./Code/12-SpeciesFigure.R')
+# source('./Code/10-SpeciesFigure.R')
 # Libraries
 library(magrittr)
 library(graphicsutils)
 library(tidyverse)
+library(latex2exp)
 source('./Functions/scoreTable.R')
 
 # Data

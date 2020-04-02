@@ -44,8 +44,9 @@ r -e "rmarkdown::render('./fwms.md')"
 **Type of article**: Ideas and Perspectives \newline
 
 **Abstract word count**: \newline
-**Main text word count**: \newline<!-- excluding abstract, acknowledgements, references, table and figure legends -->
-<!-- **Text box word count**: One for each box, if applicable -->
+**Main text word count**: \newline
+<!-- - abstract, acknowledgements, references, table and figure legends -->
+<!-- **Text box word count**: \newline One for each box, if applicable -->
 **Number of references**: \newline
 **Number of figures**: \newline
 **Number of tables**: \newline
@@ -54,17 +55,21 @@ r -e "rmarkdown::render('./fwms.md')"
 **Correspondence**: \newline
 David Beauchesne \newline
 david.beauchesne@uqar.ca \newline
-1-514-553-4975\newline
+1-514-553-4975 \newline
 
-**Statement of authorship**: \newline
+**Statement of authorship**: All the authors conceived the manuscript and the underlying objectives. DB performed the simulations, analysesm, formatted the figures and lead the drafting of the manuscript with significant contributions from KC. All co-authors contributed to data, analyses and writing based on their respective expertise and contributed to the revision of the manuscript. \newline
 
-**Data accessibility statement**:
+**Data accessibility statement**: Empirical food web data for the St. Lawrence System used for this study are openly available from the primary sources in which they were published [@morissette2003; @savenkoff2004; @savenkoff2012].
 
 \newpage
 
 
 <!-- =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 Commentaires Dom:
+
+L189 : cite the recent paper by Bramon et al.
+https://www.nature.com/articles/s41467-018-05056-0
+> They form the backbone of food webs and provide a mesoscale characterization of the structural properties of communities [@bascompte2005; @stouffer2007; @stouffer2010; @stouffer2011]
 
 - Il manque un paragraphe au début de la section sur le modèle qui décrit l'approche générale. C'est là qu'il faut dire que :
     - On étudie seulement des motifs à 3 espèces, avec une abondance positive de chaque espèce
@@ -75,10 +80,6 @@ Commentaires Dom:
     - c'est là que peuvent être listés les différents pathways
 
 - L250 : je ne comprends pas ce schéma d'optimisation, la motivation et ce qui est fait ne sont pas clairs
-
-
-- L333 : pas clair de l'objectif poursuivi avec l'analyse des réseaux empiriques. Doit être mieux motivé en intro et il faut amorcer une transition ensuite.
-
 <!-- =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
 
 
@@ -86,9 +87,19 @@ Commentaires Dom:
 # Proposal letter {-}
 <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 
+***Instructions***: *Unsolicited proposals, which will be evaluated by the Ideas
+and Perspectives or Reviews and Syntheses Editors, in consultation with the
+Editorial Board and Editor-in-Chief, prior to a full submission. Proposals
+should be no more than 300 words long, describe the nature and novelty of the
+work, the contribution of the proposed article to the discipline, and the
+qualifications of the author(s) who will write the manuscript. Proposals should
+be sent to the Editorial Office (ecolets@cefe.cnrs.fr).*
 
+***Notes***: Contribution portion is unconvincing and letter is 42 words over the limit.
 
+As global change and the human footprint keeps expanding worldwide, properly evaluating the impacts of multiple stressors on natural systems is becoming an increasingly vital issue. Even after decades of research on the impacts of multiple stressors, a general lack of theoretical understanding of their impacts remains. In particular, the role of species and their interactions in mediating the effects of multiple stressors, although widely acknowledged, has yet to be formally explored. We propose, to our knowledge, the first such exploration by conceptualizing the impacts of multiple stressors on complex food webs and by exhaustively simulating the many pathways through which the dynamics of the most common 3-species motifs in empirical food webs are impacted by stressors using generalized Lotka Volterra models. We uncover that interactions, their configuration and a species trophic position greatly influence a species sensitivity to and amplification of the impacts of stressors. Species in omnivory and tri-trophic food chains in particular are susceptible to the impacts of stressors and to non-additive impacts, which arise chiefly from impacts to species interactions. We then use simulation results to infer species sensitivity to stressors in empirical food webs of the St. Lawrence System in eastern Canada. We find that, in the mid-1980s, species were trophically predisposed to the dramatic shifts in trophic structure that unfolded following the groudfish stock collapse of the early 1990s. This contribution is significant and timely for two main reasons. First, from a theoretical stand point, this is the first exhaustive exploration of the impacts of stressors on food web motifs. Second, we provide a clear link between theory and management by illustrating how our framework can be applied to detect most sensitive species in a real food web exposed to various stressors. Our group of co-authors is singularly positioned to write this paper. D. Beauchesne and P. Archambault both have strong backgrounds in environmental assessments in general and cumulative impacts in particular. K. Cazelles and D. Gravel are both experts in theoretical ecology with strong backgrounds and recognition in the field.
 
+\newpage
 
 \doublespacing
 
@@ -97,49 +108,55 @@ Commentaires Dom:
 <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 
 
+***Instructions***: *The abstract page should contain a short summary not exceeding 150 words for Letters, and 200 words for Ideas and Perspectives and Reviews and Syntheses.*
+
+***Note***: 33 words over the limit
+
+As global change and the human footprint expands worldwide, evaluating the impacts of multiple stressors is becoming increasingly vital. Even after decades of research on the impacts of multiple stressors, a general lack of theoretical and empirical understanding of their impacts remains. In particular, the role of species and their interactions in mediating the impacts of stressors, although widely acknowledged, has yet to be formally explored. Here, we conceptualize the impacts of multiple stressors on complex food webs and exhaustively explore how stressors may impact the most common 3-species motifs in empirical food webs using generalized Lotka-Volterra models. We uncover that interactions, their configuration and a species trophic position greatly influence a species sensitivity to and amplification of the impacts of stressors. Species in omnivory and tri-trophic food chains in particular are susceptible to stressors and to non-additive impacts, which arise chiefly from disruptions to species interactions. We then infer species sensitivities in empirical food webs of the St. Lawrence System. We find that, in the mid-1980s, species were trophically predisposed to the dramatic shifts in trophic structure that unfolded following the groudfish stock collapses of the early 1990s. In conceptualizing and exploring the impacts of multiple stressors on food webs, we provide a clear link between theory and management through a famework that clearly demonstrates that an holistic understanding of complex systems is key to proper management.
+
+\newpage
+
 <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 # Glossary {-}
 <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 
-- **Stressor**:
-- **Effect**
-- **Impact**
-- **Direct effect**
-- **Indirect effect**
-- **Pathway of effect**
-- **Unitary pathway of effect**
-- **Sensitivity**
-- **Weak entry point**
-- **Non-additive effects**
-- **Amplification**
-- **Biotic buffer**
-- **Biotic amplifier**
+- **Stressor**: externality that arises from natural or human-induced biophysical processes or from anthropogenic activities and that impacts environmental processes and disturbs natural systems;
+- **Direct effect**: effect of a species on another without the involvement of a third species;
+- **Indirect effect**: effects that link at least two direct effects through an intermediary species;
+- **Pathway of effect**: composed of impacted biological processes (*e.g.* mortality rates), it is the pathway through which stressors directly and indirectly impact ecological communities. A unitary pathway of effect is an indvidual impacted biological process, whereas an integrative pathway of effect is the set of all unitary pathways of effect that combine to collectively impact an ecological community;
+- **Trophic sensitivity**: difference in species equilibrium abundance before and after the permanent appearance of stressors;
+- **Weak entry point**: highly susceptible species to a pathway of effect, whether to its benefit and strongly positive trophic sensitivity (*i.e.* positive weak entry point) or to its detriment and strongly negative trophic sensitivity (*i.e.* negative weak entry point);
+- **Non-additive impact**: trophic sensitivity to an integrative pathway of effect that is greater (*i.e.* synergistic impact) or lower (*i.e.* antagonistic impact) than the sum of trophic sensitivities to unitary pathways of effect;
+- **Trophic amplification**: difference between a species trophic sensitivity to an integrative pathway of effect and the sum of its trophic sensitivity to unitary pathways of effect;
+- **Biotic buffer**: species on which an integrative pathway of effect has a lower impact (*i.e.* antagonism) than the summed impact of unitary pathways of effect;
+- **Biotic amplifier**: species on which an integrative pathway of effect has a greater impact (*i.e.* synergism) than the summed impact of unitary pathways of effect.
 
 <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 # Introduction
 <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 
-<!-- Cite Tylianakis 2010 -->
+Ecosystems worldwide are increasingly affected by a vast array of environmental pressures, commonly referred to as stressors [@boonstra2015; @halpern2019]. Stressors are driven by natural or human-induced biophysical processes such as ocean acidification and warming, or from anthropogenic activities such as fisheries. Stressors can be defined as externalities that affect environmental processes and disturb natural systems. Individually, stressors impact all levels of biological organization and cause dramatic changes to whole ecosystems. For example, ocean acidification reduces coral and mollusk calcification, metabolic, growth and mortality rates, and has been linked to altered carbon fluxes in ecological networks [@fabry2008; @kroeker2013; @bove2019]. Fisheries induced the collapse of commercial species, decreased the mean trophic level in coastal and oceanic environments by targeting large predators and impaired a variety of essential ecosystem services [@pauly1998; @myers2003; @worm2006].
 
-Ecosystems worldwide are increasingly affected by a vast array of environmental pressures, commonly referred to as stressors [@boonstra2015; @halpern2019]. Stressors may be driven by natural or human-induced biophysical processes such as ocean acidification and warming, or directly from anthropogenic activities such as fisheries. Stressors can be defined as any externality that affects environmental processes and disturbs natural systems. Individually, stressors have been found to impact all levels of biological organization and cause dramatic changes to whole ecosystems. For example, ocean acidification can reduce coral and mollusk calcification, metabolic, growth and mortality rates, and has been linked to altered carbon fluxes in ecological networks [@fabry2008; @kroeker2013; @bove2019]. Fisheries have caused the collapse of commercial species, decreased the mean trophic level in coastal and oceanic environments by targeting large predators and impaired a variety of essential ecosystem services [@pauly1998; @myers2003; @worm2006].
+Stressors rarely occur individually and their interactions are extremely alarming because they are dreadfully impactful, pervasive [*e.g.* @crain2008; @piggott2015; @jackson2016] and unpredictable [@darling2008; @cote2016]. Global changes and local human activities result in increasingly intricate environmental stress exposure regimes, compounding the pathways through which natural systems can be altered [@halpern2019]. For example, coral reefs contend with a suite of pressures including fishing, warming temperatures, ocean acidification and water pollution [@mcclanahan2014a; @harborne2017]. Moreover, striking contrasts exist between the impacts of individual and interacting stressors. For instance, @wiedenmann2013 showed that the susceptibility of corals to temperature-induced bleaching increases with the concentration of dissolved inorganic nitrogen, and a recent study by @lapointe2019 showed that the synergy between nutrient enrichment and global warming is already causing major coral reef loss in the Florida Keys. Other dramatic examples include up to 100-fold increases in the sensitivity of certain organisms to toxicants when exposed to other environmental stressors [@liess2016] and the reversal of the positive effects of acidification on primary producer biomass by warmer waters in boreal lakes [@christensen2006].
 
-Rarely do stressors occur individually, and the list of potentially interacting stressors affecting an ecosystem at any given point in time or space can be extensive [@halpern2019]. Global changes and local human activities thus result in increasingly intricate environmental stress exposure regimes, compounding the pathways of effects through which natural systems can be impacted [@halpern2019]. For example, coral reefs contend with a suite of pressures including fishing, warming temperatures, ocean acidification and water quality that may impact species in contrasting ways [@mcclanahan2014a; @harborne2017]. Moreover, stressors may combine to disturb ecosystems in ways that cannot be captured through the examination of individual pressures.
-<!-- KC proposition -->
-For instance, @wiedenmann2013 showed that susceptibility of corals to
-temperature-induced bleaching increases with the concentration of dissolved
-inorganic nitrogen and a recent studies showed that such a synergy between nutrient enrichment and global warming is already causing major loss of coral reefs in the Florida Keys [@lapointe2019].
-<!-- END -->
-Dramatic examples include up to 100-fold increases in the sensitivity of certain organisms to toxicants (*e.g.* pesticides) when exposed to other environmental stressors [*e.g.* parasites; @liess2016] and the reversal of the positive effects of acidification on primary producer biomass by warmer waters in boreal lakes [@christensen2006]. Such interactions between the effects of stressors is extremely alarming not only because of their dreadful impacts, but also because they are pervasive [*e.g.* @crain2008; @piggott2015; @jackson2016] and, so far, remain largely unpredictable [@darling2008; @cote2016].
+Beyond their obvious direct impacts, stressors ripple through ecological communities by way of the interactions structuring the complex network in which species are embedded [@wootton2002; @bascompte2009a; @montoya2009; @ogorman2009; @ogorman2012]. Surprising observations arise from complex networks, such as a predator positively affecting its own prey [@abrams1992]. Ample empirical evidence exist of such trophically-mediated effects across ecosystems globally [@paine1980; @estes2011]. Classic examples include sea otters (*Enhydra lutris*) indirectly shielding kelp forests from browsing by sea urchins [*Strongylocentrotus sp.*; @estes1974] and the release of cottonwood (*Populus* spp.) and willows (*Salix* spp.) from elk (*Cervus elaphus*) browsing following the reintroduction of wolves (*Canis lupus*) in Yellowstone National Park [@ripple2003]. A species's susceptibility to trophically-mediated effects is influenced by its trophic role and position. For example, species with diversified diets (*i.e.* generalists) are more resilient than species with specialized diets [*i.e.* specialists; @montoya2009; @clavel2011], and apex predators are generally more vulnerable to trophically-mediated effects [@ripple2015; @stier2016].
 
-From a practical standpoint, single-driver and single-species assessments nonetheless remain overwhelmingly employed [@obrien2019], while most large-scale multiple stressors studies have typically focused on habitats [*e.g.* @ban2010; @halpern2019]. This conveniently circumscribes assessments to a set of tractable units, but it also ignores systems complexity and aggregates biological processes operating at lower levels of organization [@halpern2013; @giakoumi2015]. Furthermore, methodologies tend to either assume that the effects of multiple stressors are additive [*e.g.* @halpern2019], or rely on the use of null models that provide little insights into the mechanisms underlying ecological responses to the effects of multiple stressors [@jackson2016; @delaender2018; @griffen2016; @schafer2018]. As a response, there has been a recent upsurge in theory-driven modelling approaches to evaluate the effects of multiple stressors on complex systems [*e.g.* @hodgson2017; @delaender2018; @galic2018; @thompson2018a].
-<!-- The second portion of this paragraph is not convincing and it disrupts the flow of the text... -->
-<!-- KC which part? Looks good to me! -->
+How ecological networks are structured, *i.e.* the number, configuration and strength of interactions between species, also influences the propagation of stressors and the stability and resilience of whole systems [@wootton2002; @montoya2009; @bartley2019]. Stressors can modify these structural properties and rewire entire food webs [@blanchard2015; @kortsch2015; @bartley2019]. Links can be added or removed [*i.e.* topological rewiring; @bartley2019] through primary and secondary species extinctions [*e.g.* @allesina2006; @eklof2006], climate-related distributional shifts [*e.g.* @kortsch2015; @bartley2019] or invasive species introductions [*e.g.* @vanderzanden1999; @david2017]. Alteration to the flow of energy also arise when consumer modify their space and resource use [*i.e.* interaction strength rewiring; @bartley2019].
+<!--
+Finish this paragraph with experimental evidence of impacts on food webs?
+- O'Gorman 2019 Nature Climate Change? "warming simplifies food webs and shortens the pathways of energy flux"
+- O’Gorman, E.J., Fitch, J.E., Crowe, T.P., 2012. Multiple anthropogenic stressors and the structural properties of food webs. Ecology 93, 441–448. https://doi.org/10.1890/11-0982.1
+- Gilarranz, L.J., Mora, C., Bascompte, J., 2016. Anthropogenic effects are associated with a lower persistence of marine food webs. Nat Commun 7, 1–5. https://doi.org/10.1038/ncomms10737
+- Gilarranz, L.J., Rayfield, B., Liñán-Cembrano, G., Bascompte, J., Gonzalez, A., 2017. Effects of network modularity on the spread of perturbation impact in experimental metapopulations. Science 357, 199–201. https://doi.org/10.1126/science.aal4122
+-->
 
-Confronted with the challenge of managing and preserving complex systems, there is an urgent need for the development of frameworks that properly consider the complexities of multiple stressors in ways that are informative to management. Such frameworks should be grounded in theory, scaled for gains in ecological understanding rather than convenience, and allow for dynamic identification of conservation targets. It should also be flexible and data-oriented so that it can make use of the expanding corpus of openly available environmental knowledge and computational capabilities.
+In spite of all this knowledge, single-stressor and single-species assessments  remain overwhelmingly employed [@obrien2019], and most large-scale multiple stressors studies remain focused on impacts to habitats [*e.g.* @ban2010; @halpern2019]. This conveniently circumscribes assessments to sets of tractable units, but it ignores systems complexity and aggregates biological processes across levels of organization [@halpern2013; @giakoumi2015]. Furthermore, methodologies tend to assume that impacts of multiple stressors are additive [*e.g.* @halpern2019], or rely null models providing little insights into the ecological mechanisms governing impacts of multiple stressors [@jackson2016; @delaender2018; @griffen2016; @schafer2018].
 
-In this paper, we conceptualize how multiple stressors permeate complex ecological communities. Our objective is to theoretically and holistically investigate the role of species and their interactions (*i.e.* food web topology) in driving species sensitivity to stressors and how they may buffer against or amplify the effects of multiple stressors. We then scale up to complex systems by exploring species sensitivity to multiple stressors as a consequence of their position in empirical food webs using the St. Lawrence System in Eastern Canada as an illustration. In doing so, we seek to answer questions of particular significance to management and the application of holistic environmental approaches: 1) should species interactions be considered in impact assessments, 2) should the effects of stressors be evaluated separately or in combination, and 3) which species are most sensitive to stressors based on their trophic position.
+Confronted with the challenge of managing and preserving complex systems,
+we clearly need holistic frameworks that consider the complexities of multiple stressors in ways that are informative to management. Such frameworks should be grounded in theory, scaled for gains in ecological understanding rather than convenience, and allow for dynamic identification of conservation targets. It should also be flexible and data-oriented so that it can make use of the expanding corpus of openly available environmental knowledge and computational capabilities. This need to unite practice and theory is reflected in the recent upsurge in theory-driven modelling approaches to evaluate the impacts of multiple stressors on complex systems [*e.g.* @hodgson2017; @delaender2018; @galic2018; @thompson2018a].
 
-<!-- KC: J'ai l'impression qu'il va falloir expliquer ici la structure du papier avec un peu plus de détails pour ne pas perdre le lecteur. Surtout parceque c'est très général l'intro et que dans le 1er paragraphe, on est dans le très concret-->
+Here, our objective is to theoretically and holistically investigate the role of species and their interactions in driving species sensitivity to the impacts of multiple stressors. In doing so, we seek to answer questions of particular significance to management and the application of holistic environmental approaches: 1) should species interactions be considered in impact assessments, 2) should the effects of stressors be evaluated separately or in combination, and 3) which species are most sensitive to stressors based on their trophic position? The paper is divided in two parts. In the first part, we conceptualize how multiple stressors permeate complex ecological communities. We then simulate the impacts of stressors on the equilibrium dynamics of the most frequent three-species motifs in food webs (*i.e.* food chain, omnivory, exploitative competition, and apparent competition) to explore the many pathways through which species can be impacted in complex communities. In the second part, we illustrate our framework by inferring the sensitivity of species in the St. Lawrence System, in Eastern Canada, using data from three empirical food webs describing different regions of the St. Lawrence and exposed to up to eight different sources of stress.
+
 
 <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 # Of food webs and multiple stressors
@@ -149,95 +166,61 @@ In this paper, we conceptualize how multiple stressors permeate complex ecologic
 ## A gateway through ecological communities
 <!-- =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- -->
 
-We begin by conceptualizing how multiple stressors impact species embedded in complex ecological communities. To illustrate this, we use a simplified 6-species food web composed of populations of beluga (*Delphinapterus leucas*) and humpback (*Megaptera novaeangliae*) whales, Atlantic cod (*Gadus morhua*), capelin (*Mallotus villosus*), krill (*Euphausiacea*) and copepods (*Copepoda*; Figure \ref{concept}A). The dynamics of such a community is driven by biological processes operating at the scale of individual populations (*e.g.* reproduction and mortality) and of the whole community (*e.g.* consumer-resource interactions). Through interactions, species influence the dynamics of other species both directly and indirectly. Direct effects arise when a species affects another without the involvement of a third species [@abrams1996; @wootton2002]. For example, cod consumes capelin in our system, directly affecting its prey and weaving the dynamics of both populations together (Figure \ref{concept}A).
+We begin by conceptualizing how multiple stressors impact species embedded in complex ecological communities. To illustrate this, we use a simplified 6-species food web composed of populations of beluga (*Delphinapterus leucas*) and humpback (*Megaptera novaeangliae*) whales, Atlantic cod (*Gadus morhua*), capelin (*Mallotus villosus*), krill (*Euphausiacea*) and copepods (*Copepoda*; Figure \ref{concept}A). The dynamic ecological communities is driven by biological processes operating at the scale of individual populations (*e.g.* reproduction and mortality) and of the whole community (*e.g.* consumer-resource interactions). Through interactions, species influence the dynamics of other species both directly and indirectly. Direct effects arise when a species affects another without the involvement of a third species [@abrams1996; @wootton2002]. For example, cod consumes capelin in our system, directly affecting its prey and weaving the dynamics of both populations together (Figure \ref{concept}A).
 
-Indirect effects are effects that link at least two direct effects through an intermediary species, which results in an interaction chain also known as a density-mediated indirect effect [@wootton1993; @abrams1996; @wootton2002]. <!-- Should we also talk about indirect effects arising from interaction modification? Wooton 2002 KC: tu le fais apres, non? --> In our system, krill is indirectly affected by cod through their respective interaction with capelin (Figure \ref{concept}A). Indirect effects may be as important of, and propagate faster than, direct effects [@wootton1993; @menge1995; @yodzis2000; @wootton2002]. Surprising observations may arise from indirect effects, such as a predator having a positive net effect on its prey [@abrams1992; @montoya2009]. Trophic cascades, *i.e.* the propagation of impacts by consumers downward through whole food webs (*e.g.* cod-capelin-krill; Figure \ref{concept}A) and apparent competition, *i.e.* alternate prey species of a generalist predator (*e.g.* krill-capelin-copepod; Figure \ref{concept}A) are well-documented and prevalent types of indirect effects in empirical food webs [*e.g.* @holt1977; @paine1980; @menge1995; @estes2011]. The number, strength, types and position of direct and indirect effects arising from species interactions govern the dynamic stability of a community and influence how impacts of stressors will propagate [@wootton2002; @montoya2009]. Modify any of these parameters, and the dynamics of the community -- and how stressors propagate -- will also change.
+Indirect effects are effects that link at least two direct effects through an intermediary species, which results in an interaction chain also known as a density-mediated indirect effect [@wootton1993; @abrams1996; @wootton2002]. In our system, krill is indirectly affected by cod through their respective interaction with capelin (Figure \ref{concept}A). Indirect effects can be as important of, and propagate faster than, direct effects [@wootton1993; @menge1995; @yodzis2000; @wootton2002]. Trophic cascades, *i.e.* the propagation of impacts by consumers downward through whole food webs (*e.g.* cod-capelin-krill; Figure \ref{concept}A) and apparent competition, *i.e.* alternate prey species of a generalist predator (*e.g.* krill-capelin-copepod; Figure \ref{concept}A) are well-documented and common types of indirect effects in empirical food webs [*e.g.* @holt1977; @paine1980; @menge1995; @estes2011]. In complex food webs, the net effect of a single or of multiple species on another is the integration of all direct and indirect effects propagating through individual pathways to a focal species [@abrams1996]. For example, the net effect of cod on beluga depends on the direct effect linking both species and the indirect effect of cod on beluga through capelin (Figure \ref{concept}A).
 
-Now imagine that 3 distinct sources of stress appear in our system: climate change induced temperature anomalies, commercial shipping and trawl fishing (Figure \ref{concept}A). Stressors impact populations and whole communities by disrupting <!-- KC: un peu fort, non? impacting ? --> the biological processes that govern their dynamics [*e.g.* @galic2018; @hodgson2019; @hodgson2019a; @guiden2019]. Multiple processes may be affected by a single stressor, whereas multiple stressors may affect a single process. <!-- useful? KC: if not in the intro then YES! --> In practice, the impact of stressors will depend on their frequency and intensity, as well as on species-specific vulnerabilities. These can be highly variable. For example, species may be well adapted to <!-- KC what? -->[*e.g.* northern shrimp *Pandalus borealis* and Greenland halibut *Reinhardtius hippoglossoides*; @pillet2016], avoid [*e.g.* Atlantic cod *Gadus morhua*; @chabot2008], or be killed by [*e.g.* sessile benthic invertebrates; @eby2005; @belley2010] hypoxic environments. To address our objective and glean insights into the role of species and their interactions in shaping their sensitivity to multiple stressors, however, we focus on what happens once biological processes are impacted, rather than how impacts manifest in the first place. Identifying and quantifying species-specific vulnerabilities is best addressed through *in situ* sampling and targeted experimental investigations, which has limited applicability for complex communities influenced by many stressors, and is thus beyond the scope of this manuscript.
+Now imagine that 3 distinct sources of stress appear in the system: climate change-induced temperature anomalies, commercial shipping and trawl fishing (Figure \ref{concept}A). Stressors impact populations and whole communities by disrupting the biological processes that govern their dynamics [*e.g.* @galic2018; @hodgson2019; @hodgson2019a; @guiden2019]. Stressors can disrupt multiple processes and multiple process can be disrupted by a single stressor. Species-specific sensitivities influence the resulting impacts of stressors.  For example, species may be well adapted to [*e.g.* northern shrimp *Pandalus borealis* and Greenland halibut *Reinhardtius hippoglossoides*; @pillet2016], avoid [*e.g.* Atlantic cod; @chabot2008], or be killed by [*e.g.* sessile benthic invertebrates; @eby2005; @belley2010] hypoxic environments. To address our objective, however, we focus on the net impact of stressors, rather than how impacts manifest in the first place. Identifying and quantifying species-specific sensitivities is best addressed through *in situ* sampling and targeted experimental investigations. These have limited applicability for complex communities influenced by many stressors, and are thus beyond the scope of this manuscript.
 
-So let us assume that, in our system, temperature anomalies impact the reproductive capabilities of copepods (*i.e.* growth rate) and the effectiveness of predators to assimilate them (*i.e.* conversion rate), that shipping alters the feeding behaviour of whales (*i.e.* attack rate), and that fisheries impact the mortality of cod and capelin (Figure \ref{concept}A). Beyond their obvious direct impacts, stressors may permeate entire ecological communities through the indirect pathways of effects provided by the complex web of interactions in which species are embedded [@wootton2002; @bascompte2009a; @montoya2009; @ogorman2009; @ogorman2012]. For example, shipping indirectly impacts krill, capelin and cod through its direct impact on whale behaviour and the direct effect of whales on their prey (Figure \ref{concept}A). In that sense, indirect impacts of stressors can spread through both direct and indirect trophic effects of species on other species. To provide a clear distinction between trophic effects and stressor impacts, we will refer to stressor-species and species-species interactions using impacts and effects, respectively. <!-- I should review the notion of direct and indirect impact in the analysis, because now it may very well be that indirect impacts are more important than direct impact, even though direct effects may be more important than indirect effects -->
-
-In complex food webs, the net effect of a single or of multiple species on another is the integration of all direct and indirect effects propagating through individual pathways to a focal species [@abrams1996]. For example, the net effect of cod on beluga will depend on the direct effect linking both species and the indirect effect of cod on beluga through capelin (Figure \ref{concept}A). By extension, the net impact of a single or of multiple stressors on a species in a complex food web is the integration of all impacts on biological processes both directly and those propagating through individual pathways to a focal species. The net impact of trawling on cod must then consider the direct impact on cod mortality, as well as the indirect impact of trawling on capelin propagating back to cod through their trophic interactions (Figure \ref{concept}A). Similarly, the additional impact of shipping should consider the altered behaviour of whale propagating to cod (Figure \ref{concept}A). This means that properly understanding the impacts of multiple stressors requires an holistic approach that explicitly considers the complexity of ecological communities and all sources of stress in a system.
-
-
-\begin{figure}[H]
-\centering
-\includegraphics{./Figures/Concept.png}
-\caption{
-Conceptualization of the effects of multiple sources of environmental stress
-on the dynamics of a theoretical food web.
-A) Drivers such as sea surface temperature, marine traffic and fisheries
-penetrate food webs through various pathways of effects by disturbing
-ecological processes governing populations and communities.
-For instance, marine traffic disturbs whale feeding behaviour, which may lead to
-decreased attack rates on prey species.
-B) A species position in a food web can be decomposed in a suite of
-$n$-species submodules called motifs that are informative of the role played
-by a species in the entire food web.
-Different types of interaction types will lead to different types of community
-dynamics and a species can be described as a function of the number and
-types of interactions it is involved in.
-For instance, the interactions of the meso-predator can be decomposed into 1
-exploitative competition, 2 food chains and 1 omnivory motifs.
-C) The dynamics of motifs can uncover if <!-- KC ?? --> and how disturbances arising from
-individual and multiple drivers are propagated and amplified through different
-types of species interactions.
-Variations in species abundance due to driver induced
-disturbances provide an evaluation of motif species sensitivity (C1-3).
-The difference between the summed effects of individual drivers (\textit{i.e.} additive
-model; C1-2) and the joint effects of multiple drivers (\textit{i.e.} full model; C3)
-provides an evaluation of disturbance amplification.
-}
-\label{concept}
-\end{figure}
+Let us assume that temperature anomalies impact the reproductive capabilities of copepods (*i.e.* growth rate) and the effectiveness of their predators to assimilate them (*i.e.* conversion rate), that shipping alters the feeding behaviour of whales (*i.e.* attack rate), and that fisheries impact the mortality of cod and capelin (Figure \ref{concept}A, B). Stressors permeate ecological communities through the indirect pathways of effects provided by species interactions [@wootton2002; @bascompte2009a; @montoya2009; @ogorman2009; @ogorman2012]. For example, the direct impact of shipping on whale behaviour indirectly propagates to their prey (Figure \ref{concept}A). By extension to net effects in food webs, the net impact of a single or of multiple stressors on a species must integrate all direct and trophically-mediated impacts propagating through individual pathways to a focal species. As such, the net impact of shipping on whale also depends on the indirect impact propagating to capelin, cod and krill, and cycling back to whales (Figure \ref{concept}A).
 
 <!-- =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- -->
 ## Handling food web complexity
 <!-- =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- -->
 
-The number and complexity of pathways through which a species may affect or be affected by other species, and through which impacts may spread through whole communities, increases exponentially with the number of species and interactions in a network [@menge1995]. To illustrate this, let us imagine that community dynamic in our system is governed by resource growth, mortality, attack and conversion rates. In mathematical terms, such a system would be driven by a total of 21 distinct biological processes. Impacting this system could be achieved through over 2 000 000 unique pathways. <!-- for(i in 1:21) x[i] <- ncol(combn(1:21, i)); sum(x); 2097151 --> <!-- KC: La puissance des maths te dirait que ce que tu as fait reviens à faire (2^21 - 1) ;) --> Such complexity has proven to be prohibitive to investigations into community dynamics and into the impacts of disturbances on food webs [@wootton2002; @montoya2009].
+The number and complexity of pathways through which a species may affect or be affected by other species -- and through which impacts may permeate communities -- increases exponentially with the number of species and interactions in a network [@menge1995]. To illustrate this, let us imagine that community dynamic is governed by resource growth, mortality, attack and conversion rates (Figure \ref{concept}B). Our six-species system would then be driven by 21 distinct biological processes, offering over 2 000 000 unique pathways through which the system could be disrupted. <!-- 2^21 - 1 --> Such complexity has proven prohibitive to investigations into community dynamics and the impacts of disturbances on food webs [@wootton2002; @montoya2009].
 
-Studying smaller subgraphs -- community motifs or modules -- emerges  <!-- KC: emerged? --> as an alternative to gather insights into the dynamics and stability of complex ecological communities [@holt1997; @holt2001]. Motifs are collections of $n$-species that, when put together, construct whole food webs [@milo2002; @stouffer2007]. They form the backbone of food webs and provide a mesoscale characterization of the structural properties of communities [@bascompte2005; @stouffer2007; @stouffer2010; @stouffer2011]. Investigations into three-species motifs are particularly common in the literature [*e.g.* @menge1995; @milo2002; @stouffer2007; @stouffer2012]. There exist 13 distinct three-species motif configurations [@milo2002; @stouffer2007; @stouffer2012]. On average, 95% of three-species motifs in empirical food webs are composed of tri-trophic food chain (*e.g.* cod-capelin-krill; Figure \ref{concept}A), omnivory or intraguild predation (*e.g.* beluga-cod-capelin; Figure \ref{concept}A), exploitative competition (*e.g.* humpback whale-capelin-beluga; Figure \ref{concept}A) and apparent competition (*e.g.* krill-capelin-copepod; Figure \ref{concept}A) motifs [@camacho2007; @stouffer2010]. Focusing on motifs rather than whole food webs restricts the complexity we must contend with to better understand the role of species and their interactions in mediating the impacts of multiple stressors. We now shift our focus to the dynamics of those motifs that are particularly relevant to the structural properties of empirical food webs.
+Studying smaller subgraphs -- community motifs or modules -- emerged as an alternative to gather insights into the dynamics and stability of complex ecological communities [@holt1997; @holt2001]. Motifs are collections of $n$-species that, when put together, construct whole food webs [@milo2002; @stouffer2007]. They form the backbone of food webs and provide a mesoscale characterization of the structural properties of communities [@bascompte2005; @stouffer2007; @stouffer2010; @stouffer2011]. Investigations into three-species motifs are particularly common in the literature [*e.g.* @menge1995; @milo2002; @stouffer2007; @stouffer2012]. On average, 95% of three-species motifs in empirical food webs are composed of tri-trophic food chain (*e.g.* cod-capelin-krill; Figure \ref{concept}A), omnivory or intraguild predation (*e.g.* beluga-cod-capelin; Figure \ref{concept}A), exploitative competition (*e.g.* humpback whale-capelin-beluga; Figure \ref{concept}A) and apparent competition (*e.g.* krill-capelin-copepod; Figure \ref{concept}A) motifs [@camacho2007; @stouffer2010]. Focusing on motifs rather than whole food webs restricts the complexity we must contend with to better understand the role of species and their interactions in mediating the impacts of multiple stressors. For example,
+impacts to omnivory interactions are possible through 9 biological processes and 511 unique pathways (Figure \ref{concept}B). We now shift our focus to the dynamics of those four motifs particularly relevant to the structural properties of empirical food webs.
 
 <!-- =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
 ## Simplified dynamics of multiple stressors
 <!-- =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
 
-Different types of interactions will yield contrasting dynamics, so that the types of interactions a species is involved in and its position - *e.g.* a resource or a predator - will influence how it is impacted by stressors. Net effects in food webs are typically measured as variations in species abundances or densities, which integrates all trophic effects operating on the system simultaneously [@wootton2002; montoya2009]. The net impact of stressors on species may be measured equivalently, *i.e.* by evaluating how initial, pre-stressor, abundances or densities <!-- KC: pourquoi les 2? On peut juste parler d'1 les lecteurs pourront faire le lien avec le second --> of species at equilibrium shift after the permanent appearance of stressors in a system.
+We explore the dynamic impacts of multiple stressors with the omnivory interaction connecting cod, beluga and capelin in our system (Figure \ref{concept}C). Net effects are typically measured as variations in species abundances or densities in food webs, which integrate all trophically-mediated effects operating on the system collectively [@wootton2002; @montoya2009]. Likewise, we evaluate how pre-stressor abundances at equilibrium shift after the permanent appearance of stressors in a system as a measure of net impact.
 
-As an illustration, we focus on the omnivory interaction connecting cod, beluga and capelin in our system (Figure \ref{concept}B). Considering impacts separately reveals contrasting population trajectories following the appearance of a stressor. The direct impact of fishing on capelin mortality spreads through species and result in reduced capelin and beluga populations and a growing cod population (Figure \ref{concept}B1). This increase in cod abundance is likely driven mesopredator release following the decrease in beluga numbers in the system [@ritchie2009]. This trophic effect may ultimately exacerbate the impact of fishing on capelin. Impacting the mortality of cod, meanwhile, results in a decrease in overall predation pressure that leads to the growth of the capelin and beluga populations, whereas the cod population remains relatively unchanged (Figure \ref{concept}B2). This counterintuitive observation is likely the result of compensatory dynamics, where the impact of the stressor is offset by an increase in prey availability. <!-- add reference here? Holling 1973; Gonzales and Loreau 2009; Frost et al. 1995? --> Finally, although the direct impact of shipping on beluga feeding behaviour appears to have little direct impact on the beluga population, it nonetheless disrupts the equilibria dynamics of its prey to the benefit of cod and to the detriment of capelin (Figure \ref{concept}B3). This is likely due, once again, to a decrease in the top-down control of beluga on cod, effectively altering the beneficial effect of beluga on capelin.
-<!-- trophic cascades/compensatory dynamics cote1995 ogorman2010 ogorman2012 -->
+Impacts to single biological processes travel through unitary pathways of effect ($k$), such as an increase in cod mortality ($k = \{m_y\}$; Figure \ref{concept}B). Unitary pathways of effect that can induce contrasting population trajectories. The impact of fishing on capelin mortality ($k = \{r_x\}$) favours cod and results in reduced abundances for capelin and beluga (Figure \ref{concept}C-1). In this scenario, cod are likely released from beluga predation due to their drop in numbers [*i.e.* mesopredator release; @ritchie2009]. This trophically-mediated effect could ultimately exacerbate the impact of fishing on capelin by favouring one of its predators. Meanwhile, impacting cod mortality ($k = \{m_y\}$) results in the growth of the capelin and beluga populations (Figure \ref{concept}C-2). Surprisingly, the cod population remains relatively unchanged (Figure \ref{concept}C-2), likely because the increase in prey availability offsets the impact of fishing [*i.e.* compensatory dynamics; @gonzalez2009]. Finally, the beluga population appears insensitive to the impact of shipping ($k = \{\alpha_{xz}\} and k = \{\alpha_{yz}\}$); yet shipping likely disrupts the top-down control of beluga on cod to the benefit of cod and to the detriment of capelin (Figure \ref{concept}C-3).
 
-We define these variations in abundance -- or density -- <!-- KC: pourquoi les 2? --> as a result of the net impact of stressors as a species trophic sensitivity ($S$; Figure \ref{concept}B):
+Unless a single biological process is impacted, unitary pathways of effect combine to form an integrative pathway of effect ($K$). Shipping and fishing collectively impact our system through an integrative pathway of effect ($K = \{r_x, m_y, \alpha_{xz}, \alpha_{yz}\}$) that benefits cod and reduces capelin and beluga (Figure \ref{concept}B4). We define a species ($m$) trophic sensitivity ($S_{m,K}$) as the net impact -- *i.e.* the pre- and post-stressors variation in abundance -- resulting from an integrative pathway of effect $K$ (Figure \ref{concept}B):
 
-$$S_{m,K_j} = \frac{a_{m,K_j} - a_m}{a_m}\text{,}$$
+$$S_{m,K} = \frac{a_{m,K} - a_m}{a_m}\text{,} \label{eq1} \tag{1}$$
 
-<!-- KC: me semble qu'il faudrait ajouter l'equation avec un unitary pathway avant, juste pour que ce soit clair -->
-where $S_{m,K_j}$ is the trophic sensitivity of species $m$ to the integrative pathway of effect $K_j$, $a_m$ is the initial abundance of species $m$
-<!-- KC: peut-être qu'il serait plus correct de dire que a_m c'est l'abundance
-quand les stressor sont null/absent, non? me semble que c'est mieux que de dire initial-->, and $a_{m,K_j}$ is the abundance of species $m$ in response to the integrative pathway of effect $K_j$. Note that by definition $S_{m,K_j}$ is bounded negatively to -1, as species abundances cannot fall below 0. An integrative pathway of effect ($K_j$) is the ensemble of biological processes that are impacted by stressors and whose impact propagates directly and indirectly to a focal species ($m$). We further define a unitary pathway of effect ($k$) as a single biological process within the set of processes composing an integrative pathway of effect. In the remainder of the text, if we use the term pathway of effect without a qualifier (*i.e.* integrative or unitary), we mean an integrative pathway of effect.
+where $a_m$ and $a_{m,K}$ are the pre- and post-stressors abundances of species $m$, respectively. In the remainder of the text, the term pathway of effect without a qualifier (*i.e.* integrative or unitary) refers to integrative pathways of effect. Note that by definition $S_{m,K}$ is bounded negatively to -1, as species abundances cannot be negative. We refer to species that are highly susceptible to impacts -- whether positively or negatively -- as weak entry points and distinguish between negative and positive weak entry points.
 
-<!-- State number of positions in motifs in which we are interested -->
-Depending on a species position in a food web and the types of interactions it is involved in, it may be more or less sensitive to the impacts of stressors [@ref]. For example, it is expected that impacting a generalist species will have less impact on other species in a community than impacting a specialist species [@montoya2009]. Predators, meanwhile, are thought to be more vulnerable <!-- Take a look at Stier et al. 2016 in Science --> to stressors, their trophic position making them more susceptible to the propagation of impacts [@ref]. Out of such impacts, meso-predators may find themselves released from the effect of top predators and be positively affected by stressors [@ref]. For example, negatively impacting beluga whales in our system may result in a positive effect on cod (Figure \ref{concept}A). Species that react strongly to impacts - whether positively or negatively - can have profound effects on the structural dynamics of a community [@ref]. We refer to such species as weak entry points and distinguish between negative and positive weak entry points. More extreme values of trophic sensitivity could identify weak entry points in a community. <!-- TODO: research and shorten this paragraph, it sucks
-KC: c'est pas si pire, au final le point ici c'est d'introduire les "weak entry point" tu pourrais peut etre essayer d'aller droit au but (ça marcherait si tu rajoutais un peu de contexte sur les foodweb en intro, la 1ere phrase de ce paragraphe pourrait etre dans l'intro et ici tu ne rappellerais l'idée générale mais juste comment tu as fait) -->
+In multi-species systems, where many direct and indirect trophic effects are operating simultaneously, impacts of stressors can be amplified or dampened through biotic interactions [@ives1995; @wootton2002; @thompson2018a]. Uncovering synergies and antagonisms has been a hallmark of investigations into the impacts of multiple stressors [*e.g.* @crain2008; @darling2008; @cote2016; @thompson2018a; @galic2018]. These so-called non-additive impacts arise when the net impact of an integrative pathway of effect is greater (*i.e.* synergy) or lower (*i.e.* antagonism) than the sum of the impacts of unitary pathways of effect. We define a species ($m$) trophic amplification ($A_{m,K}$) as the difference between its trophic sensitivity to an integrative pathway of effect ($K$) and the sum of its trophic sensitivities to the unitary pathways of effect forming $K$ ($k \in K$; (Figure \ref{concept}C-4):
 
-In multi-species systems, where many direct and indirect trophic effects are operating simultaneously, impacts of stressors may be amplified or dampened through biotic interactions [@ives1995; @wootton2002; @thompson2018a]. These types of effects are termed non-additive and they may be observed when the net impact of an integrative pathway of effect is greater (*i.e.* synergy) or lower (*i.e.* antagonism) than the sum of the impacts of unitary pathways of effect, which we will refer to as the additive pathway of effect. Identifying synergies and antagonisms has been a hallmark of investigations into the impacts of multiple stressors [*e.g.* @crain2008; @darling2008; @cote2016; @thompson2018a; @galic2018]. Our definition of non-additive contrasts somewhat with usual approaches, however, in that we consider that non-additive effects arise from impacts to multiple biological processes <!-- KC: whereas ...? moi je sais pas ce que font les autres font autrement, me semble qu'il faudrait le dire -->. Since a single stressor may impact multiple biological processes, we argue that a single stressor may also cause non-additive effects, at least at the community scale.
+<!-- $$A_{m, K} = S_{m, K} - \sum_{k \in K} S_{m, k}\text{,} \label{eq2} \tag{2}$$ -->
 
-In essence, what we described earlier as varying dynamic trajectories due to the individual impacts of stressors on cod, beluga and capelin are trophic sensitivities to unitary pathways of effects (Figure \ref{concept}B1-3). Their summation, which forms the additive pathway of effect, provides an additive evaluation of a species trophic sensitivity (Figure \ref{concept}B4) and corresponds to the usual focus of environmental assessments. In reality, all of those impacts are operating simultaneously on the system through the integrative pathway of effect, which captures the true trophic sensitivity of a species (Figure \ref{concept}B4). The difference between the trophic sensitivity of a species to an integrative pathway of effect and to an additive pathway of effect provides a quantitative evaluation of non-additive impacts. We define this quantity as a species trophic amplification ($A$):
+$$A_{m, K} = \sum_{k \in K} S_{m, k} - \frac{1}{|K|} S_{m, K}\text{,} \label{eq2} \tag{2}$$
 
-$$A_{m, K_j} = S_{m, K_j} - \sum_{k \in K_j} S_{m, k}\text{,}$$
+where $|K|$ is the number of unitary pathways of effect $k$ forming the integrative pathway of effect $K$. Synergisms and antagonisms are identified by positive and negative trophic amplifications, respectively. From this definition of non-additive impacts, a single stressor can elicit non-additive impacts by disrupting multiple biological processes. In constrast, non-additive impacts are usually defined as arising from more than one stressor. However, we argue that, at the scale of communities, a stressor could indeed elicit non-additive impacts on itw own. In our system, shipping and fishing elicit synergistic impacts on capelin and beluga, and a slightly antagonistic impact on cod. Similarly, we refer to species as biotic amplifiers or biotic buffers if their trophic amplification is positive or negative, respectively. Hence, capelin and beluga are biotic amplifiers, whereas cod is a biotic buffer (Figure \ref{concept}C-4).
 
-<!-- Il y a de la redondance dans la définition de mes paramètres, éliminer -->
-where $A_{m,K_j}$ is the trophic amplification of species $m$ in response to the integrative pathway of effect $K_j$, $k$ denotes one of the ~~the $n$~~ unitary pathways of effect forming $K_j$ <!-- KC: le k en représente 1 à la fois c'est les symbols avec $\sum$ qui font en sorte que k prenne toute les valuers -->, $S_{m, K_j}$ and $S_{m, k}$ are the trophic sensitivity of $m$ to $K_j$ and $k$, respectively. Positive and negative values of trophic amplification identify synergistic and antagonistic impacts, respectively. In our system, the integrative impact of fishing and shipping would result in synergistic impacts on capelin and beluga, and a slightly antagonistic impact on cod (Figure \ref{concept}B4). We refer to species with positive or negative trophic amplification values as biotic amplifiers or biotic buffers, respectively. Hence, capelin and beluga would be biotic amplifiers, while cod would be a biotic buffer (Figure \ref{concept}B4).
+A species trophic sensitivity -- or lack thereof -- can also arise from different mechanisms. Unitary pathways of effect may reinforce each other, whereas others may cancel each other out [@wootton2002; @montoya2009]. For example, the positive impact of cod mortality on capelin (Figure \ref{concept}C-2) is offset by the negative impacts of capelin mortality and altered beluga behaviour (Figure \ref{concept}C-1, C-3, C-4). Comparing the effective and expected impacts of a unitary pathway of effect -- *i.e.* the average impact of an integerative pathways of effect -- provides a measure of variance associated to trophic sensitivity to an integrative pathway of effect ($K$):
+
+$$V_{m, K} = \sum_{k \in K} \left(S_{m, k} - \frac{1}{|K|} S_{m, K} \right)^2\text{.} \label{eq3} \tag{3}$$
+
+Low variance arise from sets of unitary pathways of effect whose individual impacts are relatively similar, whereas high variance identify sets of contrasting unitary pathways of effect. In our system, beluga ($V_{beluga,K} = 0.22$) and capelin ($V_{capelin,K} = 0.18$) are exposed to unitary pathways of effect that tend cancel each other out, whereas cod ($V_{cod,K} = 0.09$) is exposed to unitary pathways of effect that reinforce each other.
 
 
 <!-- =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
-## Holistic exploration <!-- find another title -->
+## Holistic impacts of stressors <!-- find another title -->
 <!-- =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
 
-We have thus far explored what type of trophic sensitivity and amplification to expect for species involved in an omnivory motif and exposed to a specific pathway of effect (Figure \ref{concept}B4). There are many more possible pathways of effect. Restricting the impacts of stressors to resource growth, mortality, conversion and attack rates, there are a total of 7 biological processes and 127 distinct pathways of effect for the tri-trophic food chain, competitive exploitation and apparent competition motifs, and 9 biological processes and 511 pathways of effect for the omnivory motifs. We now explore them all by modeling the dynamics of those motifs using generalized Lotka-Volterra equation systems with Type 1 functional response (Table S1). Two additional motifs were modeled to use as controls to test for the importance of species interactions in mediating the impacts of stressors: a partially connected motif with a disconnected species and a predator-prey interaction resulting in 31 distinct pathways of effects, and a disconnected motif with three fully independent species resulting in 7 pathways of effect.
+We have thus far explored the trophic sensitivity, amplification and variance of species involved in an omnivory interaction and exposed to a specific pathway of effect (Figure \ref{concept}C-4). There are far more potential pathways of effect. Restricting impacts of stressors to resource growth, mortality, conversion and attack rates, there are 7 biological processes and 127 distinct pathways of effect for the tri-trophic food chain, competitive exploitation and apparent competition motifs, and 9 biological processes and 511 pathways of effect for the omnivory motif.
 
-Resources were modeled using equations of the form
+We now model the dynamics of those motifs using generalized Lotka-Volterra equation systems with Type 1 functional response (Table S1) to explore all possible pathways of effect. Two additional motifs are included as controls to test the importance of species interactions in mediating the impacts of stressors: a partially connected motif with a disconnected species and a predator-prey interaction resulting in 31 distinct pathways of effects, and a disconnected motif with three fully independent species resulting in 7 pathways of effect.
+
+Resources were modeled using equations of the form:
 
 $$\frac{dX_i}{dt} = X_i(r_i - \alpha_{ii} X_i - \sum_j \alpha_{ij} X_j)\text{,}$$
 
@@ -249,130 +232,74 @@ $$\frac{dX_j}{dt} = X_j(-m_j + \sum_i e_{ij} \alpha_{ij} X_i - \alpha_{jk} X_k)\
 
 where $m_j$ is the mortality rate of species $j$ and $e_{ij}$ is the rate at which resource $i$ biomass is transformed into consumer $j$ biomass, *i.e.* the conversion rate, and is a scaling parameter of the attack rate which cannot exceed 1.
 
-<!-- perhaps this should come earlier in the text and be justified?? -->
-We studied the equilibrium dynamics of species constrained to coexistence, *i.e.* the abundances of all species had to be positive before and after the appearance of stressors in the system. See @stouffer2010 and @stouffer2012 for investigations into the role of motifs and species to community persistence and stability. As no equilibrium exists for the exploitative competition motif, competitive parameters between consumers were included to the consumer models to constrain growth and limit competitive exclusion. Refer to table S1 for the detailed equation system of each motif considered. Equation systems were solved using Sage [@ref]. All other analyses were performed using R [@ref].
+We studied the equilibrium dynamics of species constrained to coexistence, *i.e.* the abundances of all species had to be positive before and after the appearance of stressors in the system. See @stouffer2010 and @stouffer2012 for investigations into the role of motifs and species to community persistence and stability. As no equilibrium exists for the exploitative competition motif, competitive parameters between consumers were included to the consumer models to constrain growth and limit competitive exclusion. Refer to table S1 for the detailed equation system of each motif considered. Equation systems were solved using SageMath [@thesagedevelopers2019]. All other analyses were performed using R [@rcoreteam2019].
 
 Initial parameter values for intrinsic growth ($r$) and resource density-dependence ($\alpha_{ii}$) were fixed to 1 and 0.001, respectively, to bound all resource solutions. Competitive parameters for the exploitative competition motif were also fixed to 0.001, and conversion rates ($e$) were fixed to 0.5. A set of 100 initial values for mortality ($m \in [0.01, 0.5]$) and attack rates ($\alpha_{ij} \in [0.0001, 0.01]$) was sampled using a simulated annealing algorithm. The algorithm optimized parameter solutions for consumer abundance, *i.e.* the algorithm was more likely to select solutions if the abundance of both consumers in a particular motif increased at each iteration. Complete sets of parameters were only retained if initial abundances and abundances resulting from all possible pathways of effect were positive (explained below).
 
-All possible pathways of effect were simulated by modifying the equilibria equation parameter values by 1%. Parameters were modified to simulate negative impacts only, *e.g.* by increasing the mortality rate of the top predator in the food chain motif by 1%. Simulated impacts were limited to resource growth rates ($r$) mortality rates ($m$), conversion rates ($e$) and attack rates ($\alpha_{ij}$). Trophic sensitivity ($S_{i, K_j}$) and trophic amplification ($A_i$) for all unique motif positions ($i$) were then computed (see equations 1 and 2 above). The overall trophic sensitivity and amplification of unique motif positions was computed as the average sensitivity and amplification over all possible pathways of effect. We refer to those quantities as a position sensitivity and a position amplification.
+All possible pathways of effect were simulated by modifying the equilibria equation parameter values by 1%. Parameters were modified to simulate negative impacts only, *e.g.* by increasing the mortality rate of the predator in the food chain motif by 1%. Simulated impacts were limited to resource growth rates ($r$) mortality rates ($m$), conversion rates ($e$) and attack rates ($\alpha_{ij}$). Trophic sensitivity ($S_{i, K}$) and trophic amplification ($A_i$) for all unique motif positions ($i$) were then computed (see equations 1 and 2 above). The overall trophic sensitivity and amplification of unique motif positions was computed as the average sensitivity and amplification over all possible pathways of effect. We refer to those quantities as a position sensitivity and a position amplification.
 
-Arbitrary thresholds were used to identify negative ($S_{i,K_j} < 1%$) and positive ($S_{i,K_j} > 1%$) weak entry points, biotic buffers ($A_{i, K_j} < 0.02%$) and biotic amplifiers ($A_{i, K_j} > 0.02%$). These thresholds are used solely as references for discussion purposes to better identify species that are more or less sensitive and prone to non-additive impacts.
+Arbitrary thresholds were used to identify negative ($S_{i,K} < 1%$) and positive ($S_{i,K} > 1%$) weak entry points, biotic buffers ($A_{i, K} < 0.02%$) and biotic amplifiers ($A_{i, K} > 0.02%$). These thresholds are used solely as references for discussion purposes to identify species that are more or less sensitive and prone to non-additive impacts.
 
 <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
-## Trophic sensitivity and trophic amplification
+## Impacts on motifs
 <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 
-<!-- Should we answer introductory questions in the text as we go along, or keep it as a separate section? -->
-Unsurprisingly, integrative pathways of effect resulted in greater trophic sensitivities than unitary pathways of effect for all interaction types (Figure \ref{vulnerability}). Species in interaction motifs (*i.e.* food chain, omnivory, exploitation and apparent competition) have greater trophic sensitivities and amplifications than those in control motifs (*i.e.* partially connected and disconnected; Figures \ref{vulnerability}, \ref{positionVulnerability}). Additionally, omnivory and food chain interactions generally lead to greater trophic sensitivities and amplifications than competitive interactions (Figures \ref{vulnerability}, \ref{positionVulnerability}).
+Unsurprisingly, greater trophic sensitivities arise from integrative than unitary pathways of effect for types interation types (Figure \ref{vulnerability}). Interactions (food chain, omnivory, exploitative and apparent competition) also lead to greater trophic sensitivities than controls (partially connected and disconnected; Figures \ref{vulnerability}, \ref{position}). Among interaction types, omnivory and food chains are generally more sensitive and prone to amplification than competitive interactions (Figures \ref{vulnerability}, \ref{position}).
 
-Weak entry points are prevalent in all types of interactions (Figures \ref{vulnerability}, \ref{positionVulnerability}). Omnivory and food chain interactions are particularly susceptible. Top predators and resources are both negative weak entry points, whereas meso-predators are positive weak entry points for both interaction types (Figures \ref{vulnerability}, \ref{positionVulnerability}). Predators in exploitative competition interactions are generally negative weak entry points (Figures \ref{vulnerability}, \ref{positionVulnerability}). Finally, resources in apparent competition largely benefit from parameter variations and are positive weak entry points (Figures \ref{vulnerability}, \ref{positionVulnerability}). The only insensitive positions in interaction motifs are resources and predators in exploitative and apparent competition interactions, respectively, (Figures \ref{vulnerability}, \ref{positionVulnerability}).
+Weak entry points are prevalent in all interactions (Figures \ref{vulnerability}, \ref{position}). Most notably, predators and resources in omnivory and food chains are predominantly negative weak entry points, whereas mesopredators are positive weak entry points (Figures \ref{vulnerability}, \ref{position}). Likewise, consumers in exploitative competition and resources in apparent competition are generally negative and positive weak entry points, respectively (Figures \ref{vulnerability}, \ref{position}). Resources and consumers in exploitative and apparent competition are the sole insentive positions among interactions (Figures \ref{vulnerability}, \ref{position}). Interestingly, this insensitivity arises from negligible impacts rather than unitary pathways of effect cancelling each other out (see variance in Figure \ref{vulnerability}).
 
-Biotic buffers and amplifiers, meanwhile, are almost exclusively restricted to omnivory interactions and to the top predator in food chain interactions (Figure \ref{vulnerability}). On average, the meso-predator in omnivory interactions and predators in both interaction types are biotic amplifiers, whereas resources are not classified (Figure \ref{positionVulnerability}).  Yet most pathways of effect on these motif positions lead either to antagonistic or to synergistic impacts (Figure \ref{vulnerability}). Typecasting these positions as biotic buffers or amplifiers is therefore dependent on meticulous knowledge of realized pathways of effects. We can, however, typecast these positions are acutely sensitive to non-additive impacts.
+Non-additive impacts are largely exclusive to species in omnivory interactions and to the predator in food chains; integrative pathways of effect consistently lead to synergistic or antagonistic impacts and unitary pathways of effect are highly contrasted (Figure \ref{vulnerability}). Meticulous knowledge on realized pathways of effect is therefore necessary to properly typecast these species as either biotic buffers or amplifiers, even though predators and consumers are, on average, biotic amplifiers (Figure \ref{position}). We can, however, typecast these positions are acutely susceptible to non-additive impacts.
 
-Trophic sensitivities and amplifications are greater when different types of biological processes are impacted (Figure \ref{pathways}). Direct impacts on species mortalities or growth rates are the most impactful to a species trophic sensitivity. Yet it is worth noting that impacts to mortality or growth rates do not affect trophic amplification. Instead, non-additive impacts are driven by impacts on species interactions, *i.e.* attack ($\alpha_{ij}$) and conversion ($e$) rates (Figure \ref{pathway}).
-
-
-<!-- Vulnerability figure -->
-\begin{figure}[H]
-\centering
-\includegraphics[width=0.7\columnwidth]{./Figures/vulnerability2.png}
-\caption{
-Ranking of trophic sensitivity ($S_{i,j}$) and amplification ($A_{i,j}$) scores for all univariate
-and multivariate pathways of effects on all 13 unique motif positions in
-the three-species motifs explored, \textit{i.e.} tri-trophic food chain, omnivory,
-exploitative competition, apparent competition, partially connected and
-disconnected.
-Trophic sensitivity is the variation in species initial abundance at equilibrium
-and the abundance after disturbances are simulated through univariate or
-multivariate pathways of effect.
-Pathways of effects identified as weak entry points (\textit{i.e.}
-highly sensitive to disturbances) and biotic sinks (\textit{i.e.} insensitive
-to disturbances) are identified by red and blue regions, respectively.
-Trophic amplification is the deviance of a multivariate pathway of effect and
-the sum of the univariate effects composing the pathway of effect, \textit{i.e.} the
-additive model.
-Pathways of effect identified as biotic buffers (\textit{i.e.}
-synergistic effect of disturbances) and biotic buffers (\textit{i.e.}
-antagonistic effect of disturbances) are identified by the red and blue
-regions, respectively.
-}
-\label{vulnerability}
-\end{figure}
-
-<!-- Position vulnerability figure -->
-<!-- Review figure caption -->
-\begin{figure}[H]
-\centering
-\includegraphics{./Figures/positionVulnerability.png}
-\caption{
-Ranking of 13 motif positions as a function of position sensitivity ($S_i$)
-and amplification ($A_i$) scores in
-the three-species motifs explored, \textit{i.e.} tri-trophic food chain, omnivory,
-exploitative competition, apparent competition, partially connected and
-disconnected.
-Position sensitivity is mean value of the variation in species initial abundance at equilibrium
-and the abundance after disturbances are simulated for all univariate and multivariate pathways of effect
-on a motif position.
-Motif positions identified as weak entry points (\textit{i.e.}
-highly sensitive to disturbances) and biotic sinks (\textit{i.e.} insensitive
-to disturbances) are identified by the blue regions.
-Position amplification is the mean deviance of a multivariate pathway of effect and
-the sum of the univariate effects composing the pathway of effect, \textit{i.e.} the
-additive model, for all multivariate pathways of effect on a motif position.
-Motif positions identified as biotic buffers (\textit{i.e.}
-synergistic effect of disturbances) and biotic amplifiers (\textit{i.e.}
-antagonistic effect of disturbances) are identified by the red regions.
-}
-\label{positionVulnerability}
-\end{figure}
-
-<!-- Pathway vulnerability -->
-\begin{figure}[H]
-\centering
-\includegraphics{./Figures/pathways.png}
-\caption{
-Absolute values of the mean trophic sensitivity ($S_{i,j}$; A) and amplification ($A_{i,j}$; B) as a
-function of the types of parameter composing a pathway of effect.
-All pathways of effect targeting a specific parameter type (\textit{i.e.}
-mortality, attack and conversion rates) were grouped to evaluate their
-respective and combined effect on trophic sensitivity and amplification.
-}
-\label{pathway}
-\end{figure}
+Unsurprisingly, impacts to mutliple types of biological processes lead to greater trophic sensitivities and amplifications (Figure \ref{param}). Impacts to species mortality or growth rates in particular influence trophic sensitivity (Figure \ref{param}). Yet it is worth noting that impacts to mortality or growth rates do not affect trophic amplification; instead, non-additive impacts are driven by impacts on species interactions, *i.e.* attack ($\alpha_{ij}$) and conversion ($e$) rates (Figure \ref{param}).
 
 
 <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 # Scaling back to complex food webs
 <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 
-We have used motifs to handle food web complexity, conceptualize the role of species and their interactions in mediating the impacts of multiple stressors in ecological communities, and evaluate how different types of interations will lead to contrasting trophic sensitivities and amplifications. We now scale back to species in complex food webs. As a food web can be deconstructed into $n$-species motifs, it can also be pieced back together in the same manner to assess the structural roles of species within food webs [@stouffer2012; @cirtwill2015]. A species motif profile is evaluated as a function of all the positions it holds in $n$-species interactions. For example, cod in our conceptual system is involved twice in food chain interactions as a top predator, once in an omnivory interaction as a mesopredator, once in exploitative competition as a predator and never in apparent competition (Figure \ref{concept}C).
+Thus far, we simplified food web complexity using motifs, conceptualized the role of species and their interactions in mediating the impacts of multiple stressors in ecological communities, and evaluated how interaction type influences a species trophic sensitivity and amplification. We now scale back to species in complex food webs.
 
-Each motif in which cod is involved is characterized by a particular pathway of effect (Figure \ref{concept}C) with a distinct trophic sensitivity and amplification value (Figure \ref{concept}D).
+As a food web can be deconstructed into $n$-species motifs, it can be pieced back together to assess the structural roles of species and their interactions in complex food webs [@stouffer2012; @cirtwill2015]. All the positions a species holds in $n$-species interactions in a food web forms its motif profile. In our system, cod is twice a predator in food chains, once a consumer in an omnivory interaction and once a consumer in exploitative competition (Figure \ref{concept}D). Each three-species interaction is impacted through a specific pathway of effect from which we can evaluate trophic sensitivity and amplification (Figure \ref{concept}D, E). For example, cod is negatively impacted through the food chains and competitive exploitation interactions, whereas it benefits from impacts through the omnivory interaction (Figure \ref{concept}E). Impacts to cod are also amplified through the food chain with capelin and copepod, yet buffered through the omnivory and exploitative competition interactions (Figure \ref{concept}E). We summarize trophic sensitivities ($S_m$) and amplifications ($A_m$) across a species motif profile ($M$) by summing individual trophic sensitivities and amplifications (Figure \ref{concept}E):
 
-A species overall trophic sensitivity ($S_m$) and amplification ($A_m$) becomes the sum of its trophic sensitivities and amplifications over all its $n$-species interactions:
+$$S_m = \sum_{i \in M} S_{i,K^i}\text{;} \label{eq4} \tag{4}$$
 
-<!-- Review formulas and text -->
-$$S_m = \sum_{j \in K^{i*}}^{position} S_{i,j}\text{,}$$
+$$A_m = \sum_{i \in M} A_{i,K^i}\text{,} \label{eq5} \tag{5}$$
 
-$$A_m = \sum_{j \in K^{i*}}^{position} A_{i,j}\text{,}$$
+where $K^i$ is the pathway of effect impacting species through motif $i$. Summarizing by adding individual trophic sensitivities and amplifications allows for individual pathways of effect to reinforce and cancel each other out. For instance, we expect pathways of effect to negatively and synergistically impact cod in our system (Figure \ref{concept}E).
 
-where $S_m$ and $A_m$ are the sensitivity and amplification scores of species $m$, respectively, $K_j$ are integrative pathways of effect, $K^{i*}$ is the set of realized pathways of effects for position $i$, and $S_{i,{K_j}}$ and $A_{i,{K_j}}$ are the trophic sensitivity and amplification to the pathway of effect $K_j$ at position $i$.
 
-<!-- Have to finish the conceptual figure to include a *D* portion that explains this part. I'm not certain what it should look like yet...
-Another paragraph that will come with the portion of the figure and explaining the net trophic sensitivity and amplification of a species, using the fictitious food web as an example -->
-
-Since we simulated the trophic sensitivity and amplification of all motif positions to all possible pathways of effect, we can use these results as heuristics to infer the overall trophic sensitivity and amplification of a species in a complex food web.
-
+<!--
+Maybe try a variance evaluation here as well
+$$V_m = \sum_{i \in M} \left(S_{i,K^i} - \frac{1}{|M|} S_m \right)^2 \label{eq6} \tag{6}$$
+-->
 
 <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
-## An empirical illustration
+## An empirical illustration: the St. Lawrence System
 <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 
-We illustrate the evaluation of a species trophic sensitivity and amplification using the St. Lawrence System, in eastern Canada, as an empirical example. The St. Lawrence System is formed by one of the largest estuaries in the world, the St. Lawrence Estuary, and a vast interior sea, the Gulf of St. Lawrence. It is characterized by variable environmental and oceanographic processes that make it well suited for the establishment of diverse and productive ecological communities [@el-sabh1990a; @savenkoff2000]. We use the description of empirical food webs originating from the three main regions of the St. Lawrence for different periods: the Northern Gulf of St. Lawrence [mid-1980s; @morissette2003], the Southern Gulf of St. Lawrence [mid-1980s; @savenkoff2004], and the St. Lawrence Estuary [early 2000s; @savenkoff2012]. The total number of species and functional groups differs between food webs ($n_{SSL} = 30$; $n_{NSL} = 32$; $n_{ESL} = 41$;), yet there is significant overlap ($n_{all} = 21$). <!-- add supplementary materials? --> Food web resolution is biased towards commercial fish for all food webs. Interactions were identified as a species or functional group's diet composition in percent. Only diet percent > 0.1 were considered as interactions.
+We illustrate a species trophic sensitivity and amplification in complex food webs using empirical food webs from the St. Lawrence System in eastern Canada. The St. Lawrence System is formed by one of the largest estuaries in the world and a vast interior sea. Variable environmental and oceanographic processes make it suitable for the establishment of diverse and productive ecological communities [@el-sabh1990a; @savenkoff2000]. The St. Lawrence System provides a wealth of ecosystem services that benefit the Canadian economy. It sustains rich commercial fisheries, grants access to one of the most densely populated regions in North-America through more than 40 ports, is home to an expanding aquaculture production, and has an expanding tourism industry [@beauchesne2016; @schloss2017; @archambault2017]. These human-induced stressors blend with climate related stressors to result in intricate stress exposure regimes [@beauchesne2019].
 
-The St. Lawrence System provides a wealth of ecosystem services that benefit the Canadian economy. It sustains rich commercial fisheries, grants access to one of the most densely populated regions in North-America through more than 40 ports, is home to an expanding aquaculture production, and has an expanding tourism industry [@beauchesne2016; @schloss2017; @archambault2017]. These human-induced stressors mingle with climate related stressors to result in intricate stress exposure regimes [@beauchesne2019]. The most prevalent sources of offshore human- and climate-induced stress in the St. Lawrence System are shipping, trawl, trap and pelagic fisheries, ocean acidification, hypoxia, and bottom and surface temperature anomalies [@beauchesne2019].
+<!-- =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+### Food webs
+<!-- =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
 
-The impacts of individual sources of stress on the biological processes governing these food webs (Figure \ref{nsl}) were inferred following broad rules to simplify the number of assumptions required. First, a deep- or surface-dwelling species were considered exposed to an individual stressor if they could co-occur in the water column. Acidification, hypoxia and bottom temperature anomalies are widespread in the deep layers of the St. Lawrence, whereas surface temperature anomalies and shipping are prevalent in the surface layer [@beauchesne2019]. Second, we used a trait-matching approach to evaluate the vulnerability of species to climate-related stressors. The mobility of a species was used to evaluate its vulnerability to hypoxia and temperature anomalies. Hypoxia was considered as impacting the physiology or the behaviour of species with low or high mobility, respectively. Temperature anomalies were considered as impacting the physiology of species with low mobility only. Ocean acidification was assumed to impact the physiology of exposed carbonate-secreting organisms [*e.g.* mollusks and crustaceans; @kroeker2013]. Third, impacts of human-induced stressors were classified from known species-stressors relationships. Disruption of whale behaviour was considered as the main impact of shipping [@lesage2017; @christiansen2013]. Fisheries were considered as impacting species mortality. Targeted species were identified from the catch data provided in the food web descriptions [@morissette2003; @savenkoff2004; @savenkoff2012] and gear type from landing data from the Department of Fisheries and Ocean's Canada [@dfo2016b]. Reported whale bycatch and seals and seabird hunting were considered as impacts to mortality [@morissette2003; @savenkoff2004; @savenkoff2012].
+We use empirical data on food webs in the three main regions of the St. Lawrence for different periods: the Northern Gulf of St. Lawrence [mid-1980s; @morissette2003], the Southern Gulf of St. Lawrence [mid-1980s; @savenkoff2004], and the St. Lawrence Estuary [early 2000s; @savenkoff2012]. The total number of species and functional groups differs between food webs ($n_{SSL} = 30$; $n_{NSL} = 32$; $n_{ESL} = 41$;), yet there is significant overlap ($n_{all} = 21$). Food web resolution is biased towards commercial fish for all food webs. Interactions were identified as a species or functional group's diet composition in percent. Only diet percent > 0.1 were considered as interactions. Refer to @morissette2003, @savenkoff2004 and @savenkoff2012 for more details on the food webs. Note that detailed results are only presented and discussed for the Northern Gulf of St. Lawrence food web in the manuscript. Results for the Estuary and Southern Gulf are nonetheless available as supplementary material (Figures S1, S2).
+
+<!-- =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+### Stressor impacts
+<!-- =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+
+The most prevalent sources of offshore human- and climate-induced stress in the St. Lawrence System are shipping, trawl, trap and pelagic fisheries, ocean acidification, hypoxia, and bottom- and surface-water temperature anomalies [@beauchesne2019]. We inferred the impacts of individual sources of stress on the biological processes governing these food webs (Figure \ref{nsl}) through broad trait-matching rules guiding from expert knowledge and the scientific litterature to simplify the number of assumptions required.
+
+1) Position in the water column -- *i.e.* deep or surface-dwelling species -- determined a species exposure to stressors. Acidification, hypoxia and bottom temperature anomalies are widespread in the deep layers of the St. Lawrence, whereas surface temperature anomalies and shipping are prevalent in the surface layer [@beauchesne2019];
+2) Mobility established a species vulnerability to hypoxia and temperature anomalies. Hypoxia and temperature anomalies were considered as impactful to the physiology of species with low mobility, whereas the behaviour of mobile species was considered as impacted by hypoxia only;
+3) Ocean acidification was considered impactful to the physiology of carbonate-secreting organisms [*e.g.* mollusks and crustaceans; @kroeker2013];
+4) Shipping was considered as impactful to whale behaviour [@lesage2017; @christiansen2013];
+5) Fisheries were considered impactful to a species mortality. The catch data provided in the food web descriptions provided a list of targeted species [@morissette2003; @savenkoff2004; @savenkoff2012]. The gear types used to capture targeted species were identified with landing data from the Department of Fisheries and Ocean's Canada [@dfo2016]. Reported whale bycatch and seals and seabird hunting were considered as impacts to mortality [@morissette2003; @savenkoff2004; @savenkoff2012].
+
+<!-- =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+### Pathways of effect
+<!-- =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
 
 The motif profile of each species was evaluated from the structure of each food web (Figure \ref{nsl}). For each three-species interaction in which a species was identified, the realized pathway of effect was identified as a function of biological processes impacted (Figure \ref{nsl}). The following rules were applied to identify realized pathways of effect:
 
@@ -380,84 +307,161 @@ The motif profile of each species was evaluated from the structure of each food 
 2) impacts on behaviour disrupt consumer attack rates ($\alpha_{ij}$), and
 3) impacts on physiology disrupt consumer conversion rates ($e$).
 
-Note that detailed results are only presented and discussed for the Northern Gulf of St. Lawrence food web in the manuscript. Results for the Estuary and Southern Gulf are nonetheless available as supplementary material (Figures S1, S2).
+Simulation results from the holistic exploration of the impacts of stressors on motifs were then used as heuristics to infer the trophic sensitivity and amplication of species to specific pathways of effect in the food webs.
+
 
 <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
-## Species sensitivity and amplification
+## Sensitivity and amplification in the St. Lawrence System
 <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 
-<!-- I don't think that this section is very convincing.. -->
-The most vulnerable species in the Northern St. Lawrence are large predators that are never or rarely resources themselves, such as large demersal fish (*i.e.* demersals, atlantic cod and greenland halibut; Figure \ref{nsl}). These species are the greatest negative weak entry points in the food web and also have high trophic amplifications compared to other species in the food web (Figure \ref{nsl}).
+A species trophic position -- as described by its motif profile -- informs us on expected trophic sensitivities and amplifications. The most trophically sensitive species in the St. Lawrence are most frequently positioned as predators in food chain, omnivory and exploitative competition interactions (Figure \ref{nsl}); these generally lead to negative impacts (Figure \ref{position}). The least sensitive species, meanwhile, generally occupy positions that benefit from (*e.g.* consumersin  omnivory interactions) or are less sensitive to (*e.g.* resource in exploitative competition) to stressors (Figures \ref{position}, \ref{nsl}). Interestingly, trophic sensitivities and amplifications are not correlated; in fact, there are very few biotic buffers and most species are biotic amplifiers to some degree (Figure \ref{nsl}). Furthermore, the number of stressors impacting a species does not necessarily translate to higher trophic sensitivities or amplifications. For example, shrimp trophic sensitivity was very low even though its mortality, physiology and behaviour were all potentially impacted; marine mammal and sea birds, in contrast, were negative weak entry points and biotic amplifiers even without stressors (Figure \ref{nsl}).
 
-The position of a species in a food web greatly influences its trophic sensitivity and amplification. Resources such as shrimp and small pelagic feeders have generally weaker trophic sensitivities (Figure \ref{nsl}). Large crustaceans, meanwhile, who are positioned as both predators and resources in the food web, are positive weak entry points and biotic amplifiers (Figure \ref{nsl}). Other species like redfish and shrimp are in positioned in interactions leading to both positive (*e.g.* meso-predator in omnivory interaction) and negative (*e.g.* resources in omnivory interations) impacts (Figure \ref{nsl}). This likely leads to impacts canceling each other out, which might explain their low trophic sensitivity. Interestingly, trophic sensitivity and amplification are not correlated among species. In fact, very few species are biotic buffers, while most are biotic amplifiers to some degree (Figure \ref{nsl}).
+We can largely summarize results for the mid-1980s Northern St. Lawrence food web with two major observations. Large apex predators (*e.g.* Atlantic cod, Greenland halibut and large demersals) and marine mammals were both negative weak entry points and biotic amplifiers (Figure \ref{nsl}). Smaller forage species, meanwhile, were either positive weak entry points and biotic amplifiers (*e.g.* capelin and crustaceans), or largely insensitive to stressors (*e.g.* shrimp; Figure \ref{nsl}). On the whole, these observations foreshadow the ensuing groundfish stock collapse of the early to mid-1990s in the St. Lawrence [@savenkoff2007; @morissette2009] and elsewhere in the Northern Atlantic Ocean [@worm2003; @frank2005]. Triggered by overfishing and poor environmental conditions [@dempsey2018], the groundfish stock collapse resulted in dramatic shifts in trophic structure that saw the fall of piscivorous groundfish and the rise of small pelagics and benthic crustaceans [@savenkoff2007; @morissette2009] that mostly endure 30 years later [@bourdages2018]. Marine mammals, meanwhile, shifted their resource use and their biomass increased in the St. Lawrence [@morissette2009; @gavrilchuk2014]. Trophic interpretations explaining the shifts are plentiful [*e.g.* @jackson2001; @worm2003; @frank2005]; it now appears that species were also trophically predisposed more or less susceptible to stressors in the St. Lawrence.
 
-The number of stressors directly impacting a species does not necessarily translate to higher trophic sensitivities or amplifications. For example, even though shrimp mortality, physiology and behaviour are all impacted, the net trophic sensitivity of shrimp is very low (Figure \ref{nsl}). In contrast, species directly impacted by few or no stressors like cetaceans and harbour seals may be have high net <!--KC: why net?--> trophic sensitivity and amplifications due to their trophic position (Figure \ref{nsl}).
+Still, trophic sensitivities and amplifications are context-specific rather than species-specific. Indeed, species like cod, shrimp and large crustaceans have variable trophic sensitivities and amplifications in the food webs analysed: cod was more susceptible to impacts in the North than in other regions of the St. Lawrence, shrimp benefited more from impacts in the Estuary, and large crustaceans benefited in the Gulf, yet were negatively impacted in the Estuary (Figure \ref{species}). Similarly, stressor type alters a species trophic sensitivity and amplification. For instance, fisheries and climate combine to increase and decrease sensitivity of cod and shrimp, respectively (Figure \ref{species}). Stressors can also strengthen or weaken their respective impacts. For instance, fisheries weaken the impact of climate stressors on shrimp, although it greatly increases trophic amplification (Figure \ref{species}). All these observations bolster our assessment that detailed knowledge of realized pathways of effect and of the structure of food webs is necessary to properly capture the impacts of multiple stressors.
 
-Food web topology ~~and~~ affects a species trophic sensitivity and amplification (Figure \ref{species}). For example, cod shrimp and large crustaceans are three species or functional groups found in all three St. Lawrence food webs. Indeed, cod appears to be a stronger negative weak entry points and biotic amplifiers in the Northern Gulf than in other regions of the St. Lawrence (Figure \ref{species}). Shrimp, meanwhile, are stronger positive weak entry points and biotic amplifiers in the Estuary than the Gulf (Figure \ref{species}). Even greater contrasts are observed with large crustaceans, who are negative weak entry points in the Estuary and moderately positive weak entry points and biotic amplifiers in the Gulf (Figure \ref{species}).
 
-The types of stressors considered alters a species trophic sensitivity and amplification. For instance, fisheries and climate combine to increase and decrease sensitivity of cod and shrimp, respectively (Figure \ref{species}).
-Stressors may also combine to strengthen or weaken their respective impacts. For instance, fisheries weaken the impact of climate stressors on shrimp when combined, although it greatly increases trophic amplification (Figure \ref{species}). These observations stress <!-- KC: ?? --> the a species sensitivity to and amplification of multiple stressors will be context dependent and thus cannot be properly evaluated without holistically considering its context.
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+# What it all means
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+From cells to ecosystems, stressors are increasingly impacting natural environments. Here, we show how stressors impacting individual species ripple through entire ecological communities. In conceptualizing the impacts of multiple stressors on food webs, we sought to develop a theory-grounded framework to tackle the challenge of incorporating the complexities of real-world systems to impact assessments, management and conservation. We hypothesized that interactions, their configuration and species trophic positions greatly influence a species sensitivity to and amplification of the impacts of stressors. We numerically explored the many pathways of effect through which the dynamics of the four most common 3-species motifs (*i.e.* tri-trophic food chain, omnivory, competitive and apparent competition) can be impacted using generalized Lotka-Volterra models. We then used simulation results as heuristics to infer species sensitivity to and amplification of multiple stressors in the food webs of the St. Lawrence System in eastern Canada. In doing so, we searched for theory-grounded answers to questions of particular relevance to management.
+
+<!-- =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+### Should species interactions be considered in impact assessments? {-}
+<!-- =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<!-- =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<!-- Interactions matter -->
+<!-- Interactions drive non-additive impacts -->
+<!-- Interaction type matters -->
+<!-- =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+
+We find, as anticipated, that species interactions play a crucial role in mediating the impacts of multiple stressors through food webs and that considering species in isolation can grossly underestimate the impacts of stressors. Our result support longstanding evidence on the importance of interactions in spreading and amplifying the effects of disturbances through food webs [*e.g.* @menge1995; @wootton1993; @yodzis2000; @wootton2002; @montoya2009; @ogorman2009; @burns2014] and extend this conclusion to the impacts of multiple stressors [see @thompson2018a]. <!-- empirical example with seagrass and coral reef grazing? -->
+
+<!--
+Conservation failures?
+Mora, C., Andrefouet, S., Costello, M.J., Kranenburg, C., Rollo, A., Veron, J. et al. (2006). Coral reefs and the global network of marine protected areas. Science, 312, 1750–1751.
+
+Importance of considering interactions:
+In Mellin, C., MacNeil, M.A., Cheal, A.J., Emslie, M.J., Caley, M.J., 2016. Marine protected areas increase resilience among coral reef communities. Ecology Letters 19, 629–637. https://doi.org/10.1111/ele.12598
+
+> On coral reefs, some of the most diverse and threatened ecosystems on Earth (Knowlton et al. 2010; Fisher et al. 2011; Caley et al. 2014), protection of herbivorous fish that graze on macroalgae may contribute to faster coral recovery in MPAs (Mumby & Harborne 2010) and ultimately benefit a wide range of taxa through the indirect and delayed effects of trophic cascades (Babcock et al. 2010).
+
+Rizzari, J.R., Bergseth, B.J. & Frisch, A.J. (2015). Impact of conservation areas on trophic interactions between apex predators and herbivores on coral reefs. Cons. Biol., 29, 418–429.
+
+Top predator recovery enhance ecosystem resilience through cascading machanisms, sea otters.
+Hughes, B.B., Hammerstrom, K.K., Grant, N.E., Hoshijima, U., Eby, R., Wasson, K., 2016. Trophic cascades on the edge: fostering seagrass resilience via a novel pathway. Oecologia 182, 231–241. https://doi.org/10.1007/s00442-016-3652-z
+
+Can we make a link with community resilience to disturbances in seagreass beds and coral reefs, with the control of grazers an important aspect of conservation efforts?
+-->
+
+In the context of multiple stressors, our results further establish that impacts to multiple types of biological processes -- *e.g.* mortality and conversion rates -- greatly increase a species's sensitivity to stressors and that non-additive impacts emerge chiefly from impacts to species interactions (*i.e.* attack and conversion rates), rather than impacts to their growth or mortality rates. These results suggest that using a single indicator of population health such as reproduction or mortality downplays the impacts of stressors; they also imply that, for complex food webs, cataloguing and quantifying species interactions is necessary to properly evaluate the often suprising impacts of multiple stressors.
+
+We further uncover that the type of interaction greatly influences the susceptibility of species to the impacts of multiple stressors. Omnivory and food chain interactions in particular lead to heightened trophic sensitivities for all species involved; they also capture almost all non-additive impacts arising through species interactions in our simulations. Food chains are generally overrepresented (*i.e.* observed more often than randomly expected) in empirical food webs, whereas omnivory interactions are often used to differentiate food webs based on their structural properties [@bascompte2005; @stouffer2007; @klaise2017; @monteiro2016]. While the role of omnivory in stabilizing food webs is debated in the literature [*e.g.* @mccann1998; @bascompte2005; @stouffer2007; @klaise2017; @monteiro2016], our result suggest that food webs overrepresented with omnivory motifs may be more susceptible to multiple stressors.
+
+<!-- Different conservation strategies as a function of types of interactions [@stier2016] -->
+
+
+<!-- =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+### Should impacts of stressors be evaluated jointly? {-}
+<!-- =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<!-- =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<!-- More stressors leads to increased species sensitivity -->
+<!-- Non-additive impacts through omnivory and food chain interactions -->
+<!-- A species position is informative on the likelihood of observing non-additive impacts -->
+<!-- Detailed knowledge on pathways of effect is necessary to identify the type of non-additive impact (*i.e.* synergism vs antagonism) -->
+<!-- =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+
+We find that trophic amplification almost exclusively affects species in food chain and omnivory interactions. For these, non-additive impacts are so prevalent that evaluating impacts on a stressor by stressor basis will almost always result in over- or under-estimations of net impacts of stressors. Moreover, the type of non-additive impacts is so variable that distinguishing between synergistic and antagonistic impacts is only possible through detailed knowledge on the pathways of effect through which stressors are impacting a system. Considering that food chain and omnivory interactions are important building blocks of empirical food web structure [*e.g.* @bascompte2005; @stouffer2007; @klaise2017; @monteiro2016], non-additive impacts are likely common. Based on this, we conclude that stressors should be evaluated jointly.
+
+
+<!-- =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+### Which species are most susceptible to stressors? {-}
+<!-- =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<!-- =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<!-- Predators -->
+<!-- Direct impacts -->
+<!-- Context dependence -->
+<!-- This section needs more work... There is more to take away from our simulations than predators are vulnerble... -->
+<!-- =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+
+At the motif and food web scales, predators are generally most susceptible to stressors, acting as negative weak entry points and either biotic amplifiers or buffers as a function of specific pathways of effect. This is expected, as apex predators are both preferentially targeted for hunting and fishing, and more vulnerable to trophically-mediated effects [@pauly1998; @estes2011; @ripple2015; @stier2016].
+
+Our results further show that direct impacts are unnecessary for a species to be highly susceptible to stressors in a food web; conversely, a species can be largely insensitive or favoured even if directly impacted by multiple stressors.
+
+A species susceptibility is context-dependent
+
+We did this at equilibrium. These hold for food webs at equilibrium, meaning that the topology of the food web stays the same. If the topology changes, then the dynamics would also change.
+
+
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+# The way forward
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+Here, we clearly demonstrate that management and conservation need to move away from single species and single stressor environmental assessments and conservation in favour of holistic approaches that explicitely consider the intricacies of ecological networks. By doing so, we join others in advocating for and providing evidence in support of the application of holistic environmental approaches and the conservation of ecological networks [*e.g.* @mccann2007; @tylianakis2008; @tylianakis2010; @ogorman2012; @thompson2018a]. <!-- see @ings2009 --> Such a transition will require infrastructure and investments in broader monitoring program targeting non-commercial and unthreatened species, which is something we tend to avoid. It will also require detailing the structure of networks, which is challenging [@paine1992]. Emerging approaches such as isotopic analyses [@ref], environmental DNA [@ref], and machine and deep learning [@ref] could be leveraged to assist and optimize the characteriation of food web structure. It will also require embracing system's complexity rather than trying to distill it. That is not say that simplifcations are unwarranted; rather, *say something clever here*. <!-- edit text (poorly written), elaborate and link to literature. The main ideas are there, if poorly conveyed -->
+
+Conceptually, we favoured simplified model formulations to tackle the complexities of evaluating the impacts of multiple stressors on food webs. Ample opportunities remain to glean deeper insights into the dynamics of ecological systems impacted by multiple systems. First, our results hint at the importance of interaction strengths to properly understand the impacts of stressors [see also *e.g.* @paine1992; @mccann1998; @montoya2009; @ogorman2009; @gellner2016] without fully exploring them. <!-- more here -->
+
+Scaling up to food webs <!-- proper predictions at the food web rather than heuristics -->
+
+We also considered interactions and stressors as binary events, when that is obviously not the case. Our approach could however easily be adapted to consider the probabilities of interactions and exposure to stressors. This would however require very detailed environmental data that we generally lack at the moment.
+
+
+
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+# Figures
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+<!-- Concept -->
+\begin{figure}[H]
+\centering
+\includegraphics{./Figures/Concept.png}
+\caption{A) Conceptualization of the impacts of multiple stressors on complex food webs using a simplified 6-species food web composed of populations of beluga (\textit{Delphinapterus leucas}) and humpback (\textit{Megaptera novaeangliae}) whales, Atlantic cod (\textit{Gadus morhua}), capelin (\textit{Mallotus villosus}), krill (\textit{Euphausiacea}) and copepods (\textit{Copepoda}), and impacted by climate change-induced temperature anomalies, commercial shipping and trawl fishing. B) Stressors impact food webs by disrupting biological processes such as mortality ($m$), attack ($\alpha$) and conversion ($e$) rates. Species are either directly or indirectly impacted by stressors through species interactions. C) Disrupting biological processes impacts community dynamics and results in variations in species abundances (trophic sensitivity; $S_m$). Food web complexity is simplified by focusing on subsets of species interactions -- such as the omnivory interaction linking beluga, cod and capelin -- called motifs. Impacts to individual biological processes arise through unitary pathways of effects ($k$) and result in contrasting population trajectories (1-3). Unitary pathways of effect combine to form an integrative pathway of effect ($K$) and collectively impact species in a system (4). The difference between the sum of trophic sensitivities to  unitary pathways of effect ($k \in K$) and trophic sensitivity to the integrative pathway of effect identifies synergistic and antagonistic impacts (trophic amplification; $A_m$). D) A species motif profile ($M$) is composed of all the position it holds in $n$-species interactions in a food web. E) A pathway of effect and resulting trophic sensitivities and amplification can be evaluated across a species motif profile, the sum of which summarizes that species overall trophic sensitivity and amplification.}
+\label{concept}
+\end{figure}
+
+
+<!-- Vulnerability figure -->
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.7\columnwidth]{./Figures/vulnerability.png}
+\caption{Density plots of the trophic sensitivity ($S_{i,K}$), amplification ($A_{i,K}$) and variance ($V_{i,K}$) of 13 unique motif positions ($i$) resulting from all unitary ($k$) and integrative ($K$) pathways of effect simulated on the dynamics of 3-species motifs (\textit{i.e.} tri-trophic food chain, omnivory, exploitative competition, apparent competition, partially connected and disconnected). Impacts of stressors on individual biological processes -- \textit{i.e.} mortality ($m$), attack ($\alpha$) and conversion ($e$) rates -- form unitary pathways of effect that collectively impact food webs through integrative pathways of effect. A species trophic sensitivity is difference in equilibrium abundance before and after the permanent appearance of stressors; a species trophic amplification is the difference between its trophic sensitivity to an integrative pathway of effect and the sum of its trophic sensitivity to unitary pathways of effect. Pathways of effect that lead to a position being a weak entry point (\textit{i.e.} highly sensitive to disturbances), a biotic buffer (\textit{i.e.} synergistically impacted by stressors) or a biotic amplifier (\textit{i.e.} antagonistically impacted by stressors) are identified as colored areas under the density curves.}
+\label{vulnerability}
+\end{figure}
+
+<!-- Position  -->
+\begin{figure}[H]
+\centering
+\includegraphics{./Figures/position.png}
+\caption{Mean trophic sensitivity ($S_i$) as a function of mean trophic amplification ($A_i$) to all possible pathways of effect ($K$) for the 13 unique 3-species motif positions explored, \textit{i.e.} tri-trophic food chain, omnivory, exploitative competition, apparent competition, partially connected and disconnected. Motif positions identified as weak entry points (\textit{i.e.} highly sensitive to disturbances), biotic buffers (\textit{i.e.} synergistically impacted by stressors) and biotic amplifiers (\textit{i.e.} antagonistically impacted by stressors) are identified as colored areas on the graph.}
+\label{position}
+\end{figure}
+
+<!-- Parameter types -->
+\begin{figure}[H]
+\centering
+\includegraphics{./Figures/paramType.png}
+\caption{Mean absolute trophic sensitivities ($S_{i,K}$) and amplifications ($A_{i,K}$) as a function of the types of parameters forming an integrative pathway of effect ($K$). All pathways of effect impacting mortality ($m$), attack ($\alpha$) and conversion ($e$), were grouped to evaluate the respective and combined importance of the types of parameters in driving trophic sensitivity and amplification.}
+\label{param}
+\end{figure}
 
 <!-- Northern St. Lawrence -->
 <!-- \blandscape -->
 \begin{figure}[H]
 \centering
 \includegraphics{./Figures/ScoreTableNSL.png}
-\caption{
-Change in species and functional groups sensitivity and amplification scores
-as a function of realized pathways of effects for an empirical food web of the
-Northern Gulf of St. Lawrence in the mid-1980s \cite{morrissette2003}.
-The left-hand side of the table presents the species and functional groups,
-the drivers supposed to be affecting population level mortality,
-physiology and behaviour, and the frequency at which they are found in each
-unique position of the food chain, omnivory, exploitative and apparent
-competition motifs.
-Important drivers in the Northern Gulf of St. Lawrence are fisheries
-(\textit{i.e.} demersal destructive, demersal non-destructive high-bycatch and
-pelagic high-bycatch), climate change (\textit{i.e.} ocean acidification,
-hypoxia and bottom and surface temperature anomalies), and shipping
-\cite{beauchesne2019}.
-Species position and driver effects on biological processes were used to
-identify realized pathways of effects between all 3-species combinations in
-the food web.
-The right-hand side of the table presents the species sensitivity and
-amplification scores, which corresponds to the sum of the simulated effects
-of all realized pathways of effects for each species and functional group
-(Figure \ref{vulnerability}).
-Negative and positive sensitivity scores mean that overall pathways affecting a
-species have negative or positive effects, respectively.
-The species with the most negative and positive scores are weak entry points
-(\textit{i.e.} highly sensitive to disturbances), while species with null scores
-are biotic sinks (\textit{i.e.} insensitive to disturbances)
-Similarly, negative and positive amplification scores mean that overall pathways
-affecting a species result in antagonistic or synergistic effects, respectively.
-Species with negative or positive scores are thus biotic buffers and biotic
-amplifiers, respectively.
-}
-\label{scoreTable}
+\caption{Trophic sensitivities ($S_m$) and amplifications ($A_m$) of species and function groups of the Northern Gulf of St. Lawrence in the mid-1980s (Morissette \textit{et al.} 2003). A species trophic sensitivity and amplification is summarized using the sum of simulated trophic sensitivities ($S_{i,K}$) and amplifications ($A_{i,K}$) to pathways of effect ($K$; Figure \ref{vulnerability}) across a species motif profile ($M$). The left-hand side of the figure presents species and functional groups, unitary pathways of effects ($k$) arising from individual stressors and their potential impacts on population level mortality, physiology and behaviour, and the motif profile ($M$) of species and functional groups measured as the frequency of times they hold unique positions in tri-trophic food chain, omnivory, exploitative and apparent competition interactions structuring of the food web. Main stressors in the Northern Gulf of St. Lawrence were fisheries (\textit{i.e.} demersal destructive, demersal non-destructive high-bycatch and pelagic high-bycatch), climate change (\textit{i.e.} ocean acidification, hypoxia and bottom and surface temperature anomalies), and shipping (Beauchesne \textit{et al. in review}). Impacts of stressors on individual biological processes form unitary pathways of effect ($k$) that collectively impact food webs through integrative pathways of effect ($K$). The right-hand side of the figure presents trophic sensitivities and amplifications of species and functional groups. Negative or positive trophic sensitivities denote expected decreases or increases in species abundance as a response to pathways of effect. Species or functional groups with lowest or highest trophic sensitivities are positive or negative weak entry points (\textit{i.e.} highly sensitive to disturbances), respectively. Negative or positive trophic amplifications identify species or functional groups expected to be impacted synergistically (\textit{i.e.} biotic amplifiers) or antagonistically (\textit{i.e.} biotic buffers) by stressors.}
+\label{nsl}
 \end{figure}
 <!-- \elandscape -->
 
-<!-- Context dependent figure -->
+<!-- Context -->
 \begin{figure}[H]
 \centering
 \includegraphics{./Figures/species.png}
-\caption{
-Realized sensitivity ($S^\star_m$) and amplification ($A^\star_m$) scores for
-Atlantic cod (\textit{Gadus morhua}), shrimp (\textit{Pandalus borealis}) and
-large crustaceans (\textit{Crustacea}), 3 species or functional groups part of
-the food webs of the Southern and Northern Gulf of St. Lawrence in the mid-1980s
-\cite{morissette2003; savenkoff2004} and the St. Lawrence Estuary \cite{savenkoff2012}.
-Scores are presented when groups of drivers are considered individually and in
-combination.
-}
+\caption{Comparison of the trophic sensitivities ($S_m$) and amplifications ($A_m$) to the impacts of different groups of stressors (Figure \ref{nsl}) for Atlantic cod (\textit{Gadus morhua}), shrimp (\textit{Pandalus borealis}) and large crustaceans (\textit{Crustacea}) between the food webs of the Southern and Northern Gulf of St. Lawrence in the mid-1980s (Morissette \textit{et al.} 2003; Savenkoff \textit{et al.} 2004) and the St. Lawrence Estuary in the early 2010s (Savenkoff 2012).}
 \label{species}
 \end{figure}
-
-<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
-# What it all means
-<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
-
 
 <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 # References

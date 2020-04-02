@@ -5,10 +5,10 @@ scoreTable <- function(foodWeb, output) {
   nSp <- nrow(foodWeb)
   textCex <- .5
   headCex <- .65
-  cols <- c('#444643','#b55151')
-  cols <- c('#4B7894','#B45423')
+  cols <- c('#444643','#444643')
+  # cols <- c('#4B7894','#B45423')
   pal1 <- colorRampPalette(c('#ffffff', '#444643'))
-  pal1 <- colorRampPalette(c('#ffffff',cols[2],cols[1]))
+  # pal1 <- colorRampPalette(c('#ffffff',cols[2],cols[1]))
 
   # Graph
   png(output, res = 900, width = 260, height = 180,units = "mm")
@@ -45,7 +45,8 @@ scoreTable <- function(foodWeb, output) {
   # Headers
   nm <- c('Mortality','Physiology','Behaviour')
   posX <- seq(-6.25, by=1.5, length.out = 3)
-  text(x = posX, y = nSp+1.5, labels = nm, cex = headCex, adj = c(.5,.5), font = 2)
+  text(x = posX[2], y = nSp+2.75, labels = TeX('\\textbf{Unitary pathways of effect} ($\\textit{k}$)'), cex = headCex, adj = c(.5,.5), font = 2)
+  text(x = posX, y = nSp+1.5, labels = nm, cex = headCex, adj = c(.5,.5), font = 1)
 
   # Text
   Acidification <- png::readPNG('./img/ACID.png', native = T)
@@ -126,7 +127,7 @@ scoreTable <- function(foodWeb, output) {
   motifs <- c('tt','tt','tt','om','om','om','ex','ex','ap','ap')
   pos <- c('x','y','z','x','y','z','x','z','x','z')
   xPos <- seq(-2.15, by = .4, length.out = 10)
-  text(x = mean(xPos), y = nSp+2.75, labels = 'Position frequency', cex = headCex, adj = c(.5,.5), font = 2)
+  text(x = mean(xPos), y = nSp+2.75, labels = TeX('\\textbf{Motif profile} ($\\textit{M}$)'), cex = headCex, adj = c(.5,.5), font = 2)
   for(i in 1:length(pos)) {
     plotMotifs(motifs[i], pos[i], x = xPos[i], y = nSp+1.5, add = T,
                cex = .4, scalingX = .3, scalingY = .5, lwd = 1.2, lwd2 = 1.2)
@@ -160,7 +161,7 @@ scoreTable <- function(foodWeb, output) {
   # Header
   xR <- c(2,5.75)
   x0 <- xR[1] + diff(xR)*.66
-  text(x = mean(xR), y = nSp+2.75, labels = 'Sensitivity score', cex = headCex, adj = c(.5,.5), font = 2)
+  text(x = mean(xR), y = nSp+2.75, labels = TeX('\\textbf{Trophic sensitivity} ($\\textit{S_m}$)'), cex = headCex, adj = c(.5,.5), font = 2)
 
   # Axis
   lines(x = xR, y = rep(nSp+1,2), lwd = 1.25)
@@ -189,7 +190,7 @@ scoreTable <- function(foodWeb, output) {
   # Header
   xR <- c(6.25,10)
   x0 <- xR[1] + diff(xR)*.33
-  text(x = mean(xR), y = nSp+2.75, labels = 'Amplification score', cex = headCex, adj = c(.5,.5), font = 2)
+  text(x = mean(xR), y = nSp+2.75, labels = TeX('\\textbf{Trophic amplification} ($\\textit{A_m}$)'), cex = headCex, adj = c(.5,.5), font = 2)
 
   # Axis
   lines(x = xR, y = rep(nSp+1,2), lwd = 1.25)

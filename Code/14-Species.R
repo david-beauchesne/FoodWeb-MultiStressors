@@ -1,5 +1,6 @@
 # source('./Code/14-Species.R')
 library(igraph)
+library(latex2exp)
 source('./Code/0-Param.R')
 source('./Functions/triadClassification.R')
 source('./Functions/speciesScores.R')
@@ -164,8 +165,9 @@ plotSpecies <- function(species, scoreType) {
   axis(2, line = -.5, cex.axis = 1)
   axis(1, at = 0:8, labels = c('','C','S','F','C-S','C-F','S-F','C-S-F',''), cex.axis = 1)
   lines(x = xR, y = c(0,0), lty = 2)
-  if(scoreType == 'sen') mtext(side = 2, text = 'Sensitivity score', font = 2, line = 2, cex = 1)
-  if(scoreType == 'amp') mtext(side = 2, text = 'Amplification score', font = 2, line = 2, cex = 1)
+  mtext(side = 2, text = TeX('\\textbf{Trophic}'), font = 2, line = 3, cex = 1)
+  if(scoreType == 'sen') mtext(side = 2, text = TeX('\\textbf{sensitivity} ($\\textit{S_m}$)'), line = 1.5, cex = 1)
+  if(scoreType == 'amp') mtext(side = 2, text = TeX('\\textbf{amplification} ($\\textit{A_m}$)'), line = 1.5, cex = 1)
 
   dat <- fwSL[fwSL$Group == species & fwSL$ScoreType == scoreType, ]
   points(x = dat$x, y = dat$Score, col = dat$col, pch = 20, cex = 2)
@@ -177,7 +179,7 @@ png('./Figures/species.png', width = 1200, height = 900, res = 300, pointsize = 
 mat <- matrix(c(1:8), nrow = 4, ncol = 2, byrow = T)
 mat[4,] <- 7
 layout(mat, heights = c(1,1,1,.35))
-par(mar = c(3,3,.5,.5), family = 'serif')
+par(mar = c(3,4.5,.5,.5), family = 'serif')
 plotSpecies('LCO','sen')
 pchImage(x = .5, y = 9, obj = cod, cex.x = 1.25, cex.y = 1.5, col = '#000000')
 plotSpecies('LCO','amp')
@@ -188,9 +190,9 @@ plotSpecies('SHR','amp')
 # text(x = 8, y = .2, labels = 'Shrimp', adj = c(1,1), cex = 1.5, font = 2)
 plotSpecies('LCR','sen')
 pchImage(x = .5, y = 8, obj = crab, cex.x = 1.25, cex.y = 2, col = '#000000')
-mtext(side = 1, text = 'Drivers', font = 2, line = 2.5, cex = 1)
+mtext(side = 1, text = 'Stressor groups', font = 2, line = 2.5, cex = 1)
 plotSpecies('LCR','amp')
-mtext(side = 1, text = 'Drivers', font = 2, line = 2.5, cex = 1)
+mtext(side = 1, text = 'Stressor groups', font = 2, line = 2.5, cex = 1)
 # text(x = 8, y = .2, labels = 'Large crustaceans', adj = c(1,1), cex = 1.5, font = 2)
 
 # Legend

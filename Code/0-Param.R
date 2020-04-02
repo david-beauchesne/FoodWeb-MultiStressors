@@ -25,6 +25,7 @@ source('./Functions/paramFix.R')
 source('./Functions/univariateDisturbance.R')
 source('./Functions/multivariateDisturbance.R')
 source('./Functions/additivity.R')
+source('./Functions/variance.R')
 source('./Functions/plotMotifs.R')
 
 # Disturbance value to use

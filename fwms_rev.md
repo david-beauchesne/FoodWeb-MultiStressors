@@ -1016,15 +1016,7 @@ Structure:
 
 <!-- KC: Je commencerai par redire le pourquoi de la démarche => intégrer la complexity et mettre en avant les points forts -->
 
-Start with a bit more context
 
-In this paper, we conceptualized how multiple sources of environmental pressure may permeate entire ecological communities by way of species interactions and hypothesized that the position of a species in a food web and the types of interactions it is involved in would dictate its sensitivity to and amplification of pressures. To do so, we simulated disturbances on the dynamics of the four most common 3-species motifs (*i.e.* tri-trophic food chain, omnivory, competitive and apparent competition) using Lotka-Volterra models. Disturbances were simulated numerically through all possible univariate and multivariate pathways of effects targetting species mortality, growth, attack and conversion rates. Numerical simulations were then used as heuristics to infer species vulnerability in empirical food webs on the basis of their trophic position and local sources of stress.
-
-We found that, indeed, the vulnerability of species to multiple disturbances is largely influenced by the types of interactions and the trophic position of a species. In particular, predators involved in omnivory and food chain interactions are highly vulnerable to multiple disturbances by acting as both weak entry points and biotic amplifiers. This observation scales up to empirical food webs, in which predators are the most vulnerable species, and they need not be directly impacted to be highly vulnerable to environmental pressures.
-
-Arguably, the simplified model formulations we use are unlikely to fully capture the dynamics of complex ecosystems and the vulnerability of species in food webs. Our approach ignores such things as species interaction strength, stressor intensity and spatialtemporal dynamics, all of which are known to play crucial roles in community dynamics and their reponses to environmental pressures [@ref]. However, in the absence of appropriate knowledge, as is the case for the effects of multiple environmental pressures on ecological communities, it is reasonable to first explore the simplest possibilities, from which will emerge broad conclusions and provide new hypotheses to test theoretically or empirically [@wootton2002]. Our approach, even if simple, does just that by providing compelling evidence of the importance of species interactions in impacts assessments and by reinforcing the case for the application of holitcis approaches. It also provides the flexibility required to test increasingly complex hypotheses, all while providing mechanistic rather than correlative evidence.
-
-In conceptualizing the effects of multiple disturbances on food webs, we sought to formulate a theory-grounded framework through which the complexities of real-world systems may be studied for an improved application of holistic environmental approaches. In the context of multiple disturbances in particular, we sought to answer questions of particular relevance to management.
 
 ## 1. Should species interactions be considered in impact assessments? {-}
 
