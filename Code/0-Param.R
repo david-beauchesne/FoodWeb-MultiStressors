@@ -6,30 +6,22 @@ library(latex2exp)
 
 
 # Functions
-# source('./Functions/defaultParameters.R')
-# source('./Functions/equilibrium.R')
-# source('./Functions/disturbance.R')
-# source('./Functions/disturbBoxplot.R')
-# source('./Functions/stability.R')
-source('./Functions/simAnnealing.R')
 source('./Functions/tritrophic.R')
 source('./Functions/omnivory.R')
 source('./Functions/apparent.R')
 source('./Functions/exploitative.R')
 source('./Functions/partial.R')
 source('./Functions/disconnected.R')
-source('./Functions/paramFix.R')
-
-
-# source('./Functions/parameterSpace.R')
-source('./Functions/univariateDisturbance.R')
-source('./Functions/multivariateDisturbance.R')
-source('./Functions/additivity.R')
-source('./Functions/variance.R')
-source('./Functions/plotMotifs.R')
+source('./Functions/simAnnealing.R')
+source('./Functions/candidateParameters.R')
+source('./Functions/summarize_impacts.R')
 
 # Disturbance value to use
 distValue = .01 # (1%)
+
+# Thresholds
+sensTh <- .01
+ampTh <- .0002
 
 # Colors
 cols <- c('#4B7894','#B45423')

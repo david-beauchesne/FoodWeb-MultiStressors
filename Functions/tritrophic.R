@@ -27,21 +27,3 @@ ttSt <- function(r, alpha, beta, mu, delta, omega, m_y, m_z) {
   # Return
   return(S)
 }
-
-ttIneq <- function(r, alpha, beta, mu, delta, omega, m_y, m_z) {
-  # Inequality expressions
-  inequalities <- list(
-    # expression(r < alpha),
-    # expression(m_z < delta*omega),
-    # expression(beta*delta*mu*omega*r < ((beta^2)*m_z*mu + alpha*delta*m_y*omega)),
-    # expression(beta*mu*r < alpha*delta),
-    # expression(mu > 1),
-    # expression(omega > 1),
-    expression(ttEq(r, alpha, beta, mu, delta, omega, m_y, m_z)[1] < 1),
-    expression(ttEq(r, alpha, beta, mu, delta, omega, m_y, m_z)[2] < 1),
-    expression(ttEq(r, alpha, beta, mu, delta, omega, m_y, m_z)[3] < 1)
-  )
-
-  # Eval function
-  lapply(inequalities, eval, envir = environment()) %>% unlist() %>% any()
-}

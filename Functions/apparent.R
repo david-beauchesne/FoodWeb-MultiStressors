@@ -27,16 +27,3 @@ apSt <- function(r_x,alpha_x,r_y,alpha_y,delta,omega,gamma,nu,m_z) {
   # Return
   return(S)
 }
-
-apIneq <- function(r_x,alpha_x,r_y,alpha_y,delta,omega,gamma,nu,m_z) {
-  # Inequality expressions
-  inequalities <- list(
-    expression(),
-    expression(apEq(r_x,alpha_x,r_y,alpha_y,delta,omega,gamma,nu,m_z)[1] < 1),
-    expression(apEq(r_x,alpha_x,r_y,alpha_y,delta,omega,gamma,nu,m_z)[2] < 1),
-    expression(apEq(r_x,alpha_x,r_y,alpha_y,delta,omega,gamma,nu,m_z)[3] < 1)
-  )
-
-  # Eval function
-  lapply(inequalities, eval, envir = environment()) %>% unlist() %>% any()
-}

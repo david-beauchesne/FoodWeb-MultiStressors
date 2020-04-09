@@ -142,9 +142,9 @@ plotMotifs <- function(motif, position = '', path = '', x = 0, y = 0,
                      bg = '#f4f4f4', stringsAsFactors = F)
 
     # Positions
-    if (position == 'y') pt$bg[1] <- posCol
+    if (position == 'z') pt$bg[1] <- posCol
     if (position == 'x') pt$bg[2] <- posCol
-    if (position == 'z') pt$bg[3] <- posCol
+    if (position == 'y') pt$bg[3] <- posCol
 
     # Pathways
     if (path == 'r_y') pt$col[1] <- growth

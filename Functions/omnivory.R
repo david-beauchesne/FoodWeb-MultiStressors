@@ -27,15 +27,3 @@ omSt <- function(r, alpha, beta, mu, delta, omega, gamma, nu, m_y, m_z) {
   # Return
   return(S)
 }
-
-omIneq <- function(r, alpha, beta, mu, delta, omega, gamma, nu, m_y, m_z) {
-  # Inequality expressions
-  inequalities <- list(
-    expression(omEq(r, alpha, beta, mu, delta, omega, gamma, nu, m_y, m_z)[1] < 1),
-    expression(omEq(r, alpha, beta, mu, delta, omega, gamma, nu, m_y, m_z)[2] < 1),
-    expression(omEq(r, alpha, beta, mu, delta, omega, gamma, nu, m_y, m_z)[3] < 1)
-  )
-
-  # Eval function
-  lapply(inequalities, eval, envir = environment()) %>% unlist() %>% any()
-}

@@ -27,16 +27,3 @@ paSt <- function(r_x,alpha_x,r_z,alpha_z,mu,beta,m_y) {
   # Return
   return(S)
 }
-
-paIneq <- function(r_x,alpha_x,r_z,alpha_z,mu,beta,m_y) {
-  # Inequality expressions
-  inequalities <- list(
-    expression(),
-    expression(paEq(r_x,alpha_x,r_z,alpha_z,mu,beta,m_y)[1] < 1),
-    expression(paEq(r_x,alpha_x,r_z,alpha_z,mu,beta,m_y)[2] < 1),
-    expression(paEq(r_x,alpha_x,r_z,alpha_z,mu,beta,m_y)[3] < 1)
-  )
-
-  # Eval function
-  lapply(inequalities, eval, envir = environment()) %>% unlist() %>% any()
-}
