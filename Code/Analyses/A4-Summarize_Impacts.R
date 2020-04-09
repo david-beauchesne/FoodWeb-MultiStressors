@@ -140,8 +140,9 @@ stability <- bind_rows(stability)
 
 # Summarize
 stability <- stability %>%
-                 group_by(Pathways, nParam, Motif) %>%
-                 summarise_all(mean, na.rm = T)
+             group_by(Pathways, nParam, Motif) %>%
+             summarise_all(mean, na.rm = T) %>%
+             ungroup()
 
 
 # -----------------------------------------------------------------------------
