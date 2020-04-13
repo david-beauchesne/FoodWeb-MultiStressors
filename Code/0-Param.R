@@ -6,15 +6,15 @@ library(latex2exp)
 
 
 # Functions
-source('./Functions/tritrophic.R')
-source('./Functions/omnivory.R')
-source('./Functions/apparent.R')
-source('./Functions/exploitative.R')
-source('./Functions/partial.R')
-source('./Functions/disconnected.R')
-source('./Functions/simAnnealing.R')
-source('./Functions/candidateParameters.R')
-source('./Functions/summarize_impacts.R')
+source('./Code/Functions/tritrophic.R')
+source('./Code/Functions/omnivory.R')
+source('./Code/Functions/apparent.R')
+source('./Code/Functions/exploitative.R')
+source('./Code/Functions/partial.R')
+source('./Code/Functions/disconnected.R')
+source('./Code/Functions/simAnnealing.R')
+source('./Code/Functions/candidateParameters.R')
+source('./Code/Functions/summarize_impacts.R')
 
 # Disturbance value to use
 distValue = .01 # (1%)

@@ -1,8 +1,8 @@
 # source('./Code/F6-Context.R')
 library(igraph)
 source('./Code/0-Param.R')
-source('./Functions/triadClassification.R')
-source('./Functions/speciesVulnerability.R')
+source('./Code/Functions/triadClassification.R')
+source('./Code/Functions/speciesVulnerability.R')
 fw <- read.table('./Data/FoodWeb/disturbances0.txt', sep = '\t', header = T, stringsAsFactors = F)
 
 # DATA

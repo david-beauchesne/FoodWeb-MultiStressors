@@ -1,8 +1,8 @@
 # source('./Code/Analyses/5-Empirical_Food_Webs.R')
 library(igraph)
 source('./Code/0-Param.R')
-source('./Functions/triadClassification.R')
-source('./Functions/speciesVulnerability.R')
+source('./Code/Functions/triadClassification.R')
+source('./Code/Functions/speciesVulnerability.R')
 
 # DATA
 # Southern St. Lawrence - mid 1980s

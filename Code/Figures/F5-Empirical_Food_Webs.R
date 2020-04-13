@@ -1,7 +1,7 @@
 # source('./Code/Figures/F5-Empirical_Food_Webs.R')
 # Libraries
 source('./Code/0-Param.R')
-source('./Functions/scoreTable.R')
+source('./Code/Functions/scoreTable.R')
 
 # Data
 load('./Data/Food_Web_Vulnerability.RData')
