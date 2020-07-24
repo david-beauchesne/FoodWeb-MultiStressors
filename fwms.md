@@ -1,6 +1,6 @@
 ---
 title: On the sensitivity of food webs to multiple stressors
-author: David Beauchesne^1,2,\*^, Kevin Cazelles^3^, Philippe Archambault^2^, Dominique Gravel^4^
+author: David Beauchesne^1,2,\*^, Kevin Cazelles^3^, Philippe Archambault^2^, Laura E Dee^4^, Dominique Gravel^5^
 fontsize: 12pt
 output:
   pdf_document:
@@ -33,9 +33,10 @@ r -e "rmarkdown::render('./fwms.md')"
 -->
 
 ^1^Institut des sciences de la mer, Université du Québec à Rimouski, Rimouski, QC, Canada \newline
-^2^Québec Océan, Département de biologie, Université Laval, Québec, QC, Canada \newline
+^2^ArcticNet, Québec Océan, Département de biologie, Université Laval, Québec, QC, Canada \newline
 ^3^Department of Integrative Biology, University Of Guelph, Guelph, Ontario, Canada N1G 2W1 \newline
-^4^Département de biologie, Université de Sherbrooke, Sherbrooke, QC, Canada \newline
+^4^Department of Ecology and Evolutionary Biology, University of Colorado, Boulder, Colorado 80309 USA \newline
+^5^Département de biologie, Université de Sherbrooke, Sherbrooke, QC, Canada \newline
 
 **Running title**: Of food webs and multiple stressors \newline <!-- < 45 characters including spaces -->
 
@@ -71,15 +72,19 @@ L189 : cite the recent paper by Bramon et al.
 https://www.nature.com/articles/s41467-018-05056-0
 > They form the backbone of food webs and provide a mesoscale characterization of the structural properties of communities [@bascompte2005; @stouffer2007; @stouffer2010; @stouffer2011]
 
-- Il manque un paragraphe au début de la section sur le modèle qui décrit l'approche générale. C'est là qu'il faut dire que :
-    - On étudie seulement des motifs à 3 espèces, avec une abondance positive de chaque espèce
-    - On tire des paramètres au hasard
-    - On étudie la sensibilité de l'équilibre à l'ajout d'un stresseur (représenté ici comme un changement de la valeur des paramètres)
-    - On commence par un stresseur à la fois et ensuite on passe à une combinaison de stresseurs
-    - il faut aussi expliquer pourquoi il y a des tirages au sort plutôt que d'étudier une seule paramétrisation
-    - c'est là que peuvent être listés les différents pathways
 
-- L250 : je ne comprends pas ce schéma d'optimisation, la motivation et ce qui est fait ne sont pas clairs
+- attention au style d'écriture, surtout dans le résumé, l'intro et la discussion. Tu as l'habitude d'utiliser des superlatifs pour qualifier l'importance, la pertinence, la force de ton travail. D'abord c'est agaçant et prétentieux, mais surtout c'est au lecteur de le qualifier. Il faut prendre une distance et présenter les choses objectivement. L'intro est aussi particulièrement "wordy"; clairement, il y a un changement de style lorsque tu passes à la description de la science, c'est plus technique et straighforward.
+
+- J'ai bien compris que la discussion est préliminaire alors je n'ai pas trop pris le temps de la travailler. Ce qu'il manque c'est de bien montrer en quoi cette approche, qui est utile mais relativement compliquée, permet d'avoir une meilleure vue sur un système qu'une approche traditionnelle. En quoi, par exemple, tes conclusions diffèrent d'une approche à la Halpern ?
+
+- Un point de discusison important sur lequel il faut revenir c'est la non-additivité. Il faut enfoncer le clou et clairement montrer que ces effets non linéaires peuvent être importants, en particulier dans un food webs. Prends le temps de rappeler, expliquer ce qui se passe avec les synergies, amplifications etc.... Comparer avec ce qui se fait traditionnellement. L'exemple de départ pourrait être ré-utilisé, la boucle serait fermée.
+
+- Aussi, un peu ironique, le calcul de la sensitivité est .... additif ..... Ça devrait être un point de discussion.
+
+- Et peut-être qu'il faudrait commencer à introduire en discussion l'importance de l'exposition ? C'est peu abordé dans le framework, mais tout aussi important dans le calcul de Halpern. C'est l'effet conjugué d'exposition et d'impact qui détermine la réponse finale. Tu pourrais en quelque sorte annoncer le travail que tu feras dans le dernier chapitre.
+
+Ce serait bien de faire relire par quelqu'un de l'externe. Tu pourrais le soumettre par exemple à la discussion du labo pour avoir un peu de retour. J'espère que ce sera digeste; on ne peut rien faire de plus, la rédaction est simple et accessible, mais c'est extrêmement lourd comme matériel, il faut prendre le temps de lire et de penser....
+
 <!-- =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
 
 
@@ -97,7 +102,7 @@ be sent to the Editorial Office (ecolets@cefe.cnrs.fr).*
 
 ***Notes***: Contribution portion is unconvincing and letter is 42 words over the limit.
 
-As global change and the human footprint keeps expanding worldwide, properly evaluating the impacts of multiple stressors on natural systems is becoming an increasingly vital issue. Even after decades of research on the impacts of multiple stressors, a general lack of theoretical understanding of their impacts remains. In particular, the role of species and their interactions in mediating the effects of multiple stressors, although widely acknowledged, has yet to be formally explored. We propose, to our knowledge, the first such exploration by conceptualizing the impacts of multiple stressors on complex food webs and by exhaustively simulating the many pathways through which the dynamics of the most common 3-species motifs in empirical food webs are impacted by stressors using generalized Lotka Volterra models. We uncover that interactions, their configuration and a species trophic position greatly influence a species sensitivity to and amplification of the impacts of stressors. Species in omnivory and tri-trophic food chains in particular are susceptible to the impacts of stressors and to non-additive impacts, which arise chiefly from impacts to species interactions. We then use simulation results to infer species sensitivity to stressors in empirical food webs of the St. Lawrence System in eastern Canada. We find that, in the mid-1980s, species were trophically predisposed to the dramatic shifts in trophic structure that unfolded following the groudfish stock collapse of the early 1990s. This contribution is significant and timely for two main reasons. First, from a theoretical stand point, this is the first exhaustive exploration of the impacts of stressors on food web motifs. Second, we provide a clear link between theory and management by illustrating how our framework can be applied to detect most sensitive species in a real food web exposed to various stressors. Our group of co-authors is singularly positioned to write this paper. D. Beauchesne and P. Archambault both have strong backgrounds in environmental assessments in general and cumulative impacts in particular. K. Cazelles and D. Gravel are both experts in theoretical ecology with strong backgrounds and recognition in the field.
+Evaluating the impacts of multiple stressors is becoming increasingly vital as global changes  expand worldwide. Our understanding of how multiple stressors interact remains minimal after decades of research. The role of species and their interactions in mediating the impacts of stressors, although widely acknowledged, has yet to be formally explored. Here, we conceptualize the impacts of multiple stressors on food webs and explore how they impact 3-species motifs in simulated food webs. We uncover that the configuration of ecological interactions and trophic position greatly influence sensitivity to stressors and their amplification. Species in omnivory and tri-trophic food chains in particular are susceptible to stressors and tend to amplify their impacts. We then explore species sensitivities in empirical food webs of the St. Lawrence System. We find that, in the mid-1980s, species were trophically predisposed to the dramatic shifts in trophic structure that unfolded following the groundfish stock collapses of the early 1990s. In conceptualizing and exploring the impacts of multiple stressors on food webs, we demonstrate that a holistic understanding of complex systems is key to proper management. This contribution is significant and timely for two main reasons. First, from a theoretical stand point, this is the first exhaustive exploration of the impacts of stressors on food web motifs. Second, we provide a clear link between theory and management by illustrating how our framework can be applied to detect most sensitive species in a real food web exposed to various stressors. Our group of co-authors is singularly positioned to write this paper. D. Beauchesne and P. Archambault both have strong backgrounds in environmental assessments in general and cumulative impacts in particular. K. Cazelles and D. Gravel are both experts in theoretical ecology with strong backgrounds and recognition in the field.
 
 \newpage
 
@@ -112,7 +117,12 @@ As global change and the human footprint keeps expanding worldwide, properly eva
 
 ***Note***: 33 words over the limit
 
-As global change and the human footprint expands worldwide, evaluating the impacts of multiple stressors is becoming increasingly vital. Even after decades of research on the impacts of multiple stressors, a general lack of theoretical and empirical understanding of their impacts remains. In particular, the role of species and their interactions in mediating the impacts of stressors, although widely acknowledged, has yet to be formally explored. Here, we conceptualize the impacts of multiple stressors on complex food webs and exhaustively explore how stressors may impact the most common 3-species motifs in empirical food webs using generalized Lotka-Volterra models. We uncover that interactions, their configuration and a species trophic position greatly influence a species sensitivity to and amplification of the impacts of stressors. Species in omnivory and tri-trophic food chains in particular are susceptible to stressors and to non-additive impacts, which arise chiefly from disruptions to species interactions. We then infer species sensitivities in empirical food webs of the St. Lawrence System. We find that, in the mid-1980s, species were trophically predisposed to the dramatic shifts in trophic structure that unfolded following the groudfish stock collapses of the early 1990s. In conceptualizing and exploring the impacts of multiple stressors on food webs, we provide a clear link between theory and management through a famework that clearly demonstrates that an holistic understanding of complex systems is key to proper management.
+Evaluating the impacts of multiple stressors is becoming increasingly vital as global changes  expand worldwide. Our understanding of how multiple stressors interact remains minimal after decades of research. The role of species and their interactions in mediating the impacts of stressors, although widely acknowledged, has yet to be formally explored. Here, we conceptualize the impacts of multiple stressors on food webs
+<!--
+DG: Il faut expliquer qu’est-ce qui ressort de cette conceptualisation. Peut-être proposer les nouveaux termes, insister sur les synergies entre stresseurs. Il faut aussi expliquer pourquoi les interactions biotiques sont si importantes pour ce problème.
+-->
+and explore how they impact 3-species motifs in simulated food webs. We uncover that the configuration of ecological interactions and trophic position greatly influence sensitivity to stressors and their amplification. Species in omnivory and tri-trophic food chains in particular are susceptible to stressors and tend to amplify their impacts. We then explore species sensitivities in empirical food webs of the St. Lawrence System. We find that, in the mid-1980s, species were trophically predisposed to the dramatic shifts in trophic structure that unfolded following the groundfish stock collapses of the early 1990s. In conceptualizing and exploring the impacts of multiple stressors on food webs, we demonstrate that a holistic understanding of complex systems is key to proper management.
+
 
 \newpage
 
@@ -120,16 +130,22 @@ As global change and the human footprint expands worldwide, evaluating the impac
 # Glossary {-}
 <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 
-- **Stressor**: externality that arises from natural or human-induced biophysical processes or from anthropogenic activities and that impacts environmental processes and disturbs natural systems;
+- **Stressor**: externality that arises from natural or human-induced biophysical processes or from anthropogenic activities and that impacts ecological processes;
 - **Direct effect**: effect of a species on another without the involvement of a third species;
-- **Indirect effect**: effects that link at least two direct effects through an intermediary species;
-- **Pathway of effect**: composed of impacted biological processes (*e.g.* mortality rates), it is the pathway through which stressors directly and indirectly impact ecological communities. A unitary pathway of effect is an indvidual impacted biological process, whereas an integrative pathway of effect is the set of all unitary pathways of effect that combine to collectively impact an ecological community;
+- **Indirect effect**: effects of a species on another involving an intermediary species;
+- **Pathway of effect**: the pathway through which stressors directly and indirectly impact ecological communities. A unitary pathway of effect occurs when a biological process is affected, whereas an integrative pathway of effect is the set of all unitary pathways of effect that combine across species to collectively impact a community;
 - **Trophic sensitivity**: difference in species equilibrium abundance before and after the permanent appearance of stressors;
-- **Weak entry point**: highly susceptible species to a pathway of effect, whether to its benefit and strongly positive trophic sensitivity (*i.e.* positive weak entry point) or to its detriment and strongly negative trophic sensitivity (*i.e.* negative weak entry point);
+- **Weak entry point**: highly susceptible species to a pathway of effect, whether to its benefit (*i.e.* positive weak entry point) or to its detriment (*i.e.* negative weak entry point);
 - **Non-additive impact**: trophic sensitivity to an integrative pathway of effect that is greater (*i.e.* synergistic impact) or lower (*i.e.* antagonistic impact) than the sum of trophic sensitivities to unitary pathways of effect;
+<!--
+DG: Tu utilises de manière interchangeable effect et impact. Il faudra standardiser. Le pire est dans cette définition, où le nom utilise impact et la description effect
+-->
 - **Trophic amplification**: difference between a species trophic sensitivity to an integrative pathway of effect and the sum of its trophic sensitivity to unitary pathways of effect;
-- **Biotic buffer**: species on which an integrative pathway of effect has a lower impact (*i.e.* antagonism) than the summed impact of unitary pathways of effect;
+<!-- DG: Définitin technique. Il faudrait plutôt une définition écologique -->
+- **Biotic buffer**: species on which an integrative pathway of effect has a lower impact (*i.e.* antagonism) than the expected summed impact of unitary pathways of effect;
+<!-- DG: Définitin technique. Il faudrait plutôt une définition écologique -->
 - **Biotic amplifier**: species on which an integrative pathway of effect has a greater impact (*i.e.* synergism) than the summed impact of unitary pathways of effect.
+<!-- DG: Définitin technique. Il faudrait plutôt une définition écologique -->
 
 <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 # Introduction
@@ -193,21 +209,20 @@ Impacts to single biological processes travel through unitary pathways of effect
 
 Unless a single biological process is impacted, unitary pathways of effect combine to form an integrative pathway of effect ($K$). Shipping and fishing collectively impact our system through an integrative pathway of effect ($K = \{r_x, m_y, \alpha_{xz}, \alpha_{yz}\}$) that benefits cod and reduces capelin and beluga (Figure \ref{concept}B4). We define a species ($m$) trophic sensitivity ($S_{m,K}$) as the net impact -- *i.e.* the pre- and post-stressors variation in abundance -- resulting from an integrative pathway of effect $K$ (Figure \ref{concept}B):
 
-$$S_{m,K} = \frac{a_{m,K} - a_m}{a_m}\text{,} \label{eq1} \tag{1}$$
+$$S_{m,G} = \frac{a_{m,G} - a_m}{a_m}\text{,} \label{eq1} \tag{1}$$
 
 where $a_m$ and $a_{m,K}$ are the pre- and post-stressors abundances of species $m$, respectively. In the remainder of the text, the term pathway of effect without a qualifier (*i.e.* integrative or unitary) refers to integrative pathways of effect. Note that by definition $S_{m,K}$ is bounded negatively to -1, as species abundances cannot be negative. We refer to species that are highly susceptible to impacts -- whether positively or negatively -- as weak entry points and distinguish between negative and positive weak entry points.
 
 In multi-species systems, where many direct and indirect trophic effects are operating simultaneously, impacts of stressors can be amplified or dampened through biotic interactions [@ives1995; @wootton2002; @thompson2018a]. Uncovering synergies and antagonisms has been a hallmark of investigations into the impacts of multiple stressors [*e.g.* @crain2008; @darling2008; @cote2016; @thompson2018a; @galic2018]. These so-called non-additive impacts arise when the net impact of an integrative pathway of effect is greater (*i.e.* synergy) or lower (*i.e.* antagonism) than the sum of the impacts of unitary pathways of effect. We define a species ($m$) trophic amplification ($A_{m,K}$) as the difference between its trophic sensitivity to an integrative pathway of effect ($K$) and the sum of its trophic sensitivities to the unitary pathways of effect forming $K$ ($k \in K$; Figure \ref{concept}C-4):
 
-<!-- $$A_{m, K} = S_{m, K} - \sum_{k \in K} S_{m, k}\text{,} \label{eq2} \tag{2}$$ -->
 
-$$A_{m, K} = \sum_{k \in K} S_{m, k} - \frac{1}{|K|} S_{m, K}\text{,} \label{eq2} \tag{2}$$
+$$A_{m, G} = \sum_{g \in G} \frac{1}{|G|} S_{m, G} - S_{m, g}\text{,} \label{eq2} \tag{2}$$
 
 where $|K|$ is the number of unitary pathways of effect $k$ forming the integrative pathway of effect $K$. Synergisms and antagonisms are identified by positive and negative trophic amplifications, respectively. From this definition of non-additive impacts, a single stressor can elicit non-additive impacts by disrupting multiple biological processes. In constrast, non-additive impacts are usually defined as arising from more than one stressor. However, we argue that, at the scale of communities, a stressor could indeed elicit non-additive impacts on itw own. In our system, shipping and fishing elicit synergistic impacts on capelin and beluga, and a slightly antagonistic impact on cod. Similarly, we refer to species as biotic amplifiers or biotic buffers if their trophic amplification is positive or negative, respectively. Hence, capelin and beluga are biotic amplifiers, whereas cod is a biotic buffer (Figure \ref{concept}C-4).
 
 A species' trophic sensitivity -- or lack thereof -- can also arise from different mechanisms. Unitary pathways of effect may reinforce each other, whereas others may cancel each other out [@wootton2002; @montoya2009]. For example, the positive impact of cod mortality on capelin (Figure \ref{concept}C-2) is offset by the negative impacts of capelin mortality and altered beluga behaviour (Figure \ref{concept}C-1, C-3, C-4). Comparing the effective and expected impacts of a unitary pathway of effect -- *i.e.* the average impact of an integerative pathways of effect -- provides a measure of variance associated to trophic sensitivity to an integrative pathway of effect ($K$):
 
-$$V_{m, K} = \sum_{k \in K} \left(S_{m, k} - \frac{1}{|K|} S_{m, K} \right)^2\text{.} \label{eq3} \tag{3}$$
+$$V_{m, G} = \sum_{g \in G} \left(\frac{1}{|G|} S_{m, G} - S_{m, g} \right)^2\text{.} \label{eq3} \tag{3}$$
 
 Low variance arise from sets of unitary pathways of effect whose individual impacts are relatively similar, whereas high variance identify sets of contrasting unitary pathways of effect. In our system, beluga ($V_{beluga,K} = 0.22$) and capelin ($V_{capelin,K} = 0.18$) are exposed to unitary pathways of effect that tend cancel each other out, whereas cod ($V_{cod,K} = 0.09$) is exposed to unitary pathways of effect that reinforce each other.
 
@@ -222,13 +237,16 @@ We now model the dynamics of those motifs using generalized Lotka-Volterra equat
 
 Resources were modeled using equations of the form:
 
-$$\frac{dX_i}{dt} = X_i(r_i - \alpha_{ii} X_i - \sum_j \alpha_{ij} X_j)\text{,}$$
+$$\frac{dX_i}{dt} = X_i(r_i - \alpha_{ii} X_i + \sum_j e_{ij} \alpha_{ij} X_j)\text{,}$$
+
+<!-- $$\frac{dX_i}{dt} = X_i(r_i - \alpha_{ii} X_i - \sum_j \alpha_{ij} X_j)\text{,}$$ -->
+<!-- $$\frac{dX_j}{dt} = X_j(-m_j + \sum_i e_{ij} \alpha_{ij} X_i - \alpha_{jk} X_k)\text{,}$$ -->
+
 
 where $X_i$ denotes species $i$, $r_i$ is the intrinsic resource growth rate, $\alpha_{ii}$ is the density-dependent effect of the resource on itself and $\alpha_{ij}$ is the rate at which consumer $j$ affects resource $i$, i.e. the attack rate.
 
 Consumers were modeled using equations of the form:
 
-$$\frac{dX_j}{dt} = X_j(-m_j + \sum_i e_{ij} \alpha_{ij} X_i - \alpha_{jk} X_k)\text{,}$$
 
 where $m_j$ is the mortality rate of species $j$ and $e_{ij}$ is the rate at which resource $i$ biomass is transformed into consumer $j$ biomass, *i.e.* the conversion rate, and is a scaling parameter of the attack rate which cannot exceed 1.
 
@@ -261,9 +279,9 @@ Thus far, we simplified food web complexity using motifs, conceptualized the rol
 
 As a food web can be deconstructed into $n$-species motifs, it can be pieced back together to assess the structural roles of species and their interactions in complex food webs [@stouffer2012; @cirtwill2015]. All the positions a species holds in $n$-species interactions in a food web forms its motif profile. In our system, cod is twice a predator in food chains, once a consumer in an omnivory interaction and once a consumer in exploitative competition (Figure \ref{concept}D). Each three-species interaction is impacted through a specific pathway of effect from which we can evaluate trophic sensitivity and amplification (Figure \ref{concept}D, E). For example, cod is negatively impacted through the food chains and competitive exploitation interactions, whereas it benefits from impacts through the omnivory interaction (Figure \ref{concept}E). Impacts to cod are also amplified through the food chain with capelin and copepod, yet buffered through the omnivory and exploitative competition interactions (Figure \ref{concept}E). We summarize trophic sensitivities ($S_m$) and amplifications ($A_m$) across a species motif profile ($M$) by summing individual trophic sensitivities and amplifications (Figure \ref{concept}E):
 
-$$S_m = \sum_{i \in M} S_{i,K^i}\text{;} \label{eq4} \tag{4}$$
+$$S_m = \sum_{i \in M} S_{i,G^i}\text{;} \label{eq4} \tag{4}$$
 
-$$A_m = \sum_{i \in M} A_{i,K^i}\text{,} \label{eq5} \tag{5}$$
+$$A_m = \sum_{i \in M} A_{i,G^i}\text{,} \label{eq5} \tag{5}$$
 
 where $K^i$ is the pathway of effect impacting species through motif $i$. Summarizing by adding individual trophic sensitivities and amplifications allows for individual pathways of effect to reinforce and cancel each other out. For instance, we expect pathways of effect to negatively and synergistically impact cod in our system (Figure \ref{concept}E).
 
@@ -437,14 +455,6 @@ We also considered interactions and stressors as binary events, when that is obv
 \label{position}
 \end{figure}
 
-<!-- Parameter types -->
-\begin{figure}[H]
-\centering
-\includegraphics{./Figures/paramType.png}
-\caption{Mean absolute trophic sensitivities ($S_{i,K}$) and amplifications ($A_{i,K}$) as a function of the types of parameters forming an integrative pathway of effect ($K$). All pathways of effect impacting mortality ($m$), attack ($\alpha$) and conversion ($e$), were grouped to evaluate the respective and combined importance of the types of parameters in driving trophic sensitivity and amplification.}
-\label{param}
-\end{figure}
-
 <!-- Northern St. Lawrence -->
 <!-- \blandscape -->
 \begin{figure}[H]
@@ -458,7 +468,7 @@ We also considered interactions and stressors as binary events, when that is obv
 <!-- Context -->
 \begin{figure}[H]
 \centering
-\includegraphics{./Figures/species.png}
+\includegraphics{./Figures/context.png}
 \caption{Comparison of the trophic sensitivities ($S_m$) and amplifications ($A_m$) to the impacts of different groups of stressors (Figure \ref{nsl}) for Atlantic cod (\textit{Gadus morhua}), shrimp (\textit{Pandalus borealis}) and large crustaceans (\textit{Crustacea}) between the food webs of the Southern and Northern Gulf of St. Lawrence in the mid-1980s (Morissette \textit{et al.} 2003; Savenkoff \textit{et al.} 2004) and the St. Lawrence Estuary in the early 2010s (Savenkoff 2012).}
 \label{species}
 \end{figure}

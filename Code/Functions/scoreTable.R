@@ -1,5 +1,5 @@
 scoreTable <- function(foodWeb, output) {
-  source('./Functions/plotMotifs.R')
+  source('./Code/Functions/plotMotifs.R')
 
   # Parameters
   nSp <- nrow(foodWeb)
@@ -45,7 +45,7 @@ scoreTable <- function(foodWeb, output) {
   # Headers
   nm <- c('Mortality','Physiology','Behaviour')
   posX <- seq(-6.25, by=1.5, length.out = 3)
-  text(x = posX[2], y = nSp+2.75, labels = TeX('\\textbf{Unitary pathways of effect} ($\\textit{k}$)'), cex = headCex, adj = c(.5,.5), font = 2)
+  text(x = posX[2], y = nSp+2.75, labels = TeX('\\textbf{Unitary pathways of effect} ($\\textit{g}$)'), cex = headCex, adj = c(.5,.5), font = 2)
   text(x = posX, y = nSp+1.5, labels = nm, cex = headCex, adj = c(.5,.5), font = 1)
 
   # Text

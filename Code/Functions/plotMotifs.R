@@ -208,3 +208,49 @@ plotMotifs <- function(motif, position = '', path = '', x = 0, y = 0,
   # dev.off()
 
 }
+
+coordMotifs <- function(motif, x = 0, y = 0, scalingX = 1, scalingY = 1) {
+
+  # Parameters per motif
+  # ---------------------------------------------------
+  #                  Tri-trophic food chain
+  # ---------------------------------------------------
+  if (motif == 'tt') pt <- data.frame(x = c(0,0,0), y = c(-1,0,1))
+
+  # ---------------------------------------------------
+  #                      Omnivory
+  # ---------------------------------------------------
+  if (motif == 'om') pt <- data.frame(x = c(.35,-.35,.35), y = c(-1,.3,1))
+
+  # ---------------------------------------------------
+  #                Exploitative competition
+  # ---------------------------------------------------
+  if (motif == 'ex') pt <- data.frame(x = c(-.4,0,.4), y = c(1,-1,1))
+
+  # ---------------------------------------------------
+  #                  Apparent competition
+  # ---------------------------------------------------
+  if (motif == 'ap') pt <- data.frame(x = c(-.4,.4,0), y = c(-1,-1,1))
+
+  # ---------------------------------------------------
+  #                Partially disconnected
+  # ---------------------------------------------------
+  if (motif == 'pa') pt <- data.frame(x = c(0,0,0), y = c(-1,0,1))
+
+  # ---------------------------------------------------
+  #                    Disconnected
+  # ---------------------------------------------------
+  if (motif == 'di') pt <- data.frame(x = c(0,0,0), y = c(-1,0,1))
+
+
+
+
+  # Modify according to parameters
+  pt$x <- (pt$x * scalingX) + x
+  pt$y <- (pt$y * scalingY) + y
+
+
+  return(pt)
+  # dev.off()
+
+}

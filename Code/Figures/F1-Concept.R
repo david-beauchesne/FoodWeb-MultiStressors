@@ -95,11 +95,11 @@ layout(mat, widths = c(.05, .5, .5, 1, .3,.35,.35, .05), heights = c(.15, .35, 1
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #
 par(mar = c(0, 0, 0, 0), family = 'serif')
 plot0()
-text(x = -1, y = 1, adj = c(0,1), labels = "A) A gateway through\n      ecological communities", cex = cx_title, font = 2)
+text(x = -1, y = 1, adj = c(0,1), labels = "A) Species interactions: a gateway\n      through ecological communities", cex = cx_title, font = 2)
 
 par(mar = c(0, 0, 0, 0), family = 'serif')
 plot0()
-text(x = -1, y = 1, adj = c(0,1), labels = "C) Simplified dynamics of\n      multiple stressors", cex = cx_title, font = 2)
+text(x = -1, y = 1, adj = c(0,1), labels = "C) Simplified species response\n      to multiple stressors", cex = cx_title, font = 2)
 
 par(mar = c(0, 0, 0, 0), family = 'serif')
 plot0()
@@ -160,7 +160,7 @@ pchImage(x = .4, 1.45, obj = DD, cex.x = .8, cex.y = .6)#, col = colM[1])
 
 
 # Text
-text(x = -.65, y = 1, labels = 'Stressor\nexposure', adj = c(0,.5), cex = .75)
+text(x = -.45, y = 1, labels = 'Stressor\neffect', adj = c(1,.5), cex = .75)
 arrows(-.425, 1.025, -.35, 1.1, length = .025, code = 2, xpd = TRUE)
 
 
@@ -375,8 +375,8 @@ pchImage(x = 10, 60, obj = Shipping, cex.x = .4, cex.y = 1)#, col = colB[1])
 # Pathways of effect
 lines(x = c(51,55), y = rep(xI+45,2), lwd = lwdD)
 lines(x = c(51,55), y = rep(xI-20,2), lty = 3, lwd = lwdD)
-text(x = 50, y = xI+50, adj = c(1,.5), labels = TeX('Integrative pathway of effect ($\\textit{K}$)'), cex = .55)
-text(x = 50, y = xI-15, adj = c(1,.5), labels = TeX('$\\sum$unitary pathways of effect ($\\textit{k}$)'), cex = .55)
+text(x = 50, y = xI+50, adj = c(1,.5), labels = TeX('Integrative pathway of effect ($\\textit{G}$)'), cex = .55)
+text(x = 50, y = xI-15, adj = c(1,.5), labels = TeX('$\\sum$unitary pathways of effect ($\\textit{g}$)'), cex = .55)
 
 
 # # Additive
@@ -463,8 +463,7 @@ text(x = c(-.55, -.15, .15, .55), y = rep(-1.9,4), labels = TeX(c('$M_1$','$M_2$
 # Part D
 # =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= #
 # Data
-load('./Data/MultivariatePath.RData')
-load('./Data/AdditivePath.RData')
+load('./Data/vulnerability.RData')
 
 # Sensitivity and amplification vector for cod
 dat <- data.frame(id = c(5,4,3,2,.75),
@@ -474,47 +473,31 @@ dat <- data.frame(id = c(5,4,3,2,.75),
 # =-=-=-=-=-=-=-=-=-=-=-= #
 # Competitive exploitation
 # =-=-=-=-=-=-=-=-=-=-=-= #
-# Sensitivity
-uid <- multiPath$position == 'exz' & multiPath$pathway == 'beta-m_z-r'
-dat$sensitivity[1] <- multiPath$Mean[uid]
-
-# Amplification
-uid <- addPath$position == 'exz' & addPath$pathway == 'beta-m_z-r'
-dat$amplification[1] <- addPath$Mean[uid]
+uid <- vulnerability$Position == 'exz' & vulnerability$Pathways == 'beta-m_z-r'
+dat$sensitivity[1] <- vulnerability$Sensitivity[uid]
+dat$amplification[1] <- vulnerability$Amplification[uid]
 
 # =-=-=-=-=-=-=-=-=-=-=-= #
 # Food chain 1
 # =-=-=-=-=-=-=-=-=-=-=-= #
-# Sensitivity
-uid <- multiPath$position == 'ttz' & multiPath$pathway == 'm_y-m_z'
-dat$sensitivity[2] <- multiPath$Mean[uid]
-
-# Amplification
-uid <- addPath$position == 'ttz' & addPath$pathway == 'm_y-m_z'
-dat$amplification[2] <- addPath$Mean[uid]
-
+uid <- vulnerability$Position == 'ttz' & vulnerability$Pathways == 'm_y-m_z'
+dat$sensitivity[2] <- vulnerability$Sensitivity[uid]
+dat$amplification[2] <- vulnerability$Amplification[uid]
 
 # =-=-=-=-=-=-=-=-=-=-=-= #
 # Food chain 2
 # =-=-=-=-=-=-=-=-=-=-=-= #
-# Sensitivity
-uid <- multiPath$position == 'ttz' & multiPath$pathway == 'm_y-m_z-mu'
-dat$sensitivity[3] <- multiPath$Mean[uid]
-
-# Amplification
-uid <- addPath$position == 'ttz' & addPath$pathway == 'm_y-m_z-mu'
-dat$amplification[3] <- addPath$Mean[uid]
+uid <- vulnerability$Position == 'ttz' & vulnerability$Pathways == 'm_y-m_z-mu'
+dat$sensitivity[3] <- vulnerability$Sensitivity[uid]
+dat$amplification[3] <- vulnerability$Amplification[uid]
 
 # =-=-=-=-=-=-=-=-=-=-=-= #
 # Omnivory
 # =-=-=-=-=-=-=-=-=-=-=-= #
 # Sensitivity
-uid <- multiPath$position == 'omy' & multiPath$pathway == 'delta-gamma-m_y-r'
-dat$sensitivity[4] <- multiPath$Mean[uid]
-
-# Amplification
-uid <- addPath$position == 'omy' & addPath$pathway == 'delta-gamma-m_y-r'
-dat$amplification[4] <- addPath$Mean[uid]
+uid <- vulnerability$Position == 'omy' & vulnerability$Pathways == 'delta-gamma-m_y-r'
+dat$sensitivity[4] <- vulnerability$Sensitivity[uid]
+dat$amplification[4] <- vulnerability$Amplification[uid]
 
 # =-=-=-=-=-=-=-=-=-=-=-= #
 # Cod values
