@@ -1,6 +1,6 @@
 ---
 title: Supplementary material - On the sensitivity of food webs to multiple stressors
-author: David Beauchesne^1,2,\*^, Kevin Cazelles^3^, Philippe Archambault^2^, Dominique Gravel^4^
+author: David Beauchesne^1,2,\*^, Kevin Cazelles^3^, Philippe Archambault^2^, Laura E. Dee^4^, Dominique Gravel^5^
 fontsize: 12pt
 output:
   pdf_document:
@@ -28,20 +28,23 @@ relativeurls: true
 ---
 
 <!--
-rmarkdown::render('./fwms.md')
+rmarkdown::render('./fwms-SI.md')
 r -e "rmarkdown::render('./fwms.md')"
 -->
 
 ^1^Institut des sciences de la mer, Université du Québec à Rimouski, Rimouski, QC, Canada \newline
-^2^Québec Océan, Département de biologie, Université Laval, Québec, QC, Canada \newline
+^2^ArcticNet, Québec Océan, Département de biologie, Université Laval, Québec, QC, Canada \newline
 ^3^Department of Integrative Biology, University Of Guelph, Guelph, Ontario, Canada N1G 2W1 \newline
-^4^Département de biologie, Université de Sherbrooke, Sherbrooke, QC, Canada \newline
+^4^Department of Ecology and Evolutionary Biology, University of Colorado, Boulder, Colorado 80309 USA \newline
+^5^Département de biologie, Université de Sherbrooke, Sherbrooke, QC, Canada \newline
 
-<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
-# Supplementary Material
-<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+\newpage
 
-## Models
+# Models
+
+\singlespacing
+
+Table S1. Systems of Lotka-Volterra equations used to model the effects of multiple disturbances on the six 3-species motifs selected explored.
 
 \begin{table}[H]
 \centering
@@ -138,48 +141,18 @@ $\begin{array} {lcl}
   \end{array}$ \\
 \hline
 \end{tabular}
-\caption{Systems of Lotka-Volterra equations used to model the effects of multiple disturbances on the six 3-species motifs selected explored.}
 \label{equations}
 \end{table}
 
-\newpage
 
-## Supplementary figures
+# Supplementary figures
+
+\newpage
 
 \begin{figure}[H]
 \centering
 \includegraphics{./Figures/ScoreTableSSL.png}
-\caption{
-Change in species and functional groups sensitivity and amplification scores
-as a function of realized pathways of effects for an empirical food web of the
-Southern Gulf of St. Lawrence in the mid-1980s \cite{savenkoff2004}.
-The left-hand side of the table presents the species and functional groups,
-the drivers supposed to be affecting population level mortality,
-physiology and behaviour, and the frequency at which they are found in each
-unique position of the food chain, omnivory, exploitative and apparent
-competition motifs.
-Important drivers in the Southern Gulf of St. Lawrence are fisheries
-(\textit{i.e.} demersal destructive, demersal non-destructive high-bycatch and
-pelagic high-bycatch), climate change (\textit{i.e.} ocean acidification,
-hypoxia and bottom and surface temperature anomalies), and shipping
-\cite{beauchesne2019}.
-Species position and driver effects on biological processes were used to
-identify realized pathways of effects between all 3-species combinations in
-the food web.
-The right-hand side of the table presents the species sensitivity and
-amplification scores, which corresponds to the sum of the simulated effects
-of all realized pathways of effects for each species and functional group
-(Figure \ref{vulnerability}).
-Negative and positive sensitivity scores mean that overall pathways affecting a
-species have negative or positive effects, respectively.
-The species with the most negative and positive scores are weak entry points
-(\textit{i.e.} highly sensitive to disturbances), while species with null scores
-are biotic sinks (\textit{i.e.} insensitive to disturbances)
-Similarly, negative and positive amplification scores mean that overall pathways
-affecting a species result in antagonistic or synergistic effects, respectively.
-Species with negative or positive scores are thus biotic buffers and biotic
-amplifiers, respectively.
-}
+\caption{Change in species and functional groups sensitivity and amplification scores as a function of realized pathways of effects for an empirical food web of the Southern Gulf of St. Lawrence in the mid-1980s Savenkoff (\textit{et al.} 2004). A species trophic sensitivity and amplification is summarized using the sum of simulated trophic sensitivities ($S_{i,G}$) and amplifications ($A_{i,G}$) to pathways of effect ($G$; Figure \ref{vulnerability}) across a species motif census ($M$). The left-hand side of the figure presents species and functional groups, unitary pathways of effects ($g$) arising from individual stressors and their potential effects on population level mortality, physiology and behaviour, and the motif census ($M$) of species and functional groups measured as the frequency of times they hold unique positions in tri-trophic food chain, omnivory, exploitative and apparent competition interactions structuring of the food web. Main stressors in the Southern Gulf of St. Lawrence are fisheries (\textit{i.e.} demersal destructive, demersal non-destructive high-bycatch and pelagic high-bycatch), climate change (\textit{i.e.} ocean acidification, hypoxia and bottom and surface temperature anomalies), and shipping (Beauchesne \textit{et al.} 2020). effects of stressors on individual ecological processes form unitary pathways of effect ($g$) that collectively affect food webs through integrative pathways of effect ($G$). The right-hand side of the figure presents trophic sensitivities and amplifications of species and functional groups. Negative or positive trophic sensitivities denote expected decreases or increases in species abundance as a response to pathways of effect. Species or functional groups with lowest or highest trophic sensitivities are positive or negative weak entry points (\textit{i.e.} highly sensitive to disturbances), respectively. Negative or positive trophic amplifications identify species or functional groups expected to be affected synergistically (\textit{i.e.} biotic amplifiers) or antagonistically (\textit{i.e.} biotic buffers) by stressors.}
 \label{scoreTable2}
 \end{figure}
 
@@ -188,49 +161,5 @@ amplifiers, respectively.
 \begin{figure}[H]
 \centering
 \includegraphics{./Figures/ScoreTableESL.png}
-\caption{
-Change in species and functional groups sensitivity and amplification scores
-as a function of realized pathways of effects for an empirical food web of the
-St. Lawrence Estuary in the mid-1980s \cite{savenkoff2012}.
-The left-hand side of the table presents the species and functional groups,
-the drivers supposed to be affecting population level mortality,
-physiology and behaviour, and the frequency at which they are found in each
-unique position of the food chain, omnivory, exploitative and apparent
-competition motifs.
-Important drivers in the St. Lawrence Estuary are fisheries
-(\textit{i.e.} demersal destructive, demersal non-destructive high-bycatch and
-pelagic high-bycatch), climate change (\textit{i.e.} ocean acidification,
-hypoxia and bottom and surface temperature anomalies), and shipping
-\cite{beauchesne2019}.
-Species position and driver effects on biological processes were used to
-identify realized pathways of effects between all 3-species combinations in
-the food web.
-The right-hand side of the table presents the species sensitivity and
-amplification scores, which corresponds to the sum of the simulated effects
-of all realized pathways of effects for each species and functional group
-(Figure \ref{vulnerability}.
-Negative and positive sensitivity scores mean that overall pathways affecting a
-species have negative or positive effects, respectively.
-The species with the most negative and positive scores are weak entry points
-(\textit{i.e.} highly sensitive to disturbances), while species with null scores
-are biotic sinks (\textit{i.e.} insensitive to disturbances)
-Similarly, negative and positive amplification scores mean that overall pathways
-affecting a species result in antagonistic or synergistic effects, respectively.
-Species with negative or positive scores are thus biotic buffers and biotic
-amplifiers, respectively.
-}
-\label{scoreTable3}
-\end{figure}
-
-\begin{figure}[H]
-\centering
-\includegraphics{./Figures/TL-OM-Realised.png}
-\caption{
-Species sensitivity and amplification scores as a function of network metrics:
-1) trophic level, 2) omnivory index, 3) in-degree, 4) out-degree, 5) degree and
-6) number of pathways of effect for the food webs of the Southern and Northern
-Gulf of St. Lawrence in the mid-1980s \cite{morissette2003; savenkoff2004} and
-the St. LAwrence Estuary in the 2010s \cite{savenkoff2012}.
-}
-\label{network}
+\caption{Change in species and functional groups sensitivity and amplification scores as a function of realized pathways of effects for an empirical food web of the St. Lawrence Estuary in the mid-1980s (Savenkoff 2012). A species trophic sensitivity and amplification is summarized using the sum of simulated trophic sensitivities ($S_{i,G}$) and amplifications ($A_{i,G}$) to pathways of effect ($G$; Figure \ref{vulnerability}) across a species motif census ($M$). The left-hand side of the figure presents species and functional groups, unitary pathways of effects ($g$) arising from individual stressors and their potential effects on population level mortality, physiology and behaviour, and the motif census ($M$) of species and functional groups measured as the frequency of times they hold unique positions in tri-trophic food chain, omnivory, exploitative and apparent competition interactions structuring of the food web. Main stressors in the St. Lawrence Estuary are fisheries (\textit{i.e.} demersal destructive, demersal non-destructive high-bycatch and pelagic high-bycatch), climate change (\textit{i.e.} ocean acidification, hypoxia and bottom and surface temperature anomalies), and shipping (Beauchesne \textit{et al.} 2020). effects of stressors on individual ecological processes form unitary pathways of effect ($g$) that collectively affect food webs through integrative pathways of effect ($G$). The right-hand side of the figure presents trophic sensitivities and amplifications of species and functional groups. Negative or positive trophic sensitivities denote expected decreases or increases in species abundance as a response to pathways of effect. Species or functional groups with lowest or highest trophic sensitivities are positive or negative weak entry points (\textit{i.e.} highly sensitive to disturbances), respectively. Negative or positive trophic amplifications identify species or functional groups expected to be affected synergistically (\textit{i.e.} biotic amplifiers) or antagonistically (\textit{i.e.} biotic buffers) by stressors.}\label{scoreTable3}
 \end{figure}
