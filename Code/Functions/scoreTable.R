@@ -127,7 +127,7 @@ scoreTable <- function(foodWeb, output) {
   motifs <- c('tt','tt','tt','om','om','om','ex','ex','ap','ap')
   pos <- c('x','y','z','x','y','z','x','z','x','z')
   xPos <- seq(-2.15, by = .4, length.out = 10)
-  text(x = mean(xPos), y = nSp+2.75, labels = TeX('\\textbf{Motif profile} ($\\textit{M}$)'), cex = headCex, adj = c(.5,.5), font = 2)
+  text(x = mean(xPos), y = nSp+2.75, labels = TeX('\\textbf{Motif census} ($\\textit{M}$)'), cex = headCex, adj = c(.5,.5), font = 2)
   for(i in 1:length(pos)) {
     plotMotifs(motifs[i], pos[i], x = xPos[i], y = nSp+1.5, add = T,
                cex = .4, scalingX = .3, scalingY = .5, lwd = 1.2, lwd2 = 1.2)
