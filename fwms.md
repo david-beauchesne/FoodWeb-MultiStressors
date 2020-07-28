@@ -9,8 +9,8 @@ output:
     toc: false
     number_sections: true
 header-includes:
-   - \usepackage{lineno}
-   - \linenumbers
+   #- \usepackage{lineno}
+   #- \linenumbers
    - \usepackage{listings}
    - \usepackage{float}
    - \restylefloat{table}
