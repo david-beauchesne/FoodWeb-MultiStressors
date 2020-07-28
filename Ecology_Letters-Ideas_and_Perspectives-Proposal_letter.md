@@ -1,4 +1,4 @@
-
+# Proposal letter
 
  Dear Ecology Letters Editors,
 
@@ -18,3 +18,20 @@
  Université du Québec à Rimouski
  Cell: 1 (514) 553-4974
  david.beauchesne@uqar.ca
+
+ # Response
+
+ Dear Dr Beauchesne,
+
+Thank you for your proposal to Ecology Letters for an "Idea and Perspectives" paper. I think your concept is interesting and I would welcome a full manuscript submission. Please consider the following in preparing your manuscript.
+
+- I&P articles are intended to introduce specific novel ideas to the ecology research community. Articles that are more discursive and reflective, reviews of existing knowledge, or simple reporting of an overlooked phenomenon are not acceptable. My reading of your proposal suggests that it has the potential to achieve our standard. However, your manuscript will need to establish the novelty, importance, and generality of your theory.
+- Related, I&P submissions are most successful when they contain specific, testable predictions. This is my biggest concern about your proposed contribution, i.e. that your findings are so context dependent that they are not generally testable. Your manuscript should emphasize how your theory may be empirically tested. It is often helpful to name hypotheses, so that subsequent researchers may readily refer to them directly. Where possible, indicate what evidence there is in support or against the hypothesis. Evidence need not be strong as I&P articles are primarily about the idea, but what evidence there is (both for and against your theory) must be fairly treated.
+- Please consider if there is some conceptual diagram that, together with its caption, summarizes your theory.
+
+Please let Nathalie (cc'ed) know a date by which you anticipate submitting a manuscript so that we can include it into our planning. Additionally, when you submit your manuscript, please identify members of our editorial board who would be appropriate handling editors for this work. A full list of editors may be accessed online at https://onlinelibrary.wiley.com/page/journal/14610248/homepage/editorialboard.html.
+
+Please note that acceptance of a proposal in no way preempts the likely acceptance of a manuscript in that all manuscripts are subject to the journal's full evaluation procedures and it is often hard for us to judge a manuscript based on a short proposal. Of course we hope you are successful.
+
+Sincerely yours,
+John Drake, Senior Editor
