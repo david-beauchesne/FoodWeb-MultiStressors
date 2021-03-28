@@ -29,3 +29,6 @@ cols <- c('#96658c','#68908b','#4B7894','#971c3c')
 colP <- c('#a84d4dcc','#a84d4d44')
 colB <- c('#196f6fcc','#196f6f44')
 colM <- c('#db9f38cc','#db9f3844')
+
+
+colsPos <- c("#3fb3b2", "#ffdd55", "#c7254e", "#1b95e0", "#8555b4")

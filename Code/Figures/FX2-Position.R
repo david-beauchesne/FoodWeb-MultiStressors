@@ -98,6 +98,12 @@ dat$xM[12] <- dat$x[12] - .002
 dat$xM[13] <- dat$x[13] - .005
 dat$xM[14] <- dat$x[14] + .004
 
+# Colors
+
+colmotif <- data.frame(motif = c('om','ap','pa','di','tt','ex'),
+                       cols = colsPos[c(1,2,5,5,3,4)])
+dat <- left_join(dat, colmotif, by = 'motif')
+
 for(i in 1:nrow(dat)) {
   # Encircle
   coords <- coordMotifs(motif = dat$motif[i],
@@ -110,12 +116,14 @@ for(i in 1:nrow(dat)) {
   plotMotifs(motif = dat$motif[i], position = dat$position[i],
              x = dat$xM[i], y = dat$yM[i],
              scalingX = .006, scalingY = .000025,
-             posCol = '#818181', colLine = '#afacac',
-             cex = 1.2, lwd2 = 3, lwd = .75, add = T)
+             posCol = dat$cols[i], colLine = '#afacac',
+             cex = 1.5, lwd2 = 3, lwd = .75, add = T)
 }
 
 # Mean position values
-points(x = vulnerability$Sensitivity, y = vulnerability$Amplification, pch = 21, cex = 1.8, bg = '#e98181', col = '#8e4747', lwd = 2.5)
+# points(x = vulnerability$Sensitivity, y = vulnerability$Amplification, pch = 21, cex = 1.8, bg = '#e98181', col = '#8e4747', lwd = 2.5)
+points(x = vulnerability$Sensitivity, y = vulnerability$Amplification, pch = 21,
+       cex = 2, bg = paste0(dat$cols,'66'), col = dat$cols, lwd = 2.5)
 
 
 
@@ -126,6 +134,7 @@ yR <- c(-.0055,.0055)
 xR <- c(-.125, .125)
 
 pos <- c('omx','omy','omz','apx','apz','pax','pay','paz','dix','ttx','tty','ttz','exx','exz')
+poscol <- colsPos[c(1,1,1,2,2,5,5,5,5,3,3,3,4,4)]
 m <- substr(pos, 1,2)
 p <- substr(pos, 3,3)
 
@@ -149,15 +158,15 @@ for(i in 1:length(pos)) {
 
   uid <- vulnerability$Position == pos[i]
   points(x = vulnerability$Sensitivity[uid], y = vulnerability$Amplification[uid],
-         pch = 20, col = '#52657c33', cex = .75, bg = '#52657c33')
+         pch = 21, col = 'transparent', cex = .9, bg = paste0(poscol[i],'77'))
 
 
   # # Motifs
   plotMotifs(motif = m[i], position = p[i],
              x = xR[1]+diff(xR)*.05, y = yR[2]-diff(yR)*.1,
              scalingX = .03, scalingY = .0008,
-             posCol = '#818181', colLine = '#afacac',
-             cex = 1.2, lwd2 = 3, lwd = .75, add = T)
+             posCol = poscol[i], colLine = '#afacac',
+             cex = 1.4, lwd2 = 3, lwd = .75, add = T)
 
   # yM <- mean(vulnerability$Amplification[uid], na.rm = TRUE)
   # xM <- mean(vulnerability$Sensitivity[uid], na.rm = TRUE)
@@ -165,14 +174,22 @@ for(i in 1:length(pos)) {
 }
 
 
-
 # Legend
 par(mar = c(2,2,2,2))
 plot0()
-points(x = -.9, y = .9, pch = 21, cex = 1.8, bg = '#e98181', col = '#8e4747', lwd = 3.5)
-text(x = -.75, y = .9, cex = 1.1, labels = 'Mean simulation value', adj = c(0,.5))
-points(x = -.9, y = .7, pch = 20, col = '#52657c99', cex = 2, bg = '#52657c99')
-text(x = -.75, y = .7, cex = 1.1, labels = 'Individual simulations', adj = c(0,.5))
+points(x = rep(-.9, 5), y = seq(.9,by=-.2,length.out=5), pch = 21, cex = 1.8,
+       bg = paste0(colsPos,'99'), col = colsPos, lwd = 3.5)
+
+text(x = rep(-.75, 5), y = seq(.9,by=-.2,length.out=5), cex = 1.1, adj = c(0,.5),
+     labels = c('Omnivory','Apparent competition','Tri-trophic food chain',
+                'Exploitative competition','Controls'))
+
+
+
+points(x = -.9, y = -.3, pch = 21, cex = 1.8, bg = '#00000066', col = '#000000', lwd = 3.5)
+text(x = -.75, y = -.3, cex = 1.1, labels = 'Mean simulation value', adj = c(0,.5))
+points(x = -.9, y = -.5, pch = 20, col = '#52657c99', cex = 2, bg = '#52657c99')
+text(x = -.75, y = -.5, cex = 1.1, labels = 'Individual simulations', adj = c(0,.5))
 
 
 
