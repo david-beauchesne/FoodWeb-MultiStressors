@@ -108,12 +108,6 @@ pchImage(x = 0, 1.45, obj = Shipping, cex.x = .8, cex.y = .6, col = '#00000099')
 pchImage(x = .4, 1.45, obj = DD, cex.x = .8, cex.y = .6, col = '#00000099')
 
 
-# # Text
-text(x = -.625, y = 1, labels = 'Stressor effect', adj = c(0,.5), cex = .69)
-text(x = -.625, y = .9, labels = 'Trophic interaction', adj = c(0,.5), cex = .69)
-lines(x = c(-.725, -.65), y = c(1,1), col = '#00000066', lty = 4, lwd = 1.5)
-lines(x = c(-.725, -.65), y = c(.9,.9), col = '#000000', lwd = 1.5)
-# arrows(-.425, 1.025, -.35, 1.1, length = .025, code = 2, xpd = TRUE)
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #
 # Plot 2
@@ -122,20 +116,28 @@ sc <- .7
 par(mar = c(0, 0, 0, 0), family = 'serif')
 plot0(x = c(-1.3,1.5), y = c(-1,1))
 
+# # Text
+text(x = -1.3, y = .8, labels = 'Stressor effect', adj = c(0,.5), cex = .8)
+text(x = 0, y = .8, labels = 'Trophic interaction', adj = c(0,.5), cex = .8)
+lines(x = c(-1.3, -1), y = c(.7,.7), col = '#00000066', lty = 4, lwd = 1.5)
+lines(x = c(0, .3), y = c(.7,.7), col = '#000000', lwd = 1.5)
+# arrows(-.425, 1.025, -.35, 1.1, length = .025, code = 2, xpd = TRUE)
+
+
 # Direct effects
-y <- .7
+y <- .3
 text(x = -1.3, y = y+.2, labels = 'Direct effects', adj = c(0,.5), cex = .8)
 pchImage(x = -1.2, y = y, obj = DD, cex.x = .8*sc, cex.y = .6*sc, col = '#00000099')
 pchImage(x = -.4, y = y, obj = cod, cex.x = 1.55*sc, cex.y = cxy*sc, col = colsPos[1])
 pchImage(x = .4, y = y, obj = cap, cex.x = 1.25*sc, cex.y = cxy*sc, col = colsPos[1])
 pchImage(x = 1.2, y = y, obj = kri, cex.x = .85*sc, cex.y = (cxy-.1)*sc, col = colsPos[1])
-l <- data.frame(x1 = c(-1,-.2,.6), x2 = c(-.6,.2,1), y = c(y,y,y))
+l <- data.frame(x1 = c(-1,-.2,.6), x2 = c(-.65,.2,1), y = c(y,y,y))
 lines(x = l[1,1:2], y = l[1,c(3,3)], col = '#00000066', lty = 4)
 lines(x = l[2,1:2], y = l[2,c(3,3)], col = '#000000')
 lines(x = l[3,1:2], y = l[3,c(3,3)], col = '#000000')
 
 # Indirect effects
-y <- .2
+y <- y-.5
 text(x = -1.3, y = y+.2, labels = 'Indirect effects', adj = c(0,.5), cex = .8)
 pchImage(x = -1.2, y = y, obj = DD, cex.x = .8*sc, cex.y = .6*sc, col = '#00000099')
 pchImage(x = -.4, y = y, obj = cod, cex.x = 1.55*sc, cex.y = cxy*sc, col = colsPos[1])
@@ -147,7 +149,7 @@ xspline(x = c(-.4, .4, 1.2), y = c(y-.075,y-.125,y-.075), shape = -1, draw = TRU
 
 
 # Net effects
-y <- -.3
+y <- y-.5
 text(x = -1.3, y = y+.2, labels = 'Net effects', adj = c(0,.5), cex = .8)
 pchImage(x = -1.2, y = y, obj = DD, cex.x = .8*sc, cex.y = .6*sc, col = '#00000099')
 pchImage(x = -.4, y = y, obj = cod, cex.x = 1.55*sc, cex.y = cxy*sc, col = colsPos[1])
@@ -156,7 +158,7 @@ pchImage(x = 1.2, y = y, obj = kri, cex.x = .85*sc, cex.y = (cxy-.1)*sc, col = c
 xspline(x = c(-1.2, -.4, .4), y = c(y-.075,y-.125,y-.075), shape = -1, draw = TRUE, border = '#00000066', lty = 4)
 xspline(x = c(-1.2, 0, 1.2), y = c(y+.075,y+.175,y+.075), shape = 1, draw = TRUE, border = '#00000066', lty = 4)
 xspline(x = c(-.4, .4, 1.2), y = c(y-.075,y-.125,y-.075), shape = -1, draw = TRUE, border = '#000000')
-l <- data.frame(x1 = c(-1,-.2,.6), x2 = c(-.6,.2,1), y = c(y,y,y))
+l <- data.frame(x1 = c(-1,-.2,.6), x2 = c(-.65,.2,1), y = c(y,y,y))
 lines(x = l[1,1:2], y = l[1,c(3,3)], col = '#00000066', lty = 4)
 lines(x = l[2,1:2], y = l[2,c(3,3)], col = '#000000')
 lines(x = l[3,1:2], y = l[3,c(3,3)], col = '#000000')
