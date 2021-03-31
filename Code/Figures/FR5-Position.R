@@ -24,8 +24,8 @@ layout(mat)
 
 # Mean values per position
 par(mar = c(4,4,4,4), family = 'serif')
-yR <- c(-.0004,.0004)
-xR <- c(-.06, .06)
+yR <- c(-.15,.15)
+xR <- c(-.7, .7)
 plot0(x = xR, y = yR)
 ext <- par('usr')
 axis(1, cex.axis = 1.3)
