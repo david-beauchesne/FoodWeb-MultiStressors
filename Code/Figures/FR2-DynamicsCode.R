@@ -55,7 +55,7 @@ p <- c(r = 1.0200000000,
 
 plotOmnivory <- function() {
   # plot0(x = c(-3.5,60), y = c(-60,625))
-  plot0(x = c(-3.5,60), y = c(-60,1000))
+  plot0(x = c(-3.5,60), y = c(-60,750))
   arrows(-2, 0, 59, 0, length = .05, code = 2, xpd = TRUE)
   arrows(-2, 0, -2, 600, length = .05, code = 2, xpd = TRUE)
   lines(x = c(5,5), y = c(-25,600), lty = 2, col = '#00000088')
@@ -65,9 +65,9 @@ plotOmnivory <- function() {
   text(x = 6, y = -42, adj = c(0,1), 'Stressors', cex = .55)
   for(i in 1:3) lines(x = c(0,5), y = rep(init[i], 2), col = '#000000', lwd = .75)
   arrows(6, -25, 10, -25, length = .025, code = 2, xpd = TRUE)
-  pchImage(x = 1.5, 110, obj = bew, cex.x = .8, cex.y = .6, col = colsPos[3]) # Beluga
-  pchImage(x = 1.5, 220, obj = cod, cex.x = .7, cex.y = .5, col = colsPos[3]) # Cod
-  pchImage(x = 1.5, 460, obj = cap, cex.x = .5, cex.y = .5, col = colsPos[3]) # Capelin
+  pchImage(x = 1.5, 110, obj = bew, cex.x = .8, cex.y = .6)#, col = colsPos[3]) # Beluga
+  pchImage(x = 1.5, 220, obj = cod, cex.x = .7, cex.y = .5)#, col = colsPos[3]) # Cod
+  pchImage(x = 1.5, 460, obj = cap, cex.x = .5, cex.y = .5)#, col = colsPos[3]) # Capelin
 }
 
 # Disturbances 1
@@ -186,19 +186,19 @@ p <- c(alpha_x = 0.0010000000,
 # Plot function
 plotApparent <- function() {
   # plot0(x = c(-3.5,60), y = c(-60,625))
-  plot0(x = c(-3.5,60), y = c(-60,2000))
+  plot0(x = c(-3.5,60), y = c(-140,1850))
   arrows(-2, 0, 59, 0, length = .05, code = 2, xpd = TRUE)
   arrows(-2, 0, -2, 1500, length = .05, code = 2, xpd = TRUE)
   lines(x = c(5,5), y = c(-25,1500), lty = 2, col = '#00000088')
   lines(x = c(5,5), y = c(-25,0), col = '#000000')
-  text(x = 56, y = -15, adj = c(1,1), 'Time', cex = .75)
+  text(x = 56, y = -35, adj = c(1,1), 'Time', cex = .75)
   text(x = -3, y = 700, adj = c(.5,0), TeX('Abundance ($\\textit{a}$)'), cex = .75, srt = 90)
-  text(x = 6, y = -42, adj = c(0,1), 'Stressors', cex = .55)
+  text(x = 6, y = -110, adj = c(0,1), 'Stressors', cex = .55)
   for(i in 1:3) lines(x = c(0,5), y = rep(apInit[i], 2), col = '#000000', lwd = .75)
-  arrows(6, -25, 10, -25, length = .025, code = 2, xpd = TRUE)
-  pchImage(x = 1.5, 550, obj = cop, cex.x = .5, cex.y = .6, col = colsPos[4]) # Copepods
-  pchImage(x = 1.5, 290, obj = kri, cex.x = .5, cex.y = .5, col = colsPos[4]) # Krill
-  pchImage(x = 1.5, 1080, obj = cap, cex.x = .5, cex.y = .5, col = colsPos[4]) # Capelin
+  arrows(6, -65, 10, -65, length = .025, code = 2, xpd = TRUE)
+  pchImage(x = 1.5, 550, obj = cop, cex.x = .5, cex.y = .6, col = '#000000')#, col = colsPos[4]) # Copepods
+  pchImage(x = 1.5, 290, obj = kri, cex.x = .5, cex.y = .5)#, col = colsPos[4]) # Krill
+  pchImage(x = 1.5, 1080, obj = cap, cex.x = .5, cex.y = .5)#, col = colsPos[4]) # Capelin
 }
 
 # Unitary 1

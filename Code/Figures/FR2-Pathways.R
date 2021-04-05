@@ -246,6 +246,9 @@ text(x = txt2$x, y = txt2$y, labels = TeX(txt2$txt), adj = c(.5,.5), cex = .75, 
 #
 # =~-~=~-~=~-~=~-~=~-~=~-~=~-~=~-~=~-~=~-~=~-~=~-~=~-~=~-~=~-~=~-~=~-~=~-~=~-~= #
 # =~-~=~-~=~-~=~-~=~-~=~-~=~-~=~-~=~-~=~-~=~-~=~-~=~-~=~-~=~-~=~-~=~-~=~-~=~-~= #
+dd <- function(x,y) pchImage(x = x, y = y, obj = DD, cex.x = .4, cex.y = .6, col = '#00000099')
+sh <- function(x,y) pchImage(x = x, y = y, obj = Shipping, cex.x = .4, cex.y = .6, col = '#00000099')
+tm <- function(x,y) pchImage(x = x, y = y, obj = SST, cex.x = .4, cex.y = .6, col = '#00000099')
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #
 # Unitary 1
@@ -265,11 +268,14 @@ text(x = 55, y = xM, adj = c(.5,.5), labels = TeX('Sensitivity'), cex = .55)
 # text(x = 55, y = xM, adj = c(.5,.5), labels = TeX('$\\Delta a$'), cex = .55)
 
 # Population dynamics
-for (i in 2:4) lines(x = c(5:55), y = res1[,i], lwd = lwdD)
+for (i in 2:4) lines(x = c(5:55), y = res1[,i], lwd = lwdD, col = colsPos[3])
 
 # Disturbances
-# arrows(8, 550, 5.5, 520, length = .025, code = 2, xpd = TRUE)
-# pchImage(x = 10, xI+60, obj = DD, cex.x = .4, cex.y = 1)#, col = colB[1])
+arrows(8, 550, 5.5, 520, length = .025, code = 2, xpd = TRUE)
+dd(x = 10, y = xI+60)
+
+# Pathway of effect
+text(x = 5, y = 675, labels = TeX('$g_1 = \\{\\textit{r}_{capelin}\\}$'), adj = c(0,.5), cex = .9)
 
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #
@@ -278,11 +284,14 @@ for (i in 2:4) lines(x = c(5:55), y = res1[,i], lwd = lwdD)
 # Plot
 par(mar = c(.5, .5, 0, 0))
 plotOmnivory()
-for (i in 2:4) lines(x = c(5:55), y = res2[,i], lwd = lwdD)
+for (i in 2:4) lines(x = c(5:55), y = res2[,i], lwd = lwdD, col = colsPos[3])
 
 # Disturbances
-# pchImage(x = 10, 335, obj = DD, cex.x = .4, cex.y = 1)#, col = colB[1])
+arrows(8, 320, 5.5, 280, length = .025, code = 2, xpd = TRUE)
+dd(x = 10, y = 335)
 
+# Pathway of effect
+text(x = 5, y = 675, labels = TeX('$g_2 = \\{\\textit{m}_{cod}\\}$'), adj = c(0,.5), cex = .9)
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #
 # Unitary 3
@@ -290,11 +299,15 @@ for (i in 2:4) lines(x = c(5:55), y = res2[,i], lwd = lwdD)
 # Plot
 par(mar = c(.5, .5, 0, 0))
 plotOmnivory()
-for (i in 2:4) lines(x = c(5:55), y = res3[,i], lwd = lwdD)
+for (i in 2:4) lines(x = c(5:55), y = res3[,i], lwd = lwdD, col = colsPos[3])
 
 
 # Pathway of effect
-# pchImage(x = 10, 230, obj = Shipping, cex.x = .4, cex.y = 1)#, col = colB[1])
+arrows(8, 215, 5.5, 175, length = .025, code = 2, xpd = TRUE)
+sh(x = 10, y = 230)
+
+# Pathway of effect
+text(x = 5, y = 675, labels = TeX('$g_3 = \\{\\alpha_{capelin,beluga}\\}$'), adj = c(0,.5), cex = .9)
 
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #
@@ -303,10 +316,14 @@ for (i in 2:4) lines(x = c(5:55), y = res3[,i], lwd = lwdD)
 # Plot
 par(mar = c(.5, .5, 0, 0))
 plotOmnivory()
-for (i in 2:4) lines(x = c(5:55), y = res4[,i], lwd = lwdD)
+for (i in 2:4) lines(x = c(5:55), y = res4[,i], lwd = lwdD, col = colsPos[3])
 
 # Pathway of effect
-# pchImage(x = 10, 230, obj = Shipping, cex.x = .4, cex.y = 1)#, col = colB[1])
+arrows(8, 215, 5.5, 175, length = .025, code = 2, xpd = TRUE)
+sh(x = 10, y = 230)
+
+# Pathway of effect
+text(x = 5, y = 675, labels = TeX('$g_4 = \\{\\alpha_{cod,beluga}\\}$'), adj = c(0,.5), cex = .9)
 
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #
@@ -317,31 +334,40 @@ par(mar = c(.5, .5, 0, 0))
 plotOmnivory()
 
 # Pathways of effect
-# pchImage(x = 10, xI+60, obj = DD, cex.x = .4, cex.y = 1)#, col = colB[1])
-# pchImage(x = 10, 60, obj = Shipping, cex.x = .4, cex.y = 1)#, col = colB[1])
+arrows(8, 550, 5.5, 520, length = .025, code = 2, xpd = TRUE)
+arrows(8, 225, 5.5, 245, length = .025, code = 2, xpd = TRUE)
+arrows(8, 75, 5.5, 125, length = .025, code = 2, xpd = TRUE)
+dd(x = 10, y = xI+60)
+dd(x = 10, y = 235)
+sh(x = 10, y = 60)
+
 
 # Legends
 ## Pathways of effect
-lines(x = c(51,55), y = rep(xI+45,2), lwd = lwdD)
-lines(x = c(51,55), y = rep(xI-20,2), lty = 3, lwd = lwdD)
+lines(x = c(51,55), y = rep(xI+45,2), lwd = lwdD, col = colsPos[3])
+lines(x = c(51,55), y = rep(xI-20,2), lty = 3, lwd = lwdD, col = colsPos[3])
 text(x = 50, y = xI+50, adj = c(1,.5), labels = TeX('Integrative pathway of effect ($\\textit{G}$)'), cex = .55)
 text(x = 50, y = xI-15, adj = c(1,.5), labels = TeX('$\\sum$unitary pathways of effect ($\\textit{g}$)'), cex = .55)
 
 
 # Enveloppes
-envelop(x = 5:55, upper = init['x']-((init['x']-res1[,'x'])+(init['x']-res2[,'x'])+(init['x']-res3[,'x'])+(init['x']-res4[,'x'])), lower = res5[,'x'], col = '#00000022', border = '#00000000')
-envelop(x = 5:55, upper = init['y']-((init['y']-res1[,'y'])+(init['y']-res2[,'y'])+(init['y']-res3[,'y'])+(init['y']-res4[,'y'])), lower = res5[,'y'], col = '#00000022', border = '#00000000')
-envelop(x = 5:55, upper = init['z']-((init['z']-res1[,'z'])+(init['z']-res2[,'z'])+(init['z']-res3[,'z'])+(init['z']-res4[,'z'])), lower = res5[,'z'], col = '#00000022', border = '#00000000')
+#envelop(x = 5:55, upper = init['x']-((init['x']-res1[,'x'])+(init['x']-res2[,'x'])+(init['x']-res3[,'x'])+(init['x']-res4[,'x'])), lower = res5[,'x'], col = '#00000022', border = '#00000000')
+#envelop(x = 5:55, upper = init['y']-((init['y']-res1[,'y'])+(init['y']-res2[,'y'])+(init['y']-res3[,'y'])+(init['y']-res4[,'y'])), lower = res5[,'y'], col = '#00000022', border = '#00000000')
+#envelop(x = 5:55, upper = init['z']-((init['z']-res1[,'z'])+(init['z']-res2[,'z'])+(init['z']-res3[,'z'])+(init['z']-res4[,'z'])), lower = res5[,'z'], col = '#00000022', border = '#00000000')
+envelop(x = 5:55, upper = init['x']-((init['x']-res1[,'x'])+(init['x']-res2[,'x'])+(init['x']-res3[,'x'])+(init['x']-res4[,'x'])), lower = res5[,'x'], col = paste0(colsPos[3], '11'), border = '#00000000')
+envelop(x = 5:55, upper = init['y']-((init['y']-res1[,'y'])+(init['y']-res2[,'y'])+(init['y']-res3[,'y'])+(init['y']-res4[,'y'])), lower = res5[,'y'], col = paste0(colsPos[3], '11'), border = '#00000000')
+envelop(x = 5:55, upper = init['z']-((init['z']-res1[,'z'])+(init['z']-res2[,'z'])+(init['z']-res3[,'z'])+(init['z']-res4[,'z'])), lower = res5[,'z'], col = paste0(colsPos[3], '11'), border = '#00000000')
+
 
 # Joint model
-lines(x = c(5:55), y = res5[,'x'], lwd = lwdD)
-lines(x = c(5:55), y = res5[,'y'], lwd = lwdD)
-lines(x = c(5:55), y = res5[,'z'], lwd = lwdD)
+lines(x = c(5:55), y = res5[,'x'], lwd = lwdD, col = colsPos[3])
+lines(x = c(5:55), y = res5[,'y'], lwd = lwdD, col = colsPos[3])
+lines(x = c(5:55), y = res5[,'z'], lwd = lwdD, col = colsPos[3])
 
 # Additive model
-lines(x = c(5:55), y = init['x']-((init['x']-res1[,'x'])+(init['x']-res2[,'x'])+(init['x']-res3[,'x'])+(init['x']-res4[,'x'])), lwd = .4, lty = 3)
-lines(x = c(5:55), y = init['y']-((init['y']-res1[,'y'])+(init['y']-res2[,'y'])+(init['y']-res3[,'y'])+(init['y']-res4[,'y'])), lwd = .4, lty = 3)
-lines(x = c(5:55), y = init['z']-((init['z']-res1[,'z'])+(init['z']-res2[,'z'])+(init['z']-res3[,'z'])+(init['z']-res4[,'z'])), lwd = .4, lty = 3)
+lines(x = c(5:55), y = init['x']-((init['x']-res1[,'x'])+(init['x']-res2[,'x'])+(init['x']-res3[,'x'])+(init['x']-res4[,'x'])), lwd = .4, lty = 3, col = colsPos[3])
+lines(x = c(5:55), y = init['y']-((init['y']-res1[,'y'])+(init['y']-res2[,'y'])+(init['y']-res3[,'y'])+(init['y']-res4[,'y'])), lwd = .4, lty = 3, col = colsPos[3])
+lines(x = c(5:55), y = init['z']-((init['z']-res1[,'z'])+(init['z']-res2[,'z'])+(init['z']-res3[,'z'])+(init['z']-res4[,'z'])), lwd = .4, lty = 3, col = colsPos[3])
 
 # Non-additive
 xI <- init['x']-((init['x']-res1[,'x'])+(init['x']-res2[,'x'])+(init['x']-res3[,'x'])+(init['x']-res4[,'x']))[50]
@@ -351,6 +377,8 @@ text(x = 54, y = xM, labels = 'Amplification', cex = .55, adj = c(1,.5))
 # text(x = 54, y = xM, labels = 'Synergy', cex = .55, adj = c(1,.5))
 
 
+# Pathway of effect
+text(x = 5, y = 675, labels = TeX('$G = \\{g_1, g_2, g_3, g_4\\}$'), adj = c(0,.5), cex = .9)
 
 # =~-~=~-~=~-~=~-~=~-~=~-~=~-~=~-~=~-~=~-~=~-~=~-~=~-~=~-~=~-~=~-~=~-~=~-~=~-~= #
 # =~-~=~-~=~-~=~-~=~-~=~-~=~-~=~-~=~-~=~-~=~-~=~-~=~-~=~-~=~-~=~-~=~-~=~-~=~-~= #
@@ -359,13 +387,13 @@ text(x = 54, y = xM, labels = 'Amplification', cex = .55, adj = c(1,.5))
 #
 # =~-~=~-~=~-~=~-~=~-~=~-~=~-~=~-~=~-~=~-~=~-~=~-~=~-~=~-~=~-~=~-~=~-~=~-~=~-~= #
 # =~-~=~-~=~-~=~-~=~-~=~-~=~-~=~-~=~-~=~-~=~-~=~-~=~-~=~-~=~-~=~-~=~-~=~-~=~-~= #
-
+path <- 1600
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #
 # Unitary 1
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #
 par(mar = c(.5, .5, 0, 0))
 plotApparent()
-for (i in 2:4) lines(x = c(5:55), y = ap1[,i], lwd = lwdD)
+for (i in 2:4) lines(x = c(5:55), y = ap1[,i], lwd = lwdD, col = colsPos[4])
 
 # Delta abundances
 lines(x = c(5,55), y = rep(apInit['z'],2), lty = 4, col = '#000000aa', lwd = lwdD)
@@ -376,6 +404,14 @@ arrows(55, xM+(xI-xM)*.35, 55, xI-8.5, length = .025, code = 2, xpd = TRUE, lwd 
 arrows(55, xM-(xI-xM)*.35, 55, xE+8.5, length = .025, code = 2, xpd = TRUE, lwd = lwdD)
 text(x = 55, y = xM, adj = c(.5,.5), labels = TeX('Sensitivity'), cex = .55)
 
+# Disturbances
+arrows(8, xI+100, 5.5, xI+30, length = .025, code = 2, xpd = TRUE)
+# arrows(8, 550, 5.5, 520, length = .025, code = 2, xpd = TRUE)
+dd(x = 10, y = xI+120)
+
+# Pathway of effect
+text(x = 5, y = path, labels = TeX('$g_1 = \\{\\textit{m}_{capelin}\\}$'), adj = c(0,.5), cex = .9)
+
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #
 # Unitary 2
@@ -383,8 +419,15 @@ text(x = 55, y = xM, adj = c(.5,.5), labels = TeX('Sensitivity'), cex = .55)
 # Plot
 par(mar = c(.5, .5, 0, 0))
 plotApparent()
-for (i in 2:4) lines(x = c(5:55), y = ap2[,i], lwd = lwdD)
+for (i in 2:4) lines(x = c(5:55), y = ap2[,i], lwd = lwdD, col = colsPos[4])
 
+# Disturbances
+arrows(8, apInit['y']+180, 5.5, apInit['y']+70, length = .025, code = 2, xpd = TRUE)
+# arrows(8, 550, 5.5, 520, length = .025, code = 2, xpd = TRUE)
+tm(x = 10, y = apInit['y']+200)
+
+# Pathway of effect
+text(x = 5, y = path, labels = TeX('$g_2 = \\{\\textit{e}_{copepod,capelin}\\}$'), adj = c(0,.5), cex = .9)
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #
 # Integrative
@@ -392,35 +435,49 @@ for (i in 2:4) lines(x = c(5:55), y = ap2[,i], lwd = lwdD)
 # Plot
 par(mar = c(.5, .5, 0, 0))
 plotApparent()
-for (i in 2:4) lines(x = c(5:55), y = ap3[,i], lwd = lwdD)
+for (i in 2:4) lines(x = c(5:55), y = ap3[,i], lwd = lwdD, col = colsPos[4])
 
 # Legends
 ## Pathways of effect
-lines(x = c(51,55), y = rep(xI+175,2), lwd = lwdD)
-lines(x = c(51,55), y = rep(xI+50,2), lty = 3, lwd = lwdD)
+lines(x = c(51,55), y = rep(xI+175,2), lwd = lwdD, col = colsPos[4])
+lines(x = c(51,55), y = rep(xI+50,2), lty = 3, lwd = lwdD, col = colsPos[4])
 text(x = 50, y = xI+175, adj = c(1,.5), labels = TeX('Integrative pathway of effect ($\\textit{G}$)'), cex = .55)
 text(x = 50, y = xI+50, adj = c(1,.5), labels = TeX('$\\sum$unitary pathways of effect ($\\textit{g}$)'), cex = .55)
 
 
 # Enveloppes
-envelop(x = 5:55, upper = apInit['x']-((apInit['x']-ap1[,'x'])+(apInit['x']-ap2[,'x'])), lower = ap3[,'x'], col = '#00000022', border = '#00000000')
-envelop(x = 5:55, upper = apInit['y']-((apInit['y']-ap1[,'y'])+(apInit['y']-ap2[,'y'])), lower = ap3[,'y'], col = '#00000022', border = '#00000000')
-envelop(x = 5:55, upper = apInit['z']-((apInit['z']-ap1[,'z'])+(apInit['z']-ap2[,'z'])), lower = ap3[,'z'], col = '#00000022', border = '#00000000')
+# envelop(x = 5:55, upper = apInit['x']-((apInit['x']-ap1[,'x'])+(apInit['x']-ap2[,'x'])), lower = ap3[,'x'], col = '#00000022', border = '#00000000')
+# envelop(x = 5:55, upper = apInit['y']-((apInit['y']-ap1[,'y'])+(apInit['y']-ap2[,'y'])), lower = ap3[,'y'], col = '#00000022', border = '#00000000')
+# envelop(x = 5:55, upper = apInit['z']-((apInit['z']-ap1[,'z'])+(apInit['z']-ap2[,'z'])), lower = ap3[,'z'], col = '#00000022', border = '#00000000')
+envelop(x = 5:55, upper = apInit['x']-((apInit['x']-ap1[,'x'])+(apInit['x']-ap2[,'x'])), lower = ap3[,'x'], col = paste0(colsPos[4], '11'), border = '#00000000')
+envelop(x = 5:55, upper = apInit['y']-((apInit['y']-ap1[,'y'])+(apInit['y']-ap2[,'y'])), lower = ap3[,'y'], col = paste0(colsPos[4], '11'), border = '#00000000')
+envelop(x = 5:55, upper = apInit['z']-((apInit['z']-ap1[,'z'])+(apInit['z']-ap2[,'z'])), lower = ap3[,'z'], col = paste0(colsPos[4], '11'), border = '#00000000')
 
 # Joint model
-lines(x = c(5:55), y = ap3[,'x'], lwd = lwdD)
-lines(x = c(5:55), y = ap3[,'y'], lwd = lwdD)
-lines(x = c(5:55), y = ap3[,'z'], lwd = lwdD)
+lines(x = c(5:55), y = ap3[,'x'], lwd = lwdD, col = colsPos[4])
+lines(x = c(5:55), y = ap3[,'y'], lwd = lwdD, col = colsPos[4])
+lines(x = c(5:55), y = ap3[,'z'], lwd = lwdD, col = colsPos[4])
 
 # Additive model
-lines(x = c(5:55), y = apInit['x']-((apInit['x']-ap1[,'x'])+(apInit['x']-ap2[,'x'])), lwd = .4, lty = 3)
-lines(x = c(5:55), y = apInit['y']-((apInit['y']-ap1[,'y'])+(apInit['y']-ap2[,'y'])), lwd = .4, lty = 3)
-lines(x = c(5:55), y = apInit['z']-((apInit['z']-ap1[,'z'])+(apInit['z']-ap2[,'z'])), lwd = .4, lty = 3)
+lines(x = c(5:55), y = apInit['x']-((apInit['x']-ap1[,'x'])+(apInit['x']-ap2[,'x'])), lwd = .4, lty = 3, col = colsPos[4])
+lines(x = c(5:55), y = apInit['y']-((apInit['y']-ap1[,'y'])+(apInit['y']-ap2[,'y'])), lwd = .4, lty = 3, col = colsPos[4])
+lines(x = c(5:55), y = apInit['z']-((apInit['z']-ap1[,'z'])+(apInit['z']-ap2[,'z'])), lwd = .4, lty = 3, col = colsPos[4])
 
 # Non-additive
 xI <- apInit['z']-((apInit['z']-ap1[,'z'])+(apInit['z']-ap2[,'z']))[50]
 xE <- ap3[50,'z']
 xM <- mean(c(xI,xE))
 text(x = 54, y = xM, labels = 'Amplification', cex = .55, adj = c(1,.5))
+
+# Disturbances
+arrows(8, apInit['z']+100, 5.5, apInit['z']+30, length = .025, code = 2, xpd = TRUE)
+arrows(8, apInit['y']-50, 5.5, apInit['y']-20, length = .025, code = 2, xpd = TRUE)
+dd(x = 10, y = apInit['z']+120)
+tm(x = 10, y = apInit['y']-40)
+
+
+# Pathway of effect
+text(x = 5, y = path, labels = TeX('$G = \\{g_1,g_2\\}$'), adj = c(0,.5), cex = .9)
+
 
 dev.off()
