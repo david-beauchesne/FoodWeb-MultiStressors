@@ -12,7 +12,7 @@ vulnerability <- vulnerability %>%
 
 
 # Plot
-png('./Figures/position-all.png', width = 2500, height = 2500, res = 200, pointsize = 12)
+png('./Figures/FR5-position.png', width = 2500, height = 2500, res = 200, pointsize = 12)
 mat <- matrix(0, nrow = 5, ncol = 5)
 mat[1, ] <- 2:6
 mat[2, ] <- c(7,1,1,1,16)
