@@ -16,7 +16,7 @@ png('./Figures/FR6-Variance.png', width = 1500, height = 1000, res = 200, points
 par(mfrow = c(3,2), mar = c(4,4,1,1), family = 'serif')
 
 titleX <- function() {
-  mtext(text = TeX('\\textbf{Trophic variance} ($\\textit{V_i}$)'), side = 1, line = 2.5, cex = .8)
+  mtext(text = TeX('\\textbf{Trophic variance} ($\\textit{V_{i,G}}$)'), side = 1, line = 2.5, cex = .8)
 }
 titleY <- function() {
   mtext(text = TeX('\\textbf{log(Density + 1)}'), side = 2, line = 2, cex = .8)

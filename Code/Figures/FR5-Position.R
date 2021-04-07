@@ -1,4 +1,4 @@
-# source('./Code/Figures/FX2-Position.R')
+# source('./Code/Figures/FR5-Position.R')
 source('./Code/0-Param.R')
 source('./Code/Functions/plotMotifs.R')
 load('./Data/vulnerability.RData')
@@ -12,20 +12,20 @@ vulnerability <- vulnerability %>%
 
 
 # Plot
-png('./Figures/FR5-position.png', width = 2500, height = 2500, res = 200, pointsize = 12)
+png('./Figures/FR5-Position.png', width = 2500, height = 2500, res = 200, pointsize = 12)
 mat <- matrix(0, nrow = 5, ncol = 5)
 mat[1, ] <- 2:6
 mat[2, ] <- c(7,1,1,1,16)
-mat[3, ] <- c(8,1,1,1,9)
-mat[4, ] <- c(10,1,1,1,0)
+mat[3, ] <- c(8,1,1,1,16)
+mat[4, ] <- c(10,1,1,1,9)
 mat[5, ] <- 11:15
 layout(mat)
 
 
 # Mean values per position
 par(mar = c(4,4,4,4), family = 'serif')
-yR <- c(-.15,.15)
-xR <- c(-.7, .7)
+yR <- c(-.00035,.00035)
+xR <- c(-.065, .065)
 plot0(x = xR, y = yR)
 ext <- par('usr')
 axis(1, cex.axis = 1.3)
@@ -36,25 +36,8 @@ box(lwd = 2)
 abline(h=0, lty = 2, lwd = 2)
 abline(v=0, lty = 2, lwd = 2)
 
-# Buffers, amplifiers, weak entry points
-# polygon(x = ext[c(1,2,2,1)], y = c(rep(-sensTh,2), ext[c(3,3)]), col = paste0(cols[1], '22'), border = 'transparent') # WEP-
-# polygon(x = ext[c(1,2,2,1)], y = c(rep(sensTh,2), ext[c(4,4)]), col = paste0(cols[2], '22'), border = 'transparent') # WEP+
-# polygon(y = ext[c(3,4,4,3)], x = c(rep(ampTh,2), ext[c(4,4)]), col = paste0(cols[4], '22'), border = 'transparent') # BA
-# polygon(y = ext[c(3,4,4,3)], x = c(rep(-ampTh,2), ext[c(3,3)]), col = paste0(cols[3], '22'), border = 'transparent') # BB
-# abline(v = ampTh, lty = 4, col = cols[4], lwd = 2) # BA
-# abline(v = -ampTh, lty = 4, col = cols[3], lwd = 2) # BB
-# abline(h = sensTh, lty = 4, col = cols[2], lwd = 2) # WEP+
-# abline(h = -sensTh, lty = 4, col = cols[1], lwd = 2) # WEP-
-# text(x = ext[1]-ext[1]*.025, y = sensTh+sensTh*.1, adj = c(0,0), labels = 'Weak entry points +', cex = .8, col = cols[2], font = 2)
-# text(x = ext[1]-ext[1]*.025, y = -sensTh-sensTh*.1, adj = c(0,1), labels = 'Weak entry points -', cex = .8, col = cols[1], font = 2)
-# text(x = ampTh+ampTh*.05, y = ext[4]-ext[4]*.025, adj = c(0,1), labels = 'Biotic amplifiers', cex = .8, col = cols[4], font = 2)
-# text(x = -ampTh-ampTh*.05, y = ext[4]-ext[4]*.025, adj = c(1,1), labels = 'Biotic buffers', cex = .8, col = cols[3], font = 2)
-
-# Axes title
-# mtext(text = TeX('Mean $\\s_i$ $\\pm$ 95% CI'), side = 2, line = 2.25, cex = 1)
-# mtext(text = TeX('Mean $\\A_i$ $\\pm$ 95% CI'), side = 1, line = 2.25, cex = 1)
-mtext(text = TeX('\\textbf{Mean trophic sensitivity} ($\\textit{S_i}$)'), side = 1, line = 3, cex = 1.25)
-mtext(text = TeX('\\textbf{Mean trophic amplification} ($\\textit{A_i}$)'), side = 2, line = 3, cex = 1.25)
+mtext(text = TeX('\\textbf{Trophic sensitivity} ($\\textit{S_{i,G}}$)'), side = 1, line = 3.75, cex = 1.25)
+mtext(text = TeX('\\textbf{Trophic amplification} ($\\textit{A_{i,G}}$)'), side = 2, line = 3, cex = 1.25)
 
 # Data
 # Motifs
@@ -175,7 +158,7 @@ for(i in 1:length(pos)) {
 
 
 # Legend
-par(mar = c(2,2,2,2))
+par(mar = c(5,2,9,2))
 plot0()
 points(x = rep(-.9, 5), y = seq(.9,by=-.2,length.out=5), pch = 21, cex = 1.8,
        bg = paste0(colsPos,'99'), col = colsPos, lwd = 3.5)
