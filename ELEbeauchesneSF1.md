@@ -8,17 +8,15 @@ header-includes:
    - \usepackage{float}
    - \restylefloat{table}
    - \usepackage{listings}
-bibliography: ../FoodWeb-MultiStressorMS.bib
-csl: ../EcologyLetters.csl
+bibliography: FoodWeb-MultiStressorMS.bib
+csl: EcologyLetters.csl
 ---
 
 <!-- rmarkdown::render('./ELEbeauchesneSF1.md') -->
 
-\begin{figure}
+\begin{figure}[H]
 \centering
-\includegraphics{./Figures/ScoreTableSSL.png}
+\includegraphics{./Figures/vulnerability.png}
 \end{figure}
 
-Figure S1. Change in species and functional groups sensitivity and amplification scores as a function of realized pathways of effects for an empirical food web of the Southern Gulf of St. Lawrence in the mid-1980s [@savenkoff2004]. A species trophic sensitivity and amplification is summarized using the sum of simulated trophic sensitivities ($S_{i,G}$) and amplifications ($A_{i,G}$) to pathways of effect ($G$) across a species motif census ($M$). The left-hand side of the figure presents species and functional groups, unitary pathways of effects ($g$) arising from individual stressors and their potential effects on population level mortality, physiology and behaviour, and the motif census ($M$) of species and functional groups measured as the frequency of times they hold unique positions in tri-trophic food chain, omnivory, exploitative and apparent competition interactions structuring of the food web. Main stressors in the Southern Gulf of St. Lawrence are fisheries (\textit{i.e.} demersal destructive, demersal non-destructive high-bycatch and pelagic high-bycatch), climate change (\textit{i.e.} ocean acidification, hypoxia and bottom and surface temperature anomalies), and shipping [@beauchesne2020]. effects of stressors on individual ecological processes form unitary pathways of effect ($g$) that collectively affect food webs through integrative pathways of effect ($G$). The right-hand side of the figure presents trophic sensitivities and amplifications of species and functional groups. Negative or positive trophic sensitivities denote expected decreases or increases in species abundance as a response to pathways of effect. Species or functional groups with lowest or highest trophic sensitivities are positive or negative weak entry points (\textit{i.e.} highly sensitive to disturbances), respectively. Negative or positive trophic amplifications identify species or functional groups expected to be affected synergistically (\textit{i.e.} biotic amplifiers) or antagonistically (\textit{i.e.} biotic buffers) by stressors.
-
-# References
+**Figure S1.** Density plots of the trophic sensitivity ($S_{i,G}$), amplification ($A_{i,G}$) and trophic variance ($V_{i,G}$) of 13 unique motif positions ($i$) resulting from all unitary ($g$) and integrative ($G$) pathways of effect simulated on the dynamics of 3-species motifs (\textit{i.e.} tri-trophic food chain, omnivory, exploitative competition, apparent competition, partially connected and disconnected). Effects of stressors on individual ecological processes form unitary pathways of effect that collectively affect food webs through integrative pathways of effect. The density distributions result from $1\%$ modifications to equilibria equation parameter values - \textit{i.e.} mortality ($m$), attack ($\alpha$) and conversion ($e$) rates - simulating all possible pathways of effect ($n$). A species trophic sensitivity is the difference in equilibrium abundance before and after the permanent appearance of stressors; a species trophic amplification is the difference between its trophic sensitivity to an integrative pathway of effect and the sum of its trophic sensitivity to unitary pathways of effect. Pathways of effect that lead to a position being a sensitive entry point (\textit{i.e.} highly sensitive to disturbances), a biotic buffer (\textit{i.e.} synergistically affected by stressors) or a biotic amplifier (\textit{i.e.} antagonistically affected by stressors) are identified as colored areas under the density curves. Arbitrary thresholds are used to identify negative ($S_{i,G} < 1%$) and positive ($S_{i,G} > 1%$) sensitive entry points, biotic buffers ($A_{i, G} < 0.02%$) and biotic amplifiers ($A_{i, G} > 0.02%$). These thresholds are used for discussion purposes to identify species that are more or less sensitive and prone to non-additive effects.
