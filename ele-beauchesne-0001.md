@@ -84,7 +84,7 @@ The motif census of each species was evaluated from the structure of each food w
 \includegraphics{./Figures/FS2-Stability.png}
 \end{figure}
 
-**Figure S2.** Boxplots of the variation in motif stability on omnivory, tri-trophic food chain, exploitative competition and apparent competition interactions as a function of the number of parameters in pathways of effects ($G$). The first eigenvalue of the Jacobian matrix was used as a measure of stability for each motif, and variations in stability were evaluated as $St_{i,G} = (st_{i,G} - st_i) * st_i^{-1}$, where $St_{i,G}$ is the variation in stability of motif $i$ due to pathway of effect $G$, and st_i and st_{i,G} are the stability before and after the apperance of stressors in the system, respectively. A decrease in stability means that the stability of the motif is increasing when stressors are simulated.
+**Figure S2.** Boxplots of the variation in motif stability on omnivory, tri-trophic food chain, exploitative competition and apparent competition interactions as a function of the number of parameters in pathways of effects ($G$). The first eigenvalue of the Jacobian matrix was used as a measure of stability for each motif, and variations in stability were evaluated as $St_{i,G} = (st_{i,G} - st_i) * st_i^{-1}$, where $St_{i,G}$ is the variation in stability of motif $i$ due to pathway of effect $G$, and st_i and st_{i,G} are the stability before and after the appearance of stressors in the system, respectively. A decrease in stability means that the stability of the motif is increasing when stressors are simulated.
 
 \break
 
