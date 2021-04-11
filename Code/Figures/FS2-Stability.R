@@ -11,7 +11,7 @@ xR <- c(0.5, 9.5)
 plot0(x = xR, y = yR)
 axis(1, cex.axis = .9, at = 1:9, labels = 1:9, line = 1)
 axis(2, cex.axis = .9)#, at = seq(0,0.15,by=.025), labels = seq(0,.15,by=.025))
-mtext(text = TeX('\\textbf{Variation in stability}'), side = 2, line = 2.75, cex = 1.25)
+mtext(text = TeX('\\textbf{Variation in stability} ($\\textit{St_{m,G}}$)'), side = 2, line = 2.75, cex = 1.25)
 mtext(text = TeX('\\textbf{Number of parameters}'), side = 1, line = 3.5, cex = 1.25)
 # text(x = xR[1]+.4, y = .145, labels = 'Positive trophic sensitivity', adj = c(0,.5), cex = .95)
 # text(x = xR[1]+.4, y = .135, labels = 'Negative trophic sensitivity', adj = c(0,.5), cex = .95)
@@ -20,6 +20,8 @@ mtext(text = TeX('\\textbf{Number of parameters}'), side = 1, line = 3.5, cex = 
 # points(x = xR[1], y = .115, pch = 20, cex = 1,
 # points(x = xR[1], y = .125, pch = 20, cex = 1, col = '#c4793c', bg = '#c4793c')
 abline(h = 0, lty = 2)
+arrows(9, -.02, 9, -.05, length = .05, code = 2, xpd = TRUE, lwd = 1.5, col = '#000000')
+text(x=9.3, y=-.035, labels="Increasing\nstability", srt=90, adj=c(.5,.5))
 
 # Positive and negative values
 pos <- stability

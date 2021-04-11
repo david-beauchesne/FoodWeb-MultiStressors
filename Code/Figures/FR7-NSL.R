@@ -15,7 +15,7 @@ fwNSL <- fw %>%
          arrange(Sensitivity)
 
 # Figure
-png('./Figures/FR7-NSL_KC.png', units = "mm", width = 140, height = 150, res = 300)
+png('./Figures/FR7-NSL.png', units = "mm", width = 140, height = 150, res = 300)
 mat <- matrix(1:2, nrow = 2)
 layout(mat, heights = c(2.2, 1))
 par(mar = c(4, 4, 2.25, 2.5), family = 'serif', mgp = c(2, .7, 0))
@@ -39,7 +39,7 @@ slc <- c(8, 17, 18)
 txt[slc] <- ""
 text(fwNSL$Sensitivity, y = fwNSL$Amplification, label = txt, cex = .7,  col = "grey10")
 text(x = fwNSL$Sensitivity[slc], y = fwNSL$Amplification[slc], label = slc,   cex = .7, pos = c(2, 2, 4), col = "grey10", offset = c(.4, .5, .5))
-# 
+#
 
 # Legend
 par(mar = c(0,0,0,0), xaxs = "i", yaxs = "i")
