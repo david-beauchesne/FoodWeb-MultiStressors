@@ -46,8 +46,8 @@ points(x = rep(.5, 4), y = seq(-.07,by=-.01,length.out=4), pch = 22, cex = 1.8,
        bg = paste0(colmotif,'66'), lwd = 1)
 
 text(x = rep(.75, 4), y = seq(-.07,by=-.01,length.out=4), cex = 1.1, adj = c(0,.5),
-     labels = c('Omnivory','Tri-trophic food chain',
-                'Exploitative competition','Apparent competition'))
+     labels = c('Omnivory (-0.18)','Tri-trophic food chain (-0.24)',
+                'Exploitative competition (-0.37)','Apparent competition (-0.35)'))
 
 
 dev.off()

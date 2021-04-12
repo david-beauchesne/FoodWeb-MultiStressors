@@ -182,7 +182,7 @@ summarize_impacts <- function(ParamInit, ParamImpact, equilibrium, stability, mo
   # =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= #
   # Remove stability data
   # =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= #
-  ImpactStability <- select(ImpactStability, -InitStability, -ImpactStability)
+  # ImpactStability <- select(ImpactStability, -InitStability, -ImpactStability)
 
   # =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= #
   # Return impact summary
