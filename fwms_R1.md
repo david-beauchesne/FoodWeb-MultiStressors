@@ -43,11 +43,11 @@ r -e "rmarkdown::render('./fwms.md')"
 
 **Type of article**: Ideas and Perspectives \newline
 
-**Abstract word count**: 195 \newline
-**Main text word count**: 7303 \newline
-**Text box 1 word count**: 338 \newline
-**Number of references**: 123 \newline
-**Number of figures**: 5 \newline
+**Abstract word count**: ~~195~~188 \newline
+**Main text word count**: ~~7303~~7930 \newline
+**Text box 1 word count**: ~~338~~303 \newline
+**Number of references**: ~~123~~124 \newline
+**Number of figures**: ~~5~~ 8 \newline
 **Number of tables**: 0 \newline
 **Number of text boxes**: 1 \newline
 
