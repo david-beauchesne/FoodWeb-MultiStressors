@@ -118,13 +118,14 @@ res5 <- ode(init, times, deriv, p5)
 # resTS2 <- (res2[50, 2:4] - res2[1, 2:4])/res2[1,2:4]
 # resTS3 <- (res3[50, 2:4] - res3[1, 2:4])/res3[1,2:4]
 # resTS4 <- (res4[50, 2:4] - res4[1, 2:4])/res4[1,2:4]
+# resTS5 <- (res5[50, 2:4] - res5[1, 2:4])/res5[1,2:4]
 #
 # # Trophic amplification
-# expTS <- resTS4/3
-# resTA <- (resTS1-expTS) + (resTS2-expTS) + (resTS3-expTS)
+# expTS <- resTS5/4
+# resTA <- (resTS1-expTS) + (resTS2-expTS) + (resTS3-expTS) + (resTS4-expTS)
 #
 # # Trophic amplification
-# resTV <- (resTS1-expTS)^2 + (resTS2-expTS)^2 + (resTS3-expTS)^2
+# resTV <- (resTS1-expTS)^2 + (resTS2-expTS)^2 + (resTS3-expTS)^2 + (resTS4-expTS)^2
 # # =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= #
 
 
@@ -134,8 +135,8 @@ res5 <- ode(init, times, deriv, p5)
 #
 # Disturbances & dynamics
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #
-load('./Data/ParamInit/apParam.RData')
-load('./Data/ParamImpact/apImpact.RData')
+# load('./Data/ParamInit/apParam.RData')
+# load('./Data/ParamImpact/apImpact.RData')
 
 # i = 50
 # ParamInit = apParam[i,]
@@ -219,3 +220,18 @@ p3['m_z'] <- p3['m_z']*.8
 p3['omega'] <- p3['omega']*.8
 # Solve system of equations
 ap3 <- ode(apInit, times, deriv, p3)
+
+# # # =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= #
+# # # Measure trophic sensitivity, amplification and variance
+# # Trophic sensitivity
+# resTS1 <- (ap1[50, 2:4] - ap1[1, 2:4])/ap1[1,2:4]
+# resTS2 <- (ap2[50, 2:4] - ap2[1, 2:4])/ap2[1,2:4]
+# resTS3 <- (ap3[50, 2:4] - ap3[1, 2:4])/ap3[1,2:4]
+#
+# # Trophic amplification
+# expTS <- resTS3/2
+# resTA <- (resTS1-expTS) + (resTS2-expTS)
+#
+# # Trophic amplification
+# resTV <- (resTS1-expTS)^2 + (resTS2-expTS)^2
+# # # =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= #

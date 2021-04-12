@@ -9,9 +9,9 @@ header-includes:
    - \restylefloat{table}
 ---
 
-<!-- rmarkdown::render('./Submission/ELEbeauchesneST1.md') -->
+<!-- rmarkdown::render('./ELEbeauchesneST1.md') -->
 
-Table S1. Systems of Lotka-Volterra equations used to model the effects of multiple disturbances on the six 3-species motifs explored.
+**Table S1**. Systems of Lotka-Volterra equations used to model the effects of multiple disturbances on the six 3-species motifs explored.
 
 \begin{table}[H]
 \centering

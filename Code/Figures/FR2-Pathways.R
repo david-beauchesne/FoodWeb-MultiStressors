@@ -66,8 +66,9 @@ mat <- matrix(0, nrow = 3, ncol = 9)
 mat[1,] <- c(9,1,1,1,1,4,4,5,5)
 mat[2,] <- c(10,1,1,1,1,6,6,7,7)
 mat[3,] <- c(11,2,2,2,3,3,8,8,0)
+# mat <- rbind(c(12,13,13,13,13,14,14,14,14),mat)
 # layout(mat, widths = c(1,1,.5,.5,.5,.5))
-layout(mat, widths = c(1,.25,.25,.25,.25,.5,.5,.5,.5))
+layout(mat, widths = c(1,.25,.25,.25,.25,.5,.5,.5,.5))#, heights = c(.125,1,1,1))
 # layout.show(11)
 
 # =~-~=~-~=~-~=~-~=~-~=~-~=~-~=~-~=~-~=~-~=~-~=~-~=~-~=~-~=~-~=~-~=~-~=~-~=~-~= #
@@ -80,6 +81,7 @@ layout(mat, widths = c(1,.25,.25,.25,.25,.5,.5,.5,.5))
 # =~-~=~-~=~-~=~-~=~-~=~-~=~-~=~-~=~-~=~-~=~-~=~-~=~-~=~-~=~-~=~-~=~-~=~-~=~-~= #
 par(mar = c(2,.5,2,.5), family = 'serif')
 plot0(x = c(-.7, .7), y = c(-.7, 1.5))
+mtext(side = 3, at = -.65, text = 'A)', cex = .55)
 # Emphasis
 polygon(x = c(-.175,-.175,.7,.7), y = c(1.1,-.05,-.05,1.1), col = '#00000000', border = colsPos[3], lty = 2, lwd = lwdD)
 polygon(x = c(-.5,-.5,.5,.5), y = c(0.15,-.76,-.76,0.15), col = '#00000000', border = colsPos[4], lty = 2, lwd = lwdD)
@@ -167,6 +169,7 @@ txt2  <- data.frame(txt = c('$\\textit{r_x}$','$\\textit{r_y}','\\textit{m_z}'),
 # Plotq
 par(mar = c(0,1,1,1), family = 'serif')
 plot0(x = c(-1,.6), y = c(-2.05,1.2))
+text(x = -.95, 1.15, labels = 'B)', adj = c(0,.5), cex = .8)
 text(x = c(-.25,-.25), y = c(-1.65,-1.95), adj = c(0,.5), cex = .75,
      labels = TeX(c('Mortality rate ($\\textit{m}$)', 'Growth rate ($\\textit{r}$)')))
 
@@ -222,6 +225,8 @@ txt2  <- data.frame(txt = c('$\\textit{r_x}$','$\\textit{m_y}','\\textit{m_z}'),
 # Plot
 par(mar = c(0,1,1,1), family = 'serif')
 plot0(x = c(-.6,1), y = c(-2.05,1.2))
+mtext(side = 2, text = 'C)', at = 1.15, cex = .55, las = 2, line = .5)
+
 # box(lty = 2, col = colsPos[3])
 text(x = c(-.5,-.5), y = c(-1.65,-1.95), adj = c(0,.5), cex = .75,
      labels = TeX(c('Attack rate ($\\alpha$)','Conversion rate ($e$)')))
@@ -249,12 +254,15 @@ text(x = txt2$x, y = txt2$y, labels = TeX(txt2$txt), adj = c(.5,.5), cex = .75, 
 dd <- function(x,y) pchImage(x = x, y = y, obj = DD, cex.x = .4, cex.y = .6, col = '#00000099')
 sh <- function(x,y) pchImage(x = x, y = y, obj = Shipping, cex.x = .4, cex.y = .6, col = '#00000099')
 tm <- function(x,y) pchImage(x = x, y = y, obj = SST, cex.x = .4, cex.y = .6, col = '#00000099')
-
+path <- 655
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #
 # Unitary 1
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #
 par(mar = c(.5, .5, 0, 0))
 plotOmnivory()
+mtext(side = 2, las = 2, cex = .55, text = 'F)', at = path, line = -.5)
+
+
 # box2(side = '234', which = 'figure', lty = 2, col = colP[1], lwd = lwdD)
 
 # Delta abundances
@@ -275,7 +283,7 @@ arrows(8, 550, 5.5, 520, length = .025, code = 2, xpd = TRUE)
 dd(x = 10, y = xI+60)
 
 # Pathway of effect
-text(x = 5, y = 675, labels = TeX('$g_1 = \\{\\textit{r}_{capelin}\\}$'), adj = c(0,.5), cex = .9)
+text(x = 5, y = path, labels = TeX('$g_1 = \\{\\textit{r}_{capelin}\\}$'), adj = c(0,.5), cex = .9)
 
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #
@@ -284,6 +292,7 @@ text(x = 5, y = 675, labels = TeX('$g_1 = \\{\\textit{r}_{capelin}\\}$'), adj = 
 # Plot
 par(mar = c(.5, .5, 0, 0))
 plotOmnivory()
+mtext(side = 2, las = 2, cex = .55, text = 'G)', at = path, line = -.5)
 for (i in 2:4) lines(x = c(5:55), y = res2[,i], lwd = lwdD, col = colsPos[3])
 
 # Disturbances
@@ -291,7 +300,7 @@ arrows(8, 320, 5.5, 280, length = .025, code = 2, xpd = TRUE)
 dd(x = 10, y = 335)
 
 # Pathway of effect
-text(x = 5, y = 675, labels = TeX('$g_2 = \\{\\textit{m}_{cod}\\}$'), adj = c(0,.5), cex = .9)
+text(x = 5, y = path, labels = TeX('$g_2 = \\{\\textit{m}_{cod}\\}$'), adj = c(0,.5), cex = .9)
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #
 # Unitary 3
@@ -299,6 +308,7 @@ text(x = 5, y = 675, labels = TeX('$g_2 = \\{\\textit{m}_{cod}\\}$'), adj = c(0,
 # Plot
 par(mar = c(.5, .5, 0, 0))
 plotOmnivory()
+mtext(side = 2, las = 2, cex = .55, text = 'H)', at = path, line = -.5)
 for (i in 2:4) lines(x = c(5:55), y = res3[,i], lwd = lwdD, col = colsPos[3])
 
 
@@ -307,7 +317,7 @@ arrows(8, 215, 5.5, 175, length = .025, code = 2, xpd = TRUE)
 sh(x = 10, y = 230)
 
 # Pathway of effect
-text(x = 5, y = 675, labels = TeX('$g_3 = \\{\\alpha_{capelin,beluga}\\}$'), adj = c(0,.5), cex = .9)
+text(x = 5, y = path, labels = TeX('$g_3 = \\{\\alpha_{capelin,beluga}\\}$'), adj = c(0,.5), cex = .9)
 
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #
@@ -316,6 +326,7 @@ text(x = 5, y = 675, labels = TeX('$g_3 = \\{\\alpha_{capelin,beluga}\\}$'), adj
 # Plot
 par(mar = c(.5, .5, 0, 0))
 plotOmnivory()
+mtext(side = 2, las = 2, cex = .55, text = 'I)', at = path, line = -.5)
 for (i in 2:4) lines(x = c(5:55), y = res4[,i], lwd = lwdD, col = colsPos[3])
 
 # Pathway of effect
@@ -323,7 +334,7 @@ arrows(8, 215, 5.5, 175, length = .025, code = 2, xpd = TRUE)
 sh(x = 10, y = 230)
 
 # Pathway of effect
-text(x = 5, y = 675, labels = TeX('$g_4 = \\{\\alpha_{cod,beluga}\\}$'), adj = c(0,.5), cex = .9)
+text(x = 5, y = path, labels = TeX('$g_4 = \\{\\alpha_{cod,beluga}\\}$'), adj = c(0,.5), cex = .9)
 
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #
@@ -332,6 +343,8 @@ text(x = 5, y = 675, labels = TeX('$g_4 = \\{\\alpha_{cod,beluga}\\}$'), adj = c
 # Plot
 par(mar = c(.5, .5, 0, 0))
 plotOmnivory()
+mtext(side = 2, las = 2, cex = .55, text = 'M)', at = path, line = -.5)
+
 
 # Pathways of effect
 arrows(8, 550, 5.5, 520, length = .025, code = 2, xpd = TRUE)
@@ -378,7 +391,7 @@ text(x = 54, y = xM, labels = 'Amplification', cex = .55, adj = c(1,.5))
 
 
 # Pathway of effect
-text(x = 5, y = 675, labels = TeX('$G = \\{g_1, g_2, g_3, g_4\\}$'), adj = c(0,.5), cex = .9)
+text(x = 5, y = path, labels = TeX('$G = \\{g_1, g_2, g_3, g_4\\}$'), adj = c(0,.5), cex = .9)
 
 # =~-~=~-~=~-~=~-~=~-~=~-~=~-~=~-~=~-~=~-~=~-~=~-~=~-~=~-~=~-~=~-~=~-~=~-~=~-~= #
 # =~-~=~-~=~-~=~-~=~-~=~-~=~-~=~-~=~-~=~-~=~-~=~-~=~-~=~-~=~-~=~-~=~-~=~-~=~-~= #
@@ -387,12 +400,13 @@ text(x = 5, y = 675, labels = TeX('$G = \\{g_1, g_2, g_3, g_4\\}$'), adj = c(0,.
 #
 # =~-~=~-~=~-~=~-~=~-~=~-~=~-~=~-~=~-~=~-~=~-~=~-~=~-~=~-~=~-~=~-~=~-~=~-~=~-~= #
 # =~-~=~-~=~-~=~-~=~-~=~-~=~-~=~-~=~-~=~-~=~-~=~-~=~-~=~-~=~-~=~-~=~-~=~-~=~-~= #
-path <- 1600
+path <- 1640
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #
 # Unitary 1
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #
 par(mar = c(.5, .5, 0, 0))
 plotApparent()
+mtext(side = 2, las = 2, cex = .55, text = 'D)', at = path, line = -.5)
 for (i in 2:4) lines(x = c(5:55), y = ap1[,i], lwd = lwdD, col = colsPos[4])
 
 # Delta abundances
@@ -419,6 +433,7 @@ text(x = 5, y = path, labels = TeX('$g_1 = \\{\\textit{m}_{capelin}\\}$'), adj =
 # Plot
 par(mar = c(.5, .5, 0, 0))
 plotApparent()
+mtext(side = 2, las = 2, cex = .55, text = 'E)', at = path, line = -.5)
 for (i in 2:4) lines(x = c(5:55), y = ap2[,i], lwd = lwdD, col = colsPos[4])
 
 # Disturbances
@@ -435,6 +450,7 @@ text(x = 5, y = path, labels = TeX('$g_2 = \\{\\textit{e}_{copepod,capelin}\\}$'
 # Plot
 par(mar = c(.5, .5, 0, 0))
 plotApparent()
+mtext(side = 2, las = 2, cex = .55, text = 'L)', at = path, line = -.5)
 for (i in 2:4) lines(x = c(5:55), y = ap3[,i], lwd = lwdD, col = colsPos[4])
 
 # Legends
@@ -478,6 +494,5 @@ tm(x = 10, y = apInit['y']-40)
 
 # Pathway of effect
 text(x = 5, y = path, labels = TeX('$G = \\{g_1,g_2\\}$'), adj = c(0,.5), cex = .9)
-
 
 dev.off()

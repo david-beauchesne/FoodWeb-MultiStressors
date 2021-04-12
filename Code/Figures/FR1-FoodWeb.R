@@ -65,6 +65,8 @@ layout(mat, widths = c(1,.75))
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #
 par(mar = c(0, 0, 0, 1), family = 'serif')
 plot0(x = c(-.7, .7), y = c(-.7, 1.5))
+text(x = -.65, 1.45, labels = 'A)', adj = c(0,.5), cex = .8)
+
 # Emphasis
 # circles(.5, .64, .17, lwd = 1)
 # polygon(x = c(-.175,-.175,.7,.7), y = c(1.1,-.05,-.05,1.1), col = '#00000000', border = colP[1], lty = 2, lwd = lwdD)
@@ -126,7 +128,7 @@ lines(x = c(0, .3), y = c(.7,.7), col = '#000000', lwd = 1.5)
 
 # Direct effects
 y <- .3
-text(x = -1.3, y = y+.2, labels = 'Direct effects', adj = c(0,.5), cex = .8)
+text(x = -1.3, y = y+.2, labels = 'B) Direct effects', adj = c(0,.5), cex = .8)
 pchImage(x = -1.2, y = y, obj = DD, cex.x = .8*sc, cex.y = .6*sc, col = '#00000099')
 pchImage(x = -.4, y = y, obj = cod, cex.x = 1.55*sc, cex.y = cxy*sc, col = colsPos[1])
 pchImage(x = .4, y = y, obj = cap, cex.x = 1.25*sc, cex.y = cxy*sc, col = colsPos[1])
@@ -138,7 +140,7 @@ lines(x = l[3,1:2], y = l[3,c(3,3)], col = '#000000')
 
 # Indirect effects
 y <- y-.5
-text(x = -1.3, y = y+.2, labels = 'Indirect effects', adj = c(0,.5), cex = .8)
+text(x = -1.3, y = y+.2, labels = 'C) Indirect effects', adj = c(0,.5), cex = .8)
 pchImage(x = -1.2, y = y, obj = DD, cex.x = .8*sc, cex.y = .6*sc, col = '#00000099')
 pchImage(x = -.4, y = y, obj = cod, cex.x = 1.55*sc, cex.y = cxy*sc, col = colsPos[1])
 pchImage(x = .4, y = y, obj = cap, cex.x = 1.25*sc, cex.y = cxy*sc, col = colsPos[1])
@@ -150,7 +152,7 @@ xspline(x = c(-.4, .4, 1.2), y = c(y-.075,y-.125,y-.075), shape = -1, draw = TRU
 
 # Net effects
 y <- y-.5
-text(x = -1.3, y = y+.2, labels = 'Net effects', adj = c(0,.5), cex = .8)
+text(x = -1.3, y = y+.2, labels = 'D) Net effects', adj = c(0,.5), cex = .8)
 pchImage(x = -1.2, y = y, obj = DD, cex.x = .8*sc, cex.y = .6*sc, col = '#00000099')
 pchImage(x = -.4, y = y, obj = cod, cex.x = 1.55*sc, cex.y = cxy*sc, col = colsPos[1])
 pchImage(x = .4, y = y, obj = cap, cex.x = 1.25*sc, cex.y = cxy*sc, col = colsPos[1])
