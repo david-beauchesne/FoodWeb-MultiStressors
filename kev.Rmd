@@ -1,0 +1,82 @@
+---
+title: "Yoyo"
+output:
+  html_document:
+    toc: true
+    toc_float: true
+---
+
+# Notations
+
+- $O_i$ = position $i$ => a specific node in a specific motif
+- $a_i$: abundance of species at position i
+- $a_{i,j}$: abundance of node i with pathway of effects
+- $K^i$ set of all pathways of effects possible for position $i$
+- $K_j$ pathway of effects j
+- $k_j$ unitary pathway effects $j$
+- $K_j$ is made of unitary pathway effects
+- $O_i$: event "focal species occupies position i"
+- $P_{K_j | O_i}$: $P(\text{"pathway of effect j"} | \text{"focal species occupies position i"})$
+- NB: $P_{K_j | O_i} = f(\text{"stressors"})$
+
+
+
+# Sensitivity
+
+$$s_{i,j} = \frac{a_{i,j} - a_i}{a_i}$$
+
+$$S_{i, j} = \frac{1}{n} \sum_{l = 1}^n s_{i,j}$$
+
+
+# Amplification
+
+$$A_{i, j} = S_{i, K_j} - \sum_{k_j \in K_j} S_{i, j}$$
+
+
+# Expectations
+
+$$S_i = \sum_{j \in K^i} P_{K_j | O_i}S_{i, j}$$
+
+For a given species the expected sensitivity is
+
+$$S = \sum_i P(O_i) \sum_j P_{K_j | O_i}S_{i, j}$$
+
+NB: $\sum_i P(O_i)$ may not sum to 1 (to be determined).
+
+
+works the same way for $A_{i, j}$
+
+
+## Position sensitivity
+
+$$S_i = \frac{1}{\text{Card}(K^i)}\sum_{j \in K^i} S_{i, j}$$
+
+
+## Position probability
+
+$$P(O_i) = P("occurrence species in motif")P("interactions")$$
+
+
+
+## Amplification variance style
+
+
+$$A_{m, K_j} = \sum_{k \in K_j} \left(S_{m, k} - \frac{1}{|K_j|} S_{m, K_j} \right)^2$$
+
+
+
+Salut Philippe,
+
+Comme tu le sais déjà, j'ai abondamment échangé avec David (en CC de ce mail) sur votre projet en cours avec Transport Canada et sur celui avec le MPO qui est en cours d'évaluation. Je t'écris aujourd'hui pour te faire part de manière plus officielle de mon intérêt pour ces projets.
+
+Je suis déjà impliqué avec David sur son chapitre 4, je sais ce que vous avez réalisé dans les précédents chapitres et je connais la direction du dernier chapitre de la thèse de David. Je pense que ça me donne une bonne idée des tenants et aboutissants des travaux en cours et futurs. Malgré mon enthousiasme pour ces projets, je me suis laissé plusieurs semaines pour méditer sur mon intérêt réel pour ces derniers et l’adéquation avec mes objectifs professionnels. Après avoir travaillé sur des notions théoriques dans le cadre de ma thèse, en post-doc j'essaye de garder au moins un pied dans le "plus concret", c'est-à-dire de mettre une partie de mon énergie sur des études qui à court/moyen terme pourraient être utilisées dans les processus de décision, par exemple pour des décisions de conservation. Je recherche aussi des défis computationnels, c'est-à-dire la création d'outils informatiques performants pour faire certaines opérations, mettre en relations des bases de données, faciliter la visualisation simultanées de nombreuses informations, etc. Mon sentiment, après réflexion, c'est que je pourrais continuer à m’épanouir professionnellement en travaillant avec vous dans les prochains mois/années et j'espère que mon enthousiasme et mes compétences pourront contribuer au succès de ces projets.
+
+Voilà, en somme, les raisons de mon intérêt pour ces projets et du présent
+courriel. Je serais heureux de faire partie de l'aventure, si possible. Je finis
+mon contrat à l'université de Guelph fin août et je serais vraisemblablement de
+passage en avril à Québec et nous pourrions donc en discuter de vive voix à cette occasion et si tu penses qu'il serait mieux qu'on en discute avant, nous
+pourrions faire un Skype (ou équivalent) à 2 ou à 3 (avec David).
+
+En te souhaitant une belle journée,
+
+Kevin
