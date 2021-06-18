@@ -12,7 +12,9 @@ pos <- c('om','ap','tt','ex','pa','di')
 colsMotif <- colsPos[c(1,2,3,4,5,5)]
 xR <- c(0,.01)
 yR <- c(0,10)
-png('./Figures/FR6-Variance.png', width = 1500, height = 1000, res = 200, pointsize = 12)
+
+# png('./Figures/FR6-Variance.png', width = 1500, height = 1000, res = 200, pointsize = 12)
+pdf('./Figures/Figure_6.pdf', width = 5.9*1.25, height = 3.94*1.25, pointsize = 12)
 par(mfrow = c(3,2), mar = c(4,4,1,1), family = 'serif')
 
 titleX <- function() {

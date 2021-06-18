@@ -6,7 +6,8 @@ library(latex2exp)
 load('./Data/vulnerability.RData')
 
 # Figure
-png('./Figures/FR4-Density_boxplot.png', width = 1500, height = 2000, res = 200, pointsize = 12)
+# png('./Figures/FR4-Density_boxplot.png', width = 1500, height = 2000, res = 200, pointsize = 12)
+pdf('./Figures/Figure_4.pdf', width = 7.87, height = 10.51, pointsize = 12)
 par(mfrow = c(2,1), mar = c(5,5,1,1), family = 'serif')
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

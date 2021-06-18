@@ -15,7 +15,8 @@ fwNSL <- fw %>%
          arrange(Sensitivity)
 
 # Figure
-png('./Figures/FR7-NSL.png', units = "mm", width = 140, height = 150, res = 300)
+# png('./Figures/FR7-NSL.png', units = "mm", width = 140, height = 150, res = 300)
+pdf('./Figures/Figure_7.pdf', width = 5.51, height = 5.9, pointsize = 12)
 mat <- matrix(1:2, nrow = 2)
 layout(mat, heights = c(2.2, 1))
 par(mar = c(4, 4, 2.25, 2.5), family = 'serif', mgp = c(2, .7, 0))

@@ -59,7 +59,8 @@ lwdD <- .75
 
 
 
-png('./Figures/FR2-Pathways.png', res = 900, width = 200, height = 120, units = "mm")
+# png('./Figures/FR2-Pathways.png', res = 900, width = 200, height = 120, units = "mm")
+pdf('./Figures/Figure_2.pdf', width = 7.87, height = 4.72, pointsize = 12)
 # Layout
 # mat <- matrix(c(9:11,1,1,2,4,6,3,4,6,8,5,7,8,5,7,0), nrow = 3, ncol = 6)
 mat <- matrix(0, nrow = 3, ncol = 9)

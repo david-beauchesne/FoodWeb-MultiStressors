@@ -114,7 +114,8 @@ mat <- rbind(0,mat,0)
 mat <- cbind(0,mat,0)
 
 
-png('./Figures/FR3-Extrapolate.png', res = 900, width = 60, height = 100, units = "mm")
+# png('./Figures/FR3-Extrapolate.png', res = 900, width = 60, height = 100, units = "mm")
+pdf('./Figures/Figure_3.pdf', width = 2.36, height = 3.94, pointsize = 12)
 layout(mat, widths = c(.05,1,1,1,.05), heights = c(.05,.35,1,.35,2.65,.05))
 # layout.show(6)
 par(mar = c(0, 0, 0, 0), family = 'serif')

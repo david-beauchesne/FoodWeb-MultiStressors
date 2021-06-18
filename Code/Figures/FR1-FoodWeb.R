@@ -54,7 +54,8 @@ lwdD <- .75
 
 
 
-png('./Figures/FR1-FoodWeb.png', res = 900, width = 175, height = 120, units = "mm")
+# png('./Figures/FR1-FoodWeb.png', res = 900, width = 175, height = 120, units = "mm")
+pdf('./Figures/Figure_1.pdf', width = 6.89, height = 4.72, pointsize = 12)
 
 # Layout
 mat <- matrix(1:2, ncol = 2)
