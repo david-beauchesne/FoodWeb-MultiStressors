@@ -19,7 +19,7 @@ fwNSL <- fw %>%
 pdf('./Figures/Figure_7.pdf', width = 5.51, height = 5.9, pointsize = 12)
 mat <- matrix(1:2, nrow = 2)
 layout(mat, heights = c(2.2, 1))
-par(mar = c(4, 4, 2.25, 2.5), family = 'serif', mgp = c(2, .7, 0))
+par(mar = c(4, 4, 2.25, 2.75), family = 'serif', mgp = c(2, .7, 0))
 yR <- c(-.05, .15)
 xR <- c(-7, 5)
 plot0(x = xR, y = yR)
