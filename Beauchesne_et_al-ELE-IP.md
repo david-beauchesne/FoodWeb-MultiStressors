@@ -25,10 +25,10 @@ relativeurls: true
 ---
 
 <!--
-rmarkdown::render('fwms_R1_nomarkup.md')
+rmarkdown::render('Beauchesne_et_al-ELE-IP.md')
 # for word
 q()
-pandoc -f latex -t docx fwms_R1_nomarkup.tex -o fwms_R1_nomarkup.docx
+pandoc -f latex -t docx Beauchesne_et_al-ELE-IP.tex -o Beauchesne_et_al-ELE-IP.docx
 -->
 
 ^1^ArcticNet, Québec Océan, Département de biologie, Université Laval, Québec, QC, Canada \newline
@@ -357,7 +357,7 @@ We thank the Fond de Recherche Québécois Nature et Technologie (FRQNT) and the
 <!-- Context -->
 \begin{figure}[H]
 \centering
-\includegraphics{./Figures/context.png}
+\includegraphics{./Figures/FR8-Context.png}
 \caption{}
 \label{species}
 \end{figure}
