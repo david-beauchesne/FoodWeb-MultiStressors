@@ -7,7 +7,7 @@
 
 This repo contains all the code to replicate the simulations, analyses and figures from our study on the sensitivity of food webs to the effects of multiple stressors.
 
-![](https://github.com/david-beauchesne/FoodWeb-MultiStressors/blob/master/Figures/Figure_2.pdf)
+![](https://github.com/david-beauchesne/FoodWeb-MultiStressors/blob/master/Figures/Figure_2.pdf?raw=true)
 
 
 ## Code and figures
