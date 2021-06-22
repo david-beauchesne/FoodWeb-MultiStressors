@@ -66,7 +66,7 @@ david.beauchesne@hotmail.com \newline
 
 **Statement of authorship**: All the authors conceived the manuscript and the underlying objectives. DB performed the simulations, analyses, formatted the figures and led the drafting of the manuscript with significant contributions from KC. All co-authors contributed to data, analyses and writing based on their respective expertise and contributed to the revision of the manuscript. \newline
 
-**Data accessibility statement**: The code to replicate this study is available from Zenodo, doi: XXX.  Empirical food web data for the St. Lawrence System used for this study are openly available from the primary sources in which they were published [@morissette2003; @savenkoff2004; @savenkoff2012].
+**Data accessibility statement**: The code to replicate this study is available from Zenodo, doi: 10.5281/zenodo.5014237.  Empirical food web data for the St. Lawrence System used for this study are openly available from the primary sources in which they were published [@morissette2003; @savenkoff2004; @savenkoff2012].
 
 \newpage
 

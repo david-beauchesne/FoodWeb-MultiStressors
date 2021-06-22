@@ -1,5 +1,5 @@
 # :book: On the sensitivity of food webs to multiple stressors
-<!-- [![DOI](https://zenodo.org/badge/.svg)](https://zenodo.org/badge/latestdoi/) -->
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.5014237.svg)](https://doi.org/10.5281/zenodo.5014237)
 
 
 
