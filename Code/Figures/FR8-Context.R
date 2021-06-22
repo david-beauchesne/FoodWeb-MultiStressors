@@ -1,4 +1,4 @@
-# source('./Code/F5-Context.R')
+# source('./Code/Figures/FR8-Context.R')
 library(igraph)
 source('./Code/0-Param.R')
 source('./Code/Functions/triadClassification.R')
@@ -161,7 +161,8 @@ plotSpecies <- function(species, scoreType) {
 
 
 # Figure
-png('./Figures/context.png', width = 1200, height = 900, res = 300, pointsize = 5)
+# png('./Figures/FR8-Context.png', width = 1200, height = 900, res = 300, pointsize = 5)
+pdf('./Figures/Figure_8.pdf', width = 4.72*1.25, height = 3.54*1.25, pointsize = 7)
 mat <- matrix(c(1:8), nrow = 4, ncol = 2, byrow = T)
 mat[4,] <- 7
 layout(mat, heights = c(1,1,1,.35))

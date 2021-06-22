@@ -84,7 +84,7 @@ lwdD <- .75
 
 
 
-png('./Figures/Concept.png', res = 900, width = 180, height = 100, units = "mm")
+png('./Figures/FX-Concept_full.png', res = 900, width = 180, height = 100, units = "mm")
 
 # Layout
 layout(mat, widths = c(.05, .5, .5, 1, .3,.35,.35, .05), heights = c(.15, .35, 1, .35, .65, .6, .35, .05, 1, .15))

@@ -36,17 +36,12 @@ vignettes/*.pdf
 rsconnect/
 
 # Files to ignore
-Menage/
-FoodWebs-MultipleStressors-Old.md
-Data/ParamSpace/*
-Revisions/
-tmp.md
-tmp.pdf
-tmp2.md
-tmp2.pdf
-fwms_R1.pdf
-fwms_R1_nomarkup.pdf
+Submission/
 ELE-Beauchesne_Rebuttal.pdf
+ele-beauchesne-0001.pdf
+Beauchesne_et_al-ELE-IP.pdf
+Beauchesne_el_al-ELE-IP.docx
+Beauchesne_et_al-ELE-IP_track_changes.pdf
 
 #iOS file
 .DS_Store

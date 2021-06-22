@@ -8,6 +8,7 @@ output:
   pdf_document:
     toc: false
     number_sections: true
+    keep_tex: true
 header-includes:
    - \usepackage{listings}
    - \usepackage{float}
@@ -25,8 +26,9 @@ relativeurls: true
 
 <!--
 rmarkdown::render('fwms_R1_nomarkup.md')
-rmarkdown::render('./fwms.md', 'word_document')
-r -e "rmarkdown::render('./fwms.md')"
+# for word
+q()
+pandoc -f latex -t docx fwms_R1_nomarkup.tex -o fwms_R1_nomarkup.docx
 -->
 
 ^1^ArcticNet, Québec Océan, Département de biologie, Université Laval, Québec, QC, Canada \newline
@@ -64,7 +66,7 @@ david.beauchesne@hotmail.com \newline
 
 **Statement of authorship**: All the authors conceived the manuscript and the underlying objectives. DB performed the simulations, analyses, formatted the figures and led the drafting of the manuscript with significant contributions from KC. All co-authors contributed to data, analyses and writing based on their respective expertise and contributed to the revision of the manuscript. \newline
 
-**Data accessibility statement**: Empirical food web data for the St. Lawrence System used for this study are openly available from the primary sources in which they were published [@morissette2003; @savenkoff2004; @savenkoff2012].
+**Data accessibility statement**: The code to replicate this study is available from Zenodo, doi: XXX.  Empirical food web data for the St. Lawrence System used for this study are openly available from the primary sources in which they were published [@morissette2003; @savenkoff2004; @savenkoff2012].
 
 \newpage
 
